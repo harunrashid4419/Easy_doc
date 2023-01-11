@@ -7,6 +7,7 @@ const Home = () => {
       <Contact></Contact>
       <p>this is toukir branch</p>
       <h1>added by masum</h1>
+      <p>This is another components</p>
     </div>
   );
 };
