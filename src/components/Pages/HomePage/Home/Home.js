@@ -6,6 +6,7 @@ const Home = () => {
         <div>
             <Contact></Contact>
             <p>this is toukir branch</p>
+            <p>htia is second time</p>
 
         </div>
     );
