@@ -1,0 +1,74 @@
+.main-contact-section{
+    background-color: #3C5499;
+    padding: 50px 0;
+}
+.main-contact-section .contact-section{
+    width: 60%;
+    margin: 0 auto;
+}
+.main-contact-section .contact-section h2{
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 40px 0;
+    text-align: center;
+    position: relative;
+}
+.main-contact-section .contact-section h2::after{
+    content: '';
+    height: 4px;
+    width: 87px;
+    position: absolute;
+    background: #273a71;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 115%;
+}
+.main-contact-section .contact-section input{
+    background-color: #273A71;
+    color: white;
+    width: 48%;
+}
+.main-contact-section .contact-section input:nth-child(3){
+    margin-left: 4%;
+}
+.main-contact-section .contact-section input::placeholder{
+    color: white;
+    font-weight: 400;
+}
+.main-contact-section .contact-section textarea{
+    background-color: #273A71;
+    width: 100%;
+    margin-top: 20px;
+    height: 150px;
+}
+.main-contact-section .contact-section textarea::placeholder{
+    color: white;
+    font-weight: 400;
+}
+.main-contact-section .contact-section .button{
+    text-align: center;
+    margin-top: 30px;
+}
+.main-contact-section .contact-section a{
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background: #30bae7;
+    padding: 15px 65px;
+    border-radius: 3px;
+    box-shadow: 0 4px 0 #299ec5;
+    transition: .6s;
+}
+.main-contact-section .contact-section a:hover{
+    background: #3C5499;
+    border: 2px solid #30bae7;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 776px) {
+    .main-contact-section .contact-section{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
