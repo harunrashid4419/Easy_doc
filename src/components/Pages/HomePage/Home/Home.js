@@ -5,8 +5,8 @@ import CustomerFeedBack from "../CustomerFeedback/CustomerFeedBack";
 const Home = () => {
   return (
     <div>
-      <Contact></Contact>
       <CustomerFeedBack></CustomerFeedBack>
+      <Contact></Contact>
     </div>
   );
 };
