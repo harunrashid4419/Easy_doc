@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import Card from "../Card/Card";
 import Contact from "../Contact/Contact";
 import CustomerFeedBack from "../CustomerFeedback/CustomerFeedBack";
+import FAQ from "../FAQ/FAQ";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <CustomerFeedBack></CustomerFeedBack>
       <Contact></Contact>
       <Card></Card>
+      <FAQ></FAQ>
     </div>
   );
 };
