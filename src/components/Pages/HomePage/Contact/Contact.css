@@ -68,7 +68,16 @@
 
 @media screen and (max-width: 776px) {
     .main-contact-section .contact-section{
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
+    }
+    .main-contact-section .contact-section input{
+        background-color: #273A71;
+        color: white;
+        width: 100%;
+    }
+    .main-contact-section .contact-section input:nth-child(3){
+        margin-left: 0%;
+        margin-top: 20px;
     }
 }
