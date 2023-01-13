@@ -56,9 +56,9 @@
     color: #fff;
     background: #30bae7;
     padding: 15px 65px;
-    border-radius: 3px;
+    border-radius: 4px;
     box-shadow: 0 4px 0 #299ec5;
-    transition: .6s;
+    transition: .7s;
 }
 .main-contact-section .contact-section a:hover{
     background: #3C5499;
