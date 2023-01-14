@@ -4,15 +4,17 @@ import Card from "../Card/Card";
 import RecommendedTopics from "../Card/RecommendedTopics";
 import Contact from "../Contact/Contact";
 import CustomerFeedBack from "../CustomerFeedback/CustomerFeedBack";
+import FAQ from "../FAQ/FAQ";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <CustomerFeedBack></CustomerFeedBack>
       <RecommendedTopics></RecommendedTopics>
+      <CustomerFeedBack></CustomerFeedBack>
+      <FAQ></FAQ>
+
       <Contact></Contact>
-      <Card></Card>
     </div>
   );
 };
