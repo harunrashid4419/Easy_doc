@@ -7,17 +7,20 @@ const Contact = () => {
     <div className="main-contact-section">
       <div className="container">
         <div className="contact-section">
-          <h2>Get In Touch</h2>
-          <input type="text" placeholder="Your Name" className="input w-full" />
-          <input
-            id="email-section"
-            type="email"
-            placeholder="Your Email"
-            className="input w-full"
-          />
-          <textarea className="textarea" placeholder="Your Message"></textarea>
-          <div className="button">
-            <Link>Send Message</Link>
+          <div className="content">
+            <h1>Great Customer</h1>
+            <h1>Relationships start here</h1>
+          </div>
+          <div className="form">
+            <div className="input-section">
+              <input type="email" placeholder="Your Email" />
+              <button>Get Started</button>
+            </div>
+            <div className="link">
+              <Link>Messenger</Link>
+              <Link>Product Tours</Link>
+              <Link>Inbox and more</Link>
+            </div>
           </div>
         </div>
       </div>
