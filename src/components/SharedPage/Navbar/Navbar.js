@@ -14,9 +14,9 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className='fixed bg-[#7846E9] z-50 w-full h-[60px] flex  items-center px-4  text-gray-300'>
+    <div className='fixed bg-[#7846E9] z-50 w-full h-[60px] flex justify-between items-center px-4  text-gray-300'>
       <div>
-        <p className='text-2xl font-semibold text-white md:mr-24'>Easy Doc</p> 
+        <p className='text-2xl font-semibold text-white'>Easy Doc</p> 
       </div>
 
       {/* menu */}
@@ -42,7 +42,7 @@ const Navbar = () => {
       </ul>
 
       {/* Hamburger */}
-      <div onClick={handleClick} className="md:hidden">
+      <div onClick={handleClick} className="md:hidden z-10">
         {!nav ? <FaBars /> : <FaTimes />}
       </div>
 
