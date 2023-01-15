@@ -16,23 +16,23 @@ const Navbar = () => {
 
       {/* menu */}
       <ul className="hidden md:flex">
-        <li className="mr-4">
+        <li className="mr-5 hover:text-orange-500 transition-colors">
           <Link to="/">Home</Link>
         </li>
-        <li className="mr-4">
+        <li className="mr-5 hover:text-orange-500 transition-colors">
           <Link to="/">Documentation</Link>
         </li>
-        <li className="mr-4">
+        <li className="mr-5 hover:text-orange-500 transition-colors">
           <Link to="/">Community</Link>
         </li>
-        <li className="mr-4">
-          <Link to="/">pages</Link>
-        </li>
-        <li className="mr-4">
+        <li className="mr-5 hover:text-orange-500 transition-colors">
           <Link to="/">Blog</Link>
         </li>
-        <li className="mr-4">
+        <li className="mr-5 hover:text-orange-500 transition-colors">
           <Link to="/">Contact</Link>
+        </li>
+        <li className="mr-5 hover:text-orange-500 transition-colors">
+          <Link to="/">Login</Link>
         </li>
       </ul>
 
