@@ -5,7 +5,7 @@ import { FaAngleRight } from "react-icons/fa";
 const RecommendedTopics = () => {
   return (
     <div className="bg-bg-image bg-cover h-full w-full bg-no-repeat bg-[#FFFFFF]  max-w-[1280px] mx-auto">
-      <h1 className="text-4xl text-center font-bold mb-10">
+      <h1 className="text-4xl text-center font-bold my-10">
         Recommended Topics
       </h1>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6 pb-10">
