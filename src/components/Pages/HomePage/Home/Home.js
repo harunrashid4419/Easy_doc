@@ -1,16 +1,18 @@
 import React from "react";
+import Slider from "../../../Slider/Slider";
 import Banner from "../Banner/Banner";
 import RecommendedTopics from "../Card/RecommendedTopics";
 import Contact from "../Contact/Contact";
-import CustomerFeedBack from "../CustomerFeedback/CustomerFeedBack";
 import FAQ from "../FAQ/FAQ";
+import QSN from "../QSN/QSN";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
       <RecommendedTopics></RecommendedTopics>
-      <CustomerFeedBack></CustomerFeedBack>
+      <Slider></Slider>
+      <QSN></QSN>
       <FAQ></FAQ>
       <Contact></Contact>
     </div>
