@@ -7,6 +7,8 @@ import {
   FaGithub,
   FaLock,
   FaUserAlt,
+  FaEye,
+  FaEyeSlash
 } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { useForm } from "react-hook-form";
@@ -23,6 +25,8 @@ const Register = () => {
     useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [eyeClick, setEyeClick] = useState(false);
+  const [check, setCheck] = useState(false);
 
   const handleRegister = (data) => {
     const name = data.firstName + " " + data.lastName;
@@ -155,8 +159,11 @@ const Register = () => {
             </div>
             <div className="icon-setup">
               <FaLock className="icon" />
+              <div id="loginEye" onClick={() => setEyeClick(!eyeClick)}>
+                {eyeClick ? <FaEye /> : <FaEyeSlash />}
+              </div>
               <input
-                type="password"
+                type={eyeClick ? 'text' : 'password'}
                 placeholder="Password"
                 className="input input-bordered w-full"
                 {...register("password", {
@@ -207,7 +214,7 @@ const Register = () => {
               {error && <p className="text-red-500 mb-3">{error}</p>}
             </div>
             <div className="flex mb-3">
-              <input type="checkbox" id="checkbox" />
+              <input type="checkbox" id="checkbox" onClick={() =>setCheck(check)}/>
               <Link className="terams">Accepts tearms and conditions</Link>
             </div>
             <input type="submit" className="submit-btn" value="Register" />

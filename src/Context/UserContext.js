@@ -19,7 +19,7 @@ const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
 const UserContext = ({ children }) => {
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(true);
   const [user, setUser] = useState(null);
 
   // create user

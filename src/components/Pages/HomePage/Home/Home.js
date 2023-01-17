@@ -3,7 +3,6 @@ import Slider from "../../../Slider/Slider";
 import Banner from "../Banner/Banner";
 import RecommendedTopics from "../Card/RecommendedTopics";
 import Contact from "../Contact/Contact";
-import FAQ from "../FAQ/FAQ";
 import QSN from "../QSN/QSN";
 
 const Home = () => {
@@ -13,7 +12,6 @@ const Home = () => {
       <RecommendedTopics></RecommendedTopics>
       <Slider></Slider>
       <QSN></QSN>
-      <FAQ></FAQ>
       <Contact></Contact>
     </div>
   );
