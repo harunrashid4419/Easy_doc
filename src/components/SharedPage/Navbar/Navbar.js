@@ -6,6 +6,7 @@ import {
   FaLinkedin,
   FaFacebook,
   FaLinkedinIn,
+  FaUserCircle,
 } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
@@ -19,28 +20,31 @@ const Navbar = () => {
   return (
     <div className='fixed  z-50 w-full h-[60px] flex justify-between items-center px-4  text-gray-300'>
       <div>
-        <p className='text-2xl font-semibold text-white'>Easy Doc</p> 
+        <p className='text-2xl font-semibold text-white'>Easy Doc</p>
       </div>
 
       {/* menu */}
-      <ul className='hidden md:flex'>
+      <ul className='hidden md:flex justify-center'>
         <li className='mr-4'>
           <Link to='/'>Home</Link>
         </li>
         <li className='mr-4'>
-        <Link to='/'>Documentation</Link>
+          <Link to='/'>Documentation</Link>
         </li>
         <li className='mr-4'>
-        <Link to='/'>Community</Link>
+          <Link to='/'>Community</Link>
         </li>
         <li className='mr-4'>
-        <Link to='/'>pages</Link>
+          <Link to='/'>pages</Link>
         </li>
         <li className='mr-4'>
-        <Link to='/'>Blog</Link>
+          <Link to='/'>Blog</Link>
         </li>
         <li className='mr-4'>
-        <Link to='/'>Contact</Link>
+          <Link to='/'>Contact</Link>
+        </li>
+        <li className='mr-4'>
+          <Link to='/'><FaUserCircle className='w-46 block'></FaUserCircle></Link>
         </li>
       </ul>
 
@@ -58,22 +62,25 @@ const Navbar = () => {
         }
       >
         <li className='py-6 text-4xl'>
-        <Link to='/'>Home</Link>
+          <Link to='/'>Home</Link>
         </li>
         <li className='py-6 text-4xl'>
-        <Link to='/'>Documentation</Link>
+          <Link to='/'>Documentation</Link>
         </li>
         <li className='py-6 text-4xl'>
-        <Link to='/'>Community</Link>
+          <Link to='/'>Community</Link>
         </li>
         <li className='py-6 text-4xl'>
-        <Link to='/'>pages</Link>
+          <Link to='/'>pages</Link>
         </li>
         <li className='py-6 text-4xl'>
-        <Link to='/'>Blog</Link>
+          <Link to='/'>Blog</Link>
         </li>
         <li className='py-6 text-4xl'>
-        <Link to='/'>Contact</Link>
+          <Link to='/'>Contact</Link>
+        </li>
+        <li className='py-6 text-4xl'>
+          <Link to='/'><FaUserCircle></FaUserCircle></Link>
         </li>
       </ul>
 
