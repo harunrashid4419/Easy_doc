@@ -1,38 +1,70 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaGithub, FaTwitter, FaYoutube } from "react-icons/fa";
+import logo from "../../../assets/Logo.png";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="footer footer-center p-10 bg-black text-base-content rounded">
-        <div className="grid grid-flow-col gap-4 text-white">
-          <Link>Home</Link>
-          <Link>Document</Link>
-          <Link>FAQ</Link>
-          <Link>Contact</Link>
-          <Link>Login</Link>
-        </div>
-        <div>
-          <div className="grid grid-flow-col gap-4 text-white">
-            <Link>
-              <FaFacebookF />
-            </Link>
-            <Link>
-              <FaTwitter />
-            </Link>
-            <Link>
-              <FaGithub />
-            </Link>
-            <Link>
-              <FaYoutube />
-            </Link>
+    <div className="bg-black">
+      <div className="container">
+        <div id="footer-section" className="pt-10 pb-5 text-white">
+          <div>
+            <img style={{ width: "90px" }} src={logo} alt="logo" />
+            <p className="text-xl mt-2">
+              EASY DOC
+            </p>
+            <p className="py-2">This is the documentation website. You improve your coding knowledge by reading the documentation.</p>
+            <div className="social-icon">
+              <Link>
+                <FaFacebookF />
+              </Link>
+              <Link>
+                <FaGithub />
+              </Link>
+              <Link>
+                <FaTwitter />
+              </Link>
+              <Link>
+                <FaYoutube />
+              </Link>
+            </div>
+          </div>
+          <div id="doc-content">
+            <p className="footer-title">Doc Contents</p>
+            <Link>Video</Link>
+            <Link>List Style</Link>
+            <Link>Tables</Link>
+            <Link>Tooltip & Direction</Link>
+            <Link>Keyboard Shortcuts</Link>
+          </div>
+          <div id="doc-content">
+            <p className="footer-title">Doc Footnotes</p>
+            <Link>Single Comun</Link>
+            <Link>Two Columns</Link>
+            <Link>Three Columns</Link>
+            <Link>Four Columns</Link>
+          </div>
+          <div id="doc-content">
+            <p className="footer-title">Doc Elements</p>
+            <Link>Accordions Widget</Link>
+            <Link>Tabs Widget</Link>
+            <Link>Cheatsheet Widget</Link>
+            <Link>Image Hotspots</Link>
+            <Link>Notice / Message Widget</Link>
           </div>
         </div>
-        <div>
-          <p className="text-white">Copyright © 2023 - Easy Doc</p>
+      </div>
+      <hr />
+      <div className="container">
+        <div className="socket">
+          <div className="socket-section">
+            <Link>Blog</Link>
+            <Link className="knowledge">Knowledgebase</Link>
+          </div>
+          <p>&copy; 2023 All Rights Reserved by Easy-Doc</p>
         </div>
-      </footer>
+      </div>
     </div>
   );
 };
