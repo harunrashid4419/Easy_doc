@@ -13,7 +13,6 @@ const Home = () => {
       <RecommendedTopics></RecommendedTopics>
       <CustomerFeedBack></CustomerFeedBack>
       <FAQ></FAQ>
-
       <Contact></Contact>
     </div>
   );
