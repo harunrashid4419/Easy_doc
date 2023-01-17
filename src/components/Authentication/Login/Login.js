@@ -2,8 +2,14 @@ import React, { useContext, useState } from "react";
 import Lottie from "lottie-react";
 import loginAnimation from "../../../assets/login.json";
 import "./Login.css";
-import { FaFacebookF, FaGooglePlusG, FaGithub } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import {
+  FaFacebookF,
+  FaGooglePlusG,
+  FaGithub,
+  FaEye,
+  FaEyeSlash,
+} from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
@@ -19,6 +25,25 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [eyeClick, setEyeClick] = useState(false);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  // login
+  const handleLogin = (data) => {
+    login(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        setError("");
+        console.log(user);
+        toast.success("Login Success");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
+  };
 
   // reset password
   const restorePass = () => {
@@ -30,22 +55,6 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
-        setError(error.message);
-      });
-  };
-
-  // login
-  const handleLogin = (data) => {
-    login(data.email, data.password)
-      .then((result) => {
-        const user = result.user;
-        setError("");
-        console.log(user);
-        toast.success("Login Success");
-        navigate("/");
-      })
-      .catch((error) => {
-        console.error(error);
         setError(error.message);
       });
   };
@@ -150,10 +159,13 @@ const Login = () => {
                   <p className="mb-3 text-red-500">{errors.email?.message}</p>
                 )}
               </fieldset>
-              <fieldset>
+              <fieldset id="password-fieldset">
                 <legend>Password</legend>
+                <div id="eyeClick" onClick={() => setEyeClick(!eyeClick)}>
+                  {eyeClick ? <FaEye /> : <FaEyeSlash />}
+                </div>
                 <input
-                  type="password"
+                  type={eyeClick ? "text" : "password"}
                   {...register("password", {
                     required: "Password is required",
                   })}

@@ -55,14 +55,16 @@ const Navbar = () => {
           </li>
         ) : (
           <li className="mr-5 hover:text-orange-500 transition-colors">
-            <Link to="/">Login</Link>
+            <Link to="/login">Login</Link>
           </li>
         )}
-        <li className="mr-5 hover:text-orange-500 transition-colors">
-          <Link to="/profile">
-            <FaUserCircle className="text-4xl rounded-full border-none bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle>
-          </Link>
-        </li>
+        {user && (
+          <li className="mr-5 hover:text-orange-500 transition-colors">
+            <Link to="/profile">
+              <FaUserCircle className="text-4xl rounded-full border-none bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle>
+            </Link>
+          </li>
+        )}
       </ul>
 
       {/* Hamburger */}

@@ -83,9 +83,9 @@ const Slider = () => {
     },
   ];
   return (
-    <div>
-      <div className="container flex flex-col justify-center items-center">
-        <h2 className="text-4xl font-bold pt-4">What people say</h2>
+    <div className="container">
+      <div className=" flex flex-col justify-center items-center">
+        <h2 className="text-4xl font-bold pt-20">What people say</h2>
         <h4 className="text-gray-600 p-2">We care about your opinion</h4>
       </div>
 
@@ -107,7 +107,7 @@ const Slider = () => {
       >
         {datas.map((data, i) => (
           <SwiperSlide key={i}>
-            <div className="container flex flex-col-reverse shadow-2xl shadow-indigo-500/50 w-full max-w-lg p-6 mx-auto  rounded-xl   bg-white text-gray-800">
+            <div className="flex flex-col-reverse shadow-2xl shadow-indigo-500/50 w-full max-w-lg p-6 mx-auto  rounded-xl   bg-white text-gray-800">
               <div className="flex justify-between p-4">
                 <div className="flex space-x-4">
                   <div>

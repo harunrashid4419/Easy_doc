@@ -5,11 +5,11 @@ import { FaAngleRight } from "react-icons/fa";
 const RecommendedTopics = () => {
   return (
     <div className="container">
-      <div className="bg-bg-image bg-cover h-full w-full bg-no-repeat bg-[#FFFFFF] mx-auto">
+      <div className="bg-bg-image pt-20 bg-cover h-full w-full bg-no-repeat bg-[#FFFFFF] mx-auto">
         <h1 className="text-4xl text-center font-bold mb-10">
           Recommended Topics
         </h1>
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6 pb-10">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6 pb-20">
           <div className="bg-[#FFFFFF] shadow-2xl rounded-2xl p-4">
             <img className="h-[75px] w-[75px] mb-3" src={layer} alt="" />
             <h1 className="font-bold mb-2">MAIN CONCEPTS</h1>

@@ -95,6 +95,15 @@
     cursor: pointer;
     width: fit-content;
 }
+#password-fieldset{
+    position: relative;
+}
+#eyeClick{
+    position: absolute;
+    top: 3px;
+    right: 15px;
+}
+
 @media screen and (max-width: 776px) {
     .login-section .main-login{
         display: block;

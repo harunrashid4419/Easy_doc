@@ -85,6 +85,11 @@
 .register-section .main-register .icon-setup{
     position: relative;
 }
+#loginEye{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
 .register-section .main-register .icon{
     position: absolute;
     z-index: 9;
