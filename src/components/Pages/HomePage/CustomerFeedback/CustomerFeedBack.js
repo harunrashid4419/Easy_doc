@@ -27,8 +27,8 @@ const CustomerFeedBack = () => {
   return (
     <div className="container">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 lg:grid-cols-3">
-        {datas.map((data) => (
-          <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 bg-gray-900 text-gray-100">
+        {datas.map((data, i) => (
+          <div key={i} className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 bg-gray-900 text-gray-100">
             <div className="flex justify-between p-4">
               <div className="flex space-x-4">
                 <div>

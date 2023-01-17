@@ -1,0 +1,110 @@
+.login-section{
+    padding: 120px 0 60px 0;
+}
+.login-section .main-login fieldset{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.login-section .main-login legend{
+    color: #003300;
+    font-weight: 600;
+}
+.login-section .main-login input:focus{
+    outline: none;
+}
+.login-section .main-login input{
+    background: #CEDACA;
+}
+.login-section .main-login{
+    display: flex;
+    background-color: #4f794247;
+    border-radius: 10px;
+}
+.login-section .animation{
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+.login-section .form-section{
+    width: 40%;
+    padding: 70px 0 50px 0;
+    margin: 0 auto;
+}
+.login-section .form-section h1{
+    font-size: 32px;
+    color: #003300;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.login-section .form-section .login-btn{
+    background-color: #355BC0;
+    padding: 12px 30px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    transition: .5s;
+}
+.login-section .form-section .login-btn:hover{
+    opacity: 80%;
+}
+.login-section .main-login .social-login{
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.login-section .main-login .social-login a{
+    padding: 15px;
+    margin: 0 5px;
+    color: white;
+    font-size: 22px;
+    border-radius: 50%;
+    transition: .5s;
+}
+.login-section .main-login .social-login a:hover{
+    opacity: 70%;
+    color: black;
+}
+#facebook{
+    background-color: #425991;
+}
+#google{
+    background-color: #4BA2E4;
+}
+#github{
+    background-color: #DC5041;
+}
+.login-section .main-login .link-register{
+    color: #6b707f;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+.login-section .main-login .link-register a{
+    color: green;
+    font-size: 20px;
+    font-weight: 600;
+}
+.login-section .main-login .forget-pass{
+    margin-bottom: 16px;
+    cursor: pointer;
+    width: fit-content;
+}
+@media screen and (max-width: 776px) {
+    .login-section .main-login{
+        display: block;
+    }
+    .login-section .animation {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .login-section .form-section {
+        width: 80%;
+        padding: 30px 0 20px 0;
+    }
+}
