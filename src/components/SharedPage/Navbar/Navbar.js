@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   FaBars,
   FaTimes,
@@ -6,12 +6,24 @@ import {
   FaUsersCog,
   FaUserCircle,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/Logo.png";
+import { AuthContext } from "../../../Context/UserContext";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
   const handleClick = () => setNav(!nav);
+  const navigate = useNavigate();
+
+  // logout
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        navigate("/login");
+      })
+      .catch((error) => console.error(error));
+  };
 
   return (
     <div className="fixed bg-[#7846E9] z-50 w-full h-[60px] flex justify-between items-center px-4  text-gray-300">
@@ -37,14 +49,22 @@ const Navbar = () => {
         <li className="mr-5 hover:text-orange-500 transition-colors">
           <Link to="/">Contact</Link>
         </li>
-        <li className="mr-5 hover:text-orange-500 transition-colors">
-          <Link to="/">Login</Link>
-        </li>
-        <li className="mr-5 hover:text-orange-500 transition-colors">
-          <Link to="/profile">
-            <FaUserCircle className="text-4xl rounded-full border-none bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle>
-          </Link>
-        </li>
+        {user ? (
+          <li className="mr-5 hover:text-orange-500 transition-colors">
+            <Link onClick={handleLogOut}>LogOut</Link>
+          </li>
+        ) : (
+          <li className="mr-5 hover:text-orange-500 transition-colors">
+            <Link to="/login">Login</Link>
+          </li>
+        )}
+        {user && (
+          <li className="mr-5 hover:text-orange-500 transition-colors">
+            <Link to="/profile">
+              <FaUserCircle className="text-4xl rounded-full border-none bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle>
+            </Link>
+          </li>
+        )}
       </ul>
 
       {/* Hamburger */}
