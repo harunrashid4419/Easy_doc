@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../../Context/UserContext';
 
 const ProfileModal = () => {
+    const { user } = useContext(AuthContext);
     return (
 
         <div>
@@ -17,8 +19,8 @@ const ProfileModal = () => {
                     <div>   <img src="https://placeimg.com/80/80/people" alt="" className='rounded-full w-24 h-24 mx-auto' /></div>
 
                     <div className='text-center mt-4 space-y-4'>
-                        <h2 className='text-xl f-bold text-indigo-500'>Random</h2>
-                        <span>randomuser@gmail.com</span>
+                        <h2 className='text-xl f-bold text-indigo-500'>{user?.displayName}</h2>
+                        <span>{user?.email}</span>
                         <Link to='/view-profile' className='btn btn-xs md:btn-sm'>View Profile</Link>
                     </div>
 

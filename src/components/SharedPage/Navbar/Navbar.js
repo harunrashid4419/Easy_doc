@@ -49,29 +49,22 @@ const Navbar = () => {
         <li className="mr-5 hover:text-orange-500 transition-colors">
           <Link to="/">Contact</Link>
         </li>
-        <li className="mr-5 hover:text-orange-500 transition-colors">
-          <Link to="/">Login</Link>
-        </li>
-        <li className="mr-5 hover:text-orange-500 transition-colors">
 
-          <label htmlFor="profile-modal"><FaUserCircle className="text-4xl rounded-full border-none cursor-pointer bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle></label>
-        </li>
-        {user ? (
+
+        {user ?
+          <>
+            <li className="mr-5 hover:text-orange-500 transition-colors">
+              <button className='btn btn-warning btn-xs md:btn-sm' onClick={handleLogOut}>LogOut</button>
+            </li>
+            <li>
+              <label htmlFor="profile-modal"><FaUserCircle className="text-4xl rounded-full border-none cursor-pointer bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle></label>
+            </li>
+          </>
+          :
           <li className="mr-5 hover:text-orange-500 transition-colors">
-            <Link onClick={handleLogOut}>LogOut</Link>
+            <Link to="/login" className="btn btn-primary btn-xs md:btn-sm">Login</Link>
           </li>
-        ) : (
-          <li className="mr-5 hover:text-orange-500 transition-colors">
-            <Link to="/login">Login</Link>
-          </li>
-        )}
-        {user && (
-          <li className="mr-5 hover:text-orange-500 transition-colors">
-            <Link to="/profile">
-              <FaUserCircle className="text-4xl rounded-full border-none bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle>
-            </Link>
-          </li>
-        )}
+        }
       </ul>
 
       {/* Hamburger */}

@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "../components/Authentication/Login/Login";
 import Register from "../components/Authentication/Register/Register";
 import Home from "../components/Pages/HomePage/Home/Home";
+import MyContribution from "../components/Pages/Profile/MyContribution/MyContribution";
+import MyProfile from "../components/Pages/Profile/MyProfile/MyProfile";
 import ViewProfile from "../components/Pages/Profile/ViewProfile/ViewProfile";
 import Main from "../Layout/Main";
 
@@ -23,8 +25,18 @@ const routes = createBrowserRouter([
                 element: <Register></Register>,
             },
             {
-                path: "/profile",
+                path: "/view-profile",
                 element: <ViewProfile></ViewProfile>,
+                children: [
+                    {
+                        path: '/view-profile',
+                        element: <MyProfile></MyProfile>
+                    },
+                    {
+                        path: '/view-profile/my-contribution',
+                        element: <MyContribution></MyContribution>
+                    }
+                ]
             },
         ],
     },
