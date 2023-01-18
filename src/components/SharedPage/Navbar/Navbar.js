@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { FaBars, FaTimes, FaRegListAlt, FaUsersCog, FaUserCircle } from "react-icons/fa";
+import {
+  FaBars,
+  FaTimes,
+  FaRegListAlt,
+  FaUsersCog,
+  FaUserCircle,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/Logo.png";
 
@@ -23,7 +29,7 @@ const Navbar = () => {
           <Link to="/">Documentation</Link>
         </li>
         <li className="mr-5 hover:text-orange-500 transition-colors">
-          <Link to="/">Community</Link>
+          <Link to="/community">Community</Link>
         </li>
         <li className="mr-5 hover:text-orange-500 transition-colors">
           <Link to="/">Blog</Link>
@@ -35,7 +41,9 @@ const Navbar = () => {
           <Link to="/">Login</Link>
         </li>
         <li className="mr-5 hover:text-orange-500 transition-colors">
-          <Link to="/profile"><FaUserCircle className="text-4xl rounded-full border-none bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle></Link>
+          <Link to="/profile">
+            <FaUserCircle className="text-4xl rounded-full border-none bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle>
+          </Link>
         </li>
       </ul>
 

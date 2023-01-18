@@ -1,4 +1,5 @@
 import React from "react";
+
 import Slider from "../../../Slider/Slider";
 import Banner from "../Banner/Banner";
 import RecommendedTopics from "../Card/RecommendedTopics";
