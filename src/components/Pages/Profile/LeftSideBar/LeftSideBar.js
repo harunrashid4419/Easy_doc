@@ -10,6 +10,14 @@ const LeftSideBar = () => {
                     <Link to='/view-profile'>My Profile</Link>
                 </div>
                 <div className='flex items-center gap-6'>
+                    <img className='w-8' src="https://cdn-icons-png.flaticon.com/128/9062/9062564.png" alt="" />
+                    <Link to='/view-profile/address'>Address</Link>
+                </div>
+                <div className='flex items-center gap-6'>
+                    <img className='w-8' src="https://cdn-icons-png.flaticon.com/128/5254/5254567.png" alt="" />
+                    <Link to='/view-profile/education'>Education</Link>
+                </div>
+                <div className='flex items-center gap-6'>
                     <img className='w-8' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ93eSnGDLqSPEtbO1QnEjeqrSl17JWxHDGXg&usqp=CAU" alt="" />
                     <Link to='/view-profile/my-contribution'>My Contribution</Link>
                 </div>
