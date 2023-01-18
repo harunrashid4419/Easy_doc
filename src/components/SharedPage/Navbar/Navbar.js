@@ -26,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky top-0 bg-[#7846E9] z-50 w-full h-[60px] flex justify-between items-center px-4  text-gray-300">
+    <div className="fixed bg-[#7846E9] z-50 w-full h-[60px] flex justify-between items-center px-4  text-gray-300">
       <Link to="/" className="flex">
         <img style={{ width: "40px" }} src={logo} alt="logo" />
         <p className="text-2xl font-semibold text-white ml-1 mt-1">Easy Doc</p>
@@ -41,7 +41,7 @@ const Navbar = () => {
           <Link to="/">Documentation</Link>
         </li>
         <li className="mr-5 hover:text-orange-500 transition-colors">
-          <Link to="/">Community</Link>
+          <Link to="/community">Community</Link>
         </li>
         <li className="mr-5 hover:text-orange-500 transition-colors">
           <Link to="/">Blog</Link>
@@ -49,22 +49,22 @@ const Navbar = () => {
         <li className="mr-5 hover:text-orange-500 transition-colors">
           <Link to="/">Contact</Link>
         </li>
-
-
-        {user ?
-          <>
-            <li className="mr-5 hover:text-orange-500 transition-colors">
-              <button className='btn btn-warning btn-xs md:btn-sm' onClick={handleLogOut}>LogOut</button>
-            </li>
-            <li>
-              <label htmlFor="profile-modal"><FaUserCircle className="text-4xl rounded-full border-none cursor-pointer bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle></label>
-            </li>
-          </>
-          :
+        {user ? (
           <li className="mr-5 hover:text-orange-500 transition-colors">
-            <Link to="/login" className="btn btn-primary btn-xs md:btn-sm">Login</Link>
+            <Link onClick={handleLogOut}>LogOut</Link>
           </li>
-        }
+        ) : (
+          <li className="mr-5 hover:text-orange-500 transition-colors">
+            <Link to="/login">Login</Link>
+          </li>
+        )}
+        {user && (
+          <li className="mr-5 hover:text-orange-500 transition-colors">
+            <Link to="/profile">
+              <FaUserCircle className="text-4xl rounded-full border-none bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle>
+            </Link>
+          </li>
+        )}
       </ul>
 
       {/* Hamburger */}
