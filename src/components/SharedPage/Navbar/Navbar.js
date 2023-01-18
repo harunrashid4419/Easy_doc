@@ -8,7 +8,7 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className="fixed bg-[#7846E9] z-50 w-full h-[60px] flex justify-between items-center px-4  text-gray-300">
+    <div className="sticky top-0 bg-[#7846E9] z-50 w-full h-[60px] flex justify-between items-center px-4  text-gray-300">
       <Link to="/" className="flex">
         <img style={{ width: "40px" }} src={logo} alt="logo" />
         <p className="text-2xl font-semibold text-white ml-1 mt-1">Easy Doc</p>
@@ -35,7 +35,8 @@ const Navbar = () => {
           <Link to="/">Login</Link>
         </li>
         <li className="mr-5 hover:text-orange-500 transition-colors">
-          <Link to="/profile"><FaUserCircle className="text-4xl rounded-full border-none bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle></Link>
+
+          <label htmlFor="profile-modal"><FaUserCircle className="text-4xl rounded-full border-none cursor-pointer bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle></label>
         </li>
       </ul>
 
