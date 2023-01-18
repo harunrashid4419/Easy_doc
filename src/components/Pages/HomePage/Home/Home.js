@@ -1,17 +1,17 @@
 import React from "react";
+import Slider from "../../../Slider/Slider";
 import Banner from "../Banner/Banner";
-import Card from "../Card/Card";
+import RecommendedTopics from "../Card/RecommendedTopics";
 import Contact from "../Contact/Contact";
-import CustomerFeedBack from "../CustomerFeedback/CustomerFeedBack";
-import FAQ from "../FAQ/FAQ";
+import QSN from "../QSN/QSN";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <Card></Card>
-      <CustomerFeedBack></CustomerFeedBack>
-      <FAQ></FAQ>
+      <RecommendedTopics></RecommendedTopics>
+      <Slider></Slider>
+      <QSN></QSN>
       <Contact></Contact>
     </div>
   );
