@@ -1,0 +1,140 @@
+.register-section{
+    padding: 120px 0 50px 0;
+    background-color: #f5deb361;
+}
+.register-section .main-register{
+    width: 60%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px 25px 20px 25px;
+    box-shadow: 0px 4px 6px #000000bf;
+}
+.register-section .main-register input{
+    border-radius: 0;
+    margin-bottom: 20px;
+    padding-left: 50px;
+    background: transparent;
+}
+.register-section .main-register input:focus{
+    outline: none;
+}
+.register-section .main-register #first-name{
+    width: 98%;
+}
+.register-section .main-register #last-name{
+    width: 98%;
+    margin-left: 4%;
+}
+.register-section .main-register h2{
+    color: #003300;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.register-section .main-register .submit-btn{
+    background-color: #355BC0;
+    padding: 15px 20px;
+    width: 100%;
+    color: white;
+    cursor: pointer;
+    transition: .5s;
+}
+.register-section .main-register .submit-btn:hover{
+    opacity: 80%;
+    border-radius: 8px;
+}
+.register-section .main-register .social-register{
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.register-section .main-register .social-register a{
+    padding: 15px;
+    margin: 0 5px;
+    color: white;
+    font-size: 22px;
+    border-radius: 50%;
+    transition: .5s;
+}
+.register-section .main-register .social-register a:hover{
+    opacity: 70%;
+    color: black;
+}
+#facebook{
+    background-color: #425991;
+}
+#google{
+    background-color: #4BA2E4;
+}
+#github{
+    background-color: #DC5041;
+}
+.register-section .main-register .link-register{
+    color: #6b707f;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+.register-section .main-register .link-register a{
+    color: green;
+    font-size: 20px;
+    font-weight: 600;
+}
+.register-section .main-register .icon-setup{
+    position: relative;
+}
+#loginEye{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.register-section .main-register .icon{
+    position: absolute;
+    z-index: 9;
+    font-size: 22px;
+    left: 10px;
+    top: 12px;
+}
+.register-section .main-register .terams{
+    display: block;
+    text-align: right;
+}
+.register-section .main-register .first-last-name{
+    display: flex;
+}
+#input-file{
+    padding-left: 0px;
+}
+#checkbox{
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    .register-section .main-register{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 776px) {
+    .register-section .main-register{
+        width: 100%;
+    }
+    .register-section .main-register h2 {
+        font-size: 30px;
+    }
+    .register-section {
+        padding: 100px 0 35px 0;
+    }
+    .register-section .main-register .first-last-name{
+        display: block;
+    }
+    .register-section .main-register #first-name {
+        width: 100%;
+    }
+    .register-section .main-register #last-name {
+        width: 100%;
+        margin-left: 0%;
+    }
+}

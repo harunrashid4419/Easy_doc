@@ -1,10 +1,10 @@
 import React from "react";
 import ProfileModal from "../../Profile/ProfileModal/ProfileModal";
+import Slider from "../../../Slider/Slider";
 import Banner from "../Banner/Banner";
 import RecommendedTopics from "../Card/RecommendedTopics";
 import Contact from "../Contact/Contact";
-import CustomerFeedBack from "../CustomerFeedback/CustomerFeedBack";
-import FAQ from "../FAQ/FAQ";
+import QSN from "../QSN/QSN";
 
 const Home = () => {
   return (
@@ -12,8 +12,8 @@ const Home = () => {
       <ProfileModal></ProfileModal>
       <Banner></Banner>
       <RecommendedTopics></RecommendedTopics>
-      <CustomerFeedBack></CustomerFeedBack>
-      <FAQ></FAQ>
+      <Slider></Slider>
+      <QSN></QSN>
       <Contact></Contact>
     </div>
   );
