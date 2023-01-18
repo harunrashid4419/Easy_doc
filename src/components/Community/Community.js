@@ -26,18 +26,18 @@ const Community = () => {
           ></Player>
         </div>
       </div>
-      <div className="bg-slate-50 p-5 rounded-3xl">
+      <div className="bg-slate-50 p-5 rounded-3xl mb-5">
         <h1 className="font-bold mb-5">Write you question here</h1>
         <div>
           <textarea
-            className="w-full mb-3"
+            className="w-full mb-3 p-2 border-2 outline-none rounded-3xl"
             name=""
             id=""
             rows="2"
             placeholder="Write you question"
           ></textarea>
-          <hr className="border-y-2 border-slate-500" />
-          <div className="mt-3 flex flex-col justify-center items-center">
+          <hr className="border-y-1 border-slate-500" />
+          <div className="mt-3 flex flex-col justify-center items-center mb-3">
             <label
               htmlFor="img"
               className="btn bg-blue-500 text-white border-0 hover:bg-blue-400"
@@ -46,6 +46,10 @@ const Community = () => {
             </label>
             <input type="file" id="img" name="image" className="hidden" />
           </div>
+          <hr className="border-y-1 border-slate-500 mb-3" />
+          <button className="btn bg-blue-500 hover:bg-blue-400 flex">
+            Submit
+          </button>
         </div>
       </div>
     </div>
