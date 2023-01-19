@@ -7,19 +7,19 @@ const Post = () => {
         <h1 className="font-bold mb-5">Write you question here</h1>
         <div>
           <textarea
-            className="w-full mb-3 rounded-2xl p-2 border-2 outline-none"
+            className="w-full mb-3 rounded-2xl p-2 border-2 outline-none bg-blue-100"
             name=""
             id=""
-            rows="2"
+            rows="3"
             placeholder="Write you question"
           ></textarea>
           <hr className="border-y-1 border-slate-500" />
           <div className="mt-3 flex flex-col justify-center items-center">
             <label
               htmlFor="img"
-              className="btn bg-blue-500 mb-5 text-white border-0 hover:bg-blue-400"
+              className="p-2 bg-blue-500 mb-5 text-white border-0 hover:bg-blue-400"
             >
-              Upload
+              Upload File
             </label>
             <input type="file" id="img" name="image" className="hidden" />
           </div>
