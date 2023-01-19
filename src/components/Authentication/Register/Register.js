@@ -21,7 +21,7 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { createUser, updateUser, googleSignIn, githubSignUp } =
+  const { createUser, updateUser, googleSignIn, githubSignUp, facebookSignUp } =
     useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -137,6 +137,19 @@ const Register = () => {
       .then((data) => console.log(data));
   };
 
+  // facebook sign up
+  const handleFacebookSignUp  = () =>{
+    console.log('check')
+    facebookSignUp()
+      .then(result =>{
+        const user = result.user;
+        console.log(user);
+      })
+      .then(error =>{
+        console.error(error);
+      })
+  }
+
   return (
     <div className="register-section">
       <div className="container">
@@ -227,7 +240,7 @@ const Register = () => {
             <Link onClick={handleGitHubSignUp} id="github">
               <FaGithub />
             </Link>
-            <Link id="facebook">
+            <Link onClick={handleFacebookSignUp} id="facebook">
               <FaFacebookF />
             </Link>
           </div>
