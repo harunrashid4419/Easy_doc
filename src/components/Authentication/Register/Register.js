@@ -137,6 +137,11 @@ const Register = () => {
       .then((data) => console.log(data));
   };
 
+  // facebook sign up
+  const handleFacebookSignUp  = () =>{
+    
+  }
+
   return (
     <div className="register-section">
       <div className="container">
@@ -227,7 +232,7 @@ const Register = () => {
             <Link onClick={handleGitHubSignUp} id="github">
               <FaGithub />
             </Link>
-            <Link id="facebook">
+            <Link onCanPlay={handleFacebookSignUp} id="facebook">
               <FaFacebookF />
             </Link>
           </div>
