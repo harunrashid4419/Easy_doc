@@ -57,7 +57,7 @@ const UserContext = ({ children }) => {
   };
 
   // github signup
-  const githubSignUp = () =>{
+  const githubSignIn = () => {
     setLoader(true);
     return signInWithPopup(auth, githubProvider);
   }
@@ -82,7 +82,7 @@ const UserContext = ({ children }) => {
     logOut,
     restorePassword,
     googleSignIn,
-    githubSignUp
+    githubSignIn
   };
 
   return (
