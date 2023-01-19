@@ -4,6 +4,7 @@ import {
   getAuth,
   GithubAuthProvider,
   GoogleAuthProvider,
+  FacebookAuthProvider,
   onAuthStateChanged,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
@@ -17,6 +18,7 @@ const auth = getAuth(app);
 export const AuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 
 const UserContext = ({ children }) => {
   const [loader, setLoader] = useState(true);
@@ -60,6 +62,12 @@ const UserContext = ({ children }) => {
   const githubSignIn = () => {
     setLoader(true);
     return signInWithPopup(auth, githubProvider);
+  };
+
+  // facebook sign up
+  const facebookSignUp = () => {
+    setLoader(true);
+    return signInWithPopup(auth, facebookProvider);
   }
 
   // users ofserved
@@ -82,7 +90,8 @@ const UserContext = ({ children }) => {
     logOut,
     restorePassword,
     googleSignIn,
-    githubSignIn
+    githubSignIn,
+    facebookSignUp
   };
 
   return (
