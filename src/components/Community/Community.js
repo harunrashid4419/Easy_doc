@@ -5,7 +5,7 @@ import ShowPost from "./ShowPost";
 
 const Community = () => {
   return (
-    <div className="max-w-[1280px] mx-auto">
+    <div className="container">
       <Banner></Banner>
       <Post></Post>
       <ShowPost></ShowPost>

@@ -26,7 +26,7 @@ const ShowPost = () => {
       </div>
       <div>
         <input
-          className="w-full rounded-2xl p-2 outline-none"
+          className="w-full rounded-2xl p-2 outline-none bg-blue-100"
           type="text"
           placeholder="Write your answer"
         />

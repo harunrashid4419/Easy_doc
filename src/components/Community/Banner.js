@@ -5,7 +5,7 @@ import animation from "../../assets/teamwork.json";
 const Banner = () => {
   return (
     <div>
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 items-center  bg-slate-100 pt-16 mb-5 px-5">
+      <div className="grid md:grid-cols-2 sm:grid-cols-1 items-center pt-24  bg-slate-100 mb-5 px-5">
         <div>
           <h1 className="text-4xl font-bold mb-5">
             Communities for your favorite technologies
