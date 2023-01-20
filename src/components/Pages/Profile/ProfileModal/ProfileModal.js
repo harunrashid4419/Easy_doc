@@ -16,7 +16,7 @@ const ProfileModal = () => {
 
                     <label htmlFor="profile-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
-                    <div>   <img src="https://placeimg.com/80/80/people" alt="" className='rounded-full w-24 h-24 mx-auto' /></div>
+                    <div>   <img src={user?.photoURL} alt="" className='rounded-full w-24 h-24 mx-auto' /></div>
 
                     <div className='text-center mt-4 space-y-4'>
                         <h2 className='text-xl f-bold text-indigo-500'>{user?.displayName}</h2>

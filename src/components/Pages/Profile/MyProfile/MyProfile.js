@@ -1,3 +1,4 @@
+// import { useQuery } from '@tanstack/react-query';
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -6,14 +7,17 @@ import { FaEdit } from 'react-icons/fa';
 import { AuthContext } from '../../../../Context/UserContext';
 
 const MyProfile = () => {
+
     const { user } = useContext(AuthContext);
     const [edit, setEdit] = useState(false);
     const { register, handleSubmit } = useForm();
+
+
     // get user data from database using useQuery
-    const { data, isLoading, refetch } = useQuery({
+    const { data: currentUser = {}, isLoading, refetch } = useQuery({
         queryKey: ['user', user?.uid],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/user?uid=${user?.uid}`);
+            const res = await fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
             const data = await res.json();
             return data;
         }
@@ -21,8 +25,8 @@ const MyProfile = () => {
     if (isLoading) {
         return 'Loading...'
     }
-    // destructuring user data
-    const { email, name, photoURL, phoneNumber } = data;
+    // destructuring current user data
+    const { email, name, photoURL, phoneNumber } = currentUser;
 
     // update profile form handler
     const updateProfile = (data) => {
@@ -31,7 +35,7 @@ const MyProfile = () => {
             return;
         }
         else {
-            fetch(`http://localhost:5000/user?uid=${user?.uid}`, {
+            fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -40,8 +44,8 @@ const MyProfile = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    if (data.modifiedCount > 0) {
-                        toast.success('Your Information Updated Successfully')
+                    if (data.acknowledged) {
+                        toast.success('You update information successfully');
                         setEdit(false);
                         refetch();
                     }
