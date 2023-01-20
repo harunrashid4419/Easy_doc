@@ -4,15 +4,15 @@ import { useQuery } from "@tanstack/react-query";
 
 const ShowPost = () => {
 
-  const { data: allpost = [] } = useQuery({
+  const { data: allpost = [], refetch } = useQuery({
     queryKey: ["post"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/allUserPost");
+      const res = await fetch("https://easy-doc-server.vercel.app/allUserPost");
       const data = await res.json();
       return data;
     },
   });
-  
+
   return (
     <div>
       {allpost.map((postDatails) => (

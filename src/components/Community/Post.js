@@ -27,7 +27,7 @@ const Post = () => {
             post: data?.userPost,
             img: imgeData?.data.url,
           };
-          fetch("http://localhost:5000/userPost", {
+          fetch("https://easy-doc-server.vercel.app/userPost", {
             method: "POST",
             headers: {
               "content-type": "application/json",
