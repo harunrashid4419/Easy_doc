@@ -1,7 +1,10 @@
+
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../components/Authentication/Login/Login";
 import Register from "../components/Authentication/Register/Register";
 import Community from "../components/Community/Community";
+import Documentation from "../components/Pages/Documentation/Documentation";
+
 import Home from "../components/Pages/HomePage/Home/Home";
 import Address from "../components/Pages/Profile/Address/Address";
 import Education from "../components/Pages/Profile/Education/Education";
@@ -30,7 +33,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/community",
-        element: <PrivateRoute><Community></Community></PrivateRoute>,
+        element: <PrivateRoute> <Community></Community> </PrivateRoute>,
       },
       {
         path: "/view-profile",
@@ -56,6 +59,16 @@ const routes = createBrowserRouter([
       },
     ],
   },
-]);
+  {
+      path:'/documentation',
+      element:<Documentation></Documentation>,
 
+  },
+])
+  
+    
+          
+         
+               
+       
 export default routes;
