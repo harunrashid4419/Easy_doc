@@ -155,10 +155,10 @@ const Login = () => {
                   className=" w-full"
                   onChange={handleEmail}
                 />
-                {errors.email && (
-                  <p className="mb-3 text-red-500">{errors.email?.message}</p>
-                )}
               </fieldset>
+              {errors.email && (
+                <p className="mb-3 text-red-500">{errors.email?.message}</p>
+              )}
               <fieldset id="password-fieldset">
                 <legend>Password</legend>
                 <div id="eyeClick" onClick={() => setEyeClick(!eyeClick)}>
@@ -171,12 +171,10 @@ const Login = () => {
                   })}
                   className=" w-full"
                 />
-                {errors.password && (
-                  <p className="mb-3 text-red-500">
-                    {errors.password?.message}
-                  </p>
-                )}
               </fieldset>
+              {errors.password && (
+                <p className="mb-3 text-red-500">{errors.password?.message}</p>
+              )}
               {error && <p className="text-red-500 mb-3">{error}</p>}
               <p onClick={restorePass} className="forget-pass">
                 Forget Password
