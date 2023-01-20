@@ -3,6 +3,7 @@ import pic from "../../assets/accounts.svg";
 import { FaThumbsDown, FaThumbsUp } from "react-icons/fa";
 
 const ShowPost = () => {
+  
   return (
     <div className="my-5 p-5 bg-slate-100">
       <div className="flex items-center mb-5">

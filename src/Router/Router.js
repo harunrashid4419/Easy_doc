@@ -9,6 +9,7 @@ import MyContribution from "../components/Pages/Profile/MyContribution/MyContrib
 import MyProfile from "../components/Pages/Profile/MyProfile/MyProfile";
 import ViewProfile from "../components/Pages/Profile/ViewProfile/ViewProfile";
 import Main from "../Layout/Main";
+import PrivateRoute from "./PrivateRoute";
 
 const routes = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/community",
-        element: <Community></Community>,
+        element: <PrivateRoute><Community></Community></PrivateRoute>,
       },
       {
         path: "/view-profile",
