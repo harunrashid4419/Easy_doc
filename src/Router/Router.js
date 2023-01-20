@@ -1,7 +1,9 @@
+import path from "node:path/win32";
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../components/Authentication/Login/Login";
 import Register from "../components/Authentication/Register/Register";
-import Community from "../components/Community/Community";
+import Documentation from "../components/Pages/Documentation/Documentation";
+
 import Home from "../components/Pages/HomePage/Home/Home";
 import Address from "../components/Pages/Profile/Address/Address";
 import Education from "../components/Pages/Profile/Education/Education";
@@ -27,34 +29,40 @@ const routes = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
-      {
-        path: "/community",
-        element: <Community></Community>,
-      },
-      {
-        path: "/view-profile",
-        element: <ViewProfile></ViewProfile>,
-        children: [
-          {
-            path: "/view-profile",
-            element: <MyProfile></MyProfile>,
-          },
-          {
-            path: "/view-profile/address",
-            element: <Address></Address>,
-          },
-          {
-            path: "/view-profile/education",
-            element: <Education></Education>,
-          },
-          {
-            path: "/view-profile/my-contribution",
-            element: <MyContribution></MyContribution>,
-          },
-        ],
-      },
-    ],
+    ]
   },
-]);
+  {
+      path:'/documentation',
+      element:<Documentation></Documentation>,
 
+  },
+  {
+    path: "/view-profile",
+    element: <ViewProfile></ViewProfile>,
+    children: [
+      {
+        path: '/view-profile',
+        element: <MyProfile></MyProfile>
+    },
+    {
+        path: '/view-profile/address',
+        element: <Address></Address>
+    },
+    {
+        path: '/view-profile/education',
+        element: <Education></Education>
+    },
+    {
+        path: '/view-profile/my-contribution',
+        element: <MyContribution></MyContribution>
+    },
+    ]
+  }
+])
+  
+    
+          
+         
+               
+       
 export default routes;
