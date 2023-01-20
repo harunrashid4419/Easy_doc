@@ -43,7 +43,7 @@ const Register = () => {
   // user store in database
   const userAddToDatabase = (name, email, uid) => {
     const user = { name, email, uid, photoURL: '' };
-    fetch(`http://localhost:5000/user?uid=${uid}`, {
+    fetch(`https://easy-doc-server.vercel.app/user?uid=${uid}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

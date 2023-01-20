@@ -77,7 +77,7 @@ const Login = () => {
   // Saved user to database with (GOOGLE & GITHUB)
   const addUserToDatabase = (name, email, photoURL, uid) => {
     const user = { name, email, photoURL, uid };
-    fetch(`http://localhost:5000/user?uid=${uid}`, {
+    fetch(`https://easy-doc-server.vercel.app/user?uid=${uid}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
