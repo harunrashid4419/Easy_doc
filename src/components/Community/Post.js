@@ -25,7 +25,7 @@ const Post = () => {
           const userPost ={
             email: user?.email,
             post: data?.userPost,
-            img: imgeData?.data.url
+            img: imgeData?.data.url,
           }
           fetch('http://localhost:5000/userPost', {
             method: 'POST',
