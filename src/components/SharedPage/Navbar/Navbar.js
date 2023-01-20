@@ -59,13 +59,13 @@ const Navbar = () => {
                 LogOut
               </button>
             </li>
-            <Link to='/view-profile'>
-              <li>
-                <label htmlFor="profile-modal">
-                  <FaUserCircle className="text-4xl hover:ring-4 rounded-full ring-slate-300 bg-slate-500 text-slate-400 hover:cursor-pointer"></FaUserCircle>
-                </label>
-              </li>
-            </Link>
+
+            <li>
+              <label htmlFor="profile-modal">
+                <FaUserCircle className="text-4xl hover:ring-4 rounded-full ring-slate-300 bg-slate-500 text-slate-400 hover:cursor-pointer"></FaUserCircle>
+              </label>
+            </li>
+
           </>
         ) : (
           <li className="mr-5 hover:text-orange-500 transition-colors">
