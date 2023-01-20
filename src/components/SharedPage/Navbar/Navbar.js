@@ -38,7 +38,7 @@ const Navbar = () => {
           <Link to="/">Home</Link>
         </li>
         <li className="mr-5 hover:text-orange-500 transition-colors">
-          <Link to="/">Documentation</Link>
+          <Link to="/Documentation">Documentation</Link>
         </li>
         <li className="mr-5 hover:text-orange-500 transition-colors">
           <Link to="/community">Community</Link>
@@ -52,16 +52,26 @@ const Navbar = () => {
         {user?.uid ? (
           <>
             <li className="mr-5 hover:text-orange-500 transition-colors">
-              <button className="btn btn-warning btn-xs md:btn-sm" onClick={handleLogOut}>LogOut</button>
+              <button
+                className="btn btn-warning btn-xs md:btn-sm"
+                onClick={handleLogOut}
+              >
+                LogOut
+              </button>
             </li>
-            <li>
-              <label htmlFor="profile-modal"><FaUserCircle className="text-4xl hover:ring-4 rounded-full ring-slate-300 bg-slate-500 text-slate-400 hover:cursor-pointer"></FaUserCircle></label>
 
+            <li>
+              <label htmlFor="profile-modal">
+                <FaUserCircle className="text-4xl hover:ring-4 rounded-full ring-slate-300 bg-slate-500 text-slate-400 hover:cursor-pointer"></FaUserCircle>
+              </label>
             </li>
+
           </>
         ) : (
           <li className="mr-5 hover:text-orange-500 transition-colors">
-            <Link className="btn btn-primary btn-xs md:btn-sm" to="/login">Login</Link>
+            <Link className="btn btn-primary btn-xs md:btn-sm" to="/login">
+              Login
+            </Link>
           </li>
         )}
       </ul>

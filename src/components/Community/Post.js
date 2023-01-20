@@ -1,14 +1,48 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-
+import { toast } from "react-hot-toast";
+import { AuthContext } from "../../Context/UserContext";
 
 const Post = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  
-  const handlePost = data =>{
-    console.log(data)
-  }
-  
+  const { register, handleSubmit, reset } = useForm();
+  const imageHostKey = "2ed74405c9982edbe45a4ac8ae219bfb";
+  const { user } = useContext(AuthContext);
+
+  const handlePost = (data) => {
+    const image = data.file[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgeData) => {
+        if (imgeData.success) {
+          const userPost = {
+            email: user?.email,
+            name: user.displayName,
+            image: user?.photoURL,
+            post: data?.userPost,
+            img: imgeData?.data.url,
+          };
+          fetch("http://localhost:5000/userPost", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(userPost),
+          })
+            .then((res) => res.json())
+            .then((postdata) => {
+              toast.success("post successfuly");
+              reset();
+            });
+        }
+      });
+  };
+
   return (
     <div>
       <div className="bg-slate-50 p-5 rounded-3xl mb-5">
@@ -18,23 +52,22 @@ const Post = () => {
             <textarea
               className="w-full mb-3 rounded-2xl p-2 border-2 outline-none bg-blue-100"
               name=""
-              {...register("message")}
+              {...register("userPost", { required: "text is required" })}
               id=""
-              rows="3"
+              rows="5"
               placeholder="Write you question"
             ></textarea>
-            <hr className="border-y-1 border-slate-500" />
-            <div className="mt-3 flex flex-col justify-center items-center">
-              <label
-                htmlFor="img"
-                className="p-2 bg-blue-500 mb-5 text-white border-0 hover:bg-blue-400"
-              >
-                Upload File
-              </label>
-              <input type="file" {...register("img")} id="img" name="image" className="hidden" />
+            <div className="my-3">
+              <input
+                type="file"
+                {...register("file", { required: "img is required" })}
+              />
             </div>
-            <hr className="border-y-1 border-slate-500" />
-          <input type="submit" value="Post" className="btn bg-blue-500 hover:bg-blue-400 mt-5" />
+            <input
+              type="submit"
+              value="Post"
+              className="btn bg-blue-500 hover:bg-blue-400 mt-5"
+            />
           </form>
         </div>
       </div>
