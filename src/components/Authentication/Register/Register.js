@@ -2,9 +2,6 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import {
-  FaFacebookF,
-  FaGooglePlusG,
-  FaGithub,
   FaLock,
   FaUserAlt,
   FaEye,
@@ -16,13 +13,8 @@ import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 
 const Register = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const { createUser, updateUser, googleSignIn, githubSignUp } =
-    useContext(AuthContext);
+  const { register, handleSubmit, formState: { errors }, } = useForm();
+  const { createUser, updateUser } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const [eyeClick, setEyeClick] = useState(false);
@@ -30,32 +22,29 @@ const Register = () => {
 
   const handleRegister = (data) => {
     const name = data.firstName + " " + data.lastName;
-
+    const email = data?.email;
+    const password = data?.password;
     // create user
-    createUser(data.email, data.password)
+    createUser(email, password)
       .then((result) => {
         const user = result.user;
+        console.log(user);
         const usersInfo = {
           displayName: name,
         };
         updateUser(usersInfo)
-          .then((result) => {})
+          .then((result) => { })
           .catch((error) => console.error(error));
-
-        console.log(user);
-        toast.success("Register successfully!");
-        navigate("/");
-        usersAddToDatabase(name, data.email);
+        userAddToDatabase(name, email, user?.uid);
       })
       .catch((error) => console.error(error));
   };
 
-  // users store in database
-  const usersAddToDatabase = (name, email, img) => {
-    const user = { name, email, photoURL: "" };
-    console.log(user);
-    fetch("http://localhost:5000/users", {
-      method: "POST",
+  // user store in database
+  const userAddToDatabase = (name, email, uid) => {
+    const user = { name, email, uid, photoURL: '' };
+    fetch(`http://localhost:5000/user?uid=${uid}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
@@ -64,77 +53,9 @@ const Register = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-      });
-  };
-
-  // google signup
-  const handleGoogleSignUp = () => {
-    googleSignIn()
-      .then((result) => {
-        const user = result.user;
-        setError("");
-        toast.success("Google SignUp Success");
+        toast.success("Register successfully!");
         navigate("/");
-        console.log(user);
-        googleSignUpAddToDatabase(
-          user?.displayName,
-          user?.email,
-          user?.photoURL
-        );
-      })
-      .catch((error) => {
-        console.log(error);
-        setError(error.message);
       });
-  };
-
-  // google sign up add to database
-  const googleSignUpAddToDatabase = (name, email, photoURL) => {
-    const user = { name, email, photoURL };
-    fetch("http://localhost:5000/users", {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  };
-
-  // github sign up
-  const handleGitHubSignUp = () => {
-    githubSignUp()
-      .then((result) => {
-        const user = result.user;
-        setError("");
-        toast.success("GitHub SignUp Success");
-        navigate("/");
-        console.log(user);
-        githubSignUpAddToDatabase(
-          user?.displayName,
-          user?.email,
-          user?.photoURL
-        );
-      })
-      .catch((error) => {
-        console.log(error);
-        setError(error.message);
-      });
-  };
-
-  // gitHun sign up add to database
-  const githubSignUpAddToDatabase = (name, email, photoURL) => {
-    const user = { name, email: "", photoURL };
-    fetch("http://localhost:5000/users", {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
   };
 
   return (
@@ -214,29 +135,18 @@ const Register = () => {
               {error && <p className="text-red-500 mb-3">{error}</p>}
             </div>
             <div className="flex mb-3">
-              <input type="checkbox" id="checkbox" onClick={() =>setCheck(check)}/>
+              <input type="checkbox" id="checkbox" onClick={() => setCheck(check)} />
               <Link className="terams">Accepts tearms and conditions</Link>
             </div>
             <input type="submit" className="submit-btn" value="Register" />
           </form>
           <div className="divider">OR</div>
-          <div className="social-register">
-            <Link onClick={handleGoogleSignUp} id="google">
-              <FaGooglePlusG />
-            </Link>
-            <Link onClick={handleGitHubSignUp} id="github">
-              <FaGithub />
-            </Link>
-            <Link id="facebook">
-              <FaFacebookF />
-            </Link>
-          </div>
           <p className="link-register">
             Already have an account.<Link to="/login"> LogIn</Link> Now
           </p>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
