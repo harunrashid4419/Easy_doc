@@ -4,6 +4,7 @@ import Post from "./Post";
 import ShowPost from "./ShowPost";
 
 const Community = () => {
+
   return (
     <div className="container">
       <Banner></Banner>

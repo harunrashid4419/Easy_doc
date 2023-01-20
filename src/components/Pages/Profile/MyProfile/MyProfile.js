@@ -13,7 +13,7 @@ const MyProfile = () => {
   const { data, isLoading, refetch } = useQuery({
     queryKey: ["user", user?.uid],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/user?uid=${user?.uid}`);
+      const res = await fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
       const data = await res.json();
       return data;
     },
@@ -30,7 +30,7 @@ const MyProfile = () => {
       toast.error("please input valid number");
       return;
     } else {
-      fetch(`http://localhost:5000/user?uid=${user?.uid}`, {
+      fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
