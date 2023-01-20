@@ -15,12 +15,8 @@ import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const { login, restorePassword, googleSignIn, githubSignUp } =
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { login, restorePassword, googleSignIn, githubSignIn } =
     useContext(AuthContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -29,18 +25,15 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  // login
+  // Login with email and password
   const handleLogin = (data) => {
     login(data.email, data.password)
       .then((result) => {
         const user = result.user;
         setError("");
-        console.log(user);
-        toast.success("Login Success");
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.error(error);
         setError(error.message);
       });
   };
@@ -59,66 +52,32 @@ const Login = () => {
       });
   };
 
-  // google sign in
+
+  // Sign In with Google
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
-        setError("");
-        toast.success("Google SignIn Success");
-        navigate("/");
         console.log(user);
-        googleSignUpAddToDatabase(
-          user?.displayName,
-          user?.email,
-          user?.photoURL
-        );
+        addUserToDatabase(user?.displayName, user?.email, user?.photoURL, user?.uid);
       })
-      .catch((error) => {
-        console.log(error);
-        setError(error.message);
-      });
+      .catch((error) => toast.error(error.message));
   };
-
-  // google sign up add to database
-  const googleSignUpAddToDatabase = (name, email, photoURL) => {
-    const user = { name, email, photoURL };
-    fetch("http://localhost:5000/users", {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  };
-
-  // gitHub sign up
-  const handleGitHubSignUp = () => {
-    githubSignUp()
+  // SignIn with Github
+  const handleGithubSignIn = () => {
+    githubSignIn()
       .then((result) => {
         const user = result.user;
-        setError("");
-        toast.success("GitHub SignUp Success");
-        navigate("/");
         console.log(user);
-        githubSignUpAddToDatabase(
-          user?.displayName,
-          user?.email,
-          user?.photoURL
-        );
+        addUserToDatabase(user?.displayName, user?.email, user?.photoURL, user?.uid);
       })
-      .catch((error) => {
-        console.log(error);
-        setError(error.message);
-      });
-  };
+      .catch((error) => toast.error(error.message));
+  }
 
-  // gitHun sign up add to database
-  const githubSignUpAddToDatabase = (name, email, photoURL) => {
-    const user = { name, email: "", photoURL };
-    fetch("http://localhost:5000/users", {
+  // Saved user to database with (GOOGLE & GITHUB)
+  const addUserToDatabase = (name, email, photoURL, uid) => {
+    const user = { name, email, photoURL, uid };
+    fetch(`http://localhost:5000/user?uid=${uid}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -126,7 +85,13 @@ const Login = () => {
       body: JSON.stringify(user),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.acknowledged) {
+          setError('');
+          toast.success('Successfully sign In')
+          navigate(from, { replace: true });
+        }
+      });
   };
 
   // get email
@@ -186,7 +151,7 @@ const Login = () => {
               <Link onClick={handleGoogleSignIn} id="google">
                 <FaGooglePlusG />
               </Link>
-              <Link onClick={handleGitHubSignUp} id="github">
+              <Link onClick={handleGithubSignIn} id="github">
                 <FaGithub />
               </Link>
               <Link id="facebook">
