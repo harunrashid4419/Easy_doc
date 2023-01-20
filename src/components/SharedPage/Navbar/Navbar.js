@@ -26,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed bg-[#7846E9] z-50 w-full h-[60px] flex justify-between items-center px-4  text-gray-300">
+    <div className="sticky top-0 bg-[#7846E9] z-50 w-full h-[60px] flex justify-between items-center px-4  text-gray-300">
       <Link to="/" className="flex">
         <img style={{ width: "40px" }} src={logo} alt="logo" />
         <p className="text-2xl font-semibold text-white ml-1 mt-1">Easy Doc</p>
@@ -49,20 +49,19 @@ const Navbar = () => {
         <li className="mr-5 hover:text-orange-500 transition-colors">
           <Link to="/">Contact</Link>
         </li>
-        {user ? (
-          <li className="mr-5 hover:text-orange-500 transition-colors">
-            <Link onClick={handleLogOut}>LogOut</Link>
-          </li>
+        {user?.uid ? (
+          <>
+            <li className="mr-5 hover:text-orange-500 transition-colors">
+              <button className="btn btn-warning btn-xs md:btn-sm" onClick={handleLogOut}>LogOut</button>
+            </li>
+            <li>
+              <label htmlFor="profile-modal"><FaUserCircle className="text-4xl hover:ring-4 rounded-full ring-slate-300 bg-slate-500 text-slate-400 hover:cursor-pointer"></FaUserCircle></label>
+
+            </li>
+          </>
         ) : (
           <li className="mr-5 hover:text-orange-500 transition-colors">
-            <Link to="/login">Login</Link>
-          </li>
-        )}
-        {user && (
-          <li className="mr-5 hover:text-orange-500 transition-colors">
-            <Link to="/profile">
-              <FaUserCircle className="text-4xl rounded-full border-none bg-gray-700 text-white hover:ring-4 ring-indigo-400"></FaUserCircle>
-            </Link>
+            <Link className="btn btn-primary btn-xs md:btn-sm" to="/login">Login</Link>
           </li>
         )}
       </ul>
@@ -102,7 +101,7 @@ const Navbar = () => {
       </ul>
 
       {/* Social icons */}
-      <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
+      <div className="hidden fixed lg:flex flex-col top-[35%] left-0">
         <ul>
           <li className="w-[160px]  h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
             <a
