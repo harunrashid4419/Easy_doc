@@ -59,13 +59,13 @@ const UserContext = ({ children }) => {
   };
 
   // github signup
-  const githubSignUp = () =>{
+  const githubSignIn = () => {
     setLoader(true);
     return signInWithPopup(auth, githubProvider);
   };
 
   // facebook sign up
-  const facebookSignUp = () =>{
+  const facebookSignUp = () => {
     setLoader(true);
     return signInWithPopup(auth, facebookProvider);
   }
@@ -90,7 +90,7 @@ const UserContext = ({ children }) => {
     logOut,
     restorePassword,
     googleSignIn,
-    githubSignUp,
+    githubSignIn,
     facebookSignUp
   };
 
