@@ -60,6 +60,7 @@ const Post = () => {
             <div className="my-3">
               <input
                 type="file"
+                multiple="multiple"
                 {...register("file", { required: "img is required" })}
               />
             </div>
