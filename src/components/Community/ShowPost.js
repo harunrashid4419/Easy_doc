@@ -3,7 +3,7 @@ import { FaThumbsDown, FaThumbsUp } from "react-icons/fa";
 import { useQuery } from "@tanstack/react-query";
 
 const ShowPost = () => {
-  const { data: allpost = [], refetch } = useQuery({
+  const { data: allpost = [] } = useQuery({
     queryKey: ["post"],
     queryFn: async () => {
       const res = await fetch("https://easy-doc-server.vercel.app/allUserPost");
