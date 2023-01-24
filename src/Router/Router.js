@@ -32,6 +32,10 @@ const routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
+        path: '/documentation',
+        element: <Documentation></Documentation>,
+      },
+      {
         path: "/community",
         element: <PrivateRoute> <Community></Community> </PrivateRoute>,
       },
@@ -59,16 +63,11 @@ const routes = createBrowserRouter([
       },
     ],
   },
-  {
-      path:'/documentation',
-      element:<Documentation></Documentation>,
-
-  },
 ])
-  
-    
-          
-         
-               
-       
+
+
+
+
+
+
 export default routes;
