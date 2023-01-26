@@ -42,10 +42,6 @@ const routes = createBrowserRouter([
         element: <Details></Details>
       },
       {
-        path: '/documentation',
-        element: <Documentation></Documentation>,
-      },
-      {
         path: "/community",
         element: (
           <PrivateRoute><Community></Community></PrivateRoute>
@@ -75,19 +71,10 @@ const routes = createBrowserRouter([
       },
     ],
   },
-<<<<<<< HEAD
   {
     path: "/documentation",
     element: <Documentation></Documentation>,
   },
 ]);
-=======
-])
-
-
-
-
-
->>>>>>> main
 
 export default routes;
