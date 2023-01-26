@@ -7,7 +7,6 @@ const Blog = () => {
 
   return (
     <div className="container">
-      <p>This is blog</p>
       {blogs.map((blog) => (
         <div key={blog._id} className="main-blog">
           <div className="blog-section">
