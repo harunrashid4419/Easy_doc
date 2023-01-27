@@ -1,17 +1,20 @@
 
 import { useQuery } from "@tanstack/react-query";
+import { useContext } from "react";
+import { AuthContext } from "../Context/UserContext";
 
 
 const useFetch = (url) => {
-    const { data, isLoading } = useQuery({
-        queryKey: [url],
+    const { user } = useContext(AuthContext);
+    const { data, isLoading, refetch } = useQuery({
+        queryKey: [user?.uid],
         queryFn: async () => {
             const res = await fetch(url);
             const data = await res.json();
             return data
         }
     })
-    return { data, isLoading }
+    return { data, isLoading, refetch }
 
 }
 

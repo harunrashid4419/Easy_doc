@@ -4,6 +4,7 @@ import Register from "../components/Authentication/Register/Register";
 import Community from "../components/Community/Community";
 import Blog from "../components/Pages/BlogPage/Blog";
 import Details from "../components/Pages/BlogPage/Details/Details";
+import Description from "../components/Pages/Documentation/Description";
 import Documentation from "../components/Pages/Documentation/Documentation";
 
 import Home from "../components/Pages/HomePage/Home/Home";
@@ -72,7 +73,7 @@ const routes = createBrowserRouter([
     ],
   },
   {
-    path: "/documentation",
+    path: '/documentation',
     element: <Documentation></Documentation>,
   },
 ]);
