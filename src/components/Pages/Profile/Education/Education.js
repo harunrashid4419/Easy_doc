@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -12,31 +11,31 @@ import useHttp from '../../../../hooks/useHttp';
 const Education = () => {
     const { user } = useContext(AuthContext);
     const [edit, setEdit] = useState(false);
-    const [errorMesage, setErrorMesage] = useState('');
-    const [educationInfo, setEducationInfo] = useState(null);
     const { register, handleSubmit } = useForm();
+
     // get user information by query user uid
-    const { data: currentUser, isLoading } = useFetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
+    const { data: currentUser, isLoading, refetch } = useFetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
 
-
-    const [error, sendPutRequest, loading] = useHttp();
-
+    // http put method
+    const [response, sendPutRequest, loading] = useHttp();
     function putEducationInfo(formValue) {
-        sendPutRequest(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, 'PUT', formValue, receiveData);
+        sendPutRequest(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, 'PUT', formValue);
     }
-    function receiveData(data) {
-        console.log(data)
-    }
-    if (isLoading) {
+
+
+    if (isLoading || loading) {
         return <h1>Loading...</h1>
     }
+    if (response?.acknowledged) {
+        refetch();
+    }
     const { education, institute, subject } = currentUser;
-
 
     return (
         <div>
             <div className='flex justify-between'>
-                <h1 className='text-4xl font-bold text-indigo-700 mb-5'>Education</h1>
+                <h1 className='text-4xl font-bold text-indigo-700 mb-5'>Education </h1>
+
                 {
                     edit ?
                         <button onClick={() => setEdit(!edit)} className="btn btn-outline btn-error">Not Now</button>
@@ -99,15 +98,15 @@ const Education = () => {
                                 <tbody>
                                     <tr>
                                         <th>Education</th>
-                                        <td>{education}</td>
+                                        <td>{education ? education : 'not define'}</td>
                                     </tr>
                                     <tr>
                                         <th>Subject</th>
-                                        <td>{subject}</td>
+                                        <td>{subject ? subject : 'not define'}</td>
                                     </tr>
                                     <tr>
                                         <th>Institute</th>
-                                        <td>{institute}</td>
+                                        <td>{institute ? institute : 'not define'}</td>
                                     </tr>
 
                                 </tbody>

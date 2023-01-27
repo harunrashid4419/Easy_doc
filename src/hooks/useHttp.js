@@ -3,9 +3,9 @@ import { useState } from "react";
 
 
 const useHttp = () => {
-    const [error, setError] = useState('');
+    const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
-    function sendHtttpRequest(url, method, body, action) {
+    function sendHtttpRequest(url, method, body) {
         setLoading(true);
         fetch(url, {
             method: method,
@@ -14,23 +14,14 @@ const useHttp = () => {
             },
             body: JSON.stringify(body),
         })
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error('something wrong please try again')
-                }
-                const data = res.json();
-                action(data);
-            })
-            .then((data) => {
-                console.log(data)
+            .then((res) => res.json())
+            .then((result) => {
+                setData(result);
                 setLoading(false);
             })
-            .catch((err) => {
-                setError(err.message)
-                setLoading(false);
-            })
+
     }
-    return [error, sendHtttpRequest, loading]
+    return [data, sendHtttpRequest, loading]
 
 };
 
