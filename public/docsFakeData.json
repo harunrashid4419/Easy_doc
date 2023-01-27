@@ -1,0 +1,42 @@
+[
+    {
+        "id": "01",
+        "title": "Interview Questions",
+        "questions": [
+            {
+                "id": "01",
+                "title": "Tell me about yourself?"
+            },
+            {
+                "id": "02",
+                "title": "What is your strength?"
+            },
+            {
+                "id": "03",
+                "title": "Why should we hire you ?"
+            }
+        ]
+    },
+    {
+        "id": "02",
+        "title": "Error",
+        "questions": [
+            {
+                "id": "01",
+                "title": "syntax errro"
+            },
+            {
+                "id": "02",
+                "title": "uncaught type error"
+            },
+            {
+                "id": "03",
+                "title": "reference error"
+            },
+            {
+                "id": "04",
+                "title": "Objects are not valid as a React child"
+            }
+        ]
+    }
+]

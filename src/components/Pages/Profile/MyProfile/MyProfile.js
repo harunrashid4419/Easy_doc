@@ -57,13 +57,18 @@ const MyProfile = () => {
         </div>
       </div>
       <div className="flex space-x-20">
+
         {/* this is image container */}
         <div className="relative md:w-1/5">
+          {/* conditional rendering whether
+           user has photoURL or not */}
           {
+            // if user has photoURL show the image
             photoURL ?
-              <img src="https://i.ibb.co/dJnbzDL/profile-image.png" alt=""></img>
-              :
               <img src={photoURL} alt="" className="mask mask-circle my-6 border-4 border-dashed border-indigo-600 rounded-full mx-auto" />
+              :
+              // else show this image
+              <img src="https://i.ibb.co/dJnbzDL/profile-image.png" alt=""></img>
           }
           <label>
             <FaCamera className="text-2xl absolute top-28 right-8 text-blue-700"></FaCamera>

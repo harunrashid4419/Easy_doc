@@ -16,11 +16,13 @@ const ProfileModal = ({ show, setShow }) => {
 
                     <label htmlFor="profile-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
+                    {/* if user has photoURL then show user photo  */}
                     {
                         user?.photoURL ?
-                            <img className='rounded-full w-24 h-24 mx-auto' src="https://i.ibb.co/dJnbzDL/profile-image.png" alt=""></img>
-                            :
                             <img src={user?.photoURL} alt="" className='rounded-full w-24 h-24 mx-auto' />
+                            :
+                            // or show this random image
+                            <img className='rounded-full w-24 h-24 mx-auto' src="https://i.ibb.co/dJnbzDL/profile-image.png" alt=""></img>
                     }
 
                     <div className='text-center mt-4 space-y-4'>
