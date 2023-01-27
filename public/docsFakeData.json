@@ -5,17 +5,37 @@
         "questions": [
             {
                 "id": "01",
-                "title": "Tell me about yourself?"
+                "question": "Tell me about yourself?",
+                "answer": "Hi, My name is Mahmod Hasan"
             },
             {
                 "id": "02",
-                "title": "What is your strength?"
+                "question": "What is your strength?",
+                "answer": "I am a hard working person"
             },
             {
                 "id": "03",
-                "title": "Why should we hire you ?"
+                "question": "Why should we hire you ?",
+                "answer": "Because I have 1 year experiance in web development"
             }
-        ]
+        ],
+        "quiz": {
+            "title": "what is Redux?",
+            "options": [
+                {
+                    "one": "We can use with react only"
+                },
+                {
+                    "two": "this is a state provider container"
+                },
+                {
+                    "three": "this is a library for C++ Apps"
+                },
+                {
+                    "four": "Both 1 & 2"
+                }
+            ]
+        }
     },
     {
         "id": "02",

@@ -1,9 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Menu = () => {
+    const { id } = useParams();
+    console.log(id);
     const [docData, setDocData] = useState([]);
     useEffect(() => {
         fetch('./docsFakeData.json')
@@ -13,11 +15,14 @@ const Menu = () => {
     return (
         <div className='bg-gray-100 p-3 overflow-y-scroll'>
             <div className="divider text-gray-500">Menu</div>
+            <ul>
+                {
+                    docData.map((doc, idx) => <li key={idx} className='text-lg text-gray-900 font-sans'>{doc?.title}
+                        {doc?.questions.map(question => <li className="ml-4">{question?.question}</li>)}
+                    </li>)
+                }
+            </ul>
 
-            {
-                docData.map((doc, idx) => <ul key={idx} className='text-lg text-gray-900 font-sans'>{doc?.title}
-                    {doc?.questions.map(d => <li className='ml-4 before:content-[">"] text-base'> {d.title}</li>)}</ul>)
-            }
         </div>
     );
 };
