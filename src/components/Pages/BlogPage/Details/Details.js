@@ -20,7 +20,7 @@ const Details = () => {
   const { data: blogDetails = [] } = useQuery({
     queryKey: ["blogDetails"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/blog/${id}`);
+      const res = await fetch(`https://easy-doc-server.vercel.app/blog/${id}`);
       const data = await res.json();
       return data;
     },
@@ -29,7 +29,7 @@ const Details = () => {
   const { data: comments = [], refetch } = useQuery({
     queryKey: ["comment", blogDetails],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/comment/${_id}`);
+      const res = await fetch(`https://easy-doc-server.vercel.app/comment/${_id}`);
       const data = await res.json();
       return data;
     },
@@ -64,7 +64,7 @@ const Details = () => {
 
   const commentAddToDatabase = (message, displayName, email, photoURL, id) => {
     const commentInfo = { message, displayName, email, photoURL, id };
-    fetch("http://localhost:5000/comment", {
+    fetch("https://easy-doc-server.vercel.app/comment", {
       method: "POST",
       headers: {
         "content-type": "application/json",

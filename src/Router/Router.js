@@ -4,9 +4,7 @@ import Register from "../components/Authentication/Register/Register";
 import Community from "../components/Community/Community";
 import Blog from "../components/Pages/BlogPage/Blog";
 import Details from "../components/Pages/BlogPage/Details/Details";
-import Description from "../components/Pages/Documentation/Description";
 import Documentation from "../components/Pages/Documentation/Documentation";
-
 import Home from "../components/Pages/HomePage/Home/Home";
 import Address from "../components/Pages/Profile/Address/Address";
 import Education from "../components/Pages/Profile/Education/Education";
@@ -36,7 +34,7 @@ const routes = createBrowserRouter([
       {
         path: 'blog',
         element: <Blog></Blog>,
-        loader: () => fetch('http://localhost:5000/blog')
+        loader: () => fetch('https://easy-doc-server.vercel.app/blog')
       },
       {
         path: '/details/:id',

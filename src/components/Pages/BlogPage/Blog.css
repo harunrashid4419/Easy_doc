@@ -13,6 +13,7 @@
     width: 100%;
     border-radius: 10px;
     transition: .5s;
+    height: 200px;
 }
 .main-blog .blog-section img:hover{
     opacity: 1;
@@ -49,6 +50,12 @@
     .main-blog{
         grid-template-columns: repeat(2, 1fr);
     }
+    .main-blog .blog-section img{
+        height: 250px;
+    }
+    .main-blog .author-details img{
+        height: 60px;
+    }
 }
 @media screen and (max-width: 776px) {
     .main-blog{
@@ -56,5 +63,8 @@
     }
     .main-blog .blog-section h2{
         font-size: 20px;
+    }
+    .main-blog .blog-section img{
+        height: auto;
     }
 }
