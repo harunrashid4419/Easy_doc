@@ -26,15 +26,6 @@ const Details = () => {
     },
   });
 
-  const { data: comments = [], refetch } = useQuery({
-    queryKey: ["comment", blogDetails],
-    queryFn: async () => {
-      const res = await fetch(`https://easy-doc-server.vercel.app/comment/${_id}`);
-      const data = await res.json();
-      return data;
-    },
-  });
-  console.log(comments);
   const {
     title,
     post_date,
@@ -49,6 +40,15 @@ const Details = () => {
     second_pera,
     _id,
   } = blogDetails;
+
+  const { data: comments = [], refetch } = useQuery({
+    queryKey: ["comment", blogDetails],
+    queryFn: async () => {
+      const res = await fetch(`https://easy-doc-server.vercel.app/comment/${_id}`);
+      const data = await res.json();
+      return data;
+    },
+  });
 
   const handleCommentSubmit = (event) => {
     event.preventDefault();
@@ -147,7 +147,7 @@ const Details = () => {
         <div>
           <div className="comment-section">
             {comments.map((singleComment) => (
-              <div className="flex mb-5">
+              <div key={singleComment._id} className="flex mb-5">
                 {singleComment?.photoURL ? (
                   <img
                     className="comment-img"
