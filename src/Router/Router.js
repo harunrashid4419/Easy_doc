@@ -1,8 +1,9 @@
-
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../components/Authentication/Login/Login";
 import Register from "../components/Authentication/Register/Register";
 import Community from "../components/Community/Community";
+import Blog from "../components/Pages/BlogPage/Blog";
+import Details from "../components/Pages/BlogPage/Details/Details";
 import Documentation from "../components/Pages/Documentation/Documentation";
 
 import Home from "../components/Pages/HomePage/Home/Home";
@@ -32,12 +33,19 @@ const routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: '/documentation',
-        element: <Documentation></Documentation>,
+        path: 'blog',
+        element: <Blog></Blog>,
+        loader: () => fetch('http://localhost:5000/blog')
+      },
+      {
+        path: '/details/:id',
+        element: <Details></Details>
       },
       {
         path: "/community",
-        element: <PrivateRoute> <Community></Community> </PrivateRoute>,
+        element: (
+          <PrivateRoute><Community></Community></PrivateRoute>
+        ),
       },
       {
         path: "/view-profile",
@@ -63,11 +71,10 @@ const routes = createBrowserRouter([
       },
     ],
   },
-])
-
-
-
-
-
+  {
+    path: "/documentation",
+    element: <Documentation></Documentation>,
+  },
+]);
 
 export default routes;
