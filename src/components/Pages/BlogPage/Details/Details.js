@@ -1,22 +1,26 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   FaFacebookF,
   FaLinkedinIn,
   FaPinterestP,
   FaTwitter,
+  FaUserAlt,
 } from "react-icons/fa";
 import "./Detalis.css";
+import { AuthContext } from "../../../../Context/UserContext";
+import { toast } from "react-hot-toast";
 
 const Details = () => {
   const pageUrl = useLocation().pathname;
   const id = pageUrl.split("/details/")[1];
+  const { user } = useContext(AuthContext);
 
   const { data: blogDetails = [] } = useQuery({
     queryKey: ["blogDetails"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/blog/${id}`);
+      const res = await fetch(`https://easy-doc-server.vercel.app/blog/${id}`);
       const data = await res.json();
       return data;
     },
@@ -34,7 +38,48 @@ const Details = () => {
     first_pera,
     second_title,
     second_pera,
+    _id,
   } = blogDetails;
+
+  const { data: comments = [], refetch } = useQuery({
+    queryKey: ["comment", blogDetails],
+    queryFn: async () => {
+      const res = await fetch(`https://easy-doc-server.vercel.app/comment/${_id}`);
+      const data = await res.json();
+      return data;
+    },
+  });
+
+  const handleCommentSubmit = (event) => {
+    event.preventDefault();
+    const message = event.target.message.value;
+    commentAddToDatabase(
+      message,
+      user?.displayName,
+      user?.email,
+      user?.photoURL,
+      _id
+    );
+  };
+
+  const commentAddToDatabase = (message, displayName, email, photoURL, id) => {
+    const commentInfo = { message, displayName, email, photoURL, id };
+    fetch("https://easy-doc-server.vercel.app/comment", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(commentInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          toast.success("Comment Successfully post");
+          refetch();
+        }
+      });
+  };
 
   return (
     <div className="container">
@@ -82,6 +127,44 @@ const Details = () => {
         <p>{first_pera}</p>
         <h5>{second_title}</h5>
         <p>{second_pera}</p>
+        <div className="comment-section">
+          <h2>Comment</h2>
+          <form onSubmit={handleCommentSubmit}>
+            {user ? (
+              <>
+                <textarea
+                  className="textarea textarea-info"
+                  placeholder="Type a comment"
+                  name="message"
+                ></textarea>
+                <input className="btn btn-wide" type="submit" value="Submit" />
+              </>
+            ) : (
+              <p>If you want to comment on a blog, please <Link className="text-green-400 text-2xl" to='/login'>LogIn</Link> or <Link className="text-green-400 text-2xl" to='/register'>SignUp</Link></p>
+            )}
+          </form>
+        </div>
+        <div>
+          <div className="comment-section">
+            {comments.map((singleComment) => (
+              <div key={singleComment._id} className="flex mb-5">
+                {singleComment?.photoURL ? (
+                  <img
+                    className="comment-img"
+                    src={singleComment?.photoURL}
+                    alt="userImg"
+                  />
+                ) : (
+                  <FaUserAlt className="comment-user" />
+                )}
+                <div className="ml-5 p-3 rounded-xl border-2">
+                  <h6 className="m-0">{singleComment?.displayName}</h6>
+                  <span>{singleComment.message}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
