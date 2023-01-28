@@ -5,6 +5,7 @@ import Community from "../components/Community/Community";
 import Blog from "../components/Pages/BlogPage/Blog";
 import Details from "../components/Pages/BlogPage/Details/Details";
 import Documentation from "../components/Pages/Documentation/Documentation";
+import IdWiseDataLoad from "../components/Pages/Documentation/IdWiseDataLoad";
 import Home from "../components/Pages/HomePage/Home/Home";
 import Address from "../components/Pages/Profile/Address/Address";
 import Education from "../components/Pages/Profile/Education/Education";
@@ -47,6 +48,17 @@ const routes = createBrowserRouter([
         ),
       },
       {
+        path: '/documentation',
+        element: <Documentation></Documentation>,
+        children: [
+          {
+            path: '/documentation/:id',
+            element: <IdWiseDataLoad></IdWiseDataLoad>,
+          },
+        ]
+      },
+
+      {
         path: "/view-profile",
         element: <ViewProfile></ViewProfile>,
         children: [
@@ -69,11 +81,7 @@ const routes = createBrowserRouter([
         ],
       },
     ],
-  },
-  {
-    path: '/documentation',
-    element: <Documentation></Documentation>,
-  },
+  }
 ]);
 
 export default routes;

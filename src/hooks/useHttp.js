@@ -1,5 +1,7 @@
 
+import { Action } from "@remix-run/router";
 import { useState } from "react";
+import { json } from "react-router-dom";
 
 
 const useHttp = () => {
@@ -22,7 +24,24 @@ const useHttp = () => {
 
     }
     return [data, sendHtttpRequest, loading]
-
+    // let [errorMessage, setErrorMessage] = useState(null);
+    // function sendHtttpRequest(url, method, body, action) {
+    //     fetch(url, {
+    //         method: method,
+    //         body: JSON.stringify(body)
+    //     })
+    //         .then((response) => {
+    //             if (!response.ok) {
+    //                 throw new Error('something wen wrong. Please try again')
+    //             }
+    //             let data = response.json();
+    //             action(data)
+    //         })
+    //         .catch((error) => {
+    //             setErrorMessage(error.message);
+    //         })
+    // }
+    // return [errorMessage, sendHtttpRequest]
 };
 
 export default useHttp;

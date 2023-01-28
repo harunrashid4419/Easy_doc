@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useContext } from 'react';
 import { useState } from 'react';
@@ -5,8 +6,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { FaEdit } from 'react-icons/fa';
 import { AuthContext } from '../../../../Context/UserContext';
-import useFetch from '../../../../hooks/useFetch';
-import useHttp from '../../../../hooks/useHttp';
+
 
 const Education = () => {
     const { user } = useContext(AuthContext);
@@ -14,22 +14,38 @@ const Education = () => {
     const { register, handleSubmit } = useForm();
 
     // get user information by query user uid
-    const { data: currentUser, isLoading, refetch } = useFetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
+    const { data: educationInfo, isLoading, refetch } = useQuery({
+        queryKey: ['user', user?.uid],
+        queryFn: async () => {
+            const res = await fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
+            const data = await res.json();
+            return data;
+        }
+    })
 
-    // http put method
-    const [response, sendPutRequest, loading] = useHttp();
-    function putEducationInfo(formValue) {
-        sendPutRequest(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, 'PUT', formValue);
-    }
-
-
-    if (isLoading || loading) {
+    if (isLoading) {
         return <h1>Loading...</h1>
     }
-    if (response?.acknowledged) {
-        refetch();
+    const handleEducationForm = data => {
+        fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                // console.log(data)
+                if (data.acknowledged) {
+                    toast.success("Your Information Updated Successfully");
+                    setEdit(false);
+                    refetch();
+                }
+            });
     }
-    const { education, institute, subject } = currentUser;
+
+    const { education, institute, subject, passingYear, runningYear } = educationInfo;
 
     return (
         <div>
@@ -47,7 +63,7 @@ const Education = () => {
             <div className='bg-gray-200 p-5'>
                 {
                     edit ?
-                        <form onSubmit={handleSubmit(putEducationInfo)} className='grid md:grid-cols-2 gap-5'>
+                        <form onSubmit={handleSubmit(handleEducationForm)} className='grid md:grid-cols-2 gap-5'>
                             <div>
                                 <label className='label label-text'>Select your education level</label>
                                 <select {...register('education')} className="select w-full">
@@ -107,6 +123,14 @@ const Education = () => {
                                     <tr>
                                         <th>Institute</th>
                                         <td>{institute ? institute : 'not define'}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Passing Year</th>
+                                        <td>{passingYear ? passingYear : 'not define'}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Running Year</th>
+                                        <td>{runningYear ? runningYear : 'not define'}</td>
                                     </tr>
 
                                 </tbody>

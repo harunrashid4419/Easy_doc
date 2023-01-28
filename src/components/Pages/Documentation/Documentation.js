@@ -4,7 +4,7 @@ import Menu from './Menu';
 
 const Documentation = () => {
   return (
-    <div className='md:w-11/12 mx-auto grid md:grid-cols-4 h-screen gap-x-10 my-[40px]'>
+    <div className='grid md:grid-cols-4 container'>
       <Menu></Menu>
       <Description></Description>
     </div>

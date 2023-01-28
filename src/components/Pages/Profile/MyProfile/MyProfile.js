@@ -1,16 +1,24 @@
 
+import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { FaCamera, FaEdit } from "react-icons/fa";
 import { AuthContext } from "../../../../Context/UserContext";
-import useFetch from "../../../../hooks/useFetch";
+
 
 const MyProfile = () => {
   const { user } = useContext(AuthContext);
   const [edit, setEdit] = useState(false);
   const { register, handleSubmit } = useForm();
-  const { data: currentUser, isLoading } = useFetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
+  const { data: currentUser, isLoading, refetch } = useQuery({
+    queryKey: ['user', user?.uid],
+    queryFn: async () => {
+      const res = await fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
+      const data = await res.json();
+      return data;
+    }
+  })
   if (isLoading) {
     return <h1>Loading...</h1>
   }
@@ -34,9 +42,10 @@ console.log(currentUser)
         .then((res) => res.json())
         .then((data) => {
           console.log(data)
-          if (data.modifiedCount > 0) {
+          if (data.acknowledged) {
             toast.success("Your Information Updated Successfully");
             setEdit(false);
+            refetch();
           }
         });
     }
