@@ -4,10 +4,10 @@ import { useContext } from "react";
 import { AuthContext } from "../Context/UserContext";
 
 
-const useFetch = (url) => {
-    const { user } = useContext(AuthContext);
+const useFetch = (url, query) => {
+    console.log(query);
     const { data, isLoading, refetch } = useQuery({
-        queryKey: [user?.uid],
+        queryKey: [query],
         queryFn: async () => {
             const res = await fetch(url);
             const data = await res.json();

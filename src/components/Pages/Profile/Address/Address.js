@@ -1,11 +1,13 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 import { FaEdit } from 'react-icons/fa';
 import { AuthContext } from '../../../../Context/UserContext';
-import useFetch from '../../../../hooks/useFetch';
-import useHttp from '../../../../hooks/useHttp';
+// import useFetch from '../../../../hooks/useFetch';
+// import useHttp from '../../../../hooks/useHttp';
 
 const Address = () => {
     // const [addressInfo, setAddressInfo] = useState({});
@@ -13,23 +15,45 @@ const Address = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { user } = useContext(AuthContext);
 
-    const [response, sendPutRequest, loading] = useHttp();
+    // const [response, sendPutRequest, loading] = useHttp();
 
-    function putAddressInfo(formValue) {
-        sendPutRequest(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, 'PUT', formValue)
-    }
+    // function putAddressInfo(formValue) {
+    //     sendPutRequest(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, 'PUT', formValue)
+    // }
 
     // get user information by query user uid
-    const { data: currentUser, isLoading, refetch } = useFetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
-    if (response?.acknowledged) {
-        refetch();
-    }
+    // const { data: currentUser, isLoading, refetch } = useFetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, 'user');
+    const { data: addressInfo, isLoading, refetch } = useQuery({
+        queryKey: ['user', user?.uid],
+        queryFn: async () => {
+            const res = await fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
+            const data = await res.json();
+            return data;
+        }
+    })
 
-    if (isLoading || loading) {
+    if (isLoading) {
         return <h1>Loading...</h1>
     }
-
-    const { country, district, street } = currentUser;
+    const putAddressInfo = data => {
+        fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data)
+                if (data.acknowledged) {
+                    toast.success("Your Information Updated Successfully");
+                    setEdit(false);
+                    refetch();
+                }
+            });
+    }
+    const { country, district, street } = addressInfo;
     return (
         <div>
             <div className='flex justify-between'>
@@ -84,7 +108,7 @@ const Address = () => {
                                         <td>{district ? district : 'not define'}</td>
                                     </tr>
                                     <tr>
-                                        <th>Institute</th>
+                                        <th>Street</th>
                                         <td>{street ? street : 'not define'}</td>
                                     </tr>
 
