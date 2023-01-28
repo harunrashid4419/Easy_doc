@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCfo_QmUTuUWp2iRxlWOWXmBtzhssFnVLU",
-  authDomain: "easy-doc-9579b.firebaseapp.com",
-  projectId: "easy-doc-9579b",
-  storageBucket: "easy-doc-9579b.appspot.com",
-  messagingSenderId: "52215390191",
-  appId: "1:52215390191:web:2d5801642d0441176a201a"
+  apiKey: "AIzaSyCCM2ulDu9E3Nq4hm0hLa9GYQhx1mPn_c0",
+  authDomain: "easy-doc-9adc1.firebaseapp.com",
+  projectId: "easy-doc-9adc1",
+  storageBucket: "easy-doc-9adc1.appspot.com",
+  messagingSenderId: "167592640137",
+  appId: "1:167592640137:web:1c80d71d5c8f21fb42d058"
 };
 
 // Initialize Firebase
