@@ -15,7 +15,7 @@ const MyProfile = () => {
     return <h1>Loading...</h1>
   }
   const { email, name, phoneNumber, photoURL } = currentUser;
-
+console.log(currentUser)
   // this is the update profile function
   // that can update when user change his/her information
   const updateProfile = (data) => {
