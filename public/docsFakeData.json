@@ -1,21 +1,22 @@
 [
     {
         "id": "01",
-        "title": "Interview Questions",
-        "questions": [
+        "menuTitle": "Interview Questions",
+        "description": "Ther has top 5 common interview question, that you must know for interview preperation",
+        "subMenu": [
             {
-                "id": "01",
-                "question": "Tell me about yourself?",
+                "id": "02",
+                "subMenuTitle": "Tell me about yourself?",
                 "answer": "Hi, My name is Mahmod Hasan"
             },
             {
-                "id": "02",
-                "question": "What is your strength?",
+                "id": "03",
+                "subMenuTitle": "What is your strength?",
                 "answer": "I am a hard working person"
             },
             {
-                "id": "03",
-                "question": "Why should we hire you ?",
+                "id": "04",
+                "subMenuTitle": "Why should we hire you ?",
                 "answer": "Because I have 1 year experiance in web development"
             }
         ],
@@ -23,40 +24,58 @@
             "title": "what is Redux?",
             "options": [
                 {
-                    "one": "We can use with react only"
+                    "optionOne": "We can use with react only"
                 },
                 {
-                    "two": "this is a state provider container"
+                    "optionOwo": "this is a state provider container"
                 },
                 {
-                    "three": "this is a library for C++ Apps"
+                    "optionOhree": "this is a library for C++ Apps"
                 },
                 {
-                    "four": "Both 1 & 2"
+                    "optionOour": "Both 1 & 2"
                 }
             ]
         }
     },
     {
-        "id": "02",
-        "title": "Error",
-        "questions": [
+        "id": "05",
+        "menuTitle": "Error",
+        "description": "There is no developer who has not faced errors in life. When we get error that means we make a mistakes and we should find out it with cool head but many of the developer became nervious when getting error. Always remember if you want to be a professional developer you must learn how to handle error easily because it's a speciality of a developer.",
+        "subMenu": [
             {
-                "id": "01",
-                "title": "syntax errro"
+                "id": "06",
+                "subMenuTitle": "syntax errro"
             },
             {
-                "id": "02",
-                "title": "uncaught type error"
+                "id": "07",
+                "subMenuTitle": "uncaught type error"
             },
             {
-                "id": "03",
-                "title": "reference error"
+                "id": "08",
+                "subMenuTitle": "reference error"
             },
             {
-                "id": "04",
-                "title": "Objects are not valid as a React child"
+                "id": "09",
+                "subMenuTitle": "Objects are not valid as a React child"
             }
-        ]
+        ],
+        "quiz": {
+            "title": "what is Redux?",
+            "options": [
+                {
+                    "optionOne": "We can use with react only"
+                },
+                {
+                    "optionTwo": "this is a state provider container"
+                },
+                {
+                    "optionThree": "this is a library for C++ Apps"
+                },
+                {
+                    "optionFour": "Both 1 & 2"
+                }
+            ]
+        }
     }
 ]
