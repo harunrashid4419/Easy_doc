@@ -44,7 +44,9 @@ const Details = () => {
   const { data: comments = [], refetch } = useQuery({
     queryKey: ["comment", blogDetails],
     queryFn: async () => {
-      const res = await fetch(`https://easy-doc-server.vercel.app/comment/${_id}`);
+      const res = await fetch(
+        `https://easy-doc-server.vercel.app/comment/${_id}`
+      );
       const data = await res.json();
       return data;
     },
@@ -53,16 +55,18 @@ const Details = () => {
   const handleCommentSubmit = (event) => {
     event.preventDefault();
     const message = event.target.message.value;
+    const clear = event.target;
     commentAddToDatabase(
       message,
       user?.displayName,
       user?.email,
       user?.photoURL,
-      _id
+      _id,
+      clear
     );
   };
 
-  const commentAddToDatabase = (message, displayName, email, photoURL, id) => {
+  const commentAddToDatabase = (message, displayName, email, photoURL, id, clear) => {
     const commentInfo = { message, displayName, email, photoURL, id };
     fetch("https://easy-doc-server.vercel.app/comment", {
       method: "POST",
@@ -77,6 +81,7 @@ const Details = () => {
         if (data.acknowledged) {
           toast.success("Comment Successfully post");
           refetch();
+          clear.reset();
         }
       });
   };
@@ -105,7 +110,11 @@ const Details = () => {
         <div className="author-details">
           <div className="flex items-center">
             <div>
-              <img src={author_img_url} alt="author-img" />
+              {author_img_url ? (
+                <img src={author_img_url} alt="blog-img" />
+              ) : (
+                <FaUserAlt className="img_user" />
+              )}
             </div>
           </div>
           <div className="author-content">
@@ -140,7 +149,16 @@ const Details = () => {
                 <input className="btn btn-wide" type="submit" value="Submit" />
               </>
             ) : (
-              <p>If you want to comment on a blog, please <Link className="text-green-400 text-2xl" to='/login'>LogIn</Link> or <Link className="text-green-400 text-2xl" to='/register'>SignUp</Link></p>
+              <p>
+                If you want to comment on a blog, please{" "}
+                <Link className="text-green-400 text-2xl" to="/login">
+                  LogIn
+                </Link>{" "}
+                or{" "}
+                <Link className="text-green-400 text-2xl" to="/register">
+                  SignUp
+                </Link>
+              </p>
             )}
           </form>
         </div>
