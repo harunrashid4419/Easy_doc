@@ -112,6 +112,33 @@
     margin-right: 10px;
 }
 
+.register-section .main-register .social-login{
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.register-section .main-register .social-login a{
+    padding: 15px;
+    margin: 0 5px;
+    color: white;
+    font-size: 22px;
+    border-radius: 50%;
+    transition: .5s;
+}
+.register-section .main-register .social-login a:hover{
+    opacity: 70%;
+    color: black;
+}
+#facebook{
+    background-color: #425991;
+}
+#google{
+    background-color: #4BA2E4;
+}
+#github{
+    background-color: #DC5041;
+}
+
 @media screen and (max-width: 992px) {
     .register-section .main-register{
         width: 80%;

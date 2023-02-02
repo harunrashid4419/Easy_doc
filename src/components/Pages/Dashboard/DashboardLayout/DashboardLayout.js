@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { AiOutlineUser } from "react-icons/ai";
-import Navbar from '../../../SharedPage/Navbar/Navbar';
-import Footer from '../../../SharedPage/Footer/Footer';
+import { FaBloggerB } from "react-icons/fa";
+import Navbar from "../../../SharedPage/Navbar/Navbar";
+import Footer from "../../../SharedPage/Footer/Footer";
 import { Link, Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
   const menus = [
     { name: "All User", link: "/dashboard/users", icon: AiOutlineUser },
+    { name: "Add Blogs", link: "/dashboard/addBlog", icon: FaBloggerB },
   ];
   const [open, setOpen] = useState(true);
   return (
@@ -57,7 +59,6 @@ const DashboardLayout = () => {
     </section>
     <Footer></Footer>
     </div>
-    
   );
 };
 

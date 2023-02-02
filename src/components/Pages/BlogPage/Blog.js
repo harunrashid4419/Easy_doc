@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import "./Blog.css";
+import { FaUserAlt } from "react-icons/fa";
 
 const Blog = () => {
   const blogs = useLoaderData();
@@ -23,7 +24,11 @@ const Blog = () => {
                   : blog.description}
               </p>
               <div className="author-details">
-                <img src={blog.author_img_url} alt="blog-img" />
+                {blog.author_img_url ? (
+                  <img src={blog.author_img_url} alt="blog-img" />
+                ) : (
+                  <FaUserAlt className="img_user" />
+                )}
                 <div>
                   <h4>{blog.author_name}</h4>
                   <p>{blog.post_date}</p>

@@ -16,6 +16,7 @@ import MyProfile from "../components/Pages/Profile/MyProfile/MyProfile";
 import ViewProfile from "../components/Pages/Profile/ViewProfile/ViewProfile";
 import Main from "../Layout/Main";
 import PrivateRoute from "./PrivateRoute";
+import AddBlog from '../components/Pages/Dashboard/AddBlog/AddBlog';
 
 const routes = createBrowserRouter([
   {
@@ -62,7 +63,7 @@ const routes = createBrowserRouter([
 
       {
         path: "/view-profile",
-        element: <ViewProfile></ViewProfile>,
+        element: <PrivateRoute><ViewProfile></ViewProfile></PrivateRoute>,
         children: [
           {
             path: "/view-profile",
@@ -91,6 +92,10 @@ const routes = createBrowserRouter([
       {
         path:'/dashboard/users',
         element:<Users></Users>
+      },
+      {
+        path: '/dashboard/addBlog',
+        element: <AddBlog></AddBlog>
       }
     ]
   }

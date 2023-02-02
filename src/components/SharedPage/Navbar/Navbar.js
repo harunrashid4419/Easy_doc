@@ -54,9 +54,9 @@ const Navbar = () => {
           </li>
           {user?.uid ? (
             <>
-            <li className="mr-5 hover:text-orange-500 transition-colors">
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
+              <li className="mr-5 hover:text-orange-500 transition-colors">
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
               <li className="mr-5 hover:text-orange-500 transition-colors">
                 <button
                   className="btn btn-warning btn-xs md:btn-sm"
@@ -74,9 +74,7 @@ const Navbar = () => {
             </>
           ) : (
             <li className="mr-5 hover:text-orange-500 transition-colors">
-              <Link className="btn btn-primary btn-xs md:btn-sm" to="/login">
-                Login
-              </Link>
+              <Link to="/login">Login</Link>
             </li>
           )}
         </ul>
@@ -121,22 +119,26 @@ const Navbar = () => {
         {/* Social icons */}
         <div className="hidden fixed lg:flex flex-col top-[35%] left-0">
           <ul>
-            <li className="w-[160px]  h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
-              <a
-                className="flex ml-4 mr-4 justify-between items-center w-full text-gray-300"
-                href="/"
-              >
-                Document <FaRegListAlt size={25} />
-              </a>
-            </li>
-            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]">
-              <a
-                className="flex ml-4 mr-4 justify-between items-center w-full text-gray-300"
-                href="/"
-              >
-                Community <FaUsersCog size={30} />
-              </a>
-            </li>
+            <Link to="/documentation">
+              <li className="w-[160px]  h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
+                <span
+                  className="flex ml-4 mr-4 justify-between items-center w-full text-gray-300"
+                  href="/"
+                >
+                  Document <FaRegListAlt size={25} />
+                </span>
+              </li>
+            </Link>
+            <Link to="/community">
+              <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]">
+                <span
+                  className="flex ml-4 mr-4 justify-between items-center w-full text-gray-300"
+                  href="/"
+                >
+                  Community <FaUsersCog size={30} />
+                </span>
+              </li>
+            </Link>
           </ul>
         </div>
       </div>

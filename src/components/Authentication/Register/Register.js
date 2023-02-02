@@ -1,11 +1,14 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Register.css";
 import {
   FaLock,
   FaUserAlt,
   FaEye,
-  FaEyeSlash
+  FaEyeSlash,
+  FaGooglePlusG,
+  FaGithub,
+  FaFacebookF,
 } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { useForm } from "react-hook-form";
@@ -13,12 +16,19 @@ import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 
 const Register = () => {
-  const { register, handleSubmit, formState: { errors }, } = useForm();
-  const { createUser, updateUser } = useContext(AuthContext);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const { createUser, updateUser, googleSignIn, githubSignIn } =
+    useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const [eyeClick, setEyeClick] = useState(false);
   const [check, setCheck] = useState(false);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleRegister = (data) => {
     const name = data.firstName + " " + data.lastName;
@@ -33,16 +43,19 @@ const Register = () => {
           displayName: name,
         };
         updateUser(usersInfo)
-          .then((result) => { })
+          .then((result) => {})
           .catch((error) => console.error(error));
         userAddToDatabase(name, email, user?.uid);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        setError(error.message);
+        console.error(error);
+      });
   };
 
   // user store in database
   const userAddToDatabase = (name, email, uid) => {
-    const user = { name, email, uid, photoURL: '' };
+    const user = { name, email, uid, photoURL: "" };
     fetch(`https://easy-doc-server.vercel.app/user?uid=${uid}`, {
       method: "PUT",
       headers: {
@@ -55,6 +68,58 @@ const Register = () => {
         console.log(data);
         toast.success("Register successfully!");
         navigate("/");
+      });
+  };
+
+  // Sign In with Google
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        addUserToDatabase(
+          user?.displayName,
+          user?.email,
+          user?.photoURL,
+          user?.uid
+        );
+      })
+      .catch((error) => toast.error(error.message));
+  };
+
+  // SignIn with Github
+  const handleGithubSignIn = () => {
+    githubSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        addUserToDatabase(
+          user?.displayName,
+          user?.email,
+          user?.photoURL,
+          user?.uid
+        );
+      })
+      .catch((error) => toast.error(error.message));
+  };
+
+  // Saved user to database with (GOOGLE & GITHUB)
+  const addUserToDatabase = (name, email, photoURL, uid) => {
+    const user = { name, email, photoURL, uid };
+    fetch(`https://easy-doc-server.vercel.app/user?uid=${uid}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          setError("");
+          toast.success("Successfully sign In");
+          navigate(from, { replace: true });
+        }
       });
   };
 
@@ -84,7 +149,7 @@ const Register = () => {
                 {eyeClick ? <FaEye /> : <FaEyeSlash />}
               </div>
               <input
-                type={eyeClick ? 'text' : 'password'}
+                type={eyeClick ? "text" : "password"}
                 placeholder="Password"
                 className="input input-bordered w-full"
                 {...register("password", {
@@ -135,18 +200,33 @@ const Register = () => {
               {error && <p className="text-red-500 mb-3">{error}</p>}
             </div>
             <div className="flex mb-3">
-              <input type="checkbox" id="checkbox" onClick={() => setCheck(check)} />
+              <input
+                type="checkbox"
+                id="checkbox"
+                onClick={() => setCheck(check)}
+              />
               <Link className="terams">Accepts tearms and conditions</Link>
             </div>
             <input type="submit" className="submit-btn" value="Register" />
           </form>
           <div className="divider">OR</div>
+          <div className="social-login">
+            <Link onClick={handleGoogleSignIn} id="google">
+              <FaGooglePlusG />
+            </Link>
+            <Link onClick={handleGithubSignIn} id="github">
+              <FaGithub />
+            </Link>
+            <Link id="facebook">
+              <FaFacebookF />
+            </Link>
+          </div>
           <p className="link-register">
             Already have an account.<Link to="/login"> LogIn</Link> Now
           </p>
         </div>
       </div>
-    </div >
+    </div>
   );
 };
 
