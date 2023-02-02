@@ -60,7 +60,7 @@ const routes = createBrowserRouter([
 
       {
         path: "/view-profile",
-        element: <ViewProfile></ViewProfile>,
+        element: <PrivateRoute><ViewProfile></ViewProfile></PrivateRoute>,
         children: [
           {
             path: "/view-profile",
