@@ -1,92 +1,60 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 
 
 
 const Users = () => { 
-      
-        return (
+  const {data:allusers=[]}=useQuery({
+          queryKey:'allusers',
+          queryFn:async()=>{
+            const res=await fetch('https://easy-doc-server.vercel.app/allUser');
+            const data=await res.json();
+            return data;
 
-<div class=" overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs sm:flex-col md:flex-row lg:flex-row text-gray-700 uppercase dark:text-gray-400">
-            <tr>
-                <th scope="col" class="sm:px-3 md:px-6 lg:px-6 py-3 bg-gray-50 dark:bg-gray-800">
-                    Product name
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Color
-                </th>
-                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
-                    Category
-                </th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Sliver
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Laptop
-                </td>
-                
-            </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Laptop PC
-                </td>
-                
-            </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Magic Mouse 2
-                </th>
-                <td class="px-6 py-4">
-                    Black
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Accessories
-                </td>
-                
-            </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Google Pixel Phone
-                </th>
-                <td class="px-6 py-4">
-                    Gray
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Phone
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Apple Watch 5
-                </th>
-                <td class="px-6 py-4">
-                    Red
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Wearables
-                </td>
-                
-            </tr>
-        </tbody>
-    </table>
+          }
+  })
+  
+
+        return (
+<div>
+  <h1 className='text-4xl my-12 text-center'>All Users</h1>
+
+  <div className="overflow-x-auto ">
+  <table className="table table-zebra w-full ">
+  
+    <thead>
+      <tr className='bg-violet-200'>
+        <th className='text-xl'>Avatar</th>
+        <th className='text-xl'>Name</th>
+        <th className='text-xl'>Email</th>
+        <th className='text-xl'>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        allusers?.map(user=>
+        <tr key={user._id}>
+        <th>
+        <div className="avatar">
+  <div className="w-16 rounded-full">
+    <img src={user.photoURL} alt=""/>
+  </div>
+</div>
+        </th>
+        <td>{user.name}</td>
+        <td>{user.email}</td>
+         <td>
+          <button className='btn bg-yellow-400 hover:bg-yellow-500 text-black border-none'>Delete</button>
+         </td>
+    </tr> 
+    )
+      }
+    </tbody>
+  </table>
 </div>
 
+</div>
         );
       }
           
