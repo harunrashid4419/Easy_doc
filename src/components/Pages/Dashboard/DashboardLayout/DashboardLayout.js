@@ -11,15 +11,15 @@ const DashboardLayout = () => {
   ];
   const [open, setOpen] = useState(true);
   return (
-    <div className="">
+    <div className="w-full">
       <Navbar></Navbar>
-    <section className="flex">
+    <section className="flex md:w-4/5 lg:w-full w-4/5">
       <div
-        className={`bg-violet-400 min-h-screen ${
-          open ? "w-72" : "w-16"
+        className={`bg-violet-500 min-h-screen ${
+          open ? "md:w-72 lg:w-72 w-12" : "lg:w-72 md:w-72 w-12"
         } duration-500 text-gray-100 px-4`}
       >
-        <div className="py-3 flex justify-end">
+        <div className="py-3 flex justify-end ">
           <HiMenuAlt3
             size={32}
             className="cursor-pointer"
@@ -46,18 +46,12 @@ const DashboardLayout = () => {
               >
                 {menu?.name}
               </h2>
-              <h2
-                className={`${
-                  open && "hidden"
-                } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
-              >
-                {menu?.name}
-              </h2>
+              
             </Link>
           ))}
         </div>
       </div>
-      <div className="text-xl sm:w-full text-gray-900 font-semibold bg-violet-100 border-2 border-violet-200">
+      <div className="text-xl w-full  text-gray-900 font-semibold border-violet-200" >
         <Outlet></Outlet>
       </div>
     </section>
