@@ -4,6 +4,8 @@ import Register from "../components/Authentication/Register/Register";
 import Community from "../components/Community/Community";
 import Blog from "../components/Pages/BlogPage/Blog";
 import Details from "../components/Pages/BlogPage/Details/Details";
+import DashboardLayout from "../components/Pages/Dashboard/DashboardLayout/DashboardLayout";
+import Users from "../components/Pages/Dashboard/Users/Users";
 import Documentation from "../components/Pages/Documentation/Documentation";
 import IdWiseDataLoad from "../components/Pages/Documentation/IdWiseDataLoad";
 import Home from "../components/Pages/HomePage/Home/Home";
@@ -81,6 +83,16 @@ const routes = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path:'/dashboard',
+    element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+    children:[
+      {
+        path:'/dashboard/users',
+        element:<Users></Users>
+      }
+    ]
   }
 ]);
 

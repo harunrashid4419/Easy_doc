@@ -26,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[#7846E9] ">
+    <div className="bg-[#7846E9] w-full">
       <div className="sticky container top-0 z-50 w-full h-[60px] flex justify-between items-center px-4  text-gray-300">
         <Link to="/" className="flex">
           <img style={{ width: "40px" }} src={logo} alt="logo" />
@@ -54,6 +54,9 @@ const Navbar = () => {
           </li>
           {user?.uid ? (
             <>
+            <li className="mr-5 hover:text-orange-500 transition-colors">
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
               <li className="mr-5 hover:text-orange-500 transition-colors">
                 <button
                   className="btn btn-warning btn-xs md:btn-sm"
@@ -109,6 +112,9 @@ const Navbar = () => {
           </li>
           <li className="py-6 text-4xl">
             <Link to="/">Contact</Link>
+          </li>
+          <li className="py-6 text-4xl">
+            <Link to="/dashboard">Dashboard</Link>
           </li>
         </ul>
 
