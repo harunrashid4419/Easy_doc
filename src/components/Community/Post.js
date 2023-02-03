@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../../Context/UserContext";
+import ShowPost from "./ShowPost";
 
 const Post = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -72,6 +73,7 @@ const Post = () => {
           </form>
         </div>
       </div>
+      <ShowPost ></ShowPost>
     </div>
   );
 };

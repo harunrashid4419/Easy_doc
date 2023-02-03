@@ -9,7 +9,6 @@ const Community = () => {
     <div className="container">
       <Banner></Banner>
       <Post></Post>
-      <ShowPost></ShowPost>
     </div>
   );
 };

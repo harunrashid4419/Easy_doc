@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import loginAnimation from "../../../assets/login.json";
 import "./Login.css";
@@ -15,8 +15,12 @@ import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 
 const Login = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const { login, restorePassword, googleSignIn, githubSignIn } =
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const { login, user, restorePassword, googleSignIn, githubSignIn } =
     useContext(AuthContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -30,8 +34,9 @@ const Login = () => {
     login(data.email, data.password)
       .then((result) => {
         const user = result.user;
+        console.log(user);
         setError("");
-        navigate(from, { replace: true });
+        toast.success('LogIn Success');
       })
       .catch((error) => {
         setError(error.message);
@@ -52,27 +57,37 @@ const Login = () => {
       });
   };
 
-
   // Sign In with Google
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
         console.log(user);
-        addUserToDatabase(user?.displayName, user?.email, user?.photoURL, user?.uid);
+        addUserToDatabase(
+          user?.displayName,
+          user?.email,
+          user?.photoURL,
+          user?.uid
+        );
       })
       .catch((error) => toast.error(error.message));
   };
+  
   // SignIn with Github
   const handleGithubSignIn = () => {
     githubSignIn()
       .then((result) => {
         const user = result.user;
         console.log(user);
-        addUserToDatabase(user?.displayName, user?.email, user?.photoURL, user?.uid);
+        addUserToDatabase(
+          user?.displayName,
+          user?.email,
+          user?.photoURL,
+          user?.uid
+        );
       })
       .catch((error) => toast.error(error.message));
-  }
+  };
 
   // Saved user to database with (GOOGLE & GITHUB)
   const addUserToDatabase = (name, email, photoURL, uid) => {
@@ -87,8 +102,8 @@ const Login = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          setError('');
-          toast.success('Successfully sign In')
+          setError("");
+          toast.success("Successfully sign In");
           navigate(from, { replace: true });
         }
       });
@@ -99,6 +114,13 @@ const Login = () => {
     const email = event.target.value;
     setEmail(email);
   };
+
+  // navigate 
+  useEffect(() => {
+    if (user && user?.email) {
+       navigate(from, { replace: true });
+    }
+ }, [from, navigate, user]);
 
   return (
     <div className="login-section">
