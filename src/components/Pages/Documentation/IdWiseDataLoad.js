@@ -9,7 +9,7 @@ const IdWiseDataLoad = () => {
     const { data, isLoading } = useQuery({
         queryKey: ["menu", id],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/menu/${id}`);
+            const res = await fetch(`https://easy-doc-server.vercel.app/menu/${id}`);
             const data = await res.json();
             return data;
         },
