@@ -1,0 +1,31 @@
+.add-blog-section{
+    padding: 50px;
+}
+.add-blog-section h2{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: orange;
+    font-weight: 600;
+}
+.add-blog-section label{
+    font-weight: 600;
+}
+.add-blog-section input{
+    font-weight: 500;
+    font-size: 16px;
+}
+.add-blog-section textarea{
+    height: 100px;
+    font-weight: 500;
+}
+.add-blog-section .post-btn{
+    background-color: #355BC0;
+    padding: 12px 30px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    width: 30%;
+    margin-top: 20px;
+    transition: .5s;
+}
