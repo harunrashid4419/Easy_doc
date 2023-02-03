@@ -1,36 +1,35 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Menu from './Menu';
+import SubMenu from './SubMenu';
 
 const IdWiseDataLoad = () => {
-    const { id } = useParams();
-    // console.log(id);
-    // const [allMenu, setAllMenu] = useState([]);
-    // const [loading, setLoading] = useState(false);
-    // useEffect(() => {
-    //     setLoading(true)
-    //     fetch('./docsFakeData.json')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setAllMenu(data)
-    //             console.log(data)
-    //             setLoading(false);
-    //         })
-    // }, [id])
-    // if (loading) {
-    //     return <h1>loading...</h1>
-    // }
-    // console.log(allMenu);
-    // const menuData = allMenu.find(menu => menu.id === id)
+    const { id = '01' } = useParams();
+    const { data, isLoading } = useQuery({
+        queryKey: ["menu", id],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:5000/menu/${id}`);
+            const data = await res.json();
+            return data;
+        },
+    });
 
-    // console.log(menuData);
-    // const { description } = menuData;
+    if (isLoading) {
+        return <h1>LOading..</h1>
+    }
+
     return (
-        <div className='border h-30'>
-            <h1 className='text-4xl font-bold text-center'> this is dynamic Id :{id}</h1>
+        <div>
+            {
+                data?._id ?
+                    <Menu menu={data}></Menu>
+                    :
+                    <SubMenu subMenu={data}></SubMenu>
+            }
         </div>
-    );
+    )
+
 };
 
 export default IdWiseDataLoad;

@@ -41,7 +41,7 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li className="mr-5 hover:text-orange-500 transition-colors">
-            <Link to="/Documentation">Documentation</Link>
+            <Link to="/documentation">Documentation</Link>
           </li>
           <li className="mr-5 hover:text-orange-500 transition-colors">
             <Link to="/community">Community</Link>

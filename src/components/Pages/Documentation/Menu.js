@@ -1,31 +1,67 @@
 import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { FaSearch } from 'react-icons/fa';
-import MenuItem from './MenuItem';
 
-const Menu = () => {
-    const [allMenu, setAllMenu] = useState([]);
-    useEffect(() => {
-        fetch('/docsFakeData.json')
-            .then(res => res.json())
-            .then(data => setAllMenu(data))
-    }, [])
+const Menu = ({ menu }) => {
 
+    const { tips, what, why, types, examples } = menu;
+    const allTip = tips?.list.split('   ');
+    const allType = types?.type.split('   ');
+    const codes = examples?.code?.split('   ');
     return (
-        <div className='bg-gray-100 pl-4 pr-2 h-screen border-r-4 border-gray-200'>
-            <div className="divider text-gray-500">Menu</div>
-            <div className='relative'>
-                <input className="w-full border-2 mb-4 pl-16 p-2 rounded" type="text" placeholder='Quick Search' /><FaSearch className='absolute top-3 left-4 w-10 text-slate-400'></FaSearch>
+        <div className='space-y-10'>
+            <h1 className="text-5xl font-bold">{what?.title}</h1>
+            <p className="text-xl">{what?.description}</p>
+            <h2 className="text-3xl">{types?.heading}</h2>
+            <p>{types?.para1}</p>
+            <div className='space-y-2'>
+                {
+                    allType && allType.map((type, idx) => <ul
+                        key={idx}
+                    >
+                        {
+                            type.includes('Error') ?
+                                <li className='text-xl text-blue-400 underline'>
+                                    {type}
+                                </li>
+                                :
+                                <li>
+                                    {type}
+                                </li>
+                        }
+                    </ul>)
+                }
             </div>
+            <h2 className="text-3xl font-semibold">{why?.question}</h2>
+            <p className="text-xl">{why?.answer}</p>
+            <h2 className='text-3xl font-bold'>{tips?.heading}</h2>
+            <div className='space-y-4'>
+                {
+                    allTip && allTip.map((tip, idx) => <ul
+                        key={idx}>
+                        {
+                            (/\d\./).test(tip) ?
+                                <li className="text-2xl font-semibold">{tip}
+                                </li>
+                                :
+                                <li>
+                                    {tip}
+                                </li>
+                        }
+                    </ul>)
+                }
+            </div>
+            <h2 className='text-3xl font-semibold'>{examples?.heading}</h2>
+            <h4 className='text-2xl font-semibold'>{examples?.subHeading}</h4>
+            <p className='text-xl'>{examples?.para1}</p>
             {
-                allMenu && allMenu.map(menu => <MenuItem
-                    key={menu?.id}
-                    menu={menu}
-                ></MenuItem>)
+                codes && <div className="mockup-code">
+                    {
+                        codes && codes.map((code, idx) => <pre
+                            key={idx} className="text-gray-300"
+                        ><code>{code}</code></pre>)
+                    }
+                </div>
             }
         </div>
     );
 };
-
 export default Menu;
