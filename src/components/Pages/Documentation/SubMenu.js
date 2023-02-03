@@ -12,7 +12,7 @@ const SubMenu = ({ subMenu }) => {
         <div>
             {/* what part start */}
             <h1 className='text-5xl font-bold text-center px-20 mb-10'>{what?.title}</h1>
-            <img src={what?.img} className="w-full"></img>
+            <img src={what?.img} className="w-full" alt='' />
             <h2 className="text-3xl my-4 font-semibold">{what?.subTitle}</h2>
             <div className="space-y-4 text-xl">
                 {
