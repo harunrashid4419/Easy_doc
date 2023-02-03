@@ -46,9 +46,8 @@ const routes = createBrowserRouter([
       },
       {
         path: "/community",
-        element: (
-          <PrivateRoute><Community></Community></PrivateRoute>
-        ),
+        element: <Community></Community>,
+       
       },
       {
         path: '/documentation',
