@@ -5,7 +5,7 @@ const useAdmin = email =>{
     const [isLoader, setIsLoader] = useState(true);
     useEffect(() =>{
         if(email){
-            fetch(`http://localhost:5000/user/admin/${email}`)
+            fetch(`https://easy-doc-server.vercel.app/user/admin/${email}`)
             .then(res => res.json())
             .then(data =>{
                 console.log(data);

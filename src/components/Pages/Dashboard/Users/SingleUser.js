@@ -8,7 +8,7 @@ const SingleUser = ({ user, refetch }) => {
   const handleDeleteUser = (id) => {
     const agree = window.confirm('Are you want to delete this user');
     if(agree){
-        fetch(`http://localhost:5000/allUser/${id}`, {
+        fetch(`https://easy-doc-server.vercel.app/allUser/${id}`, {
             method: "DELETE",
         })
             .then(res => res.json())
