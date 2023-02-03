@@ -23,7 +23,6 @@ const MyProfile = () => {
     return <h1>Loading...</h1>
   }
   const { email, name, phoneNumber, photoURL } = currentUser;
-console.log(currentUser)
   // this is the update profile function
   // that can update when user change his/her information
   const updateProfile = (data) => {
@@ -41,7 +40,7 @@ console.log(currentUser)
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
+          // console.log(data)
           if (data.acknowledged) {
             toast.success("Your Information Updated Successfully");
             setEdit(false);

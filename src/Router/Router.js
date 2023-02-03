@@ -16,7 +16,8 @@ import MyProfile from "../components/Pages/Profile/MyProfile/MyProfile";
 import ViewProfile from "../components/Pages/Profile/ViewProfile/ViewProfile";
 import Main from "../Layout/Main";
 import PrivateRoute from "./PrivateRoute";
-import AddBlog from '../components/Pages/Dashboard/AddBlog/AddBlog';
+import AddBlog from "../components/Pages/Dashboard/AddBlog/AddBlog";
+import AdminRouter from "./AdminRouter";
 
 const routes = createBrowserRouter([
   {
@@ -36,34 +37,40 @@ const routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: 'blog',
+        path: "blog",
         element: <Blog></Blog>,
-        loader: () => fetch('https://easy-doc-server.vercel.app/blog')
+        loader: () => fetch("https://easy-doc-server.vercel.app/blog"),
       },
       {
-        path: '/details/:id',
-        element: <Details></Details>
+        path: "/details/:id",
+        element: <Details></Details>,
       },
       {
         path: "/community",
         element: (
-          <PrivateRoute><Community></Community></PrivateRoute>
+          <PrivateRoute>
+            <Community></Community>
+          </PrivateRoute>
         ),
       },
       {
-        path: '/documentation',
+        path: "/documentation",
         element: <Documentation></Documentation>,
         children: [
           {
-            path: '/documentation/:id',
+            path: "/documentation/:id",
             element: <IdWiseDataLoad></IdWiseDataLoad>,
           },
-        ]
+        ],
       },
 
       {
         path: "/view-profile",
-        element: <PrivateRoute><ViewProfile></ViewProfile></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <ViewProfile></ViewProfile>
+          </PrivateRoute>
+        ),
         children: [
           {
             path: "/view-profile",
@@ -86,19 +93,27 @@ const routes = createBrowserRouter([
     ],
   },
   {
-    path:'/dashboard',
-    element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
-    children:[
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
       {
-        path:'/dashboard/users',
-        element:<Users></Users>
+        path: "/dashboard/users",
+        element: (
+          <AdminRouter>
+            <Users></Users>
+          </AdminRouter>
+        ),
       },
       {
-        path: '/dashboard/addBlog',
-        element: <AddBlog></AddBlog>
-      }
-    ]
-  }
+        path: "/dashboard/addBlog",
+        element: <AddBlog></AddBlog>,
+      },
+    ],
+  },
 ]);
 
 export default routes;

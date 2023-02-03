@@ -1,0 +1,49 @@
+import React from "react";
+import { toast } from "react-hot-toast";
+import { FaUserAlt } from "react-icons/fa";
+
+const SingleUser = ({ user, refetch }) => {
+  const { name, email, photoURL, _id } = user;
+
+  const handleDeleteUser = (id) => {
+    const agree = window.confirm('Are you want to delete this user');
+    if(agree){
+        fetch(`http://localhost:5000/allUser/${id}`, {
+            method: "DELETE",
+        })
+            .then(res => res.json())
+            .then(data =>{
+                console.log(data);
+                if(data.deletedCount > 0){
+                    toast.success('User Deleted Successfully');
+                    refetch();
+                }
+            })
+    }
+  };
+  return (
+    <tbody>
+      <tr>
+        <th>
+          {photoURL ? (
+            <img className="w-16 rounded-full" src={photoURL} alt="" />
+          ) : (
+            <FaUserAlt className="w-16 h-16" />
+          )}
+        </th>
+        <td className="font-medium">{name}</td>
+        <td className="font-medium">{email}</td>
+        <td>
+          <button
+            onClick={() => handleDeleteUser(_id)}
+            className="btn bg-yellow-400 hover:bg-yellow-500 text-black border-none"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  );
+};
+
+export default SingleUser;
