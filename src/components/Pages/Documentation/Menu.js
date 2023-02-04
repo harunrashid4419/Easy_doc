@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { HiThumbUp, HiThumbDown } from "react-icons/hi";
 const Menu = ({ menu }) => {
 
     const { tips, what, why, types, examples } = menu;
@@ -61,6 +61,8 @@ const Menu = ({ menu }) => {
                     }
                 </div>
             }
+
+            <button className=''>dis this page helpful <HiThumbUp></HiThumbUp> <HiThumbDown></HiThumbDown></button>
         </div>
     );
 };
