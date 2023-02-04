@@ -8,7 +8,6 @@ import DashboardLayout from "../components/Pages/Dashboard/DashboardLayout/Dashb
 import Users from "../components/Pages/Dashboard/Users/Users";
 import Documentation from "../components/Pages/Documentation/Documentation";
 import IdWiseDataLoad from "../components/Pages/Documentation/IdWiseDataLoad";
-import MenuBar from "../components/Pages/Documentation/MenuBar";
 import Home from "../components/Pages/HomePage/Home/Home";
 import Address from "../components/Pages/Profile/Address/Address";
 import Education from "../components/Pages/Profile/Education/Education";
@@ -61,7 +60,7 @@ const routes = createBrowserRouter([
           {
             path: "/documentation/:id",
             element: <IdWiseDataLoad></IdWiseDataLoad>,
-            loader: async ({ params }) => await fetch(`http://localhost:5000/menu/${params.id}`)
+            loader: async ({ params }) => await fetch(`https://easy-doc-server.vercel.app/menu/${params.id}`)
           }
         ]
       },
