@@ -18,17 +18,19 @@ const MenuBar = () => {
         return <h1>Loading...</h1>
     }
     return (
-        <div className='bg-gray-100 sticky top-0 pl-4 pr-2 h-screen border-r-4 border-gray-200 overflow-y-scroll'>
+        <div className='bg-gray-100 md:h-screen md:border-r-4 border-gray-200 overflow-y-scroll md:sticky top-0 p-4'>
             <div className="divider text-gray-500">Menu</div>
             <div className='relative'>
                 <input className="w-full border-2 mb-4 pl-16 p-2 rounded" type="text" placeholder='Quick Search' /><FaSearch className='absolute top-3 left-4 w-10 text-slate-400'></FaSearch>
             </div>
-            {
-                allMenu && allMenu.map(menu => <MenuItem
-                    key={menu?.id}
-                    menu={menu}
-                ></MenuItem>)
-            }
+            <div>
+                {
+                    allMenu && allMenu.map(menu => <MenuItem
+                        key={menu?.id}
+                        menu={menu}
+                    ></MenuItem>)
+                }
+            </div>
         </div>
     );
 };
