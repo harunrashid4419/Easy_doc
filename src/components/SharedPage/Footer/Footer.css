@@ -27,17 +27,10 @@
     color: #6363FF;
 }
 
-/* #doc-content p{
-    color: #f1f1f1; 
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 10px;
-    margin-bottom: 10px;
-} */
+
 #doc-content a {
     transition: .8s;
     font-size: 16px;
-    color: #b9b9b9;
     font-weight: 500;
     margin-bottom: 10px;
     display: block;

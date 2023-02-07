@@ -92,6 +92,7 @@ const Menu = ({ menu }) => {
                 </button>
             </div>
         </div>
-    );
-};
+    )
+}
+
 export default Menu;

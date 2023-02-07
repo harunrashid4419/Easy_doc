@@ -14,6 +14,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
+import { useTheme } from "../../../hooks/useTheme";
 
 const Register = () => {
   const {
@@ -29,6 +30,7 @@ const Register = () => {
   const [check, setCheck] = useState(false);
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  const {theme} = useTheme();
 
   const handleRegister = (data) => {
     const name = data.firstName + " " + data.lastName;
@@ -124,10 +126,10 @@ const Register = () => {
   };
 
   return (
-    <div className="register-section">
+    <div className={`register-section ${theme === 'dark' ? 'bg-base-100' : 'bg-[#f5deb361]'}`}>
       <div className="container">
-        <div className="main-register">
-          <h2>Please Register</h2>
+        <div className='main-register bg-neutral-content'>
+          <h2 className="text-base-200">Please Register</h2>
           <form onSubmit={handleSubmit(handleRegister)}>
             <div className="icon-setup">
               <AiOutlineMail className="icon" />

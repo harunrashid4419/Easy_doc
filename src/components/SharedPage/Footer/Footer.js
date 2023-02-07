@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { FaFacebookF, FaGithub, FaTwitter, FaYoutube } from "react-icons/fa";
 import logo from "../../../assets/Logo.png";
 import "./Footer.css";
+import { useTheme } from "../../../hooks/useTheme";
 
 const Footer = () => {
+  const { theme } = useTheme();
   return (
-    <div className="bg-black">
+    <div className="main-footer-section bg-base-100">
       <div className="container">
         <div id="footer-section" className="pt-10 pb-5 text-white">
           <div>
@@ -30,23 +32,23 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          <div id="doc-content">
-            <p className="footer-title">Doc Contents</p>
+          <div className="text-primary" id="doc-content">
+            <p className={`footer-title ${theme === 'dark' ? 'text-[#f1f1f1]' : 'text-[#242729]'}`}>Doc Contents</p>
             <Link>Video</Link>
             <Link>List Style</Link>
             <Link>Tables</Link>
             <Link>Tooltip & Direction</Link>
             <Link>Keyboard Shortcuts</Link>
           </div>
-          <div id="doc-content">
-            <p className="footer-title">Doc Footnotes</p>
+          <div className="text-primary" id="doc-content">
+            <p className={`footer-title ${theme === 'dark' ? 'text-[#f1f1f1]' : 'text-[#242729]'}`}>Doc Footnotes</p>
             <Link>Single Comun</Link>
             <Link>Two Columns</Link>
             <Link>Three Columns</Link>
             <Link>Four Columns</Link>
           </div>
-          <div id="doc-content">
-            <p className="footer-title">Doc Elements</p>
+          <div className="text-primary" id="doc-content">
+            <p className={`footer-title ${theme === 'dark' ? 'text-[#f1f1f1]' : 'text-[#242729]'}`}>Doc Elements</p>
             <Link>Accordions Widget</Link>
             <Link>Tabs Widget</Link>
             <Link>Cheatsheet Widget</Link>

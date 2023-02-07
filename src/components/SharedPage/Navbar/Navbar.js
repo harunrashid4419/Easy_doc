@@ -1,20 +1,17 @@
 import React, { useState, useContext } from "react";
-import {
-  FaBars,
-  FaTimes,
-  FaRegListAlt,
-  FaUsersCog,
-  FaUserCircle,
-} from "react-icons/fa";
+import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/Logo.png";
 import { AuthContext } from "../../../Context/UserContext";
+import { useTheme } from "../../../hooks/useTheme";
+import ThemeToggle from "../../ThemeToggle/ThemeToggle";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const { user, logOut } = useContext(AuthContext);
   const handleClick = () => setNav(!nav);
   const navigate = useNavigate();
+  const { theme } = useTheme();
 
   // logout
   const handleLogOut = () => {
@@ -26,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[#7846E9] w-full">
+    <div className={`${theme === 'dark' ? 'bg-black' : 'bg-[#7846E9]'} w-full`}>
       <div className="sticky container top-0 z-50 w-full h-[60px] flex justify-between items-center px-4  text-gray-300">
         <Link to="/" className="flex">
           <img style={{ width: "40px" }} src={logo} alt="logo" />
@@ -37,6 +34,9 @@ const Navbar = () => {
 
         {/* menu */}
         <ul className="hidden md:flex items-center">
+          <li className="mr-5 mt-2">
+            <ThemeToggle />
+          </li>
           <li className="mr-5 hover:text-orange-500 transition-colors">
             <Link to="/">Home</Link>
           </li>
@@ -115,32 +115,6 @@ const Navbar = () => {
             <Link to="/dashboard">Dashboard</Link>
           </li>
         </ul>
-
-        {/* Social icons */}
-        <div className="hidden fixed lg:flex flex-col top-[35%] left-0">
-          <ul>
-            <Link to="/documentation">
-              <li className="w-[160px]  h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
-                <span
-                  className="flex ml-4 mr-4 justify-between items-center w-full text-gray-300"
-                  href="/"
-                >
-                  Document <FaRegListAlt size={25} />
-                </span>
-              </li>
-            </Link>
-            <Link to="/community">
-              <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]">
-                <span
-                  className="flex ml-4 mr-4 justify-between items-center w-full text-gray-300"
-                  href="/"
-                >
-                  Community <FaUsersCog size={30} />
-                </span>
-              </li>
-            </Link>
-          </ul>
-        </div>
       </div>
     </div>
   );

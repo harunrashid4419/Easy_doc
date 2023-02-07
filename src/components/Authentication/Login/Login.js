@@ -13,6 +13,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
+import { useTheme } from "../../../hooks/useTheme";
 
 const Login = () => {
   const {
@@ -28,6 +29,7 @@ const Login = () => {
   const [eyeClick, setEyeClick] = useState(false);
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  const { theme } = useTheme();
 
   // Login with email and password
   const handleLogin = (data) => {
@@ -36,7 +38,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         setError("");
-        toast.success('LogIn Success');
+        toast.success("LogIn Success");
       })
       .catch((error) => {
         setError(error.message);
@@ -72,7 +74,7 @@ const Login = () => {
       })
       .catch((error) => toast.error(error.message));
   };
-  
+
   // SignIn with Github
   const handleGithubSignIn = () => {
     githubSignIn()
@@ -115,25 +117,29 @@ const Login = () => {
     setEmail(email);
   };
 
-  // navigate 
+  // navigate
   useEffect(() => {
     if (user && user?.email) {
-       navigate(from, { replace: true });
+      navigate(from, { replace: true });
     }
- }, [from, navigate, user]);
+  }, [from, navigate, user]);
 
   return (
     <div className="login-section">
       <div className="container">
-        <div className="main-login">
+        <div
+          className={`main-login ${
+            theme === "dark" ? "bg-[#2C303A]" : "bg-[#4f794247]"
+          }`}
+        >
           <div className="animation">
             <Lottie animationData={loginAnimation} loop={true}></Lottie>
           </div>
           <div className="form-section">
-            <h1>Please Login</h1>
+            <h1 className='text-base-200'>Please Login</h1>
             <form onSubmit={handleSubmit(handleLogin)}>
               <fieldset>
-                <legend>Email</legend>
+                <legend className='text-base-200'>Email</legend>
                 <input
                   type="email"
                   {...register("email", {
@@ -147,7 +153,7 @@ const Login = () => {
                 <p className="mb-3 text-red-500">{errors.email?.message}</p>
               )}
               <fieldset id="password-fieldset">
-                <legend>Password</legend>
+                <legend className='text-base-200'>Password</legend>
                 <div id="eyeClick" onClick={() => setEyeClick(!eyeClick)}>
                   {eyeClick ? <FaEye /> : <FaEyeSlash />}
                 </div>

@@ -24,7 +24,6 @@
     color: orange;
 }
 .main-blog-details h3{
-    color: #1d2a3b;
     margin-top: 20px;
     font-size: 30px;
     font-weight: 700; 
@@ -60,12 +59,10 @@
 }
 .main-blog-details p{
     font-size: 18px;
-    color: rgba(0, 0, 0, 0.74);
     margin: 20px 0;
 }
 .main-blog-details h5{
     font-size: 26px;
-    color: #111111;
     font-weight: 700;
 }
 .main-blog-details .comment-section h2{

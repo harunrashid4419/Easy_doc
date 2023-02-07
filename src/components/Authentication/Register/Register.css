@@ -1,11 +1,9 @@
 .register-section{
     padding: 120px 0 50px 0;
-    background-color: #f5deb361;
 }
 .register-section .main-register{
     width: 60%;
     margin: 0 auto;
-    background-color: #ffffff;
     padding: 40px 25px 20px 25px;
     box-shadow: 0px 4px 6px #000000bf;
 }
@@ -26,7 +24,6 @@
     margin-left: 4%;
 }
 .register-section .main-register h2{
-    color: #003300;
     font-size: 32px;
     font-weight: 700;
     letter-spacing: 5px;

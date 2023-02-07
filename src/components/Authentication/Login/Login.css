@@ -9,18 +9,16 @@
     margin-bottom: 20px;
 }
 .login-section .main-login legend{
-    color: #003300;
     font-weight: 600;
 }
 .login-section .main-login input:focus{
     outline: none;
 }
 .login-section .main-login input{
-    background: #CEDACA;
+    background: transparent;
 }
 .login-section .main-login{
     display: flex;
-    background-color: #4f794247;
     border-radius: 10px;
 }
 .login-section .animation{
@@ -35,7 +33,6 @@
 }
 .login-section .form-section h1{
     font-size: 32px;
-    color: #003300;
     letter-spacing: 5px;
     text-align: center;
     margin-bottom: 20px;

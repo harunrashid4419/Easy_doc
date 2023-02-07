@@ -1,9 +1,8 @@
-import { useQuery } from '@tanstack/react-query';
-import React from 'react';
-import { FaSearch } from 'react-icons/fa';
-import MenuItem from './MenuItem';
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
+import { FaSearch } from "react-icons/fa";
+import MenuItem from "./MenuItem";
 // import Menu from './Menu';
-
 
 const MenuBar = () => {
     const { data: allMenu = [], isLoading } = useQuery({
