@@ -121,3 +121,109 @@ const Navbar = () => {
 };
 
 export default Navbar;
+// import React, { useContext, useReducer, useState } from 'react';
+// import { FaBars, FaTimes, FaUserCircle } from 'react-icons/fa';
+// import { Link, useNavigate } from 'react-router-dom';
+// import { AuthContext } from '../../../Context/UserContext';
+
+// const initialState = '';
+// const reducer = (state, action) => {
+//   switch (action) {
+//     case 'open':
+//       return 'open';
+//     case 'close':
+//       return 'close';
+//     default:
+//       return state;
+//   }
+// }
+// const Navbar = () => {
+//   const { user, logOut } = useContext(AuthContext);
+//   const navigate = useNavigate();
+//   // logout
+//   const handleLogOut = () => {
+//     logOut()
+//       .then(() => {
+//         navigate("/login");
+//       })
+//       .catch((error) => console.error(error));
+//   };
+
+
+//   const routes = <>
+//     <Link to='/' className='font-semibold hover:text-red-500'>Home</Link>
+//     <Link to='/documentation' className='font-semibold hover:text-red-500'>Docs</Link>
+//     <Link to='/community' className='font-semibold hover:text-red-500'>Community</Link>
+//     <Link to='/blog' className='font-semibold hover:text-red-500'>Blogs</Link>
+//     {
+//       user?.uid
+//         ?
+//         <>
+//           <button
+//             className="btn btn-warning btn-xs md:btn-sm"
+//             onClick={handleLogOut}
+//           >
+//             LogOut
+//           </button>
+
+//         </>
+//         :
+//         <>
+//           <Link className='btn mr-4 hover:bg-blue-600 bg-blue-700 sm:btn-sm align-middle' to='/login'>Login</Link>
+//           {/* <Link className='btn btn-outline sm:btn-sm md:btn-md rounded' to='/register'>SignUp</Link> */}
+//         </>
+//     }
+//   </>
+
+//   const [toggole, dispatch] = useReducer(reducer, initialState);
+//   console.log(toggole);
+//   return (
+
+
+//     // <div>
+//     //   {
+//     //     toggole === 'open' ?
+
+//     //       <FaTimes
+//     //         onClick={() => dispatch('close')}
+//     //         className='md:hidden cursor-pointer'
+//     //       ></FaTimes>
+//     //       :
+//     //       <FaBars
+//     //         onClick={() => dispatch('open')}
+//     //         className='md:hidden cursor-pointer'
+//     //       ></FaBars>
+//     //   }
+//     //   <ul className={`${toggole === 'open' ? 'block' : 'hidden'} md:hidden`}>
+//     //     <li className='grid' onClick={() => dispatch('close')}>
+//     //       {routes}
+//     //     </li>
+//     //   </ul>
+//     // </div>
+
+
+//     <div className='flex justify-between'>
+//       <div className="flex items-center">
+
+//         <img className='h-10' src="https://static.thenounproject.com/png/4139689-200.png" alt="" />
+//         <Link to='/' className='font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-t from-purple-500 to-pink-600'>DOC</Link>
+//       </div>
+
+
+//       <ul className="hidden md:flex items-center gap-x-4">
+
+//         {routes}
+
+//         {
+//           user?.uid && <label htmlFor="profile-modal">
+//             <FaUserCircle className="text-4xl hover:ring-4 rounded-full ring-slate-300  text-slate-400 hover:cursor-pointer"></FaUserCircle>
+//           </label>
+//         }
+
+//       </ul>
+//     </div>
+
+//   );
+// };
+
+// export default Navbar;
