@@ -1,4 +1,5 @@
 import React from "react";
+import Payment from "../../../../Payment/Payment";
 import Slider from "../../../Slider/Slider";
 import Banner from "../Banner/Banner";
 import RecommendedTopics from "../Card/RecommendedTopics";
@@ -14,6 +15,7 @@ const Home = () => {
       <RecommendedTopics></RecommendedTopics>
       <Slider></Slider>
       <QSN></QSN>
+      <Payment></Payment>
       <Contact></Contact>
     </div>
   );
