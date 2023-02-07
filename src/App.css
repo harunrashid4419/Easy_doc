@@ -1,3 +1,11 @@
+#light{
+  background-color: #fff;
+}
+#dark{
+  background-color: black;
+}
+
+
 .App {
   text-align: center;
 }

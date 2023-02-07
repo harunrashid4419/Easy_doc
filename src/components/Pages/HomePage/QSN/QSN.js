@@ -11,7 +11,7 @@ const QSN = () => {
           <div>
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-100 rounded-md shadow-2xl"
+              className="collapse collapse-plus border border-base-300 bg-neutral-content rounded-md shadow-2xl"
             >
               <div className="collapse-title text-xl font-medium">
                 What is React?
@@ -32,7 +32,7 @@ const QSN = () => {
           <div>
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-100 rounded-md shadow-2xl"
+              className="collapse collapse-plus border border-base-300 bg-neutral-content rounded-md shadow-2xl"
             >
               <div className="collapse-title text-xl font-medium">
                 Is React backend of frontend?
@@ -51,7 +51,7 @@ const QSN = () => {
           <div>
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-100 rounded-md shadow-2xl"
+              className="collapse collapse-plus border border-base-300 bg-neutral-content rounded-md shadow-2xl"
             >
               <div className="collapse-title text-xl font-medium">
                 What is the benefit of React ?
@@ -73,7 +73,7 @@ const QSN = () => {
           <div>
             <div
               tabIndex={0}
-              className="collapse collapse-plus border rounded-md shadow-2xl border-base-300 rounded-md shadow-2xl "
+              className="bg-neutral-content collapse collapse-plus border rounded-md shadow-2xl border-base-300 rounded-md shadow-2xl "
             >
               <div className="collapse-title text-xl font-medium">
                 Why React is important to learn ?
@@ -93,7 +93,7 @@ const QSN = () => {
           <div>
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-100 rounded-md shadow-2xl"
+              className="bg-neutral-content collapse collapse-plus border border-base-300 rounded-md shadow-2xl"
             >
               <div className="collapse-title text-xl font-medium">
                 Focus me to see content
@@ -106,7 +106,7 @@ const QSN = () => {
           <div>
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-100 rounded-md shadow-2xl"
+              className="collapse collapse-plus border border-base-300 bg-neutral-content rounded-md shadow-2xl"
             >
               <div className="collapse-title text-xl font-medium">
                 Focus me to see content

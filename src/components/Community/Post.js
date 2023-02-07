@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../../Context/UserContext";
+import { useTheme } from "../../hooks/useTheme";
 import ShowPost from "./ShowPost";
 
 const Post = () => {
   const { register, handleSubmit, reset } = useForm();
   const imageHostKey = "2ed74405c9982edbe45a4ac8ae219bfb";
   const { user } = useContext(AuthContext);
+  const { theme } = useTheme();
 
   const handlePost = (data) => {
     const image = data.file[0];
@@ -46,12 +48,16 @@ const Post = () => {
 
   return (
     <div>
-      <div className="bg-slate-50 p-5 rounded-3xl mb-5">
+      <div
+        className={`${
+          theme === "dark" ? "bg-[#2C303A]" : "bg-slate-50"
+        } p-5 rounded-3xl mb-5`}
+      >
         <h1 className="font-bold mb-5">Write you question here</h1>
         <div>
           <form onSubmit={handleSubmit(handlePost)}>
             <textarea
-              className="w-full mb-3 rounded-2xl p-2 border-2 outline-none bg-blue-100"
+              className={`w-full mb-3 rounded-2xl p-2 border-2 outline-none ${theme === 'dark' ? 'bg-white': 'bg-blue-100'}`}
               name=""
               {...register("userPost", { required: "text is required" })}
               id=""
@@ -73,7 +79,7 @@ const Post = () => {
           </form>
         </div>
       </div>
-      <ShowPost ></ShowPost>
+      <ShowPost></ShowPost>
     </div>
   );
 };
