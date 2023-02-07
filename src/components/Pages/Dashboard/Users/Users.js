@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { useTheme } from "../../../../hooks/useTheme";
 import SingleUser from "./SingleUser";
 
 const Users = () => {
+  const {theme} = useTheme();
   const { data: allusers = [], refetch } = useQuery({
     queryKey: ["allusers"],
     queryFn: async () => {
@@ -16,7 +18,7 @@ const Users = () => {
     <div className="mb-10">
       <h1 className="text-4xl my-12 text-center">All Users</h1>
       <div className="overflow-x-auto ">
-        <table className="table table-zebra w-full ">
+        <table className={`table table-zebra w-full ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
           <thead>
             <tr className="bg-violet-200">
               <th className="text-xl font-medium">Image</th>

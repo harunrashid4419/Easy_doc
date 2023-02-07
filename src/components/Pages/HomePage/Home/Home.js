@@ -4,10 +4,9 @@ import Banner from "../Banner/Banner";
 import RecommendedTopics from "../Card/RecommendedTopics";
 import Contact from "../Contact/Contact";
 import QSN from "../QSN/QSN";
-
+import SideBar from "../SideBar/SideBar";
 
 const Home = () => {
-
   return (
     <div>
       <Banner></Banner>
@@ -15,6 +14,7 @@ const Home = () => {
       <Slider></Slider>
       <QSN></QSN>
       <Contact></Contact>
+      <SideBar></SideBar>
     </div>
   );
 };

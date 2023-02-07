@@ -90,7 +90,7 @@ const Details = () => {
     <div className="container">
       <div className="main-blog-details">
         <div className="top-header">
-          <p>{post_date}</p>
+          <p className="text-base-content">{post_date}</p>
           <div className="share-icon">
             <Link>
               <FaFacebookF />
@@ -106,7 +106,7 @@ const Details = () => {
             </Link>
           </div>
         </div>
-        <h3>{title}</h3>
+        <h3 className="text-base-content">{title}</h3>
         <div className="author-details">
           <div className="flex items-center">
             <div>
