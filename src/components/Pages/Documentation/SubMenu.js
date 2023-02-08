@@ -59,7 +59,7 @@ const SubMenu = ({ subMenu }) => {
 
       {/* examples part start */}
       <h2 className="text-3xl font-semibold my-4">{examples?.heading}</h2>
-      <p className="text-xl my-4">{examples?.para1}</p>
+      <p className="text-xl my-4 text-primary">{examples?.para1}</p>
       <div className="border-l-8 border-dotted border-indigo-600 ml-20 space-y-4">
         {exampleAnswer &&
           exampleAnswer.map((answer, idx) => (
@@ -73,7 +73,11 @@ const SubMenu = ({ subMenu }) => {
           ))}
       </div>
       {codes && (
-        <div className={`${theme === 'dark' ? 'bg-[#242729]' : 'bg-[#242729]'} mockup-code`}>
+        <div
+          className={`${
+            theme === "dark" ? "bg-[#242729]" : "bg-[#242729]"
+          } mockup-code`}
+        >
           {codes &&
             codes.map((code, idx) => (
               <pre key={idx} className="text-gray-300">
