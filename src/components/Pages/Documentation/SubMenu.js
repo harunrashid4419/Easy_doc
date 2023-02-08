@@ -8,7 +8,7 @@ const SubMenu = ({ subMenu }) => {
   const howAnswer = how?.answer?.split("   ");
   const exampleAnswer = examples?.answer?.split("   ");
   const codes = examples?.code?.split("   ");
-  const {theme} = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div>
@@ -20,20 +20,20 @@ const SubMenu = ({ subMenu }) => {
       <h2 className="text-3xl my-4 font-semibold">{what?.subTitle}</h2>
       <div className="space-y-4 text-xl">
         {descriptions.map((dscrpson, idx) => (
-          <p key={idx}>{dscrpson}</p>
+          <p className="text-primary" key={idx}>{dscrpson}</p>
         ))}
       </div>
 
       {/* why part start */}
-      <h2 className="font-bold text-3xl mt-8 mb-4">{why?.question}</h2>
-      <p className="text-2xl my-4">{why?.para1}</p>
-      <div className="space-y-8 text-xl">
-        {whyAnswer && whyAnswer.map((answer, idx) => <p key={idx}>{answer}</p>)}
+      <h2 className="font-bold text-3xl mt-8 mb-4 text-base-content">{why?.question}</h2>
+      <p className="text-2xl my-4 text-base-content">{why?.para1}</p>
+      <div className="space-y-8 text-xl text-base-content">
+        {whyAnswer && whyAnswer.map((answer, idx) => <p className="text-primary" key={idx}>{answer}</p>)}
       </div>
 
       {/* how part start */}
       <h2 className="text-3xl font-semibold my-6">{how?.heading}</h2>
-      <p className="my-8">{how?.para1}</p>
+      <p className="my-8 text-primary">{how?.para1}</p>
       <div className="space-y-4">
         {howAnswer &&
           howAnswer.map((answer, idx) => (
@@ -49,7 +49,7 @@ const SubMenu = ({ subMenu }) => {
 
       {/* examples part start */}
       <h2 className="text-3xl font-semibold my-4">{examples?.heading}</h2>
-      <p className="text-xl my-4">{examples?.para1}</p>
+      <p className="text-xl my-4 text-primary">{examples?.para1}</p>
       <div className="border-l-8 border-dotted border-indigo-600 ml-20 space-y-4">
         {exampleAnswer &&
           exampleAnswer.map((answer, idx) => (
@@ -63,7 +63,11 @@ const SubMenu = ({ subMenu }) => {
           ))}
       </div>
       {codes && (
-        <div className={`${theme === 'dark' ? 'bg-[#242729]' : 'bg-[#242729]'} mockup-code`}>
+        <div
+          className={`${
+            theme === "dark" ? "bg-[#242729]" : "bg-[#242729]"
+          } mockup-code`}
+        >
           {codes &&
             codes.map((code, idx) => (
               <pre key={idx} className="text-gray-300">
