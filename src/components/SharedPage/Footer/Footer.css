@@ -1,14 +1,15 @@
-
-#footer-section{
+#footer-section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
-.social-icon{
+
+.social-icon {
     display: inline-flex;
     padding: 20px 0;
 }
-.social-icon a{
+
+.social-icon a {
     font-size: 22px;
     background-color: #494949;
     padding: 15px 15px;
@@ -16,20 +17,18 @@
     margin-left: 10px;
     transition: .8s;
 }
-.social-icon a:nth-child(1){
+
+.social-icon a:nth-child(1) {
     margin-left: 0px;
 }
-.social-icon a:hover{
+
+.social-icon a:hover {
     background-color: #D6D9DC;
     color: #6363FF;
 }
-#doc-content p{
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-#doc-content a{
+
+
+#doc-content a {
     transition: .8s;
     font-size: 16px;
     font-weight: 500;
@@ -37,47 +36,58 @@
     display: block;
     width: fit-content;
 }
-#doc-content a:hover{
+
+#doc-content a:hover {
     text-decoration: underline;
     color: #203BF0;
 }
-hr{
+
+hr {
     border-color: #2c303a;
 }
-.socket{
+
+.socket {
     display: flex;
     padding: 20px 0;
     justify-content: space-between;
 }
-.socket a, p{
+
+.socket a,
+/* p {
     color: #6b707f;
     transition: .5s;
-}
-.socket a:hover{
+} */
+
+.socket a:hover {
     text-decoration: underline;
     color: #203BF0;
 }
-.socket .knowledge{
+
+.socket .knowledge {
     margin-left: 20px;
 }
 
 @media screen and (max-width: 992px) {
-    #footer-section{
+    #footer-section {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
 }
+
 @media screen and (max-width: 576px) {
-    #footer-section{
+    #footer-section {
         grid-template-columns: repeat(1, 1fr);
     }
-    .socket{
+
+    .socket {
         display: block;
     }
-    .socket p{
+
+    .socket p {
         text-align: right;
     }
-    .socket-section{
+
+    .socket-section {
         margin-bottom: 10px;
     }
-} 
+}

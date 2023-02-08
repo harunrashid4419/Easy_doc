@@ -1,7 +1,5 @@
 import React from "react";
-import { FaThumbsDown, FaThumbsUp } from "react-icons/fa";
 import { useQuery } from "@tanstack/react-query";
-import { useForm } from "react-hook-form";
 import ShowSinglePost from "./ShowSinglePost";
 
 const ShowPost = () => {

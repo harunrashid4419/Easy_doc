@@ -37,7 +37,7 @@ const routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "blog",
+        path: "/blog",
         element: <Blog></Blog>,
         loader: () => fetch("https://easy-doc-server.vercel.app/blog"),
       },
@@ -58,9 +58,13 @@ const routes = createBrowserRouter([
         element: <Documentation></Documentation>,
         children: [
           {
+            path: "/documentation",
+            element: <IdWiseDataLoad></IdWiseDataLoad>,
+          },
+          {
             path: "/documentation/:id",
             element: <IdWiseDataLoad></IdWiseDataLoad>,
-            loader: async ({ params }) => await fetch(`https://easy-doc-server.vercel.app/menu/${params.id}`)
+            // loader: async ({ params }) => await fetch(`https://easy-doc-server.vercel.app/menu/${params.id}`)
           }
         ]
       },
