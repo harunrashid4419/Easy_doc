@@ -18,7 +18,11 @@ import Main from "../Layout/Main";
 import PrivateRoute from "./PrivateRoute";
 import AddBlog from "../components/Pages/Dashboard/AddBlog/AddBlog";
 import AdminRouter from "./AdminRouter";
+<<<<<<< HEAD
+import Courses from "../components/Pages/Courses/Courses";
+=======
 import ErrorElement from "../components/ErrorElement/ErrorElement";
+>>>>>>> main
 
 const routes = createBrowserRouter([
   {
@@ -37,6 +41,10 @@ const routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/courses",
+        element: <Courses></Courses>,
       },
       {
         path: "/blog",

@@ -26,38 +26,41 @@ const Navbar = () => {
     <div className={`${theme === 'dark' ? 'bg-black' : 'bg-[#7846E9]'} w-full`}>
       <div className="sticky container top-0 z-50 w-full h-[60px] flex justify-between items-center px-4  text-gray-300">
         <Link to="/" className="flex">
-          <img style={{ width: "40px" }} src={logo} alt="logo" />
-          <p className="text-2xl font-semibold text-white ml-1 mt-1">
+          <img style={{ width: "30px",hight: "30px" }} src={logo} alt="logo" />
+          <p className="text-2xl font-semibold text-white ml-1 mr-1 mt-1">
             Easy Doc
           </p>
         </Link>
 
         {/* menu */}
         <ul className="hidden md:flex items-center">
-          <li className="mr-5 mt-2">
+          <li className="mr-4 mt-2">
             <ThemeToggle />
           </li>
-          <li className="mr-5 hover:text-orange-500 transition-colors">
+          <li className="mr-4 hover:text-orange-500 transition-colors">
             <Link to="/">Home</Link>
           </li>
-          <li className="mr-5 hover:text-orange-500 transition-colors">
-            <Link to="/documentation">Doc</Link>
+          <li className="mr-4 hover:text-orange-500 transition-colors">
+            <Link to="/documentation">Documentation</Link>
           </li>
-          <li className="mr-5 hover:text-orange-500 transition-colors">
+          <li className="mr-4 hover:text-orange-500 transition-colors">
             <Link to="/community">Community</Link>
           </li>
-          <li className="mr-5 hover:text-orange-500 transition-colors">
+          <li className="mr-4 hover:text-orange-500 transition-colors">
             <Link to="/blog">Blog</Link>
           </li>
-          <li className="mr-5 hover:text-orange-500 transition-colors">
+          <li className="mr-4 hover:text-orange-500 transition-colors">
+            <Link to="/courses">Courses</Link>
+          </li>
+          <li className="mr-4 hover:text-orange-500 transition-colors">
             <Link to="/">Contact</Link>
           </li>
           {user?.uid ? (
             <>
-              <li className="mr-5 hover:text-orange-500 transition-colors">
+              <li className="mr-4 hover:text-orange-500 transition-colors">
                 <Link to="/dashboard">Dashboard</Link>
               </li>
-              <li className="mr-5 hover:text-orange-500 transition-colors">
+              <li className="mr-4 hover:text-orange-500 transition-colors">
                 <button
                   className="btn btn-warning btn-xs md:btn-sm"
                   onClick={handleLogOut}
@@ -107,6 +110,9 @@ const Navbar = () => {
           </li>
           <li className="py-6 text-4xl">
             <Link to="/">Blog</Link>
+          </li>
+          <li className="py-6 text-4xl">
+            <Link to="/">Courses</Link>
           </li>
           <li className="py-6 text-4xl">
             <Link to="/">Contact</Link>
