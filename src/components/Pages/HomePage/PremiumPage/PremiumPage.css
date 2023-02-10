@@ -1,0 +1,62 @@
+.premium-section{
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+}
+.premium-section .premium{
+    width: 60%;
+    margin: 0 20px;
+    padding: 30px 0;
+    border-radius: 10px;
+}
+.premium-section .premium h2{
+    font-size: 32px;
+    text-align: center;
+    margin: 10px 0;
+}
+.premium-section .premium h1{
+    font-size: 32px;
+    text-align: center;
+}
+.premium-section .premium .price{
+    background-color: green;
+    padding: 10px 0;
+}
+.premium-section .premium .price p{
+    text-align: center;
+}
+.premium-section .premium-action{
+    margin: 30px 0;
+}
+.premium-section .premium-action p{
+    border-bottom: 1px solid black;
+    width: fit-content;
+    margin: 15px auto;
+}
+.premium-section .premium button{
+    background-color: #355BC0;
+    padding: 8px 30px;
+    border-radius: 3px;
+    transition: .5s;
+}
+.premium-section .premium button:hover{
+    opacity: 70%;
+}
+
+@media screen and (max-width: 992px) {
+    .premium-section{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 776px) {
+    .premium-section{
+        width: 100%;
+        margin-top: 30px;
+    }
+    .premium-section .premium {
+        width: 100%;
+        margin: 0 20px;
+        padding: 30px 0;
+        border-radius: 10px;
+    }
+}
