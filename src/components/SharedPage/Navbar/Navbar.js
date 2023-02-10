@@ -50,7 +50,7 @@ const Navbar = () => {
             <Link to="/blog">Blog</Link>
           </li>
           <li className="mr-5 hover:text-orange-500 transition-colors">
-            <Link to="/">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
           {user?.uid ? (
             <>

@@ -109,7 +109,7 @@
         "subMenu": [
             {
                 "id": "06",
-                "subMenuTitle": "syntax errro",
+                "subMenuTitle": "syntax error",
                 "what": {
                     "title": "Syntax Error",
                     "description": "During the syntax analysis phase, this type of error appears. Syntax error is found during the execution of the program.   Some syntax error can be:   Error in structure   Missing operators   Unbalanced parenthesis"

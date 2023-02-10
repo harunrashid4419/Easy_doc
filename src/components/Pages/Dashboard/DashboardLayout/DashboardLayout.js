@@ -14,7 +14,7 @@ const DashboardLayout = () => {
       <Navbar></Navbar>
       <section className="flex md:w-4/5 lg:w-full w-4/5">
         <div
-          className={`bg-violet-500 min-h-screen ${
+          className={`bg-violet-400 min-h-screen ${
             open ? "md:w-72 lg:w-72 w-12" : "lg:w-72 md:w-72 w-12"
           } duration-500 text-gray-100 px-4`}
         >
@@ -47,11 +47,11 @@ const DashboardLayout = () => {
                 </h2>
               </Link>
             ))} */}
-            {isAdmin && <Link to="/dashboard/users">All User</Link>}
-            <Link to="/dashboard/addBlog">Add Blog</Link>
+            {isAdmin && <Link className='text-black' to="/dashboard/users">All User</Link>}
+            <Link className='text-black' to="/dashboard/addBlog">Add Blog</Link>
           </div>
         </div>
-        <div className="text-xl w-full  text-gray-900 font-semibold border-violet-200">
+        <div className="text-xl w-full  text-gray-900 font-semibold">
           <Outlet></Outlet>
         </div>
       </section>
