@@ -18,11 +18,13 @@ import Main from "../Layout/Main";
 import PrivateRoute from "./PrivateRoute";
 import AddBlog from "../components/Pages/Dashboard/AddBlog/AddBlog";
 import AdminRouter from "./AdminRouter";
+import ErrorElement from "../components/ErrorElement/ErrorElement";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorElement></ErrorElement>,
     children: [
       {
         path: "/",
