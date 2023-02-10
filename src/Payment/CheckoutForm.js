@@ -42,7 +42,7 @@ function CheckoutFrom() {
             return
           }
 
-          const {error, paymentMethod} = await stripe.createPaymentMethod({
+          const {error} = await stripe.createPaymentMethod({
              type: 'card',
              card
           });

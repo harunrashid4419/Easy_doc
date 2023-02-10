@@ -8,7 +8,6 @@
   margin: 0 auto;
   padding: 0 50px;
 }
-
 @media screen and (max-width: 776px) {
   .container{
     padding: 0 30px;
