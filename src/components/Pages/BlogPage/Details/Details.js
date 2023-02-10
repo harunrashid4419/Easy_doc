@@ -129,13 +129,13 @@ const Details = () => {
           </div>
         </div>
         <img src={img} alt="blog-img" />
-        <p>{description}</p>
-        <h5>{structure}</h5>
-        <p>{structure_explain}</p>
-        <h5>{first_title}</h5>
-        <p>{first_pera}</p>
-        <h5>{second_title}</h5>
-        <p>{second_pera}</p>
+        <p className="text-primary">{description}</p>
+        <h5 className="text-base-content">{structure}</h5>
+        <p className="text-base-content">{structure_explain}</p>
+        <h5 className="text-base-content">{first_title}</h5>
+        <p className="text-primary">{first_pera}</p>
+        <h5 className="text-base-content">{second_title}</h5>
+        <p className="text-primary">{second_pera}</p>
         <div className="comment-section">
           <h2>Comment</h2>
           <form onSubmit={handleCommentSubmit}>
