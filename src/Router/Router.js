@@ -18,6 +18,7 @@ import Main from "../Layout/Main";
 import PrivateRoute from "./PrivateRoute";
 import AddBlog from "../components/Pages/Dashboard/AddBlog/AddBlog";
 import AdminRouter from "./AdminRouter";
+import Courses from "../components/Pages/Courses/Courses";
 
 const routes = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/courses",
+        element: <Courses></Courses>,
       },
       {
         path: "/blog",

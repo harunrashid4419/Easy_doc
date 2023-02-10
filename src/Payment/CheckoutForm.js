@@ -2,6 +2,7 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import React, { useContext } from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
+import { toast } from 'react-hot-toast';
 import { AuthContext } from '../Context/UserContext';
 
 
@@ -72,8 +73,29 @@ function CheckoutFrom() {
             return;
           }
           if(paymentIntent.status === "succeeded"){
-            setSuccess('Congrats! your payment completed');
-            setTransactionId(paymentIntent.id);
+            
+            const payment ={
+               price,
+               transactionId:paymentIntent.id,
+               email: user?.email
+            }
+            fetch('http://localhost:5000/payments', {
+              method: 'POST',
+              headers:{
+                'content-type' : 'application/json',
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+              },
+              body: JSON.stringify(payment)
+            })
+            .then(res => res.json())
+            .then(data => {
+               if(data.insertedId){
+                setSuccess('Congrats! your payment completed');
+                setTransactionId(paymentIntent.id);
+                toast.success('payment Successful')
+                event.reset()
+               }
+            })
             
           }
           setProcessing(false);
