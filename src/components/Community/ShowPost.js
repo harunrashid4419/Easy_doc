@@ -1,11 +1,8 @@
 import React from "react";
-import { FaThumbsDown, FaThumbsUp } from "react-icons/fa";
 import { useQuery } from "@tanstack/react-query";
-import { useForm } from "react-hook-form";
 import ShowSinglePost from "./ShowSinglePost";
 
 const ShowPost = () => {
-  
   const { data: allpost = [] } = useQuery({
     queryKey: ["post"],
     queryFn: async () => {
@@ -15,17 +12,16 @@ const ShowPost = () => {
     },
   });
 
-
   return (
- <div>
-  {
-    allpost.map(singlePost => <ShowSinglePost
-    key={singlePost._id}
-    singlePost={singlePost}
-    ></ShowSinglePost>)
-  }
-
-</div>         
-)};
+    <div>
+      {allpost.map((singlePost) => (
+        <ShowSinglePost
+          key={singlePost._id}
+          singlePost={singlePost}
+        ></ShowSinglePost>
+      ))}
+    </div>
+  );
+};
 
 export default ShowPost;

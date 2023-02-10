@@ -19,11 +19,13 @@ import PrivateRoute from "./PrivateRoute";
 import AddBlog from "../components/Pages/Dashboard/AddBlog/AddBlog";
 import AdminRouter from "./AdminRouter";
 import Contact from "../components/Pages/Contact/Contact";
+import ErrorElement from "../components/ErrorElement/ErrorElement";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorElement></ErrorElement>,
     children: [
       {
         path: "/",
@@ -63,9 +65,13 @@ const routes = createBrowserRouter([
         element: <Documentation></Documentation>,
         children: [
           {
+            path: "/documentation",
+            element: <IdWiseDataLoad></IdWiseDataLoad>,
+          },
+          {
             path: "/documentation/:id",
             element: <IdWiseDataLoad></IdWiseDataLoad>,
-            loader: async ({ params }) => await fetch(`https://easy-doc-server.vercel.app/menu/${params.id}`)
+            // loader: async ({ params }) => await fetch(`https://easy-doc-server.vercel.app/menu/${params.id}`)
           }
         ]
       },

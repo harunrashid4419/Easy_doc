@@ -5,16 +5,19 @@ import {
   FaCommentDots,
   FaLongArrowAltDown,
   FaLongArrowAltUp,
+  FaUserAlt,
 } from "react-icons/fa";
 import { useQuery } from "@tanstack/react-query";
 
 import { AuthContext } from "../../Context/UserContext";
+import { useTheme } from "../../hooks/useTheme";
 
 function ShowSinglePost({ singlePost }) {
   const { image, img, name, post, _id } = singlePost;
   const { register, handleSubmit, reset } = useForm();
   const [commentBox, setCommentBox] = useState("hidden");
   const { user } = useContext(AuthContext);
+  const { theme } = useTheme();
 
   const handlecomment = (data) => {
     const userComment = {
@@ -60,13 +63,21 @@ function ShowSinglePost({ singlePost }) {
 
   return (
     <div>
-      <div className="my-5 p-5 bg-slate-100">
+      <div
+        className={`my-5 p-5 ${
+          theme === "dark" ? "bg-[#2C303A]" : "bg-slate-100"
+        }`}
+      >
         <div className="flex items-center mb-5">
-          <img className="rounded-full w-10 h-10 mr-5" src={image} alt="" />
-          <p className="font-bold text-black">{name}</p>
+          {image ? (
+            <img className="rounded-full w-10 h-10 mr-5" src={image} alt="" />
+          ) : (
+            <FaUserAlt className="w-10 h-10 mr-5 text-primary" />
+          )}
+          <span className="font-bold text-primary">{name}</span>
         </div>
         <div className="mb-5">
-          <p className="mb-5">{post}</p>
+          <p className="mb-5 text-primary">{post}</p>
           <img className="w-1/2 m-auto" src={img} alt="imgloading.." />
         </div>
         <div className="mt-9">
@@ -81,18 +92,23 @@ function ShowSinglePost({ singlePost }) {
             color="green"
           />
           {userComment.map((allcomment) => (
-            <div key={allcomment._id} className="mb-5 bg-white rounded-2xl">
-              <div>
+            <div key={allcomment._id} className="mb-5 bg-white rounded-2xl p-5">
+              <div className="flex items-center text-black">
                 {/* whoever answer will show his picture here */}
-                <img
-                  className="rounded-full w-10 h-10 mr-5"
-                  src={allcomment?.userPhoto}
-                  alt=""
-                />
+                {allcomment?.userPhoto ? (
+                  <img
+                    className="rounded-full w-10 h-10 mr-5"
+                    src={allcomment?.userPhoto}
+                    alt=""
+                  />
+                ) : (
+                  <FaUserAlt className="w-10 h-10 mr-5" />
+                )}
+
                 {/* whoever answer will show his name here */}
                 <p className="font-bold text-black">{allcomment?.userName}</p>
               </div>
-              <p className="text-black  p-2 ">{allcomment.userComment}</p>
+              <p className="text-black  p-2  mt-5">{allcomment.userComment}</p>
               <div className="flex mt-2 p-2 pb-5">
                 <button className="inline-block">
                   <FaLongArrowAltUp className=" text-blue-600 mr-1"></FaLongArrowAltUp>
@@ -124,7 +140,7 @@ function ShowSinglePost({ singlePost }) {
               className="input input-sm sm:input-md input-bordered w-full rounded-badge"
             />
             <button
-              className="btn btn-sm sm:btn-md btn-primary rounded-badge"
+              className="btn btn-sm sm:btn-md btn-primary rounded-badge text-base-100"
               type="submit"
             >
               Send

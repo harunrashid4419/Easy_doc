@@ -5,13 +5,12 @@ import { FaUserAlt } from "react-icons/fa";
 
 const Blog = () => {
   const blogs = useLoaderData();
-
   return (
     <div className="container">
       <div className="main-blog">
         {blogs.map((blog) => (
           <div key={blog._id}>
-            <div className="blog-section">
+            <div className="blog-section bg-neutral-content">
               <Link to={`/details/${blog._id}`}>
                 <img src={blog.img} alt="blog-img" />
               </Link>

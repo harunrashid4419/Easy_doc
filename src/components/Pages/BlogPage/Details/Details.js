@@ -90,7 +90,7 @@ const Details = () => {
     <div className="container">
       <div className="main-blog-details">
         <div className="top-header">
-          <p>{post_date}</p>
+          <p className="text-base-content">{post_date}</p>
           <div className="share-icon">
             <Link>
               <FaFacebookF />
@@ -106,7 +106,7 @@ const Details = () => {
             </Link>
           </div>
         </div>
-        <h3>{title}</h3>
+        <h3 className="text-base-content">{title}</h3>
         <div className="author-details">
           <div className="flex items-center">
             <div>
@@ -129,13 +129,13 @@ const Details = () => {
           </div>
         </div>
         <img src={img} alt="blog-img" />
-        <p>{description}</p>
-        <h5>{structure}</h5>
-        <p>{structure_explain}</p>
-        <h5>{first_title}</h5>
-        <p>{first_pera}</p>
-        <h5>{second_title}</h5>
-        <p>{second_pera}</p>
+        <p className="text-primary">{description}</p>
+        <h5 className="text-base-content">{structure}</h5>
+        <p className="text-base-content">{structure_explain}</p>
+        <h5 className="text-base-content">{first_title}</h5>
+        <p className="text-primary">{first_pera}</p>
+        <h5 className="text-base-content">{second_title}</h5>
+        <p className="text-primary">{second_pera}</p>
         <div className="comment-section">
           <h2>Comment</h2>
           <form onSubmit={handleCommentSubmit}>
