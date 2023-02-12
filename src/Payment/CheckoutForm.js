@@ -20,7 +20,7 @@ function CheckoutFrom() {
      const price = 2;
 
      useEffect(() =>{
-        fetch("http://localhost:5000/create-payment-intent",{
+        fetch("https://easy-doc-server.vercel.app/create-payment-intent",{
           method: "POST",
           headers: {
             "Content-Type" : "application/json",
@@ -79,7 +79,7 @@ function CheckoutFrom() {
                transactionId:paymentIntent.id,
                email: user?.email
             }
-            fetch('http://localhost:5000/payments', {
+            fetch('https://easy-doc-server.vercel.app/payments', {
               method: 'POST',
               headers:{
                 'content-type' : 'application/json',
