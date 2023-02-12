@@ -72,12 +72,12 @@ function ShowSinglePost({ singlePost }) {
           {image ? (
             <img className="rounded-full w-10 h-10 mr-5" src={image} alt="" />
           ) : (
-            <FaUserAlt className="w-10 h-10 mr-5" />
+            <FaUserAlt className="w-10 h-10 mr-5 text-primary" />
           )}
-          <span className="font-bold text-black">{name}</span>
+          <span className="font-bold text-primary">{name}</span>
         </div>
         <div className="mb-5">
-          <p className="mb-5">{post}</p>
+          <p className="mb-5 text-primary">{post}</p>
           <img className="w-1/2 m-auto" src={img} alt="imgloading.." />
         </div>
         <div className="mt-9">
@@ -93,7 +93,7 @@ function ShowSinglePost({ singlePost }) {
           />
           {userComment.map((allcomment) => (
             <div key={allcomment._id} className="mb-5 bg-white rounded-2xl p-5">
-              <div className="flex items-center">
+              <div className="flex items-center text-black">
                 {/* whoever answer will show his picture here */}
                 {allcomment?.userPhoto ? (
                   <img

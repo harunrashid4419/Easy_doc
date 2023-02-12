@@ -19,11 +19,14 @@ import AddBlog from "../components/Pages/Dashboard/AddBlog/AddBlog";
 import AdminRouter from "./AdminRouter";
 import Interview from "../components/Pages/Documentation/Interview";
 import Error from "../components/Pages/Documentation/Error";
+import Courses from "../components/Pages/Courses/Courses";
+import ErrorElement from "../components/ErrorElement/ErrorElement";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorElement></ErrorElement>,
     children: [
       {
         path: "/",
@@ -36,6 +39,10 @@ const routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/courses",
+        element: <Courses></Courses>,
       },
       {
         path: "/blog",

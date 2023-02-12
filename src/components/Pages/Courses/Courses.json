@@ -1,0 +1,26 @@
+[
+     {
+          "coursesName": "Fundamental React",
+          "price": "90",
+          "img" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fmozumderneaz-9445.medium.com%2Ffundamental-react-js-b6c97da4ce2a&psig=AOvVaw3EHjHN8OWectGT_KJhn6RX&ust=1676121669979000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMDRjviFi_0CFQAAAAAdAAAAABAE",
+          "participant" : "2,000",
+          "heading" : "Learn the Fundamentals of React Build Dynamic User Interfaces",
+          "fullderscription" : "Discover the power of React, the popular JavaScript library for building user interfaces. In this course, you'll learn the fundamental concepts and techniques of React, including components, state and props, event handling, and more. Gain hands-on experience by building real-world applications and bring your ideas to life. Join now and become a confident React developer."
+     },
+     {
+          "coursesName" : "Explore deeply react custom hooks.",
+          "img" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcodersociety.com%2Fblog%2Farticles%2Freact-hooks&psig=AOvVaw1qiYey-RFwGAElTKV97-Rp&ust=1676121577640000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIDk98yFi_0CFQAAAAAdAAAAABAE",
+          "price" : "120",
+          "participant" : "1,950",
+          "heading" : "Dive Deep into React Custom Hooks Streamline Your Code.",
+          "fullderscription" : "Take your React skills to the next level with custom hooks. In this course, you'll explore the concept of custom hooks in-depth and learn how to use them to streamline your code. From state management to side effects, you'll discover how to create custom hooks that can be reused across your projects. Enhance your development skills and improve your efficiency with this comprehensive guide to React custom hooks."
+     },
+     {
+          "coursesName" : "React advanced topics",
+          "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXK-iaILeHgxRz5FYqeTCAJM2e7A9YS2FL3Q&usqp=CAU",
+          "price" : "190",
+          "participant" : "3,900",
+          "heading" : "Master React Advanced Topics Take Your Skills to the Next Level.",
+          "fullderscription" : "Elevate your React skills and dive into the advanced topics of this powerful JavaScript library. In this course, you'll explore advanced concepts such as performance optimization, advanced state management, server-side rendering, and more. Learn how to use React in real-world applications and bring your ideas to life. Join now and become a React expert."
+     }
+]
