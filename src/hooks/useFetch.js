@@ -1,36 +1,25 @@
+import axios from "axios";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { ERROR, SUCCESS } from "../redux/actionTypes/actionTypes";
 
-import { useQuery } from "@tanstack/react-query";
-import { useContext } from "react";
-import { AuthContext } from "../Context/UserContext";
 
+const useFetch = (url) => {
+    const state = useSelector((state) => state);
+    const { loading, data, error } = state;
+    const dispatch = useDispatch();
+    useEffect(() => {
+        axios.get(url)
+            .then(res => {
+                dispatch({ type: SUCCESS, result: res.data })
+            })
+            .catch(err => dispatch({ type: ERROR }))
 
-const useFetch = (url, query) => {
-    console.log(query);
-    const { data, isLoading, refetch } = useQuery({
-        queryKey: [query],
-        queryFn: async () => {
-            const res = await fetch(url);
-            const data = await res.json();
-            return data
-        }
-    })
-    return { data, isLoading, refetch }
+    }, [url])
+    return { data, loading, error }
 
 }
 
 export default useFetch;
 
 // How to fetch data with axios
-// useEffect(() => {
-//     setLoading(true);
-//     axios.get(url)
-//         .then(res => {
-//             setData(res?.data);
-//         })
-//         .catch(err => setError(err))
-//         .finally(() => {
-//             setLoading(false);
-//         })
-
-// }, [url])
-// return { data, loading, error }
