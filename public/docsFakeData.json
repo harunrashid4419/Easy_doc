@@ -1,208 +1,113 @@
 [
     {
         "id": "01",
-        "menuTitle": "Common Interview Questions",
-        "what": {
-            "title": "Interview Questions",
-            "description": "An interview is a structured conversation where one participant asks questions, and the other provides answers. In common parlance, the word interview refers to a one-on-one conversation between an interviewer and an interviewee."
-        },
-        "why": {
-            "question": "Why is preparation important for interview ?",
-            "answer": "Being invited to an interview means that your application must have made a good impression. An interview is a discussion between you and an employer to find out if you can do the job. You need to prepare yourself for the interview to make sure that you are successful."
-        },
-        "tips": {
-            "heading": "10 things you should never do in a job interview",
-            "list": "1. Be Negetive   It's never a good idea to be critical towards past employers you may have had. Negativity towards previous experiences does not reflect poorly on the organization, but on you. Always be optimistic about past challenges you’ve faced and what you learned from those experiences.   2. Show your nerves   It’s normal to feel nervous during an interview, especially if you’ve been preparing for a while. However coming across as too nervous may be interpreted by the interviewer as you needing to work on the interpersonal skills necessary to thrive in the work environments—be that with other students in the lab or customers for the company. This doesn’t mean you need to be an extrovert—just be confident in yourself and your answers.   3. Lie about anything   It can be tempting to overstate your experience to make you seem more qualified than you are, especially when you feel trapped in a perpetual I need experience to get experience cycle. But exaggerating your qualifications is never a good idea. The risks from doing a job you aren't qualified for is harmful to yourself and others. Some other ways of getting out of this cycle can include volunteering to gain necessary skills, doing workshops, or even taking a course to diversify your skill set!   4. Be arrogant   Don’t get me wrong, it’s important to be confident and enthusiastic during an interview, but appearing arrogant is usually a downfall. There is a fine line between bragging and being confident. No matter how qualified you think you are for the position, nobody owes you the job so stay humble, be respectful, and make sure to thank your interviewer for their time and the opportunity to interview for the position.   5. Dress too casually   While you don’t need to wear a suit and tie to interview at a lab (typically), it's important to present yourself professionally. So no leggings or sweats, no messy hair, and please don’t wear running shoes. How you present yourself reflects on your cleanliness, organization, and work ethic. It shows your interviewer that you're taking this seriously.   6. Show up late   This one speaks for itself. Remember, 10 minutes early is on time. Don’t forget to double-check your interview time and location, and make sure you review how to get there on Google Maps.   7. Leave them hanging   Often at the end of an interview, you'll be asked if you have any questions. Never say (No) This is a great time not only to ask questions about the position and the organization, but also to ask them about the timeline for the (potential) hiring process, reaffirm how qualified and passionate you are, and of course ask any other questions. Don’t forget to thank them for the interview!   8. Display bad body language   Body language is a big reflection of your entire attitude and what you think of the people you're with and the place you're in. Be sure to sit up straight, and make eye contact. Slouching, as well as fiddling around, could show that you’re nervous, uninterested, or arrogant.   9. Forget to do your homework   Make sure you know the position you're applying for through and through. Be ready to talk about how your skills, experience, and attitude fulfill the values and requirements of the position. Make sure you have evidence to back up the fact that you are the one for the job.   10. Ramble on   Although it's important to answer the question with more than one-word responses, rambling on and on for minutes is not recommended. Gather your thoughts and try to articulate them clearly so the interviewer gets the point. Rambling loses their interest and can make them think you don't know what you're talking about. If you feel like you're rambling, stop yourself and ask the interviewer to repeat the question. This will help you get back on track. You could also ask if your response answers their question and they may take the opportunity to elaborate and redirect you."
-        },
-        "subMenu": [
+        "category": "interview",
+        "title": "Interview Preperation & Tips",
+        "titleSummury": "An interview is a structured conversation where one participant asks questions, and the other provides answers. In common parlance, the word interview refers to a one-on-one conversation between an interviewer and an interviewee.",
+        "question": "Why is preparation important for interview ?",
+        "answer": "Being invited to an interview means that your application must have made a good impression. An interview is a discussion between you and an employer to find out if you can do the job. You need to prepare yourself for the interview to make sure that you are successful.",
+        "tipsTitle": "10 things you should never do in a job interview",
+        "allTips": "1. Be Negetive   It's never a good idea to be critical towards past employers you may have had. Negativity towards previous experiences does not reflect poorly on the organization, but on you. Always be optimistic about past challenges you’ve faced and what you learned from those experiences.   2. Show your nerves   It’s normal to feel nervous during an interview, especially if you’ve been preparing for a while. However coming across as too nervous may be interpreted by the interviewer as you needing to work on the interpersonal skills necessary to thrive in the work environments—be that with other students in the lab or customers for the company. This doesn’t mean you need to be an extrovert—just be confident in yourself and your answers.   3. Lie about anything   It can be tempting to overstate your experience to make you seem more qualified than you are, especially when you feel trapped in a perpetual I need experience to get experience cycle. But exaggerating your qualifications is never a good idea. The risks from doing a job you aren't qualified for is harmful to yourself and others. Some other ways of getting out of this cycle can include volunteering to gain necessary skills, doing workshops, or even taking a course to diversify your skill set!   4. Be arrogant   Don’t get me wrong, it’s important to be confident and enthusiastic during an interview, but appearing arrogant is usually a downfall. There is a fine line between bragging and being confident. No matter how qualified you think you are for the position, nobody owes you the job so stay humble, be respectful, and make sure to thank your interviewer for their time and the opportunity to interview for the position.   5. Dress too casually   While you don’t need to wear a suit and tie to interview at a lab (typically), it's important to present yourself professionally. So no leggings or sweats, no messy hair, and please don’t wear running shoes. How you present yourself reflects on your cleanliness, organization, and work ethic. It shows your interviewer that you're taking this seriously.   6. Show up late   This one speaks for itself. Remember, 10 minutes early is on time. Don’t forget to double-check your interview time and location, and make sure you review how to get there on Google Maps.   7. Leave them hanging   Often at the end of an interview, you'll be asked if you have any questions. Never say (No) This is a great time not only to ask questions about the position and the organization, but also to ask them about the timeline for the (potential) hiring process, reaffirm how qualified and passionate you are, and of course ask any other questions. Don’t forget to thank them for the interview!   8. Display bad body language   Body language is a big reflection of your entire attitude and what you think of the people you're with and the place you're in. Be sure to sit up straight, and make eye contact. Slouching, as well as fiddling around, could show that you’re nervous, uninterested, or arrogant.   9. Forget to do your homework   Make sure you know the position you're applying for through and through. Be ready to talk about how your skills, experience, and attitude fulfill the values and requirements of the position. Make sure you have evidence to back up the fact that you are the one for the job.   10. Ramble on   Although it's important to answer the question with more than one-word responses, rambling on and on for minutes is not recommended. Gather your thoughts and try to articulate them clearly so the interviewer gets the point. Rambling loses their interest and can make them think you don't know what you're talking about. If you feel like you're rambling, stop yourself and ask the interviewer to repeat the question. This will help you get back on track. You could also ask if your response answers their question and they may take the opportunity to elaborate and redirect you."
+    },
+    {
+        "id": "02",
+        "category": "interview",
+        "title": "Tell me about yourself?",
+        "titleSummury": "This is firest question of an interview. And you must prepare for this question before. You can great impact by answerings this question beautifylly",
+        "subTitle": "How To Answer the “Tell Me About Yourself” Interview Question",
+        "subTitleSummury": "“Tell me about yourself” might seem like an easy win of an interview question—after all, you know all about yourself! And good thing, too, because it’s often the very first thing an interviewer will ask you to do—whether you’re having a preliminary phone screen, speaking to your prospective boss, or sitting down with the CEO during the final round.   But responding to this invitation to talk about yourself in the context of a job interview can feel stressful and complicated. You might be thinking: Um, what do you want to know? Should I give you the biopic synopsis of my workplace drama complete with ideal casting?   Your interviewer doesn’t need to know you envision Zendaya playing you in the imagined movie adaptation of your life. But you can and should prepare in advance so you can use this common opening prompt to your advantage, setting the stage for a successful interview.",
+        "question": "Why interviewers ask you to “Tell me about yourself” ?",
+        "answer": "As with any interview question, the key to crafting an impressive answer is understanding why people are asking in the first place.   “It lets them ease into the actual interviewing,” says leadership development coach Alina Campos, founder of Rising. “Often when the conversation starts it’s a lot of small talk and it’s a way to transition into it,” especially for less seasoned recruiters or hiring managers. “The interviewee’s nervous but the interviewer’s trying to get their bearings [too].”   This question is also a great starting point that can help inform the direction of the interview, says Muse career coach and BetterWorks Labs founder Al Dea: “Depending on what you say it’s going to help them figure out the next question,” which might help start a chain effect of follow-up questions, lend an easy flow to the conversation, and help recruiters and hiring managers accomplish one of their major goals in the hiring process: getting to know you.   If you answer it well, the interviewers will begin to find out why you’re the best candidate for this job, in terms of hard skills and experience as well as soft skills. It’s a great opportunity to demonstrate that you can communicate clearly and effectively, connect with and react to other humans, and present yourself professionally.",
+        "howTitle": "How to answer “Tell me about yourself”",
+        "howTitleSummury1": "1. Remember this is often your first impression, and it matters.   “We really only have one chance to make a first impression,” says Muse career coach and recruiter Steven Davis. “My opinion is that most hiring decisions are made in the first minute,” which includes your greeting, handshake, eye contact, and the first thing you say, which may very well be your response to “Tell me about yourself.”   Even if the powers that be aren’t making an irreversible determination shortly after the conversation begins, a first impression can color the rest of the interview. If you have to spend the rest of the time making up for a bad opening, you’re in a very different position than if you gave a succinct, confident, and relevant answer right off the bat.   “Be prepared for this question and show interviewers you prepared for it,” Campos says. “The confidence that comes across in this is a really good place to start from.”   2. Keep it professional.   As you know by now, this question carries an invisible addendum: “as it’s relevant to this role and company.” So you’re best off keeping your answer professional. The norm in some countries might be to share personal details at this point, Wascovich says, but in the U.S. you should avoid talking about your family and hobbies, for instance, unless you know something very specific about the company that would lead you to believe otherwise.   3. Know your audience.   Learning about the company you're interviewing with ahead of time is crucial. You can tailor your answer to focus on where you align with the company culture and be able to ask more informed questions at the end of the interview.   4. Highlight your personality   Mentioning that you quilt or play chess reveals more about you than just what you do in your spare time, it shows a part of your personality. Interactive roles like volunteer work or being a part of a softball team demonstrate that you are friendly and are able to communicate well with others. ",
+        "exampleTitle": "Here are some examples",
+        "exampleAnswers": [
             {
-                "id": "02",
-                "subMenuTitle": "Tell me about yourself?",
-                "what": {
-                    "title": "How To Answer the “Tell Me About Yourself” Interview Question",
-                    "description": "“Tell me about yourself” might seem like an easy win of an interview question—after all, you know all about yourself! And good thing, too, because it’s often the very first thing an interviewer will ask you to do—whether you’re having a preliminary phone screen, speaking to your prospective boss, or sitting down with the CEO during the final round.   But responding to this invitation to talk about yourself in the context of a job interview can feel stressful and complicated. You might be thinking: Um, what do you want to know? Should I give you the biopic synopsis of my workplace drama complete with ideal casting?   Your interviewer doesn’t need to know you envision Zendaya playing you in the imagined movie adaptation of your life. But you can and should prepare in advance so you can use this common opening prompt to your advantage, setting the stage for a successful interview."
-                },
-                "why": {
-                    "question": "Why interviewers ask you to “Tell me about yourself” ?",
-                    "answer": "As with any interview question, the key to crafting an impressive answer is understanding why people are asking in the first place.   “It lets them ease into the actual interviewing,” says leadership development coach Alina Campos, founder of Rising. “Often when the conversation starts it’s a lot of small talk and it’s a way to transition into it,” especially for less seasoned recruiters or hiring managers. “The interviewee’s nervous but the interviewer’s trying to get their bearings [too].”   This question is also a great starting point that can help inform the direction of the interview, says Muse career coach and BetterWorks Labs founder Al Dea: “Depending on what you say it’s going to help them figure out the next question,” which might help start a chain effect of follow-up questions, lend an easy flow to the conversation, and help recruiters and hiring managers accomplish one of their major goals in the hiring process: getting to know you.   If you answer it well, the interviewers will begin to find out why you’re the best candidate for this job, in terms of hard skills and experience as well as soft skills. It’s a great opportunity to demonstrate that you can communicate clearly and effectively, connect with and react to other humans, and present yourself professionally."
-                },
-                "how": {
-                    "heading": "4 more tips for answering “Tell me about yourself”",
-                    "answer": "1. Remember this is often your first impression, and it matters.   “We really only have one chance to make a first impression,” says Muse career coach and recruiter Steven Davis. “My opinion is that most hiring decisions are made in the first minute,” which includes your greeting, handshake, eye contact, and the first thing you say, which may very well be your response to “Tell me about yourself.”   Even if the powers that be aren’t making an irreversible determination shortly after the conversation begins, a first impression can color the rest of the interview. If you have to spend the rest of the time making up for a bad opening, you’re in a very different position than if you gave a succinct, confident, and relevant answer right off the bat.   “Be prepared for this question and show interviewers you prepared for it,” Campos says. “The confidence that comes across in this is a really good place to start from.”   2. Keep it professional.   As you know by now, this question carries an invisible addendum: “as it’s relevant to this role and company.” So you’re best off keeping your answer professional. The norm in some countries might be to share personal details at this point, Wascovich says, but in the U.S. you should avoid talking about your family and hobbies, for instance, unless you know something very specific about the company that would lead you to believe otherwise.   3. Know your audience.   Learning about the company you're interviewing with ahead of time is crucial. You can tailor your answer to focus on where you align with the company culture and be able to ask more informed questions at the end of the interview.   4. Highlight your personality   Mentioning that you quilt or play chess reveals more about you than just what you do in your spare time, it shows a part of your personality. Interactive roles like volunteer work or being a part of a softball team demonstrate that you are friendly and are able to communicate well with others. "
-                },
-                "examples": {
-                    "heading": "Here are some examples",
-                    "answers": [
-                        {
-                            "heading": "Example Answer #1",
-                            "answer": "I began my career as an administrative assistant working for my current company, but I quickly branched out into marketing. I've always had this way of making better sense of why people need and desire products and services. You could say that I have a knack for understanding the psychology of customers, and using that to point to their needs and specific pain points. I used these skills to advance in my company, making it all the way to marketing director. My goal is to continue to progress in my career."
-                        },
-                        {
-                            "heading": "Example Answer #2",
-                            "answer": "I'd be glad to share a little about myself. I graduated from XYZ University, where I majored in business administration. During my time at the school I had an internship at a large Fortune 500 company, where I was able to take an active role in their Human Resources department, receiving excellent career advice from mentors. I continued on at that company, up until my current job.   One of the things that I spearheaded at the company was creating a holistic view of employee care. I helped add to the company culture by creating initiatives to create a sense of community, even when we were working remotely. I've sensed that my major passion is to foster a sense of community among employees. My wife and kids have even mentioned how good I am about including them in games and activities. I believe I’m the ideal candidate, as I am passionate about helping you to continue the great work you're doing in human resources."
-                        },
-                        {
-                            "heading": "Example Answer #3",
-                            "answer": " Throughout my entire career, I have been driven by learning new skills and finding innovative ways to complete my duties. I've always been an avid reader, and consider myself to be a go-getter when it comes to discovering new things. Recently, in the last 5 years, I taught myself how to code, and from there I have had a steady career in the IT field. I have grown leaps and bounds in my technical skills, and this is because I am a lifelong learner who is always willing to humble myself to learn something new."
-                        }
-                    ]
-                }
+                "heading": "Example Answer #1",
+                "answer": "I began my career as an administrative assistant working for my current company, but I quickly branched out into marketing. I've always had this way of making better sense of why people need and desire products and services. You could say that I have a knack for understanding the psychology of customers, and using that to point to their needs and specific pain points. I used these skills to advance in my company, making it all the way to marketing director. My goal is to continue to progress in my career."
             },
             {
-                "id": "03",
-                "subMenuTitle": "What is your strength?",
-                "what": {
-                    "title": "What Are Your Strengths?",
-                    "subTitle": "Today, we’re tackling another critical job interview question: What are your strengths?",
-                    "img": "https://resources.biginterview.com/wp-content/uploads/2022/12/How-to-Answer-What-are-your-strengths.jpg",
-                    "description": "This is a commonly asked question in job interviews – for all levels of positions and in all industries. Even when you’re not asked “What are your strengths?”, you still must be prepared to answer the question well in order to land the job. After all, from the employer’s perspective, the main point of a job interview is to understand what you could do for the organization and why they should hire you instead of someone else. Although this question comes up in 80% of interviews, many candidates don’t know how to answer it. This means there’s a real opportunity for you to stand out from the crowd if you can speak about your strengths in an authentic and compelling way."
-                },
-                "why": {
-                    "question": "Why Do Interviewers Ask This Question?",
-                    "para1": "It’s the interviewer’s job to find someone who will perform in the position and get along with the team. This question can be phrased in several ways:",
-                    "answer": "Your strengths align with the company’s needs   You can do the job and perform like a rock star   You are the best person for the job — no need to hold out for someone better   You have qualities, skills, and/or experience that set you apart from the competition   You are someone who will make an excellent addition to the team"
-                },
-                "how": {
-                    "heading": "How to Talk About Your Strengths",
-                    "para1": "Some people think this is an easy question. This question is a prompt for you to brag and “sell” yourself as the best fit for the job. So how could you mess it up? You know yourself, right? Unfortunately, many candidates don’t have a clear sense of their job-related strengths.",
-                    "answer": "1. Brainstorm   Sit down and make a personal strengths list — aim for at least 10 and be creative. Jot down everything that comes to mind. You can always delete or modify later.   Your strengths could include:   Experience — Experience with a certain software or type of task, expertise in a particular industry, a track record of working with similar products or clients, etc.   Talents — Abilities such as programming in a desired language, writing proposals, selling widgets, litigating cases, organizing events, translating from Mandarin, etc. (the possibilities here are truly endless).   Soft skills — Competencies such as problem-solving, influencing, team building, negotiation, managing up, etc.   2. Prepare examples   Develop at least one example or interview story to illustrate each of your strengths. If you’re not sure how to go about crafting compelling stories and examples from your previous experience, scroll down to find some examples that work. Having a concise example or story ready to back each strength up is crucial here. Be careful about rambling. Your answer should still be 1-2 minutes long. If you want to share three strengths and back each up with an example, you will want to practice answering interview questions in advance so that you can do it in a concise and effective way.   3. Be accurate, relevant, and show self-awareness   Make sure to choose the strengths that you actually possess and avoid being too generic. Instead of “people skills” (too broad and boring), go with “relationship building” or “persuasive communication.” You should take the time to analyze the job description and identify the most important strengths for each opportunity. You likely have many strengths, but which will be most relevant for this interviewer? Always try to match your strengths with the requirements of the position you’re applying for. A common mistake here is to choose a lame strength that doesn’t really help you stand out. These are either strengths that are hardly relevant to the job at hand or weak strengths that just about anyone could claim. This mistake makes a candidate bland and forgettable at best. At worst, you can raise red flags with the interviewer — who wants to hire someone whose greatest strength is the ability to show up on time?   4. Don’t be too humble   Many candidates are too humble or just aren’t comfortable articulating what makes them great. This is particularly true for introverts and/or people who never really had to “sell” themselves before because new jobs always fell in their laps in the past. You have to get over any hesitation to say nice things about yourself (That’s why practicing your answers is so crucial!). You can do it in a way that feels comfortable and authentic if you prepare in advance."
-                },
-                "examples": {
-                    "heading": "Examples of the Best Answers",
-                    "para1": "Review these examples of the best answers to questions about your strengths but be sure to tailor your responses to your credentials and the job requirements.",
-                    "answers": [
-                        {
-                            "heading": "Example Answer #1",
-                            "answer": " I have a solid work ethic. When I'm working on a project, I don't just want to meet deadlines. Rather, I prefer to complete the project well ahead of schedule. Last year, I even earned a bonus for completing my three most recent reports one week ahead of time."
-                        },
-                        {
-                            "heading": "Example Answer #2",
-                            "answer": "I have extremely strong writing skills. Having worked as a copy editor for five years, I have a deep attention to detail when it comes to my writing. I have also written for a variety of publications, so I know how to shape my writing style to fit the task and audience. As a marketing assistant, I will be able to write and edit press releases effectively and update web content with accuracy and ease."
-                        },
-                        {
-                            "heading": "Example Answer #3",
-                            "answer": "I am a skilled sales representative with over 10 years of experience. I have exceeded my sales goals every quarter by at least 20%, and I've earned a bonus each year since I started with my current employer."
-                        }
-                    ]
-                }
+                "heading": "Example Answer #2",
+                "answer": "I'd be glad to share a little about myself. I graduated from XYZ University, where I majored in business administration. During my time at the school I had an internship at a large Fortune 500 company, where I was able to take an active role in their Human Resources department, receiving excellent career advice from mentors. I continued on at that company, up until my current job.   One of the things that I spearheaded at the company was creating a holistic view of employee care. I helped add to the company culture by creating initiatives to create a sense of community, even when we were working remotely. I've sensed that my major passion is to foster a sense of community among employees. My wife and kids have even mentioned how good I am about including them in games and activities. I believe I’m the ideal candidate, as I am passionate about helping you to continue the great work you're doing in human resources."
             },
             {
-                "id": "04",
-                "subMenuTitle": "Why should we hire you ?",
-                "what": {
-                    "title": "How to Answer “Why Should We Hire You?”",
-                    "description": "“Why should we hire you?” is still one of the most common, and yet difficult job interview questions in 2023.   What makes it so tough is that it’s a very open-ended question, and can be answered in a number of different ways.   You can, for example, go over your resume and explain how your work experience makes you a great fit for the role.   You can, for example, go over your resume and explain how your work experience makes you a great fit for the role.   Alternatively, you can talk about how you possess certain skills that make you stand out from other candidates.   In this article, we’re going to teach you 10 different answers you can give to this complicated job interview question!"
-                },
-                "why": {
-                    "question": "Why Do Interviewers Ask “Why Should We Hire You?” ",
-                    "loremAfterQuestion": "When the interviewer asks “why should we hire you?”, they want to measure exactly how qualified you are for the job and what makes you a good fit for the company.",
-                    "answer": "When the interviewer asks “why should we hire you?”, they want to measure exactly how qualified you are for the job and what makes you a good fit for the company.   Your work experience and achievements. You can talk about a specific accomplishment at a previous, relevant position and show the interviewer how you can achieve similar results for them.   Your skills and qualifications. If you can prove that you’ve got all the skills that the company is looking for in a candidate, you’ll have effectively answered the question.   Your passion and motivation. You can highlight how good of a company fit you’d be and how much you love working in your field or industry. When it comes to choosing between two applicants with similar skills and work experience, the employer will always go for the one who’s more motivated, sociable, and able to fit in with the company culture. So, talking about your passions and motivations can take you a long way!"
-                },
-                "proTips": {
-                    "heading": "Interviewers can phrase the “why should we hire you?” interview question in several different ways, such as:",
-                    "similarQuestions": "Why are you the best candidate for this job?   What makes you a good candidate for this position?   Why are you a good fit for this position?   Why should we hire you over other applicants?   Why do you think this position is a good fit for you?   Can you describe why you’re the ideal candidate for this position?   Why should we hire you for this position?"
-                },
-                "how": {
-                    "heading": "How to Answer “Why Should We Hire You?”",
-                    "para1": "Now that we’ve covered the basics, let’s talk about tips! There are 3 main tricks to getting this job interview question right, starting with: ",
-                    "answer": "1. Show off your skills and experience   The first thing you should do when answering “why should we hire you?” is to highlight any skills and professional experience that are relevant to the position you’re applying for.   To make your answer all the more valid, make sure to always back up everything you say with examples, experiences, and achievements.   2. Highlight your ability to fit in and work in a team   Teamwork skills and adaptability comes in handy for practically every position out there.   No matter your profession, you’ll likely need to work alongside others and adapt to different people and situations, so these are two skills that employers are always on the lookout for.   Even if you’re a novelist - a predominantly solitary profession - you’ll still need to work with your publisher, a team of editors, and book designers to create a good book.   So, convincing the interviewer that you can adapt to the work environment, your colleagues, and even your supervisors, is an important part of answering “why should we hire you?”   3. Explain how you can help the company do more   At the end of the day, the goal of every job is to help an organization achieve a certain goal.   If you’re applying for a job in marketing, for example, your goal might be to generate leads. If you’re in customer support, it’s to provide excellent service to the company’s clients   As such, one way to answer “why should we hire you?” is by explaining how, exactly, you can help the company achieve such a goal through your experience and skills.   Let’s say that you’re applying for a role as an event planner at a small company. From reading the job description, you know they’re looking for someone to organize events in their area and get the company’s name out there.   Now you have a clear understanding of what the company’s #1 goal in hiring you is! They want to find someone who can organize events successfully, promote the said events, and improve the company's brand awareness.   Now, when answering “why should we hire you,” you can explain how exactly you’ll be able to fulfill the company's goals."
-                },
-                "examples": {
-                    "heading": "A general answer to “Why Should I Hire You”",
-                    "answers": [
-                        {
-                            "heading": "Possible Answer #1",
-                            "answer": " “Over the years, I have acquired relevant skills and experience, which I shall bring to your organization.   I have also worked tirelessly on my communication abilities and teamwork skills, which I will put to use in my future career, which would be in your organization if I am selected for the position.   I have given my 100% effort in my past companies, and this has enabled me to recognize my capabilities and limitations.   If I channelize them further, they will bring fruitful results to me and also to your esteemed organization.”"
-                        },
-                        {
-                            "heading": "Possible Answer #2",
-                            "answer": " “This is a wonderful opportunity for me to get interviewed at such a renowned company.   Your organization will surely prove to be an excellent platform for me to establish my skills and knowledge in the corporate world.   Even though I am a fresher, I assure you that I will give my best and work to my full potential so that I can contribute as much as I can towards the growth and welfare of this great brand.”"
-                        },
-                        {
-                            "heading": "Possible Answer #3",
-                            "answer": "“Honestly, I possess all the skills and experience that you’re looking for. I’m pretty confident that I am the best candidate for this job role.   It’s not just my background in the past projects, but also my people skills, which will be applicable in this position.   On the other hand, I am a self motivated person and I try to exceed my superior’s expectations with high-quality work. Being a fast learner, I quickly pick up business knowledge related to my project.   Lastly, I would like to add that I work well both as an individual contributor and also as a team member.   Collectively, all these skills put together makes me a complete package for this job.”"
-                        },
-                        {
-                            "heading": "Possible Answer #4",
-                            "answer": "“I feel that I should be hired by you given my excellent academic background along with the skills and experience the company is looking for.   I have the experience and the attitude to excel. If given a chance, I will surely work towards building my expertise, which would prove beneficial for me as well as your organization.”"
-                        }
-                    ]
-                }
+                "heading": "Example Answer #3",
+                "answer": " Throughout my entire career, I have been driven by learning new skills and finding innovative ways to complete my duties. I've always been an avid reader, and consider myself to be a go-getter when it comes to discovering new things. Recently, in the last 5 years, I taught myself how to code, and from there I have had a steady career in the IT field. I have grown leaps and bounds in my technical skills, and this is because I am a lifelong learner who is always willing to humble myself to learn something new."
+            }
+        ]
+    },
+    {
+        "id": "03",
+        "category": "interview",
+        "title": "What is your strength?",
+        "subTitle": "Today, we’re tackling another critical job interview question: What are your strengths?",
+        "img": "https://resources.biginterview.com/wp-content/uploads/2022/12/How-to-Answer-What-are-your-strengths.jpg",
+        "subTitleSummury": "This is a commonly asked question in job interviews – for all levels of positions and in all industries. Even when you’re not asked “What are your strengths?”, you still must be prepared to answer the question well in order to land the job. After all, from the employer’s perspective, the main point of a job interview is to understand what you could do for the organization and why they should hire you instead of someone else. Although this question comes up in 80% of interviews, many candidates don’t know how to answer it. This means there’s a real opportunity for you to stand out from the crowd if you can speak about your strengths in an authentic and compelling way.",
+        "question": "Why Do Interviewers Ask This Question?",
+        "answer": "It’s the interviewer’s job to find someone who will perform in the position and get along with the team. This question can be phrased in several ways:   Your strengths align with the company’s needs   You can do the job and perform like a rock star   You are the best person for the job — no need to hold out for someone better   You have qualities, skills, and/or experience that set you apart from the competition   You are someone who will make an excellent addition to the team",
+        "howTitle": "How to Talk About Your Strengths",
+        "howTitleSummury1": "Some people think this is an easy question. This question is a prompt for you to brag and “sell” yourself as the best fit for the job. So how could you mess it up? You know yourself, right? Unfortunately, many candidates don’t have a clear sense of their job-related strengths.",
+        "howTitleSummury2": "1. Brainstorm   Sit down and make a personal strengths list — aim for at least 10 and be creative. Jot down everything that comes to mind. You can always delete or modify later.   Your strengths could include:   Experience — Experience with a certain software or type of task, expertise in a particular industry, a track record of working with similar products or clients, etc.   Talents — Abilities such as programming in a desired language, writing proposals, selling widgets, litigating cases, organizing events, translating from Mandarin, etc. (the possibilities here are truly endless).   Soft skills — Competencies such as problem-solving, influencing, team building, negotiation, managing up, etc.   2. Prepare examples   Develop at least one example or interview story to illustrate each of your strengths. If you’re not sure how to go about crafting compelling stories and examples from your previous experience, scroll down to find some examples that work. Having a concise example or story ready to back each strength up is crucial here. Be careful about rambling. Your answer should still be 1-2 minutes long. If you want to share three strengths and back each up with an example, you will want to practice answering interview questions in advance so that you can do it in a concise and effective way.   3. Be accurate, relevant, and show self-awareness   Make sure to choose the strengths that you actually possess and avoid being too generic. Instead of “people skills” (too broad and boring), go with “relationship building” or “persuasive communication.” You should take the time to analyze the job description and identify the most important strengths for each opportunity. You likely have many strengths, but which will be most relevant for this interviewer? Always try to match your strengths with the requirements of the position you’re applying for. A common mistake here is to choose a lame strength that doesn’t really help you stand out. These are either strengths that are hardly relevant to the job at hand or weak strengths that just about anyone could claim. This mistake makes a candidate bland and forgettable at best. At worst, you can raise red flags with the interviewer — who wants to hire someone whose greatest strength is the ability to show up on time?   4. Don’t be too humble   Many candidates are too humble or just aren’t comfortable articulating what makes them great. This is particularly true for introverts and/or people who never really had to “sell” themselves before because new jobs always fell in their laps in the past. You have to get over any hesitation to say nice things about yourself (That’s why practicing your answers is so crucial!). You can do it in a way that feels comfortable and authentic if you prepare in advance.",
+        "exampleTitle": "Examples of the Best Answers",
+        "exampleSummury1": "Review these examples of the best answers to questions about your strengths but be sure to tailor your responses to your credentials and the job requirements.",
+        "exampleAnswers": [
+            {
+                "heading": "Example Answer #1",
+                "answer": " I have a solid work ethic. When I'm working on a project, I don't just want to meet deadlines. Rather, I prefer to complete the project well ahead of schedule. Last year, I even earned a bonus for completing my three most recent reports one week ahead of time."
+            },
+            {
+                "heading": "Example Answer #2",
+                "answer": "I have extremely strong writing skills. Having worked as a copy editor for five years, I have a deep attention to detail when it comes to my writing. I have also written for a variety of publications, so I know how to shape my writing style to fit the task and audience. As a marketing assistant, I will be able to write and edit press releases effectively and update web content with accuracy and ease."
+            },
+            {
+                "heading": "Example Answer #3",
+                "answer": "I am a skilled sales representative with over 10 years of experience. I have exceeded my sales goals every quarter by at least 20%, and I've earned a bonus each year since I started with my current employer."
+            }
+        ]
+    },
+    {
+        "id": "04",
+        "category": "interview",
+        "title": "Why should we hire you ?",
+        "subTitle": "How to Answer “Why Should We Hire You?”",
+        "subTitleSummury": "“Why should we hire you?” is still one of the most common, and yet difficult job interview questions in 2023.   What makes it so tough is that it’s a very open-ended question, and can be answered in a number of different ways.   You can, for example, go over your resume and explain how your work experience makes you a great fit for the role.   You can, for example, go over your resume and explain how your work experience makes you a great fit for the role.   Alternatively, you can talk about how you possess certain skills that make you stand out from other candidates.   In this article, we’re going to teach you 10 different answers you can give to this complicated job interview question!",
+        "question": "Why Do Interviewers Ask “Why Should We Hire You?” ",
+        "answer": "When the interviewer asks “why should we hire you?”, they want to measure exactly how qualified you are for the job and what makes you a good fit for the company.   Your work experience and achievements. You can talk about a specific accomplishment at a previous, relevant position and show the interviewer how you can achieve similar results for them.   Your skills and qualifications. If you can prove that you’ve got all the skills that the company is looking for in a candidate, you’ll have effectively answered the question.   Your passion and motivation. You can highlight how good of a company fit you’d be and how much you love working in your field or industry. When it comes to choosing between two applicants with similar skills and work experience, the employer will always go for the one who’s more motivated, sociable, and able to fit in with the company culture. So, talking about your passions and motivations can take you a long way!",
+        "howTitle": "How to Answer “Why Should We Hire You?”",
+        "howTitleSummury1": "Now that we’ve covered the basics, let’s talk about tips! There are 3 main tricks to getting this job interview question right, starting with: ",
+        "howTitleSummury2": "1. Show off your skills and experience   The first thing you should do when answering “why should we hire you?” is to highlight any skills and professional experience that are relevant to the position you’re applying for.   To make your answer all the more valid, make sure to always back up everything you say with examples, experiences, and achievements.   2. Highlight your ability to fit in and work in a team   Teamwork skills and adaptability comes in handy for practically every position out there.   No matter your profession, you’ll likely need to work alongside others and adapt to different people and situations, so these are two skills that employers are always on the lookout for.   Even if you’re a novelist - a predominantly solitary profession - you’ll still need to work with your publisher, a team of editors, and book designers to create a good book.   So, convincing the interviewer that you can adapt to the work environment, your colleagues, and even your supervisors, is an important part of answering “why should we hire you?”   3. Explain how you can help the company do more   At the end of the day, the goal of every job is to help an organization achieve a certain goal.   If you’re applying for a job in marketing, for example, your goal might be to generate leads. If you’re in customer support, it’s to provide excellent service to the company’s clients   As such, one way to answer “why should we hire you?” is by explaining how, exactly, you can help the company achieve such a goal through your experience and skills.   Let’s say that you’re applying for a role as an event planner at a small company. From reading the job description, you know they’re looking for someone to organize events in their area and get the company’s name out there.   Now you have a clear understanding of what the company’s #1 goal in hiring you is! They want to find someone who can organize events successfully, promote the said events, and improve the company's brand awareness.   Now, when answering “why should we hire you,” you can explain how exactly you’ll be able to fulfill the company's goals.",
+        "exampleTitle": "A general answer to “Why Should I Hire You”",
+        "exampleAnswers": [
+            {
+                "heading": "Possible Answer #1",
+                "answer": " “Over the years, I have acquired relevant skills and experience, which I shall bring to your organization.   I have also worked tirelessly on my communication abilities and teamwork skills, which I will put to use in my future career, which would be in your organization if I am selected for the position.   I have given my 100% effort in my past companies, and this has enabled me to recognize my capabilities and limitations.   If I channelize them further, they will bring fruitful results to me and also to your esteemed organization.”"
+            },
+            {
+                "heading": "Possible Answer #2",
+                "answer": " “This is a wonderful opportunity for me to get interviewed at such a renowned company.   Your organization will surely prove to be an excellent platform for me to establish my skills and knowledge in the corporate world.   Even though I am a fresher, I assure you that I will give my best and work to my full potential so that I can contribute as much as I can towards the growth and welfare of this great brand.”"
+            },
+            {
+                "heading": "Possible Answer #3",
+                "answer": "“Honestly, I possess all the skills and experience that you’re looking for. I’m pretty confident that I am the best candidate for this job role.   It’s not just my background in the past projects, but also my people skills, which will be applicable in this position.   On the other hand, I am a self motivated person and I try to exceed my superior’s expectations with high-quality work. Being a fast learner, I quickly pick up business knowledge related to my project.   Lastly, I would like to add that I work well both as an individual contributor and also as a team member.   Collectively, all these skills put together makes me a complete package for this job.”"
+            },
+            {
+                "heading": "Possible Answer #4",
+                "answer": "“I feel that I should be hired by you given my excellent academic background along with the skills and experience the company is looking for.   I have the experience and the attitude to excel. If given a chance, I will surely work towards building my expertise, which would prove beneficial for me as well as your organization.”"
             }
         ]
     },
     {
         "id": "05",
-        "menuTitle": "Error",
-        "what": {
-            "title": "Error",
-            "description": "There is no developer who has not faced errors in his/her development life. When we get error that means we make a mistakes and we should find out it with cool head but many of the developer became nervious when getting error. Always remember if you want to be a professional developer you must learn how to handle error easily because it's a speciality of a developer."
-        },
-        "types": {
-            "heading": "Error types",
-            "para1": "Besides the generic Error constructor, there are other core error constructors in JavaScript. For client-side exceptions, see Exception handling statements.",
-            "type": "EvalError   Creates an instance representing an error that occurs regarding the global function eval().   RangeError   Creates an instance representing an error that occurs when a numeric variable or parameter is outside its valid range.   ReferenceError   Creates an instance representing an error that occurs when de-referencing an invalid reference.   SyntaxError   Creates an instance representing a syntax error.   TypeError   Creates an instance representing an error that occurs when a variable or parameter is not of a valid type.   URIError   Creates an instance representing an error that occurs when encodeURI() or decodeURI() are passed invalid parameters.   AggregateError   Creates an instance representing several errors wrapped in a single error when multiple errors need to be reported by an operation, for example by Promise.any()."
-        },
-        "examples": {
-            "heading": "Examples",
-            "subHeading": "Throwing a generic error",
-            "para1": "Usually you create an Error object with the intention of raising it using the throw keyword. You can handle the error using the try...catch construct:",
-            "code": "try   {throw new Error('Whoops!');   } catch (e) {   console.error(`${e.name }: ${e.message}`);   }"
-        },
-        "subMenu": [
-            {
-                "id": "06",
-                "subMenuTitle": "syntax errro",
-                "what": {
-                    "title": "Syntax Error",
-                    "description": "During the syntax analysis phase, this type of error appears. Syntax error is found during the execution of the program.   Some syntax error can be:   Error in structure   Missing operators   Unbalanced parenthesis"
-                },
-                "why": {
-                    "question": "Why this error occur ?",
-                    "answer": "A syntax error occurs when a programmer writes an incorrect line of code. Most syntax errors involve missing punctuation or a misspelled name. If there is a syntax error in a compiled or interpreted programming language, then the code won't work.   When an invalid calculation enters into a calculator then a syntax error can also occurs. This can be caused by entering several decimal points in one number or by opening brackets without closing them.   For example 1: Using '=' when '==' is needed."
-                },
-                "examples": {
-                    "heading": "For Examples",
-                    "code": "int a;   print('value of variable a is',a)   Here, ';' is missing from the print statement."
-                }
-            },
-            {
-                "id": "07",
-                "subMenuTitle": "uncaught type error",
-                "what": {
-                    "title": "What is an uncaught TypeError in JavaScript?",
-                    "img": "http://net-informations.com/js/iq/img/type-error.png",
-                    "description": "According to the Mozilla website for developer documents, “the TypeError object represents an error when a value is not of the expected type.” Uncaught means that the error was not caught in the catch part of the try-catch block."
-                },
-                "why": {
-                    "question": "Why this error occur ?",
-                    "answer": "A TypeError may be thrown when:   an operand or argument passed to a function is incompatible with the type expected by that operator or function; or   when attempting to modify a value that cannot be changed; or   when attempting to use a value in an inappropriate way."
-                },
-                "examples": {
-                    "heading": "Examples",
-                    "subHeading": "Catching a TypeError",
-                    "code": "try {   null.f()   } catch (e) {   console.log(e instanceofTypeError) // true   console.log(e.message) // null has nopropertie   console.log(e.name) // TypeError   console.log(e fileName) // Scratchpad/1   console.log(e.lineNumber) // 2   console.log(e.columnNumber) // 2console.log(e.stack) // @Scratchpad2:2:3\n}"
-                }
-            },
-            {
-                "id": "08",
-                "subMenuTitle": "reference error",
-                "what": {
-                    "title": "ReferenceError",
-                    "description": "When programming in JavaScript, you’ll commonly encounter reference errors. There are a number of reasons why you might get one, but fortunately, resolving such an error isn’t too difficult. It’s helpful to know what this error is and why it’s being thrown by the compiler because you’ll save yourself precious debugging time.   In this guide to JavaScript reference errors, you’ll learn how to identify and solve them as well as how to avoid this type of error in the future."
-                },
-                "why": {
-                    "question": "Why You Need to Understand Reference Errors",
-                    "answer": "It’s important that you understand why JavaScript might throw such an error, especially for the following reasons:   - If you understand what’s going on and why, the error is easier and quicker to fix.   - It is possible to catch this type of error at build time if your code is properly structured.   - If you spend less time trying to understand why the error occurred, you can spend more time on programming, which improves your workflow."
-                },
-                "examples": {
-                    "heading": "Examples",
-                    "subHeading": "Undeclared or Undefined Variable",
-                    "para1": "When a variable reference cannot be found or is not declared, it causes a reference error. New developers are most likely to commit reference errors by forgetting to define variables before referencing them. Here’s an example:",
-                    "code": "const a = 'Apple'   console.log(a)   // ReferenceError a is not defined."
-                }
-            }
-        ],
+        "category": "error",
+        "title": "Error",
+        "titleSummury": "There is no developer who has not faced errors in his/her development life. When we get error that means we make a mistakes and we should find out it with cool head but many of the developer became nervious when getting error. Always remember if you want to be a professional developer you must learn how to handle error easily because it's a speciality of a developer.",
+        "subTitle": "Error types",
+        "subTitleSummury": "Besides the generic Error constructor, there are other core error constructors in JavaScript. For client-side exceptions, see Exception handling statements.",
+        "errorTypes": "EvalError   Creates an instance representing an error that occurs regarding the global function eval().   RangeError   Creates an instance representing an error that occurs when a numeric variable or parameter is outside its valid range.   ReferenceError   Creates an instance representing an error that occurs when de-referencing an invalid reference.   SyntaxError   Creates an instance representing a syntax error.   TypeError   Creates an instance representing an error that occurs when a variable or parameter is not of a valid type.   URIError   Creates an instance representing an error that occurs when encodeURI() or decodeURI() are passed invalid parameters.   AggregateError   Creates an instance representing several errors wrapped in a single error when multiple errors need to be reported by an operation, for example by Promise.any().",
+        "exampleTitle": "Examples",
+        "subExampleTitle": "Throwing a generic error",
+        "subExampleTitleSummury": "Usually you create an Error object with the intention of raising it using the throw keyword. You can handle the error using the try...catch construct:",
+        "code": "try   {throw new Error('Whoops!');   } catch (e) {   console.error(`${e.name }: ${e.message}`);   }",
         "quiz": {
             "title": "Why we got error ?",
             "options": [
@@ -220,5 +125,39 @@
                 }
             ]
         }
+    },
+    {
+        "id": "06",
+        "category": "error",
+        "title": "Syntax Errro",
+        "titleSummury": "During the syntax analysis phase, this type of error appears. Syntax error is found during the execution of the program.   Some syntax error can be:   Error in structure   Missing operators   Unbalanced parenthesis",
+        "question": "Why this error occur ?",
+        "answer": "A syntax error occurs when a programmer writes an incorrect line of code. Most syntax errors involve missing punctuation or a misspelled name. If there is a syntax error in a compiled or interpreted programming language, then the code won't work.   When an invalid calculation enters into a calculator then a syntax error can also occurs. This can be caused by entering several decimal points in one number or by opening brackets without closing them.   For example 1: Using '=' when '==' is needed.",
+        "exampleTitle": "For Examples",
+        "code": "int a;   print('value of variable a is',a)   Here, ';' is missing from the print statement."
+    },
+    {
+        "id": "07",
+        "category": "error",
+        "title": "Uncaught Type Error",
+        "img": "http://net-informations.com/js/iq/img/type-error.png",
+        "titleSummury": "According to the Mozilla website for developer documents, “the TypeError object represents an error when a value is not of the expected type.” Uncaught means that the error was not caught in the catch part of the try-catch block.",
+        "question": "Why this error occur ?",
+        "answer": "A TypeError may be thrown when:   an operand or argument passed to a function is incompatible with the type expected by that operator or function; or   when attempting to modify a value that cannot be changed; or   when attempting to use a value in an inappropriate way.",
+        "exampleTitle": "Examples",
+        "subExampleTitle": "Catching a TypeError",
+        "code": "try {   null.f()   } catch (e) {   console.log(e instanceofTypeError) // true   console.log(e.message) // null has nopropertie   console.log(e.name) // TypeError   console.log(e fileName) // Scratchpad/1   console.log(e.lineNumber) // 2   console.log(e.columnNumber) // 2console.log(e.stack) // @Scratchpad2:2:3\n}"
+    },
+    {
+        "id": "08",
+        "category": "error",
+        "title": "Reference Error",
+        "titleSummury": "When programming in JavaScript, you’ll commonly encounter reference errors. There are a number of reasons why you might get one, but fortunately, resolving such an error isn’t too difficult. It’s helpful to know what this error is and why it’s being thrown by the compiler because you’ll save yourself precious debugging time.   In this guide to JavaScript reference errors, you’ll learn how to identify and solve them as well as how to avoid this type of error in the future.",
+        "question": "Why You Need to Understand Reference Errors",
+        "answer": "It’s important that you understand why JavaScript might throw such an error, especially for the following reasons:   - If you understand what’s going on and why, the error is easier and quicker to fix.   - It is possible to catch this type of error at build time if your code is properly structured.   - If you spend less time trying to understand why the error occurred, you can spend more time on programming, which improves your workflow.",
+        "exampleTitle": "Examples",
+        "subExampleTitle": "Undeclared or Undefined Variable",
+        "subExampleTitleSummury": "When a variable reference cannot be found or is not declared, it causes a reference error. New developers are most likely to commit reference errors by forgetting to define variables before referencing them. Here’s an example:",
+        "code": "const a = 'Apple'   console.log(a)   // ReferenceError a is not defined."
     }
 ]

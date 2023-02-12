@@ -1,13 +1,14 @@
-import { DOC_DATA, ERROR } from "../actionTypes/actionTypes";
+import { DOCERROR, ERROR, INTERVIEW, SUCCESS } from "../actionTypes/actionTypes";
 
 const initialState = {
     data: {},
     error: '',
     loading: true,
+    open: '',
 };
 const docReducer = (state = initialState, action) => {
     switch (action.type) {
-        case DOC_DATA:
+        case SUCCESS:
             return {
                 ...state,
                 loading: false,
@@ -21,6 +22,10 @@ const docReducer = (state = initialState, action) => {
                 loading: false,
                 data: {}
             };
+        case INTERVIEW:
+            return { open: 'interview' };
+        case DOCERROR:
+            return { open: 'docerror' }
         default:
             return state;
     }

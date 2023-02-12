@@ -7,7 +7,6 @@ import Details from "../components/Pages/BlogPage/Details/Details";
 import DashboardLayout from "../components/Pages/Dashboard/DashboardLayout/DashboardLayout";
 import Users from "../components/Pages/Dashboard/Users/Users";
 import Documentation from "../components/Pages/Documentation/Documentation";
-import IdWiseDataLoad from "../components/Pages/Documentation/IdWiseDataLoad";
 import Home from "../components/Pages/HomePage/Home/Home";
 import Address from "../components/Pages/Profile/Address/Address";
 import Education from "../components/Pages/Profile/Education/Education";
@@ -18,6 +17,8 @@ import Main from "../Layout/Main";
 import PrivateRoute from "./PrivateRoute";
 import AddBlog from "../components/Pages/Dashboard/AddBlog/AddBlog";
 import AdminRouter from "./AdminRouter";
+import Interview from "../components/Pages/Documentation/Interview";
+import Error from "../components/Pages/Documentation/Error";
 
 const routes = createBrowserRouter([
   {
@@ -59,13 +60,16 @@ const routes = createBrowserRouter([
         children: [
           {
             path: "/documentation",
-            element: <IdWiseDataLoad></IdWiseDataLoad>,
+            element: <Interview></Interview>,
           },
           {
             path: "/documentation/:id",
-            element: <IdWiseDataLoad></IdWiseDataLoad>,
-            // loader: async ({ params }) => await fetch(`https://easy-doc-server.vercel.app/menu/${params.id}`)
-          }
+            element: <Interview></Interview>
+          },
+          {
+            path: "/documentation/:id",
+            element: <Error></Error>
+          },
         ]
       },
 
