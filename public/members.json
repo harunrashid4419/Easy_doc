@@ -1,0 +1,54 @@
+[
+    {
+        "id":"01",
+        "image":"https://i.ibb.co/7Jw0Jkc/Photo-of-Md-Harun-Or-Rashid-removebg-preview.png",
+        "name":"Harun Or-Rashid",
+        "title":"Team Leader",
+        "description":"I am a hard-working and driven individual who isn't afraid to face a challenge.I'm passionate about my work and I know how to get the job done.",
+        "facebook":"https://www.facebook.com/mdharun.orrashid.79827",
+        "linkedin":"https://www.linkedin.com/in/md-harun-or-rashid2/",
+        "github":"https://github.com/harunrashid4419/"
+  
+    },
+    {
+        "id":"02",
+        "image":"https://i.ibb.co/5YPmrdD/Toukir-ahmed-removebg-preview.png",
+        "name":"Toukir Ahmed",
+        "title":"General Member",
+        "description":"I am an optimistic, candid, responsible and social person.I am confident with my thinking analysis that I can convince people with my points.",
+        "facebook":"https://www.facebook.com/profile.php?id=100029985392696",
+        "linkedin":"https://www.linkedin.com/in/toukircse777/",
+        "github":"https://github.com/toukircse77"
+  
+    }, {
+        "id":"03",
+        "image":"https://i.ibb.co/9HJ6GNq/330268195-623930759541376-8870168755201645329-n-removebg-preview.png",
+        "name":"Ashraful Islam",
+        "title":"General Member",
+        "description":"I am ambitious and driven.I thrive on challenges and constantly set goals for myself, so I have something to strive toward.",
+        "facebook":"https://www.facebook.com/ashraful.rirdon",
+        "linkedin":"https://www.linkedin.com/in/ashraful-islam-webdev",
+        "github":"https://github.com/ashr-aful007"
+  
+    }, {
+        "id":"04",
+        "image":"https://i.ibb.co/zsd1N4Z/IMG-20221223-WA0000-removebg-preview.png",
+        "name":"Mahmud Hasan",
+        "title":"General Member",
+        "description":"I am an excellent communicator.I pride myself on making sure people have the right information because it drives better results.",
+        "facebook":"https://www.facebook.com/Mahmod90047",
+        "linkedin":"https://www.facebook.com/Mahmod90047",
+        "github":"https://github.com/Mahmod-Hassan"
+  
+    }, {
+        "id":"05",
+        "image":"https://i.ibb.co/rGX8FzR/6edff7d2-d40f-466e-aa3a-ed2e59283269-removebg-preview-removebg-preview.png",
+        "name":"Poly Akhtar",
+        "title":"General Member",
+        "description":"I am highly organized.I always take notes and use a series of tools to help myself stay on top of deadlines.",
+        "facebook":"https://www.facebook.com/profile.php?id=100029985392696",
+        "linkedin":"https://www.linkedin.com/in/poly-akhtar/",
+        "github":"https://github.com/polyakhtar"
+  
+    }
+  ]

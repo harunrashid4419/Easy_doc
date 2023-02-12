@@ -53,7 +53,7 @@ const Navbar = () => {
             <Link to="/courses">Courses</Link>
           </li>
           <li className="mr-4 hover:text-orange-500 transition-colors">
-            <Link to="/">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
           {user?.uid ? (
             <>

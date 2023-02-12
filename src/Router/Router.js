@@ -21,6 +21,7 @@ import Interview from "../components/Pages/Documentation/Interview";
 import Error from "../components/Pages/Documentation/Error";
 import Courses from "../components/Pages/Courses/Courses";
 import ErrorElement from "../components/ErrorElement/ErrorElement";
+import Contact from "../components/Pages/Contact/Contact";
 
 const routes = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const routes = createBrowserRouter([
       {
         path: "/courses",
         element: <Courses></Courses>,
+      },
+      {
+        path:'/contact',
+        element:<Contact></Contact>
       },
       {
         path: "/blog",
