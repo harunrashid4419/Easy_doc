@@ -15,7 +15,7 @@ const useFetch = (url) => {
             })
             .catch(err => dispatch({ type: ERROR }))
 
-    }, [url])
+    }, [url, dispatch])
     return { data, loading, error }
 
 }

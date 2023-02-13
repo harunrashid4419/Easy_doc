@@ -8,7 +8,7 @@ const LeftSideBer = () => {
     const [interviewOpen, setInterviewOpen] = useState(false);
     const [errorDocOpen, setErrorDocOpen] = useState(false);
     const [installation, setInstallation] = useState(false);
-    const { data, loading, error } = useFetch('http://localhost:5000/doc-data');
+    const { data, loading, error } = useFetch('https://easy-doc-server.vercel.app/doc-data');
     if (loading) {
         return <p>Loading...</p>
     }
