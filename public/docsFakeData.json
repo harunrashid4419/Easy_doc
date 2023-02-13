@@ -159,5 +159,29 @@
         "subExampleTitle": "Undeclared or Undefined Variable",
         "subExampleTitleSummury": "When a variable reference cannot be found or is not declared, it causes a reference error. New developers are most likely to commit reference errors by forgetting to define variables before referencing them. Here’s an example:",
         "code": "const a = 'Apple'   console.log(a)   // ReferenceError a is not defined."
+    },
+    {
+        "id": "09",
+        "title": "Getting Started",
+        "category": "installation",
+        "titleSummuryYellow": "Try the new React documentation.   The new Quick Start teaches modern React and includes live examples.   The new docs will soon replace this site, which will be archived. Provide feedback."
+    },
+    {
+        "id": "09",
+        "title": "Create a New React App",
+        "category": "installation",
+        "titleSummuryYellow": "Use an integrated toolchain for the best user and developer experience.   This page describes a few popular React toolchains which help with tasks like:   Scaling to many files and components.   Using third-party libraries from npm.   Detecting common mistakes early.   Live-editing CSS and JS in development.Optimizing the output for production."
+    },
+    {
+        "id": "10",
+        "title": "Add React to a Website",
+        "category": "installation",
+        "titleSummuryYellow": "Try the new React documentation.   The new Quick Start teaches modern React and includes live examples.   The new docs will soon replace this site, which will be archived. Provide feedback."
+    },
+    {
+        "id": "11",
+        "title": "CDN Links",
+        "category": "installation",
+        "titleSummuryYellow": "Both React and ReactDOM are available over a CDN."
     }
 ]
