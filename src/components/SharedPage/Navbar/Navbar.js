@@ -8,6 +8,7 @@ import ThemeToggle from "../../ThemeToggle/ThemeToggle";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
+
   // logout
   const handleLogOut = () => {
     logOut()
@@ -41,6 +42,9 @@ const Navbar = () => {
       </li>
       <li className="mr-4 transition-colors">
         <Link to="/quiz">Quiz</Link>
+      </li>
+      <li className="mr-4 transition-colors">
+        <Link to="/contact">Contact</Link>
       </li>
       {user?.uid ? (
         <>
@@ -82,14 +86,16 @@ const Navbar = () => {
             htmlFor="easy-drawer"
             className="md:hidden text-3xl hover:cursor-pointer hover:bg-slate-200 p-2 rounded-md"
           >
-            <HiMenu className=""></HiMenu>
+            <HiMenu></HiMenu>
           </label>
-          <img
-            className="w-16 h-16"
-            alt=""
-            src="https://static.thenounproject.com/png/4676087-200.png"
-          ></img>
-          <h1 className="text-blue-500 text-3xl font-extrabold">DOC</h1>
+          <Link to='/'>
+            <img
+              className="w-10 h-10 ml-6"
+              alt=""
+              src="https://static.thenounproject.com/png/4676087-200.png"
+            ></img>
+            <h1 className="text-blue-500 text-xl font-extrabold">EASY DOC</h1>
+          </Link>
         </div>
         <div className="md:hidden">
           {user?.uid && (
