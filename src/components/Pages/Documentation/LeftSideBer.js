@@ -29,7 +29,7 @@ const LeftSideBer = () => {
                 </li>
                 <li>
                     {
-                        data && data.filter(item => item?.category === 'installation').map(error => <Link
+                        data && data?.filter(item => item?.category === 'installation').map(error => <Link
                             key={error._id}
                             className={`pl-4 ${installation ? 'block' : 'hidden'} hover:bg-gray-300 cursor-pointer p-1`} to={`/documentation/${error?.id}`}
                         >{error?.title}

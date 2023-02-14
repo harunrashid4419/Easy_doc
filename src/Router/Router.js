@@ -22,12 +22,14 @@ import Error from "../components/Pages/Documentation/Error";
 import Courses from "../components/Pages/Courses/Courses";
 import ErrorElement from "../components/ErrorElement/ErrorElement";
 import Contact from "../components/Pages/Contact/Contact";
+import Quiz from "../components/Pages/QuizPage/Quiz";
+import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    // errorElement: <ErrorElement></ErrorElement>,
+    errorElement: <ErrorElement></ErrorElement>,
     children: [
       {
         path: "/",
@@ -46,8 +48,8 @@ const routes = createBrowserRouter([
         element: <Courses></Courses>,
       },
       {
-        path:'/contact',
-        element:<Contact></Contact>
+        path: "/contact",
+        element: <Contact></Contact>,
       },
       {
         path: "/blog",
@@ -57,6 +59,18 @@ const routes = createBrowserRouter([
       {
         path: "/details/:id",
         element: <Details></Details>,
+      },
+      {
+        path: "/quiz",
+        element: <Quiz></Quiz>,
+        loader: () => fetch("https://easy-doc-server.vercel.app/quiz"),
+      },
+      {
+        path: "/quiz/:id",
+        loader: async ({ params }) => {
+          return fetch(`https://easy-doc-server.vercel.app/quiz/${params.id}`);
+        },
+        element: <QuizDetails></QuizDetails>
       },
       {
         path: "/community",
@@ -76,16 +90,14 @@ const routes = createBrowserRouter([
           },
           {
             path: "/documentation/:id",
-            element: <Interview></Interview>
+            element: <Interview></Interview>,
           },
           {
             path: "/documentation/:id",
-            element: <Error></Error>
+            element: <Error></Error>,
           },
-        ]
+        ],
       },
-
-
 
       {
         path: "/view-profile",
