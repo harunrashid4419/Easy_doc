@@ -10,9 +10,8 @@ const Drawer = () => {
     const [interviewOpen, setInterviewOpen] = useState(false);
     const [errorDocOpen, setErrorDocOpen] = useState(false);
     const { pathname } = useLocation();
-    console.log(pathname);
     const { user } = useContext(AuthContext);
-    const { data, loading, error } = useFetch('http://localhost:5000/doc-data');
+    const { data, loading } = useFetch('https://easy-doc-server.vercel.app/doc-data');
     const links = <>
 
         <Link to="/">Home</Link>
