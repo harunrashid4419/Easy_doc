@@ -1,0 +1,497 @@
+[
+    {
+        "id": "1",
+        "name": "React",
+        "total": "6",
+        "img": "https://www.webrexstudio.com/wp-content/uploads/2019/05/react-js-image.png",
+        "questions": [
+            {
+                "questions": "How many elements does a react component return?",
+                "currect_ans": "1 Element",
+                "_id": "09797232321",
+                "options": [
+                    "1 Element",
+                    "2 Element",
+                    "Multiple Elements",
+                    "None of the above"
+                ]
+            },
+            {
+                "questions": "React is mainly for building",
+                "currect_ans": "User interface",
+                "_id": "09797232322",
+                "options": [
+                    "Database",
+                    "Connectivity",
+                    "User interface",
+                    "Design Platform"
+                ]
+            },
+            {
+                "questions": "JSX is necessary to work with React.js?",
+                "currect_ans": "False",
+                "_id": "09797232323",
+                "options": [
+                    "True",
+                    "False",
+                    "None of the above"
+                ]
+            },
+            {
+                "questions": "What does the 'webpack' command do?",
+                "currect_ans": "1 Element",
+                "_id": "09797232324",
+                "options": [
+                    "A module bundler",
+                    "Runs react local development server.",
+                    "Transpiles all the Javascript down into one file",
+                    "None of the above"
+                ]
+            },
+            {
+                "questions": "What is ReactJS?",
+                "currect_ans": "User-interface framework",
+                "_id": "09797232325",
+                "options": [
+                    "Server-side Framework",
+                    "User-interface framework",
+                    "A Library for building interaction interfaces",
+                    "None of the Above"
+                ]
+            },
+            {
+                "questions": "Reactjs data flow implementation?",
+                "currect_ans": "one way data flow",
+                "_id": "09797232326",
+                "options": [
+                    "one way data flow",
+                    "Two way data flow",
+                    "Two way data flow"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "JavaScript",
+        "total": "7",
+        "img": "https://www.shutterstock.com/shutterstock/photos/1630593262/display_1500/stock-vector-js-j-s-letter-logo-design-with-a-creative-cut-creative-logo-design-1630593262.jpg",
+        "questions": [
+            {
+                "questions": "Can you access Cookie using javascript?",
+                "currect_ans": "True",
+                "_id": "09797232327",
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            {
+                "questions": "Which of the following is a valid type of function javascript supports?",
+                "currect_ans": "Both of the above.",
+                "_id": "09797232328",
+                "options": [
+                   "named function",
+                    "anonymous function",
+                    "Both of the above.",
+                    "None of the above."
+                ]
+            },
+            {
+                "questions": "Which built-in method returns the length of the string?",
+                "currect_ans": "length()",
+                "_id": "09797232329",
+                "options": [
+                    "length()",
+                    "size()",
+                    "index()",
+                    "None of the above."
+                ]
+            },
+            {
+                "questions": "Which built-in method returns the string representation of the number's value?",
+                "currect_ans": "toString()",
+                "_id": "09797232330",
+                "options": [
+                    "toValue()",
+                    "toNumber()",
+                    "toString()",
+                    "None of the above."
+                ]
+            },
+            {
+                "questions": "Which of the following function of Array object adds one or more elements to the end of an array and returns the new length of the array?",
+                "currect_ans": "push()",
+                "_id": "09797232331",
+                "options": [
+                    "pop()",
+                    "push()",
+                    "join()",
+                    "map()"
+                ]
+            },
+            {
+                "questions": "Which of the following function of Array object returns true if at least one element in this array satisfies the provided testing function?",
+                "currect_ans": "some()",
+                "_id": "09797232332",
+                "options": [
+                    "some()",
+                    "reverse()",
+                    "shift()",
+                    "slice()"
+                ]
+            },
+            {
+                "questions": "Which of the following function of String object creates a string to be displayed as bold as if it were in a <b> tag?",
+                "currect_ans": "bold()",
+                "_id": "09797232333",
+                "options": [
+                    "anchor()",
+                    "big()",
+                    "bold()",
+                    "blink()"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "name": "HTML 5",
+        "total": "8",
+        "img": "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png",
+        "questions": [
+            {
+                "questions": "What does HTML stands for?",
+                "currect_ans": "Hypertext Markup Language.",
+                "_id": "09797232334",
+                "options": [
+                    "Hypertext Machine language.",
+                    "Hypertext and links markup language.",
+                    "Hypertext Markup Language.",
+                    "Hightext machine language."
+                ]
+            },
+            {
+                "questions": "How is document type initialized in HTML5.?",
+                "currect_ans": "<!DOCTYPE HTML>",
+                "_id": "09797232335",
+                "options": [
+                    "</DOCTYPE HTML>",
+                    "</DOCTYPE>",
+                    "<!DOCTYPE HTML>",
+                    "</DOCTYPE html>"
+                ]
+            },
+            {
+                "questions": "Which of the following HTML Elements is used for making any text bold ?",
+                "currect_ans": "<b>",
+                "_id": "09797232336",
+                "options": [
+                    "<b>",
+                    "<li>",
+                    "<a>",
+                    "<ul>"
+                ]
+            },
+            {
+                "questions": "Which of the following HTML element is used for creating an unordered list?",
+                "currect_ans": "<ul>",
+                "_id": "09797232337",
+                "options": [
+                    "<b>",
+                    "<li>",
+                    "<a>",
+                    "<ul>"
+                ]
+            },
+            {
+                "questions": "Which of the following characters indicate closing of a tag? ",
+                "currect_ans": "/",
+                "_id": "09797232338",
+                "options": [
+                    ".",
+                    "/",
+                    "//",
+                    "!"
+                ]
+            },
+            {
+                "questions": "What is the font-size of the h1 heading tag?",
+                "currect_ans": "2 em",
+                "_id": "09797232339",
+                "options": [
+                    "1.7 em",
+                    "3.5 em",
+                    "1.5 em",
+                    "2 em"
+                ]
+            },
+            {
+                "questions": "How many heading tags are there in HTML5?",
+                "currect_ans": "6",
+                "_id": "09797232340",
+                "options": [
+                    "3",
+                    "5",
+                    "4",
+                    "6"
+                ]
+            },
+            {
+                "questions": "How many attributes are there in HTML5?",
+                "currect_ans": "None of above",
+                "_id": "09797232341",
+                "options": [
+                    "2",
+                    "7",
+                    "None of above",
+                    "3"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Node JS",
+        "total": "5",
+        "img": "https://images.ctfassets.net/aq13lwl6616q/7cS8gBoWulxkWNWEm0FspJ/c7eb42dd82e27279307f8b9fc9b136fa/nodejs_cover_photo_smaller_size.png",
+        "questions": [
+            {
+                "questions": "Node.js is written in",
+                "currect_ans": "All of the above.",
+                "_id": "09797232342",
+                "options": [
+                    "JavaScript",
+                    "C++",
+                    "C",
+                    "All of the above."
+                ]
+            },
+            {
+                "questions": "How modules in Node.js can be connected from one component to another ?",
+                "currect_ans": "Exports",
+                "_id": "09797232343",
+                "options": [
+                    "Expose",
+                    "Module",
+                    "Exports",
+                    "All of the above."
+                ]
+            },
+            {
+                "questions": "Which of the below modules is not a built-in module in Node.js?",
+                "currect_ans": "fsread",
+                "_id": "09797232344",
+                "options": [
+                    "zli",
+                    "HTTPS",
+                    "dgram",
+                    "fsread"
+                ]
+            },
+            {
+                "questions": "Which of the below command will show all the modules installed locally ?",
+                "currect_ans": "npm ls",
+                "_id": "09797232345",
+                "options": [
+                    "npm ls -g",
+                    "npm ls",
+                    "node ls -g",
+                    "node ls"
+                ]
+            },
+            {
+                "questions": "Which of the below fs module is used to truncate a file?",
+                "currect_ans": "fs.ftruncate(fd, len, callback",
+                "_id": "09797232346",
+                "options": [
+                    "fs.delete(fd, len, callback",
+                    "fs.remove(fd, len, callback)",
+                    "fs.ftruncate(fd, len, callback",
+                    "None of the above."
+                ]
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "name": "MongoDB",
+        "total": "5",
+        "img": "https://webimages.mongodb.com/_com_assets/cms/kuzt9r42or1fxvlq2-Meta_Generic.png",
+        "questions": [
+            {
+                "questions": "Which of the following replica sets vote in the election of a primary replica set?",
+                "currect_ans": "All of the above",
+                "_id": "09797232347",
+                "options": [
+                    "Secondary",
+                    "Hidden",
+                    "Delayed",
+                    "All of the above"
+                ]
+            },
+            {
+                "questions": "Which of the following commands can cause the database to be locked?",
+                "currect_ans": "All of the above",
+                "_id": "09797232348",
+                "options": [
+                    "Inserting data",
+                    "Issuing a query",
+                    "Map-reduce",
+                    "All of the above"
+                ]
+            },
+            {
+                "questions": "Which of the following methods can be used on a cursor object?",
+                "currect_ans": "All of the above",
+                "_id": "09797232349",
+                "options": [
+                    "All of the above",
+                    "cursor.next()",
+                    "cursor.hasNext()",
+                    "cursor.forEach()"
+                ]
+            },
+            {
+                "questions": "Which of the following command is used to get all the indexes on a collection?",
+                "currect_ans": "db.collection.getIndexes()",
+                "_id": "09797232347",
+                "options": [
+                    "db.collection.showIndexes()",
+                    "db.showIndexes()",
+                    "db.collection.getIndexes()",
+                    "db.collection.findIndexes()"
+                ]
+            },
+            {
+                "questions": "Which of the following operators can reverse the effects of a double unwind operation?",
+                "currect_ans": "$push",
+                "_id": "09797232350",
+                "options": [
+                    "$push",
+                    "$wind",
+                    "Can't be reversed",
+                    "$wind.$wind"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "name": "CSS 3",
+        "total": "10",
+        "img": "https://ostraining.com/wp-content/uploads/coding/html5-css3-hd.jpg",
+        "questions": [
+            {
+                "questions": "Which property in CSS is used to set the color of multicolumn text ?",
+                "currect_ans": "column-rule-color",
+                "_id": "09797232351",
+                "options": [
+                    "column-color",
+                    "column-rule-style",
+                    "column-rule-color",
+                    "column-rule-decoration"
+                ]
+            },
+            {
+                "questions": "Which CSS value is responsible for the show the transition effect with a slow start, then fast, and end slowly ?",
+                "currect_ans": "ease",
+                "_id": "09797232352",
+                "options": [
+                    "linear",
+                    "in",
+                    "out",
+                    "ease"
+                ]
+            },
+            {
+                "questions": "Which below selector is used to change the color of placeholder text?",
+                "currect_ans": "",
+                "_id": "09797232353",
+                "options": [
+                    "::margin Selector",
+                    "::placeholder Selector",
+                    "::constraint Selector",
+                    "::layout Selector"
+                ]
+            },
+            {
+                "questions": "Which variable in CSS has been used to defines the data type of the content ?",
+                "currect_ans": "content_type",
+                "_id": "09797232354",
+                "options": [
+                    "content_type",
+                    "content_length",
+                    "content_value",
+                    "content_agent"
+                ]
+            },
+            {
+                "questions": "Which of the below property will rotate an element clockwise or counter-clockwise in CSS ?",
+                "currect_ans": "",
+                "_id": "09797232355",
+                "options": [
+                    "matrix()",
+                    "skewX()",
+                    "skewY()",
+                    "rotate()"
+                ]
+            },
+            {
+                "questions": "Which of the below properties in CSS show a pop-up window that split into pieces when it is clicked ?",
+                "currect_ans": "3D movement effect",
+                "_id": "09797232356",
+                "options": [
+                    "Click and break it",
+                    "Blurred element",
+                    "3D movement effect",
+                    "Left bottom"
+                ]
+            },
+            {
+                "questions": "Which selector in CSS is used to select all elements that are given within a particular range value?",
+                "currect_ans": ":in-range",
+                "_id": "09797232357",
+                "options": [
+                    ":invalid",
+                    ":las",
+                    ":long",
+                    ":in-range"
+                ]
+            },
+            {
+                "questions": "Which property in CSS is used the resize the element by the user?",
+                "currect_ans": "Resize",
+                "_id": "09797232358",
+                "options": [
+                    "Outline Offset",
+                    "Unit",
+                    "Resize",
+                    "Crop"
+                ]
+            },
+            {
+                "questions": "Which of the below selector in CSS is used to selects all elements of value E and attribute attr ?",
+                "currect_ans": "E[attr$=value]",
+                "_id": "09797232359",
+                "options": [
+                    "E[attr^=value]",
+                    "E[attr*=value]",
+                    "E[attr%=value]",
+                    "E[attr$=value]"
+                ]
+            },
+            {
+                "questions": "Which of the below property in CSS is used to give a three diagonal sense of depth to an element?",
+                "currect_ans": "animatio",
+                "_id": "09797232360",
+                "options": [
+                    "animatio",
+                    "sense",
+                    "perspective",
+                    "perspex"
+                ]
+            }
+        ]
+    }
+]
