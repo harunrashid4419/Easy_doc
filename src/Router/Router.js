@@ -95,7 +95,7 @@ const routes = createBrowserRouter([
           },
           {
             path: "/documentation/:id",
-            element: <Error></Error>,
+            element: <Error></Error>
           },
           {
             path: "/documentation/:id",
