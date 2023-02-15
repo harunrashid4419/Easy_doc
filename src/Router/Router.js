@@ -22,13 +22,18 @@ import Error from "../components/Pages/Documentation/Error";
 import Courses from "../components/Pages/Courses/Courses";
 import ErrorElement from "../components/ErrorElement/ErrorElement";
 import Contact from "../components/Pages/Contact/Contact";
+<<<<<<< HEAD
 import Installation from "../components/Pages/Documentation/Installation";
+=======
+import Quiz from "../components/Pages/QuizPage/Quiz";
+import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
+>>>>>>> main
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    // errorElement: <ErrorElement></ErrorElement>,
+    errorElement: <ErrorElement></ErrorElement>,
     children: [
       {
         path: "/",
@@ -47,8 +52,13 @@ const routes = createBrowserRouter([
         element: <Courses></Courses>,
       },
       {
+<<<<<<< HEAD
         path: '/contact',
         element: <Contact></Contact>
+=======
+        path: "/contact",
+        element: <Contact></Contact>,
+>>>>>>> main
       },
       {
         path: "/blog",
@@ -58,6 +68,18 @@ const routes = createBrowserRouter([
       {
         path: "/details/:id",
         element: <Details></Details>,
+      },
+      {
+        path: "/quiz",
+        element: <Quiz></Quiz>,
+        loader: () => fetch("https://easy-doc-server.vercel.app/quiz"),
+      },
+      {
+        path: "/quiz/:id",
+        loader: async ({ params }) => {
+          return fetch(`https://easy-doc-server.vercel.app/quiz/${params.id}`);
+        },
+        element: <QuizDetails></QuizDetails>
       },
       {
         path: "/community",
@@ -77,11 +99,11 @@ const routes = createBrowserRouter([
           },
           {
             path: "/documentation/:id",
-            element: <Interview></Interview>
+            element: <Interview></Interview>,
           },
           {
             path: "/documentation/:id",
-            element: <Error></Error>
+            element: <Error></Error>,
           },
           {
             path: "/documentation/:id",
@@ -89,8 +111,6 @@ const routes = createBrowserRouter([
           },
         ]
       },
-
-
 
       {
         path: "/view-profile",
