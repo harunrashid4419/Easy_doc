@@ -22,12 +22,9 @@ import Error from "../components/Pages/Documentation/Error";
 import Courses from "../components/Pages/Courses/Courses";
 import ErrorElement from "../components/ErrorElement/ErrorElement";
 import Contact from "../components/Pages/Contact/Contact";
-<<<<<<< HEAD
 import Installation from "../components/Pages/Documentation/Installation";
-=======
 import Quiz from "../components/Pages/QuizPage/Quiz";
 import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
->>>>>>> main
 
 const routes = createBrowserRouter([
   {
@@ -52,13 +49,8 @@ const routes = createBrowserRouter([
         element: <Courses></Courses>,
       },
       {
-<<<<<<< HEAD
         path: '/contact',
         element: <Contact></Contact>
-=======
-        path: "/contact",
-        element: <Contact></Contact>,
->>>>>>> main
       },
       {
         path: "/blog",
