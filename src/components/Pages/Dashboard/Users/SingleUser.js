@@ -36,7 +36,7 @@ const SingleUser = ({ user, refetch }) => {
         <td>
           <button
             onClick={() => handleDeleteUser(_id)}
-            className="btn bg-yellow-400 hover:bg-yellow-500 text-black border-none"
+            className="btn text-black border-none" style={{backgroundColor:'#F87171'}}
           >
             Delete
           </button>

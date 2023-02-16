@@ -129,7 +129,7 @@
     {
         "id": "06",
         "category": "error",
-        "title": "Syntax Errro",
+        "title": "Syntax Error",
         "titleSummury": "During the syntax analysis phase, this type of error appears. Syntax error is found during the execution of the program.   Some syntax error can be:   Error in structure   Missing operators   Unbalanced parenthesis",
         "question": "Why this error occur ?",
         "answer": "A syntax error occurs when a programmer writes an incorrect line of code. Most syntax errors involve missing punctuation or a misspelled name. If there is a syntax error in a compiled or interpreted programming language, then the code won't work.   When an invalid calculation enters into a calculator then a syntax error can also occurs. This can be caused by entering several decimal points in one number or by opening brackets without closing them.   For example 1: Using '=' when '==' is needed.",
@@ -164,24 +164,44 @@
         "id": "09",
         "title": "Getting Started",
         "category": "installation",
-        "titleSummuryYellow": "Try the new React documentation.   The new Quick Start teaches modern React and includes live examples.   The new docs will soon replace this site, which will be archived. Provide feedback."
-    },
-    {
-        "id": "09",
-        "title": "Create a New React App",
-        "category": "installation",
-        "titleSummuryYellow": "Use an integrated toolchain for the best user and developer experience.   This page describes a few popular React toolchains which help with tasks like:   Scaling to many files and components.   Using third-party libraries from npm.   Detecting common mistakes early.   Live-editing CSS and JS in development.Optimizing the output for production."
+        "titleSummury":"This page is an overview of the React documentation and related resources.   React is a JavaScript library for building user interfaces. Learn what React is all about on our   homepage or in the tutorial.",
+        "titleSummuryYellow": "Try the new React documentation.   The new Quick Start teaches modern React and includes live examples.   The new docs will soon replace this site, which will be archived. Provide feedback.",
+        "question":"Try React",
+        "answer":"React has been designed from the start for gradual adoption, and you can use as little or as   much React as you need. Whether you want to get a taste of React, add some interactivity to   a simple HTML page, or start a complex React-powered app, the links in this section will help   you get started.",
+        "allTips":"1. Online Playgrounds   If you’re interested in playing around with React, you can use an online code playground. Try a   Hello World template on CodePen, CodeSandbox, or Stackblitz.   If you prefer to use your own text editor, you can also download this HTML file, edit it, and   open it from the local filesystem in your browser. It does a slow runtime code transformation,   so we’d only recommend using this for simple demos.   2. Add React to a Website   You can add React to an HTML page in one minute. You can then either gradually expand its   presence, or keep it contained to a few dynamic widgets.   3. Create a New React App   When starting a React project, a simple HTML page with script tags might still be the best   option. It only takes a minute to set up!   As your application grows, you might want to consider a more integrated setup. There are   several JavaScript toolchains we recommend for larger applications. Each of them can work   with little to no configuration and lets you take full advantage of the rich React ecosystem.",
+        "howTitle":"Learn React",
+        "howTitleSummury1":"People come to React from different backgrounds and with different learning styles. Whether   you prefer a more theoretical or a practical approach, we hope you’ll find this section helpful.",
+        "howTitleSummury2":"1. First Examples   The React homepage contains a few small React examples with a live editor. Even if you don’t   know anything about React yet, try changing their code and see how it affects the result.   2. React for Beginners   If you feel that the React documentation goes at a faster pace than you’re comfortable with,   check out this overview of React by Tania Rascia. It introduces the most important React   concepts in a detailed, beginner-friendly way. Once you’re done, give the documentation   another try!   3. React for Designers   If you’re coming from a design background, these resources are a great place to get started.   4. JavaScript Resources   The React documentation assumes some familiarity with programming in the JavaScript   language. You don’t have to be an expert, but it’s harder to learn both React and JavaScript at   the same time.   We recommend going through this JavaScript overview to check your knowledge level. It will   take you between 30 minutes and an hour but you will feel more confident learning React."
+
+        
     },
     {
         "id": "10",
-        "title": "Add React to a Website",
+        "title": "Create a New React App",
         "category": "installation",
-        "titleSummuryYellow": "Try the new React documentation.   The new Quick Start teaches modern React and includes live examples.   The new docs will soon replace this site, which will be archived. Provide feedback."
+        "titleSummuryYellow": "Use an integrated toolchain for the best user and developer experience.   This page describes a few popular React toolchains which help with tasks like:   Scaling to many files and components.   Using third-party libraries from npm.   Detecting common mistakes early.   Live-editing CSS and JS in development.Optimizing the output for production.",
+        "question":"You Might Not Need a Toolchain",
+        "answer":"If you don’t experience the problems described above or don’t feel comfortable using   JavaScript tools yet, consider adding React as a plain <script> tag on an HTML page,   optionally with JSX.   This is also the easiest way to integrate React into an existing website. You can always add   a larger toolchain if you find it helpful!",
+        "howTitle":"Recommended Toolchains",
+        "howTitleSummury1":"The React team primarily recommends these solutions:   If you’re learning React or creating a new single-page app, use Create React App.   If you’re building a server-rendered website with Node.js, try Next.js.   If you’re building a static content-oriented website, try Gatsby.   If you’re building a component library or integrating with an existing codebase, try More Flexible Toolchains.",
+        "howTitleSummury2":"1. Create React App   Create React App is a comfortable environment for learning React, and is the best way to start   building a new single-page application in React.   It sets up your development environment so that you can use the latest JavaScript features,   provides a nice developer experience, and optimizes your app for production.   2. Next.js   Next.js is a popular and lightweight framework for static and server‑rendered applications   built with React. It includes styling and routing solutions out of the box, and assumes that   you’re using Node.js as the server environment.   Learn Next.js from its official guide.   3. Gatsby   Gatsby is the best way to create static websites with React. It lets you use React components,   but outputs pre-rendered HTML and CSS to guarantee the fastest load time.   Learn Gatsby from its official guide and a gallery of starter kits.   4. More Flexible Toolchains   The following toolchains offer more flexibility and choice. We recommend them to more   experienced users:   Neutrino combines the power of webpack with the simplicity of presets, and includes a preset for React apps and   React components.   Nx is a toolkit for full-stack monorepo development, with built-in support for React, Next.js, Express, and more.   Parcel is a fast, zero configuration web application bundler that works with React.   Razzle is a server-rendering framework that doesn’t require any configuration, but offers more flexibility than   Next.js."
     },
     {
         "id": "11",
         "title": "CDN Links",
         "category": "installation",
-        "titleSummuryYellow": "Both React and ReactDOM are available over a CDN."
+        "titleSummuryYellow": "Both React and ReactDOM are available over a CDN.",
+        "img1":"https://i.ibb.co/nn2Qy0b/Screenshot-63.png",
+        "howTitleSummury1":"The versions above are only meant for development, and are not suitable for production.   Minified and optimized production versions of React are available at:",
+        "img2":"https://i.ibb.co/pR3pWhN/Screenshot-64.png"
+    },
+    {
+        "id": "12",
+        "title": "Release Channels",
+        "category": "installation",
+        "titleSummury":"React relies on a thriving open source community to file bug reports, open pull   requests, and submit RFCs. To encourage feedback we sometimes share special   builds of React that include unreleased features.",
+        "titleSummuryYellow": "Try the new React documentation.   The new Quick Start teaches modern React and includes live examples.   The new docs will soon replace this site, which will be archived. Provide feedback.",
+        "howTitleSummury2":"1. Latest Channel   Latest is the channel used for stable React releases. It corresponds to the latest tag on npm.   It is the recommended channel for all React apps that are shipped to real users.   If you’re not sure which channel you should use, it’s Latest. If you’re a React developer, this   is what you’re already using.   You can expect updates to Latest to be extremely stable. Versions follow the semantic   versioning scheme. Learn more about our commitment to stability and incremental migration   in our versioning policy.   2. Next Channel   The Next channel is a prerelease channel that tracks the main branch of the React repository.   We use prereleases in the Next channel as release candidates for the Latest channel. You can   think of Next as a superset of Latest that is updated more frequently.   The degree of change between the most recent Next release and the most recent Latest   release is approximately the same as you would find between two minor semver releases.   However, the Next channel does not conform to semantic versioning. You should expect   occasional breaking changes between successive releases in the Next channel.   3. Experimental Channel   Like Next, the Experimental channel is a prerelease channel that tracks the main branch of the   React repository. Unlike Next, Experimental releases include additional features and APIs that   are not ready for wider release.   Usually, an update to Next is accompanied by a corresponding update to Experimental. They   are based on the same source revision, but are built using a different set of feature flags."
+
     }
 ]

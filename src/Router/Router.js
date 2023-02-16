@@ -24,6 +24,8 @@ import ErrorElement from "../components/ErrorElement/ErrorElement";
 import Contact from "../components/Pages/Contact/Contact";
 import Quiz from "../components/Pages/QuizPage/Quiz";
 import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
+import Installation from "../components/Pages/Documentation/Installation";
+
 
 const routes = createBrowserRouter([
   {
@@ -89,12 +91,16 @@ const routes = createBrowserRouter([
             element: <Interview></Interview>,
           },
           {
-            path: "/documentation/:id",
+            path: "/documentation/interview/:id",
             element: <Interview></Interview>,
           },
           {
-            path: "/documentation/:id",
+            path: "/documentation/error/:id",
             element: <Error></Error>,
+          },
+          {
+            path: "/documentation/installation/:id",
+            element:<Installation></Installation>,
           },
         ],
       },
