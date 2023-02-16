@@ -32,7 +32,7 @@ const Interview = () => {
     return (
         <div className='text-[1.2rem]'>
             <h1 className='text-3xl my-4 md:text-5xl font-bold'>{title}</h1>
-            <img src={img}></img>
+            <img src={img} alt=""/>
             <p>{titleSummury}</p>
             <h2 className='text-2xl md:text-3xl mt-10 mb-2 font-bold'>{subTitle}</h2>
             <div className='space-y-4'>

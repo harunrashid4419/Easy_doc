@@ -26,6 +26,8 @@ import Installation from "../components/Pages/Documentation/Installation";
 import Quiz from "../components/Pages/QuizPage/Quiz";
 import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
 
+
+
 const routes = createBrowserRouter([
   {
     path: "/",
