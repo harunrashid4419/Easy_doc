@@ -55,7 +55,7 @@ const LeftSideBer = () => {
                   className={`pl-4 ${
                     installation ? "block" : "hidden"
                   } hover:bg-gray-300 cursor-pointer p-1`}
-                  to={`/documentation/installation/${error?.id}`}
+                  to={`/documentation/${error?.id}`}
                 >
                   {error?.title}
                 </Link>
@@ -85,7 +85,7 @@ const LeftSideBer = () => {
                   className={`pl-4 ${
                     interviewOpen ? "block" : "hidden"
                   } hover:bg-gray-300 cursor-pointer p-1`}
-                  to={`/documentation/interview/${interview?.id}`}
+                  to={`/documentation/${interview?.id}`}
                 >
                   {interview?.title}
                 </Link>
@@ -114,7 +114,7 @@ const LeftSideBer = () => {
                   className={`pl-4 ${
                     errorDocOpen ? "block" : "hidden"
                   } hover:bg-gray-300 cursor-pointer p-1`}
-                  to={`/documentation/error/${error?.id}`}
+                  to={`/documentation/${error?.id}`}
                 >
                   {error?.title}
                 </Link>

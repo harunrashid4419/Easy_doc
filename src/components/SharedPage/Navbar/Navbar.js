@@ -24,9 +24,6 @@ const Navbar = () => {
         <ThemeToggle></ThemeToggle>
       </li>
       <li className="mr-4 transition-colors">
-        <Link to="/">Home</Link>
-      </li>
-      <li className="mr-4 transition-colors">
         <Link to="/documentation">Docs</Link>
       </li>
       {user?.uid && (
@@ -50,14 +47,6 @@ const Navbar = () => {
         <>
           <li className="mr-4 transition-colors">
             <Link to="/dashboard">Dashboard</Link>
-          </li>
-          <li className="mr-4 transition-colors">
-            <button
-              className="bg-red-400 text-white font-[poppins] px-6 py-1 rounded hover:bg-red-300 duration-200"
-              onClick={handleLogOut}
-            >
-              LogOut
-            </button>
           </li>
           <li>
             <label htmlFor="profile-modal">
@@ -84,11 +73,11 @@ const Navbar = () => {
         <div className="flex items-center">
           <label
             htmlFor="easy-drawer"
-            className="md:hidden text-3xl hover:cursor-pointer hover:bg-slate-200 p-2 rounded-md"
+            className="lg:hidden text-3xl hover:cursor-pointer hover:bg-slate-200 p-2 rounded-md"
           >
             <HiMenu></HiMenu>
           </label>
-          <Link to='/'>
+          <Link to="/">
             <img
               className="w-10 h-10 ml-6"
               alt=""
@@ -97,14 +86,15 @@ const Navbar = () => {
             <h1 className="text-blue-500 text-xl font-extrabold">EASY DOC</h1>
           </Link>
         </div>
-        <div className="md:hidden">
+        <div className="lg:hidden flex gap-3">
+          <ThemeToggle></ThemeToggle>
           {user?.uid && (
             <label htmlFor="profile-modal">
               <FaUserCircle className="text-4xl hover:ring-8 rounded-full ring-blue-500/30 bg-white text-blue-500 hover:cursor-pointer"></FaUserCircle>
             </label>
           )}
         </div>
-        <ul className="hidden md:flex items-center gap-4">{links}</ul>
+        <ul className="hidden lg:flex shrink-1 items-center gap-4">{links}</ul>
       </div>
     </div>
   );

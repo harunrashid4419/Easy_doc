@@ -34,7 +34,7 @@ const Footer = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://twitter.com/?lang=en"
+                href="https://twitter.com/PolyAkhtar"
               >
                 <FaTwitter />
               </a>
