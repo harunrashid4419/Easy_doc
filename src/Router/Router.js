@@ -27,6 +27,8 @@ import Quiz from "../components/Pages/QuizPage/Quiz";
 import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
 import Payment from "../Payment/Payment";
 
+
+
 const routes = createBrowserRouter([
   {
     path: "/",

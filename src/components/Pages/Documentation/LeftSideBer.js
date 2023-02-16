@@ -118,6 +118,7 @@ const LeftSideBer = () => {
                 >
                   {error?.title}
                 </Link>
+               
               ))}
         </li>
       </ul>
