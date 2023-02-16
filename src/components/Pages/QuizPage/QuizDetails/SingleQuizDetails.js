@@ -1,8 +1,9 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer } from "react";
 import { useTheme } from "../../../../hooks/useTheme";
 import "./SingleQuizDetails.css";
 
 const SingleQuizDetails = ({ question, i }) => {
+  const { theme } = useTheme();
   const { questions, options, currect_ans } = question;
   const initialState = {
     value: "",
@@ -25,7 +26,11 @@ const SingleQuizDetails = ({ question, i }) => {
   console.log(state);
   return (
     <div className="single-quiz-details bg-neutral-content pt-4 pb-8 px-6">
-      <h5 className="text-fuchsia-800 font-semibold text-2xl">
+      <h5
+        className={`${
+          theme === "dark" ? "text-white" : "text-fuchsia-800"
+        } font-semibold text-2xl`}
+      >
         {i + 1}. {questions}
       </h5>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

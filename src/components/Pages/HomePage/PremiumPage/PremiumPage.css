@@ -34,7 +34,6 @@
     margin: 15px auto;
 }
 .premium-section .premium button{
-    background-color: #355BC0;
     padding: 8px 30px;
     border-radius: 3px;
     transition: .5s;
@@ -58,5 +57,13 @@
         margin: 0 20px;
         padding: 30px 0;
         border-radius: 10px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .premium-section{
+        display: block;
+    }
+    .premium-section .premium {
+        margin: 0 0px 20px 0;
     }
 }
