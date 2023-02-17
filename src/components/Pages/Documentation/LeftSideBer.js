@@ -9,9 +9,7 @@ const LeftSideBer = () => {
   const [interviewOpen, setInterviewOpen] = useState(false);
   const [errorDocOpen, setErrorDocOpen] = useState(false);
   const [installation, setInstallation] = useState(false);
-  const { data, loading } = useFetch(
-    "http://localhost:5000/doc-data"
-  );
+  const { data, loading } = useFetch("https://easy-doc-server.vercel.app/doc-data");
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -118,7 +116,6 @@ const LeftSideBer = () => {
                 >
                   {error?.title}
                 </Link>
-               
               ))}
         </li>
       </ul>
