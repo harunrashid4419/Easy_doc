@@ -10,7 +10,6 @@ import Documentation from "../components/Pages/Documentation/Documentation";
 import Home from "../components/Pages/HomePage/Home/Home";
 import Address from "../components/Pages/Profile/Address/Address";
 import Education from "../components/Pages/Profile/Education/Education";
-import MyContribution from "../components/Pages/Profile/MyContribution/MyContribution";
 import MyProfile from "../components/Pages/Profile/MyProfile/MyProfile";
 import ViewProfile from "../components/Pages/Profile/ViewProfile/ViewProfile";
 import Main from "../Layout/Main";
@@ -27,6 +26,7 @@ import Quiz from "../components/Pages/QuizPage/Quiz";
 import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
 import Payment from "../Payment/Payment";
 import AddReview from "../components/Pages/Dashboard/AddReview/AddReview";
+import Drawer from "../components/SharedPage/Navbar/Drawer";
 
 
 
@@ -95,7 +95,11 @@ const routes = createBrowserRouter([
         children: [
           {
             path: "/documentation",
-            element: <Interview></Interview>,
+            element: <Installation></Installation>,
+          },
+          {
+            path: "/documentation/installation/:id",
+            element: <Installation></Installation>
           },
           {
             path: "/documentation/interview/:id",
@@ -105,10 +109,7 @@ const routes = createBrowserRouter([
             path: "/documentation/error/:id",
             element: <Error></Error>
           },
-          {
-            path: "/documentation/installation/:id",
-            element: <Installation></Installation>
-          },
+
         ]
       },
 
@@ -131,11 +132,7 @@ const routes = createBrowserRouter([
           {
             path: "/view-profile/education",
             element: <Education></Education>,
-          },
-          {
-            path: "/view-profile/my-contribution",
-            element: <MyContribution></MyContribution>,
-          },
+          }
         ],
       },
     ],

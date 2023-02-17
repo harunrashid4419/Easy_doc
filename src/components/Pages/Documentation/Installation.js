@@ -6,7 +6,8 @@ import { useTheme } from "../../../hooks/useTheme";
 
 const Installation = () => {
   const { theme } = useTheme();
-  const { id } = useParams();
+  const { id = "63ee7862d9c11e46a7ec92ed" } = useParams();
+  console.log(id);
   const [loading, setLoading] = useState(false);
   const [installation, setInstallation] = useState({});
   const {
@@ -38,7 +39,7 @@ const Installation = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://easy-doc-server.vercel.app/installation/${id}`)
+    fetch(`http://localhost:5000/installation/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setInstallation(data);

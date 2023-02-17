@@ -53,7 +53,7 @@ const Drawer = () => {
                                 {
                                     data.filter(doc => doc?.category === 'installation').map(installation => <Link
                                         key={installation._id}
-                                        className={`${openInstallation ? 'block' : 'hidden'} hover:bg-gray-300 cursor-pointer pl-6 py-1`} to={`/documentation/installation/${installation?.id}`}
+                                        className={`${openInstallation ? 'block' : 'hidden'} hover:bg-gray-300 cursor-pointer pl-6 py-1`} to={`/documentation/installation/${installation?._id}`}
                                     >{installation?.title}
                                     </Link>)
                                 }
@@ -64,7 +64,7 @@ const Drawer = () => {
                                 {
                                     data.filter(doc => doc?.category === 'interview').map(interview => <Link
                                         key={interview._id}
-                                        className={`${interviewOpen ? 'block' : 'hidden'} hover:bg-gray-300 cursor-pointer pl-6 py-1`} to={`/documentation/interview/${interview?.id}`}
+                                        className={`${interviewOpen ? 'block' : 'hidden'} hover:bg-gray-300 cursor-pointer pl-6 py-1`} to={`/documentation/interview/${interview?._id}`}
                                     >{interview?.title}
                                     </Link>)
                                 }
@@ -76,7 +76,7 @@ const Drawer = () => {
                                 {
                                     data.filter(doc => doc?.category === 'error').map(error => <Link
                                         key={error._id}
-                                        className={`${errorDocOpen ? 'block' : 'hidden'} hover:bg-gray-300 cursor-pointer pl-6 py-1`} to={`/documentation/error/${error?.id}`}
+                                        className={`${errorDocOpen ? 'block' : 'hidden'} hover:bg-gray-300 cursor-pointer pl-6 py-1`} to={`/documentation/error/${error?._id}`}
                                     >{error?.title}
                                     </Link>)
                                 }

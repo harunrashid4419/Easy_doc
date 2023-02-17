@@ -78,10 +78,10 @@ const MyProfile = () => {
               // else show this image
               <img src="https://i.ibb.co/dJnbzDL/profile-image.png" alt=""></img>
           }
-          <label>
+          {/* <label>
             <FaCamera className="text-2xl absolute top-28 right-8 text-blue-700"></FaCamera>
             <input type="file" className="file-input file-input-bordered file-input-accent w-full max-w-xs hidden" />
-          </label>
+          </label> */}
         </div>
         {/* this is user information container */}
         <div>

@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 // import { ERROR, SUCCESS } from '../../../redux/actionTypes/actionTypes';
 
 const Interview = () => {
-  const { id = "01" } = useParams();
+  const { id } = useParams();
+  console.log(id);
   const [loading, setLoading] = useState(false);
   const [interview, setInterview] = useState({});
   const {
@@ -31,7 +32,7 @@ const Interview = () => {
   // const dispatch = useDispatch();
   useEffect(() => {
     setLoading(true);
-    fetch(`https://easy-doc-server.vercel.app/interview/${id}`)
+    fetch(`http://localhost:5000/interview/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
