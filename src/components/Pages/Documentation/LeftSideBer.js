@@ -19,9 +19,8 @@ const LeftSideBer = () => {
   return (
     // this is leftsidbar main div
     <div
-      className={`${
-        theme === "dark" ? "bg-[#2c303a54]" : "bg-gray-100"
-      } md:h-screen md:border-r-4 border-gray-200 overflow-y-scroll md:sticky top-0 p-2 hidden md:block md:col-span-3 lg:col-span-1`}
+      className={`${theme === "dark" ? "bg-[#2c303a54]" : "bg-gray-100"
+        } md:h-screen md:border-r-4 border-gray-200 overflow-y-scroll md:sticky top-0 p-2 hidden md:block md:col-span-3 lg:col-span-1`}
     >
       <div className="divider text-gray-500">Menu</div>
       <div className="relative">
@@ -40,24 +39,22 @@ const LeftSideBer = () => {
         >
           Installation
           <FaAngleRight
-            className={`inline text-2xl text-gray-600 ${
-              installation ? "rotate-90" : ""
-            } transition delay-50`}
+            className={`inline text-2xl text-gray-600 ${installation ? "rotate-90" : ""
+              } transition delay-50`}
           ></FaAngleRight>
         </li>
         <li>
           {data &&
             data
               ?.filter((item) => item?.category === "installation")
-              .map((error) => (
+              .map((installation) => (
                 <Link
-                  key={error._id}
-                  className={`pl-4 ${
-                    installation ? "block" : "hidden"
-                  } hover:bg-gray-300 cursor-pointer p-1`}
-                  to={`/documentation/${error?.id}`}
+                  key={installation._id}
+                  className={`pl-4 ${installation ? "block" : "hidden"
+                    } hover:bg-gray-300 cursor-pointer p-1`}
+                  to={`/documentation/installation/${installation?.id}`}
                 >
-                  {error?.title}
+                  {installation?.title}
                 </Link>
               ))}
         </li>
@@ -70,9 +67,8 @@ const LeftSideBer = () => {
         >
           Interview Question{" "}
           <FaAngleRight
-            className={`inline text-2xl text-gray-600 ${
-              interviewOpen ? "rotate-90" : ""
-            } transition delay-50`}
+            className={`inline text-2xl text-gray-600 ${interviewOpen ? "rotate-90" : ""
+              } transition delay-50`}
           ></FaAngleRight>
         </li>
         <li>
@@ -82,10 +78,9 @@ const LeftSideBer = () => {
               .map((interview) => (
                 <Link
                   key={interview._id}
-                  className={`pl-4 ${
-                    interviewOpen ? "block" : "hidden"
-                  } hover:bg-gray-300 cursor-pointer p-1`}
-                  to={`/documentation/${interview?.id}`}
+                  className={`pl-4 ${interviewOpen ? "block" : "hidden"
+                    } hover:bg-gray-300 cursor-pointer p-1`}
+                  to={`/documentation/interview/${interview?.id}`}
                 >
                   {interview?.title}
                 </Link>
@@ -99,9 +94,8 @@ const LeftSideBer = () => {
         >
           Error{" "}
           <FaAngleRight
-            className={`inline text-2xl text-gray-600 ${
-              errorDocOpen ? "rotate-90" : ""
-            } transition delay-50`}
+            className={`inline text-2xl text-gray-600 ${errorDocOpen ? "rotate-90" : ""
+              } transition delay-50`}
           ></FaAngleRight>
         </li>
         <li>
@@ -111,10 +105,9 @@ const LeftSideBer = () => {
               .map((error) => (
                 <Link
                   key={error._id}
-                  className={`pl-4 ${
-                    errorDocOpen ? "block" : "hidden"
-                  } hover:bg-gray-300 cursor-pointer p-1`}
-                  to={`/documentation/${error?.id}`}
+                  className={`pl-4 ${errorDocOpen ? "block" : "hidden"
+                    } hover:bg-gray-300 cursor-pointer p-1`}
+                  to={`/documentation/error/${error?.id}`}
                 >
                   {error?.title}
                 </Link>
