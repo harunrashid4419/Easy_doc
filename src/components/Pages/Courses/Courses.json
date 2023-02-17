@@ -2,14 +2,14 @@
      {
           "coursesName": "Fundamental React",
           "price": "90",
-          "img" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fmozumderneaz-9445.medium.com%2Ffundamental-react-js-b6c97da4ce2a&psig=AOvVaw3EHjHN8OWectGT_KJhn6RX&ust=1676121669979000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMDRjviFi_0CFQAAAAAdAAAAABAE",
+          "img" : "https://miro.medium.com/v2/resize:fit:720/format:webp/1*lrM8fal70VbPMdy4CFZOcw.jpeg",
           "participant" : "2,000",
           "heading" : "Learn the Fundamentals of React Build Dynamic User Interfaces",
           "fullderscription" : "Discover the power of React, the popular JavaScript library for building user interfaces. In this course, you'll learn the fundamental concepts and techniques of React, including components, state and props, event handling, and more. Gain hands-on experience by building real-world applications and bring your ideas to life. Join now and become a confident React developer."
      },
      {
           "coursesName" : "Explore deeply react custom hooks.",
-          "img" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcodersociety.com%2Fblog%2Farticles%2Freact-hooks&psig=AOvVaw1qiYey-RFwGAElTKV97-Rp&ust=1676121577640000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIDk98yFi_0CFQAAAAAdAAAAABAE",
+          "img" : "https://tsh.io/wp-content/uploads/fly-images/14921/react-hooks-best-practices-lead_-810x540.jpg",
           "price" : "120",
           "participant" : "1,950",
           "heading" : "Dive Deep into React Custom Hooks Streamline Your Code.",
