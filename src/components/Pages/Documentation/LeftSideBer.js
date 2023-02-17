@@ -10,7 +10,7 @@ const LeftSideBer = () => {
   const [errorDocOpen, setErrorDocOpen] = useState(false);
   const [installation, setInstallation] = useState(false);
   const { data, loading } = useFetch(
-    "https://easy-doc-server.vercel.app/doc-data"
+    "http://localhost:5000/doc-data"
   );
   if (loading) {
     return <p>Loading...</p>;
@@ -49,15 +49,15 @@ const LeftSideBer = () => {
           {data &&
             data
               ?.filter((item) => item?.category === "installation")
-              .map((error) => (
+              .map((installation) => (
                 <Link
-                  key={error._id}
+                  key={installation._id}
                   className={`pl-4 ${
-                    installation ? "block" : "hidden"
+                    setInstallation ? "block" : "hidden"
                   } hover:bg-gray-300 cursor-pointer p-1`}
-                  to={`/documentation/${error?.id}`}
+                  to={`/documentation/installation/${installation?.id}`}
                 >
-                  {error?.title}
+                  {installation?.title}
                 </Link>
               ))}
         </li>
@@ -85,7 +85,7 @@ const LeftSideBer = () => {
                   className={`pl-4 ${
                     interviewOpen ? "block" : "hidden"
                   } hover:bg-gray-300 cursor-pointer p-1`}
-                  to={`/documentation/${interview?.id}`}
+                  to={`/documentation/interview/${interview?.id}`}
                 >
                   {interview?.title}
                 </Link>
@@ -114,7 +114,7 @@ const LeftSideBer = () => {
                   className={`pl-4 ${
                     errorDocOpen ? "block" : "hidden"
                   } hover:bg-gray-300 cursor-pointer p-1`}
-                  to={`/documentation/${error?.id}`}
+                  to={`/documentation/error/${error?.id}`}
                 >
                   {error?.title}
                 </Link>

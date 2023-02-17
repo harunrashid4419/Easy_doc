@@ -97,15 +97,15 @@ const routes = createBrowserRouter([
             element: <Interview></Interview>,
           },
           {
-            path: "/documentation/:id",
+            path: "/documentation/interview/:id",
             element: <Interview></Interview>,
           },
           {
-            path: "/documentation/:id",
+            path: "/documentation/error/:id",
             element: <Error></Error>
           },
           {
-            path: "/documentation/:id",
+            path: "/documentation/installation/:id",
             element: <Installation></Installation>
           },
         ]
