@@ -9,6 +9,7 @@ import useFetch from "../../../hooks/useFetch";
 const Drawer = () => {
   const [interviewOpen, setInterviewOpen] = useState(false);
   const [errorDocOpen, setErrorDocOpen] = useState(false);
+  const [openInstallation, setOpenInstallation] = useState(false);
   const { pathname } = useLocation();
   const { user } = useContext(AuthContext);
   const { data, loading } = useFetch(
@@ -51,6 +52,31 @@ const Drawer = () => {
               </Link>
 
               <label
+                onClick={() => setOpenInstallation(!openInstallation)}
+                className="hover:cursor-pointer px-4 py-2 flex items-center hover:bg-gray-300 justify-between"
+              >
+                React{" "}
+                <FaAngleRight
+                  className={`inline text-2xl text-gray-600 ${
+                    openInstallation ? "rotate-90" : ""
+                  } transition delay-50 `}
+                ></FaAngleRight>
+              </label>
+
+              {data
+                .filter((doc) => doc?.category === "installation")
+                .map((installation) => (
+                  <Link
+                    key={installation._id}
+                    className={`${
+                      openInstallation ? "block" : "hidden"
+                    } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
+                    to={`/documentation/installation/${installation?.id}`}
+                  >
+                    {installation?.title}
+                  </Link>
+                ))}
+              <label
                 onClick={() => setInterviewOpen(!interviewOpen)}
                 className="hover:cursor-pointer px-4 py-2 flex items-center hover:bg-gray-300 justify-between"
               >
@@ -70,7 +96,7 @@ const Drawer = () => {
                     className={`${
                       interviewOpen ? "block" : "hidden"
                     } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
-                    to={`/documentation/${interview?.id}`}
+                    to={`/documentation/interview/${interview?.id}`}
                   >
                     {interview?.title}
                   </Link>
@@ -96,7 +122,7 @@ const Drawer = () => {
                     className={`${
                       errorDocOpen ? "block" : "hidden"
                     } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
-                    to={`/documentation/${error?.id}`}
+                    to={`/documentation/error/${error?.id}`}
                   >
                     {error?.title}
                   </Link>
