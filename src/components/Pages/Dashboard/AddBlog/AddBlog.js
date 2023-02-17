@@ -88,7 +88,7 @@ const AddBlog = () => {
   };
 
   return (
-    <div className="add-blog-section">
+    <div className="add-blog-section bg-neutral-content">
       <h2>Add a Blog</h2>
       <form onSubmit={handleBlogSubmit}>
         <div className="form-control w-full mb-5">

@@ -8,8 +8,10 @@ const LeftSideBer = () => {
   const { theme } = useTheme();
   const [interviewOpen, setInterviewOpen] = useState(false);
   const [errorDocOpen, setErrorDocOpen] = useState(false);
-  const [installation, setInstallation] = useState(false);
-  const { data, loading } = useFetch("https://easy-doc-server.vercel.app/doc-data");
+  const [openInstallation, setOpenInstallation] = useState(false);
+  const { data, loading } = useFetch(
+    "https://easy-doc-server.vercel.app/doc-data"
+  );
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -32,12 +34,12 @@ const LeftSideBer = () => {
       <h1 className="text-2xl font-bold text-center">React</h1>
       <ul className="space-y-2 text-[1.2rem]">
         <li
-          onClick={() => setInstallation(!installation)}
+          onClick={() => setOpenInstallation(!openInstallation)}
           className="flex justify-between transition duration-700 ease-in-out cursor-pointer items-center text-[1.5rem] hover:bg-gray-300 pl-2"
         >
           Installation
           <FaAngleRight
-            className={`inline text-2xl text-gray-600 ${installation ? "rotate-90" : ""
+            className={`inline text-2xl text-gray-600 ${openInstallation ? "rotate-90" : ""
               } transition delay-50`}
           ></FaAngleRight>
         </li>
@@ -48,7 +50,7 @@ const LeftSideBer = () => {
               .map((installation) => (
                 <Link
                   key={installation._id}
-                  className={`pl-4 ${installation ? "block" : "hidden"
+                  className={`pl-4 ${openInstallation ? "block" : "hidden"
                     } hover:bg-gray-300 cursor-pointer p-1`}
                   to={`/documentation/installation/${installation?.id}`}
                 >
