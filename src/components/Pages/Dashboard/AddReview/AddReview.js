@@ -37,7 +37,7 @@ const AddReview = () => {
     e
   ) => {
     const feedbacks = { name, email, photoURL, feedback, rating, date };
-    fetch("http://localhost:5000/feedback", {
+    fetch("https://easy-doc-server.vercel.app/feedback", {
       method: "POST",
       headers: {
         "content-type": "application/json",

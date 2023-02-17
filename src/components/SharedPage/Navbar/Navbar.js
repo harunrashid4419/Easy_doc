@@ -77,9 +77,9 @@ const Navbar = () => {
           >
             <HiMenu></HiMenu>
           </label>
-          <Link to="/">
+          <Link className="flex items-center" to="/">
             <img
-              className="w-10 h-10 ml-6"
+              className="w-10 h-10"
               alt=""
               src="https://static.thenounproject.com/png/4676087-200.png"
             ></img>
