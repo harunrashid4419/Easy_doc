@@ -21,6 +21,7 @@ const DashboardLayout = () => {
           <div className="mt-8 flex flex-col gap-4 relative">
             {isAdmin && <Link to="/dashboard/users">All User</Link>}
             <Link to="/dashboard/addBlog">Add Blog</Link>
+            <Link to="/dashboard/addReview">Add Review</Link>
           </div>
         </div>
         <div className="text-xl w-full text-gray-900 font-semibold border-violet-200">

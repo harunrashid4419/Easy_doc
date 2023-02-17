@@ -26,6 +26,7 @@ import Installation from "../components/Pages/Documentation/Installation";
 import Quiz from "../components/Pages/QuizPage/Quiz";
 import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
 import Payment from "../Payment/Payment";
+import AddReview from "../components/Pages/Dashboard/AddReview/AddReview";
 
 
 
@@ -159,6 +160,10 @@ const routes = createBrowserRouter([
         path: "/dashboard/addBlog",
         element: <AddBlog></AddBlog>,
       },
+      {
+        path: '/dashboard/addReview',
+        element: <AddReview></AddReview>
+      }
     ],
   },
 ]);
