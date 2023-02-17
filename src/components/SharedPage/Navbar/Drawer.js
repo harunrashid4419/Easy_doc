@@ -69,7 +69,7 @@ const Drawer = () => {
                                         key={installation._id}
                                         className={`${openInstallation ? "block" : "hidden"
                                             } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
-                                        to={`/documentation/installation/${installation?.id}`}
+                                        to={`/documentation/installation/${installation?._id}`}
                                     >
                                         {installation?.title}
                                     </Link>
@@ -92,7 +92,7 @@ const Drawer = () => {
                                         key={interview._id}
                                         className={`${interviewOpen ? "block" : "hidden"
                                             } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
-                                        to={`/documentation/interview/${interview?.id}`}
+                                        to={`/documentation/interview/${interview?._id}`}
                                     >
                                         {interview?.title}
                                     </Link>
@@ -116,7 +116,7 @@ const Drawer = () => {
                                         key={error._id}
                                         className={`${errorDocOpen ? "block" : "hidden"
                                             } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
-                                        to={`/documentation/error/${error?.id}`}
+                                        to={`/documentation/error/${error?._id}`}
                                     >
                                         {error?.title}
                                     </Link>
