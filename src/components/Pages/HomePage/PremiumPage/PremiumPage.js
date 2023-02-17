@@ -14,6 +14,8 @@ const PremiumPage = () => {
   const { theme } = useTheme();
   return (
     <div className="container">
+      <h2 className="text-center mt-5 text-4xl">Premium option</h2>
+      <p className="text-center italic mt-1 text-sm mb-8">If you want to talk with us, Please buy the premium option.</p>
       <div className="premium-section">
         <div
           className={`premium ${
