@@ -5,7 +5,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../Context/UserContext";
 
-function CheckoutFrom({price}) {
+function CheckoutFrom({ price }) {
   const { user } = useContext(AuthContext);
   const [cardError, setCardError] = useState("");
   const [success, setSuccess] = useState("");
@@ -94,6 +94,7 @@ function CheckoutFrom({price}) {
   };
   return (
     <>
+      <h2 className="my-5 text-2xl">Subscription Price: <span className="text-green-500">{price}</span></h2>
       <form onSubmit={handleSubmit}>
         <CardElement
           options={{

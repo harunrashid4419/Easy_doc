@@ -90,7 +90,7 @@ const Details = () => {
     <div className="container">
       <div className="main-blog-details">
         <div className="top-header">
-          <p className="text-base-content">{post_date}</p>
+          <p className="text-base-content">{post_date.slice(0, 10)}</p>
           <div className="share-icon">
             <Link>
               <FaFacebookF />

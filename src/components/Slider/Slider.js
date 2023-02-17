@@ -16,85 +16,13 @@ const Slider = () => {
   const { theme } = useTheme();
   const [datas, setDatas] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/feedback")
+    fetch("https://easy-doc-server.vercel.app/feedback")
       .then((res) => res.json())
       .then((data) => {
         setDatas(data);
       });
   }, []);
 
-  // const datas = [
-  //   {
-  //     name: "alison",
-  //     time: 2,
-  //     rating: 4.5,
-  //     description:
-  //       " In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available ",
-  //   },
-  //   {
-  //     name: "ederson",
-  //     time: 3,
-  //     rating: 5.0,
-  //     description:
-  //       " In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available ",
-  //   },
-  //   {
-  //     name: "ederson",
-  //     time: 3,
-  //     rating: 5.0,
-  //     description:
-  //       " In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available ",
-  //   },
-  //   {
-  //     name: "ederson",
-  //     time: 3,
-  //     rating: 5.0,
-  //     description:
-  //       " In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available ",
-  //   },
-  //   {
-  //     name: "ederson",
-  //     time: 3,
-  //     rating: 5.0,
-  //     description:
-  //       " In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available ",
-  //   },
-  //   {
-  //     name: "ederson",
-  //     time: 3,
-  //     rating: 5.0,
-  //     description:
-  //       " In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available ",
-  //   },
-  //   {
-  //     name: "paolo",
-  //     time: "11.30",
-  //     rating: 5,
-  //     description:
-  //       " In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available ",
-  //   },
-  //   {
-  //     name: "paolo",
-  //     time: "11.30",
-  //     rating: 5,
-  //     description:
-  //       " In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available ",
-  //   },
-  //   {
-  //     name: "paolo",
-  //     time: "11.30",
-  //     rating: 5,
-  //     description:
-  //       " In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available ",
-  //   },
-  //   {
-  //     name: "paolo",
-  //     time: "11.30",
-  //     rating: 5,
-  //     description:
-  //       " In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available ",
-  //   },
-  // ];
   return (
     <div className="bg-base-100">
       <div className="container">
@@ -142,7 +70,7 @@ const Slider = () => {
                         }`}
                       >
                         {" "}
-                        {data.time} days ago
+                        {data.date.slice(0, 10)}
                       </span>
                     </div>
                   </div>
