@@ -149,6 +149,10 @@ const routes = createBrowserRouter([
     ),
     children: [
       {
+        path: '/dashboard',
+        element: <AddReview></AddReview>
+      },
+      {
         path: "/dashboard/users",
         element: (
           <AdminRouter>

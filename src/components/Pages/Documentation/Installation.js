@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useTheme } from "../../../hooks/useTheme";
 
 const Installation = () => {
-    const {theme} = useTheme();
+  const { theme } = useTheme();
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [installation, setInstallation] = useState({});
@@ -63,7 +63,7 @@ const Installation = () => {
         {summuries &&
           summuries.map((summury, idx) => <p key={idx}>{summury}</p>)}
       </div>
-      <div className={`space-y-4 w-full ${theme === 'dark' ? 'bg-[#171717]': 'bg-yellow-200'} rounded-md mb-8`}>
+      <div className={`space-y-4 w-full ${theme === 'dark' ? 'bg-[#171717]' : 'bg-yellow-200'} rounded-md mb-8`}>
         {summuries3 &&
           summuries3.map((summury, idx) => (
             <p className="text-lg md:text-xl p-4" key={idx}>
