@@ -1,45 +1,33 @@
+import { Player } from "@lottiefiles/react-lottie-player";
 import React from "react";
-import { FaCheck } from "react-icons/fa";
-import { VscChromeClose } from "react-icons/vsc";
+import { Link } from "react-router-dom";
+import { useTheme } from "../../../../hooks/useTheme";
 import "./PremiumPage.css";
+import subscribtion from '../../../../assets/subscribe-banner.json'
 
 const PremiumPage = () => {
+
+  const { theme } = useTheme();
   return (
     <div className="container">
-      <div className="premium-section">
-        <div className="premium bg-gray-400">
-          <h2>Free</h2>
-          <div className="price text-base-100">
-            <h1>$0</h1>
-            <p>Per Month</p>
-          </div>
-          <div className="premium-action">
-            <p className="flex"><FaCheck className="mt-1 mr-1" /> Problem Sloveing</p>
-            <p className="flex"><FaCheck className="mt-1 mr-1" /> Documentation</p>
-            <p className="flex"><FaCheck className="mt-1 mr-1" /> Interview Questions</p>
-            <p className="flex"><FaCheck className="mt-1 mr-1" /> Blog</p>
-            <p className="flex"><VscChromeClose className="mt-1 mr-1" /> Live Chat</p>
-          </div>
-          <div className="text-center mt-5">
-            <button className="text-base-100">Buy Now</button>
-          </div>
+       <h2 className="text-center text-3xl font-bold">Get on-time support </h2>
+              <div className="grid md:grid-cols-2 sm:grid-cols-1 items-center pt-16  bg-neutral-content mb-5 px-5">
+        <div>
+        <Player
+            src={subscribtion}
+            className="h-72 w-full"
+            loop
+            autoplay
+          ></Player>
         </div>
-        <div className="premium bg-gray-400">
-          <h2>Premium</h2>
-          <div className="price text-base-100">
-            <h1>$2.99</h1>
-            <p>Per Month</p>
-          </div>
-          <div className="premium-action">
-            <p className="flex"><FaCheck className="mt-1 mr-1" /> Problem Sloveing</p>
-            <p className="flex"><FaCheck className="mt-1 mr-1" /> Documentation</p>
-            <p className="flex"><FaCheck className="mt-1 mr-1" /> Interview Questions</p>
-            <p className="flex"><FaCheck className="mt-1 mr-1" /> Blog</p>
-            <p className="flex"><FaCheck className="mt-1 mr-1" /> Live Chat</p>
-          </div>
-          <div className="text-center mt-5">
-            <button className="text-base-100">Buy Now</button>
-          </div>
+        <div>
+        <h1 className="text-3xl font-bold mb-5">
+        subscribe our innovation and get on-time support.
+          </h1>
+          <p className={`${theme === 'dark' ? 'text-[#ffffff94]' : 'text-[6b707f]'}`}>
+          with <strong>2$</strong> subscription fee to get premium access. it will help you get an on-time problem solution. It helps for potential work with live chat.
+          </p>
+          <button className="btn mt-4 btn-secondary bg-purple-600 border-none">subscribe</button>
         </div>
       </div>
     </div>

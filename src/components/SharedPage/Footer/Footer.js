@@ -6,7 +6,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="main-footer-section bg-base-100">
+    <div className="main-footer-section bg-base-100]">
       <div className="container">
         <div id="footer-section" className="pt-10 pb-5 text-white">
           <div>
@@ -34,7 +34,7 @@ const Footer = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://twitter.com/?lang=en"
+                href="https://twitter.com/PolyAkhtar"
               >
                 <FaTwitter />
               </a>

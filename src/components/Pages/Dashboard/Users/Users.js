@@ -16,11 +16,11 @@ const Users = () => {
 
   return (
     <div className="mb-10">
-      <h1 className="text-4xl my-12 text-center">All Users</h1>
+      <h1 className={`text-4xl my-12 text-center ${theme === 'dark' ? 'text-white' : 'text-black'}`}>All Users</h1>
       <div className="overflow-x-auto ">
         <table className={`table table-zebra w-full ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
           <thead>
-            <tr className="bg-violet-200">
+            <tr className="">
               <th className="text-xl font-medium">Image</th>
               <th className="text-xl font-medium">Name</th>
               <th className="text-xl font-medium">Email</th>

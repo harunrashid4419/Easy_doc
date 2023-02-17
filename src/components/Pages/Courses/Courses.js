@@ -37,7 +37,7 @@ function Courses() {
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 my-0 m-4'>
       {
           allcoursesdata.map(courses => <ShowCourses
-               courses={courses}
+            courses={courses}
           ></ShowCourses>)
        }
       </div>
