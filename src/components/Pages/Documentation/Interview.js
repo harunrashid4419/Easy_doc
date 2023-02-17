@@ -32,7 +32,7 @@ const Interview = () => {
   // const dispatch = useDispatch();
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/interview/${id}`)
+    fetch(`https://easy-doc-server.vercel.app/interview/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);

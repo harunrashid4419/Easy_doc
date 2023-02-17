@@ -39,7 +39,7 @@ const Installation = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/installation/${id}`)
+    fetch(`https://easy-doc-server.vercel.app/installation/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setInstallation(data);
