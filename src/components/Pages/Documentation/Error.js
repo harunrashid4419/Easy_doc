@@ -25,7 +25,7 @@ const Error = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://easy-doc-server.vercel.app/error/${id}`)
+    fetch(`http://localhost:5000/error/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);

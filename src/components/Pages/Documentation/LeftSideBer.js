@@ -32,6 +32,9 @@ const LeftSideBer = () => {
         <FaSearch className="absolute top-3 left-4 w-10 text-slate-400"></FaSearch>
       </div>
       <h1 className="text-2xl font-bold text-center">React</h1>
+
+
+      {/* React Installation docs data here */}
       <ul className="space-y-2 text-[1.2rem]">
         <li
           onClick={() => setOpenInstallation(!openInstallation)}
@@ -52,7 +55,7 @@ const LeftSideBer = () => {
                   key={installation._id}
                   className={`pl-4 ${openInstallation ? "block" : "hidden"
                     } hover:bg-gray-300 cursor-pointer p-1`}
-                  to={`/documentation/installation/${installation?.id}`}
+                  to={`/documentation/installation/${installation._id}`}
                 >
                   {installation?.title}
                 </Link>
@@ -60,6 +63,9 @@ const LeftSideBer = () => {
         </li>
       </ul>
       <h1 className="text-2xl font-bold text-center mt-8">Others</h1>
+
+
+      {/* Interview docs data here */}
       <ul className="space-y-2 text-[1.2rem]">
         <li
           onClick={() => setInterviewOpen(!interviewOpen)}
@@ -80,13 +86,16 @@ const LeftSideBer = () => {
                   key={interview._id}
                   className={`pl-4 ${interviewOpen ? "block" : "hidden"
                     } hover:bg-gray-300 cursor-pointer p-1`}
-                  to={`/documentation/interview/${interview?.id}`}
+                  to={`/documentation/interview/${interview._id}`}
                 >
                   {interview?.title}
                 </Link>
               ))}
         </li>
       </ul>
+
+
+      {/* Error docs data here */}
       <ul className="space-y-2 text-[1.2rem]">
         <li
           onClick={() => setErrorDocOpen(!errorDocOpen)}
@@ -107,7 +116,7 @@ const LeftSideBer = () => {
                   key={error._id}
                   className={`pl-4 ${errorDocOpen ? "block" : "hidden"
                     } hover:bg-gray-300 cursor-pointer p-1`}
-                  to={`/documentation/error/${error?.id}`}
+                  to={`/documentation/error/${error._id}`}
                 >
                   {error?.title}
                 </Link>
