@@ -1,12 +1,13 @@
 import React from 'react';
-import Description from './Description';
-import MenuBar from './MenuBar';
+import LeftSideBer from './LeftSideBer';
+import RightSideBer from './RightSideBer';
+
 
 const Documentation = () => {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-4 gap-y-4 m-2'>
-      <MenuBar></MenuBar>
-      <Description></Description>
+    <div className='grid grid-cols-1 md:grid-cols-8 lg:grid-cols-4 gap-y-4 m-2'>
+      <LeftSideBer></LeftSideBer>
+      <RightSideBer></RightSideBer>
     </div>
   );
 };

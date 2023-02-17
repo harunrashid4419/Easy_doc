@@ -7,7 +7,6 @@ import Details from "../components/Pages/BlogPage/Details/Details";
 import DashboardLayout from "../components/Pages/Dashboard/DashboardLayout/DashboardLayout";
 import Users from "../components/Pages/Dashboard/Users/Users";
 import Documentation from "../components/Pages/Documentation/Documentation";
-import IdWiseDataLoad from "../components/Pages/Documentation/IdWiseDataLoad";
 import Home from "../components/Pages/HomePage/Home/Home";
 import Address from "../components/Pages/Profile/Address/Address";
 import Education from "../components/Pages/Profile/Education/Education";
@@ -18,8 +17,17 @@ import Main from "../Layout/Main";
 import PrivateRoute from "./PrivateRoute";
 import AddBlog from "../components/Pages/Dashboard/AddBlog/AddBlog";
 import AdminRouter from "./AdminRouter";
+import Interview from "../components/Pages/Documentation/Interview";
+import Error from "../components/Pages/Documentation/Error";
 import Courses from "../components/Pages/Courses/Courses";
 import ErrorElement from "../components/ErrorElement/ErrorElement";
+import Contact from "../components/Pages/Contact/Contact";
+import Installation from "../components/Pages/Documentation/Installation";
+import Quiz from "../components/Pages/QuizPage/Quiz";
+import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
+import Payment from "../Payment/Payment";
+
+
 
 const routes = createBrowserRouter([
   {
@@ -44,6 +52,10 @@ const routes = createBrowserRouter([
         element: <Courses></Courses>,
       },
       {
+        path: '/contact',
+        element: <Contact></Contact>
+      },
+      {
         path: "/blog",
         element: <Blog></Blog>,
         loader: () => fetch("https://easy-doc-server.vercel.app/blog"),
@@ -51,6 +63,22 @@ const routes = createBrowserRouter([
       {
         path: "/details/:id",
         element: <Details></Details>,
+      },
+      {
+        path: "/quiz",
+        element: <Quiz></Quiz>,
+        loader: () => fetch("https://easy-doc-server.vercel.app/quiz"),
+      },
+      {
+        path: "/quiz/:id",
+        loader: async ({ params }) => {
+          return fetch(`https://easy-doc-server.vercel.app/quiz/${params.id}`);
+        },
+        element: <QuizDetails></QuizDetails>
+      },
+      {
+        path: '/payment',
+        element: <Payment></Payment>
       },
       {
         path: "/community",
@@ -66,17 +94,22 @@ const routes = createBrowserRouter([
         children: [
           {
             path: "/documentation",
-            element: <IdWiseDataLoad></IdWiseDataLoad>,
+            element: <Interview></Interview>,
           },
           {
-            path: "/documentation/:id",
-            element: <IdWiseDataLoad></IdWiseDataLoad>,
-            // loader: async ({ params }) => await fetch(`https://easy-doc-server.vercel.app/menu/${params.id}`)
-          }
+            path: "/documentation/interview/:id",
+            element: <Interview></Interview>,
+          },
+          {
+            path: "/documentation/error/:id",
+            element: <Error></Error>
+          },
+          {
+            path: "/documentation/installation/:id",
+            element: <Installation></Installation>
+          },
         ]
       },
-
-
 
       {
         path: "/view-profile",

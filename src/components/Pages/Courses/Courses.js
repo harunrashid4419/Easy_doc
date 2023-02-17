@@ -8,7 +8,7 @@ function Courses() {
      const {theme} = useTheme();
      const [allcoursesdata, setallCoursesData] = useState([])
    useEffect(() =>{
-      fetch('http://localhost:5000/allcourses')
+      fetch('https://easy-doc-server.vercel.app/allcourses')
       .then(res => res.json())
       .then(data => setallCoursesData(data))
    },[])

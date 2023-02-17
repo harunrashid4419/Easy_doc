@@ -18,40 +18,12 @@ const DashboardLayout = () => {
             open ? "md:w-72 lg:w-72 w-12" : "lg:w-72 md:w-72 w-12"
           } duration-500 text-gray-100 px-4`}
         >
-          {/* <div className="py-3 flex justify-end ">
-            <HiMenuAlt3
-              size={32}
-              className="cursor-pointer"
-              onClick={() => setOpen(!open)}
-            />
-          </div> */}
           <div className="mt-8 flex flex-col gap-4 relative">
-            {/* {menus?.map((menu, i) => (
-              <Link
-                to={menu?.link}
-                key={i}
-                className={` ${
-                  menu?.margin && "mt-5"
-                } group flex items-center text-sm  gap-3.5 font-medium p-2 hover:text-orange-500 transition-colors rounded-md`}
-              >
-                <div>{React.createElement(menu?.icon, { size: "20" })}</div>
-                <h2
-                  style={{
-                    transitionDelay: `${i + 3}00ms`,
-                  }}
-                  className={`whitespace-pre duration-500 text-xl ${
-                    !open && "opacity-0 translate-x-28 overflow-hidden"
-                  }`}
-                >
-                  {menu?.name}
-                </h2>
-              </Link>
-            ))} */}
             {isAdmin && <Link to="/dashboard/users">All User</Link>}
             <Link to="/dashboard/addBlog">Add Blog</Link>
           </div>
         </div>
-        <div className="text-xl w-full  text-gray-900 font-semibold border-violet-200">
+        <div className="text-xl w-full text-gray-900 font-semibold border-violet-200">
           <Outlet></Outlet>
         </div>
       </section>

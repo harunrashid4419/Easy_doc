@@ -6,32 +6,49 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="main-footer-section bg-base-100">
+    <div className="main-footer-section bg-base-100]">
       <div className="container">
         <div id="footer-section" className="pt-10 pb-5 text-white">
           <div>
             <img style={{ width: "90px" }} src={logo} alt="logo" />
-            <p className="text-xl mt-2 text-base-content">
-              EASY DOC
+            <p className="text-xl mt-2 text-base-content">EASY DOC</p>
+            <p className="py-2 text-base-content">
+              This is the documentation website. You improve your coding
+              knowledge by reading the documentation.
             </p>
-            <p className="py-2 text-base-content">This is the documentation website. You improve your coding knowledge by reading the documentation.</p>
             <div className="social-icon">
-              <Link>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.facebook.com/mdharun.orrashid.79827"
+              >
                 <FaFacebookF />
-              </Link>
-              <Link>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/harunrashid4419/Easy_doc"
+              >
                 <FaGithub />
-              </Link>
-              <Link>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://twitter.com/PolyAkhtar"
+              >
                 <FaTwitter />
-              </Link>
-              <Link>
+              </a>
+              <a
+                rel="noreferrer"
+                href="https://www.youtube.com/@codecademy"
+                target="_blank"
+              >
                 <FaYoutube />
-              </Link>
+              </a>
             </div>
           </div>
           <div className="text-primary" id="doc-content">
-            <p className='footer-title text-primary'>Doc Contents</p>
+            <p className="footer-title text-primary">Doc Contents</p>
             <Link>Video</Link>
             <Link>List Style</Link>
             <Link>Tables</Link>
@@ -39,14 +56,14 @@ const Footer = () => {
             <Link>Keyboard Shortcuts</Link>
           </div>
           <div className="text-primary" id="doc-content">
-            <p className='footer-title text-primary'>Doc Footnotes</p>
+            <p className="footer-title text-primary">Doc Footnotes</p>
             <Link>Single Comun</Link>
             <Link>Two Columns</Link>
             <Link>Three Columns</Link>
             <Link>Four Columns</Link>
           </div>
           <div className="text-primary" id="doc-content">
-            <p className='footer-title text-primary'>Doc Elements</p>
+            <p className="footer-title text-primary">Doc Elements</p>
             <Link>Accordions Widget</Link>
             <Link>Tabs Widget</Link>
             <Link>Cheatsheet Widget</Link>
