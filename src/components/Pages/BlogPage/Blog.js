@@ -30,7 +30,7 @@ const Blog = () => {
                 )}
                 <div>
                   <h4>{blog.author_name}</h4>
-                  <p>{blog.post_date}</p>
+                  <p>{blog.post_date.slice(0, 10)}</p>
                 </div>
               </div>
             </div>
