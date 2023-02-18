@@ -15,6 +15,7 @@ const Drawer = () => {
     const { data, loading } = useFetch(
         "https://easy-doc-server.vercel.app/doc-data"
     );
+    console.log(data);
     const links = (
         <>
             <Link to="/">Home</Link>
@@ -33,7 +34,7 @@ const Drawer = () => {
     );
 
     if (loading) {
-        return loading;
+        return <p>Loading...</p>;
     }
 
     return (

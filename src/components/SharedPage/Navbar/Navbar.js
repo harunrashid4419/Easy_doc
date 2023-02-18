@@ -1,22 +1,12 @@
 import React, { useContext } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { HiMenu } from "react-icons/hi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/UserContext";
 import ThemeToggle from "../../ThemeToggle/ThemeToggle";
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
-  const navigate = useNavigate();
-
-  // logout
-  const handleLogOut = () => {
-    logOut()
-      .then(() => {
-        navigate("/login");
-      })
-      .catch((error) => console.error(error));
-  };
+  const { user } = useContext(AuthContext);
 
   const links = (
     <>
