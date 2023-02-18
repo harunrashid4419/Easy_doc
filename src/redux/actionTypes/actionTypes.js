@@ -1,4 +1,0 @@
-export const SUCCESS = "SUCCESS";
-export const ERROR = "ERROR";
-export const INTERVIEW = "INTERVIEW";
-export const DOCERROR = "DOCERROR";
