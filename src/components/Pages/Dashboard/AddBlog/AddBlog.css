@@ -29,3 +29,11 @@
     margin-top: 20px;
     transition: .5s;
 }
+@media screen and (max-width: 576px) {
+    .add-blog-section{
+        padding: 50px 20px;
+    }
+    .add-blog-section .post-btn{
+        width: 100%;
+    }
+}

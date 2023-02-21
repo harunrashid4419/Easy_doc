@@ -14,7 +14,7 @@ function Courses() {
   }, []);
   return (
     <div className="container">
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 items-center pt-16  bg-neutral-content mb-5 px-5">
+      <div className="grid md:grid-cols-2 sm:grid-cols-1 items-center mt-16  bg-neutral-content mb-5 px-5">
         <div>
           <h1 className="text-3xl font-bold mb-5">
             Discover Your Potential Browse Online Courses

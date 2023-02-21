@@ -11,11 +11,13 @@ import {
 import "./Detalis.css";
 import { AuthContext } from "../../../../Context/UserContext";
 import { toast } from "react-hot-toast";
+import { useTheme } from "../../../../hooks/useTheme";
 
 const Details = () => {
   const pageUrl = useLocation().pathname;
   const id = pageUrl.split("/details/")[1];
   const { user } = useContext(AuthContext);
+  const {theme} = useTheme();
 
   const { data: blogDetails = [] } = useQuery({
     queryKey: ["blogDetails"],
@@ -90,7 +92,7 @@ const Details = () => {
     <div className="container">
       <div className="main-blog-details">
         <div className="top-header">
-          <p className="text-base-content">{post_date.slice(0, 10)}</p>
+          <p className="text-base-content">{post_date}</p>
           <div className="share-icon">
             <Link>
               <FaFacebookF />
@@ -117,7 +119,7 @@ const Details = () => {
               )}
             </div>
           </div>
-          <div className="author-content">
+          <div className={`author-content ${theme === 'dark' ? 'bg-[#2C303A]': 'bg-[#F4F6F8]'}`}>
             <p>
               I write and curate content for Bluehost. I hope this blog post is
               helpful.

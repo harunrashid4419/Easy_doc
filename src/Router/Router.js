@@ -27,6 +27,7 @@ import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
 import Payment from "../Payment/Payment";
 import AddReview from "../components/Pages/Dashboard/AddReview/AddReview";
 import Drawer from "../components/SharedPage/Navbar/Drawer";
+import PaymentUsers from "../components/Pages/Dashboard/PaymentUsers/PaymentUsers";
 
 
 
@@ -164,7 +165,11 @@ const routes = createBrowserRouter([
       {
         path: '/dashboard/addReview',
         element: <AddReview></AddReview>
-      }
+      },
+      {
+        path: '/dashboard/paymentUsers',
+        element: <PaymentUsers></PaymentUsers>
+      },
     ],
   },
 ]);

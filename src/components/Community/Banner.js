@@ -7,7 +7,7 @@ const Banner = () => {
   const { theme } = useTheme();
   return (
     <div>
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 items-center pt-24  bg-neutral-content mb-5 px-5">
+      <div className="grid md:grid-cols-2 sm:grid-cols-1 items-center mt-24  bg-neutral-content mb-5 px-5">
         <div>
           <h1 className="text-4xl font-bold mb-5">
             Communities for your favorite technologies
