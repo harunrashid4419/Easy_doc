@@ -1,34 +1,53 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Navbar from "../../../SharedPage/Navbar/Navbar";
 import Footer from "../../../SharedPage/Footer/Footer";
 import { Link, Outlet } from "react-router-dom";
 import useAdmin from "../../../../Hook/useAdmin";
 import { AuthContext } from "../../../../Context/UserContext";
-import Drawer from "../../../SharedPage/Navbar/Drawer";
+import { useTheme } from "../../../../hooks/useTheme";
 
 const DashboardLayout = () => {
   const { user } = useContext(AuthContext);
   const [isAdmin] = useAdmin(user?.email);
-  const [open, setOpen] = useState(true);
+  const { theme } = useTheme();
   return (
-    <div className="w-full">
+    <div className="">
       <Navbar></Navbar>
-      <section className="flex md:w-4/5 lg:w-full w-4/5">
-        <div
-          className={`bg-violet-500 min-h-screen ${open ? "md:w-72 lg:w-72 w-12" : "lg:w-72 md:w-72 w-12"
-            } duration-500 text-gray-100 px-4`}
-        >
-          <div className="mt-8 flex flex-col gap-4 relative">
-            {isAdmin && <Link to="/dashboard/users">All User</Link>}
-            <Link to="/dashboard/addReview">Add Review</Link>
-            <Link to="/dashboard/addBlog">Add Blog</Link>
-          </div>
-        </div>
-        <Drawer></Drawer>
-        <div className="text-xl w-full text-gray-900 font-semibold border-violet-200">
+      <div className="drawer drawer-mobile container">
+        <input
+          id="dashboard-drawer"
+          type="checkbox"
+          className="drawer-toggle"
+        />
+        <div className="drawer-content">
           <Outlet></Outlet>
         </div>
-      </section>
+        <div className="drawer-side">
+          <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
+          <ul
+            className={`menu p-2 mt-1 w-80 text-base-content ${
+              theme === "dark" ? "bg-[#2C303A]" : "bg-gray-100"
+            }`}
+          >
+            {isAdmin && (
+              <>
+                <Link className="mb-2 border-b-black" to="/dashboard/users">
+                  All User
+                </Link>
+                <Link className="mb-2" to="/dashboard/paymentUsers">
+                  All Payment User
+                </Link>
+              </>
+            )}
+            <Link className="mb-2" to="/dashboard/addReview">
+              Add Review
+            </Link>
+            <Link className="mb-2" to="/dashboard/addBlog">
+              Add Blog
+            </Link>
+          </ul>
+        </div>
+      </div>
       <Footer></Footer>
     </div>
   );

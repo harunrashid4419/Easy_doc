@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { FaCamera, FaEdit } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
 import { AuthContext } from "../../../../Context/UserContext";
 
 
@@ -11,7 +11,7 @@ const MyProfile = () => {
   const { user } = useContext(AuthContext);
   const [edit, setEdit] = useState(false);
   const { register, handleSubmit } = useForm();
-  const { data: currentUser, isLoading, refetch } = useQuery({
+  const { data , isLoading, refetch } = useQuery({
     queryKey: ['user', user?.uid],
     queryFn: async () => {
       const res = await fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
@@ -22,7 +22,8 @@ const MyProfile = () => {
   if (isLoading) {
     return <h1>Loading...</h1>
   }
-  const { email, name, phoneNumber, photoURL } = currentUser;
+  const { email, name, phoneNumber, photoURL } = data;
+  console.log(data)
   // this is the update profile function
   // that can update when user change his/her information
   const updateProfile = (data) => {

@@ -21,10 +21,10 @@ const Users = () => {
         <table className={`table table-zebra w-full ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
           <thead>
             <tr className="">
-              <th className="text-xl font-medium">Image</th>
-              <th className="text-xl font-medium">Name</th>
-              <th className="text-xl font-medium">Email</th>
-              <th className="text-xl font-medium">Action</th>
+              <th className="text-xl font-medium text-base-100">Image</th>
+              <th className="text-xl font-medium text-base-100">Name</th>
+              <th className="text-xl font-medium text-base-100">Email</th>
+              <th className="text-xl font-medium text-base-100">Action</th>
             </tr>
           </thead>
             {allusers.map((user) => (

@@ -70,6 +70,8 @@ function CheckoutFrom({ price }) {
         price,
         transactionId: paymentIntent.id,
         email: user?.email,
+        name: user?.displayName,
+        photoURL: user?.photoURL,
       };
       fetch("https://easy-doc-server.vercel.app/payments", {
         method: "POST",
@@ -90,11 +92,12 @@ function CheckoutFrom({ price }) {
         });
     }
     setProcessing(false);
-    console.log(paymentIntent);
   };
   return (
     <>
-      <h2 className="my-5 text-2xl">Subscription Price: <span className="text-green-500">{price}</span></h2>
+      <h2 className="my-5 text-2xl">
+        Subscription Price: <span className="text-green-500">${price}</span>
+      </h2>
       <form onSubmit={handleSubmit}>
         <CardElement
           options={{
