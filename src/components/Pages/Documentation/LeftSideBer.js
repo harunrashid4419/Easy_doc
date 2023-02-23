@@ -9,6 +9,7 @@ const LeftSideBer = () => {
   const [interviewOpen, setInterviewOpen] = useState(false);
   const [errorDocOpen, setErrorDocOpen] = useState(false);
   const [openInstallation, setOpenInstallation] = useState(false);
+  const [openMainConcept, setOpenMainConcept] = useState(false);
   const { data, loading } = useFetch(
     "https://easy-doc-server.vercel.app/doc-data"
   );
@@ -19,8 +20,9 @@ const LeftSideBer = () => {
   return (
     // this is leftsidbar main div
     <div
-      className={`${theme === "dark" ? "bg-[#2c303a54]" : "bg-gray-100"
-        } md:h-screen md:border-r-4 border-gray-200 overflow-y-scroll md:sticky top-0 p-2 hidden md:block md:col-span-3 lg:col-span-1`}
+      className={`${
+        theme === "dark" ? "bg-[#2c303a54]" : "bg-gray-100"
+      } md:h-screen md:border-r-4 border-gray-200 overflow-y-scroll md:sticky top-0 p-2 hidden md:block md:col-span-3 lg:col-span-1`}
     >
       <div className="divider text-gray-500">Menu</div>
       <div className="relative">
@@ -33,7 +35,6 @@ const LeftSideBer = () => {
       </div>
       <h1 className="text-2xl font-bold text-center">React</h1>
 
-
       {/* React Installation docs data here */}
       <ul className="space-y-2 text-[1.2rem]">
         <li
@@ -42,8 +43,9 @@ const LeftSideBer = () => {
         >
           Installation
           <FaAngleRight
-            className={`inline text-2xl text-gray-600 ${openInstallation ? "rotate-90" : ""
-              } transition delay-50`}
+            className={`inline text-2xl text-gray-600 ${
+              openInstallation ? "rotate-90" : ""
+            } transition delay-50`}
           ></FaAngleRight>
         </li>
         <li>
@@ -53,8 +55,9 @@ const LeftSideBer = () => {
               .map((installation) => (
                 <Link
                   key={installation._id}
-                  className={`pl-4 ${openInstallation ? "block" : "hidden"
-                    } hover:bg-gray-300 cursor-pointer p-1`}
+                  className={`pl-4 ${
+                    openInstallation ? "block" : "hidden"
+                  } hover:bg-gray-300 cursor-pointer p-1`}
                   to={`/documentation/installation/${installation._id}`}
                 >
                   {installation?.title}
@@ -62,8 +65,36 @@ const LeftSideBer = () => {
               ))}
         </li>
       </ul>
+      <ul className="space-y-2 text-[1.2rem]">
+        <li
+          onClick={() => setOpenMainConcept(!openMainConcept)}
+          className="flex justify-between transition duration-700 ease-in-out cursor-pointer items-center text-[1.5rem] hover:bg-gray-300 pl-2"
+        >
+          Main Concept
+          <FaAngleRight
+            className={`inline text-2xl text-gray-600 ${
+              openMainConcept ? "rotate-90" : ""
+            } transition delay-50`}
+          ></FaAngleRight>
+        </li>
+        <li>
+          {data &&
+            data
+              ?.filter((item) => item?.category === "MAIN CONCEPTS")
+              .map((main) => (
+                <Link
+                  key={main._id}
+                  className={`pl-4 ${
+                    openMainConcept ? "block" : "hidden"
+                  } hover:bg-gray-300 cursor-pointer p-1`}
+                  to={`/documentation/mainConcept/${main._id}`}
+                >
+                  {main?.title}
+                </Link>
+              ))}
+        </li>
+      </ul>
       <h1 className="text-2xl font-bold text-center mt-8">Others</h1>
-
 
       {/* Interview docs data here */}
       <ul className="space-y-2 text-[1.2rem]">
@@ -73,8 +104,9 @@ const LeftSideBer = () => {
         >
           Interview Question{" "}
           <FaAngleRight
-            className={`inline text-2xl text-gray-600 ${interviewOpen ? "rotate-90" : ""
-              } transition delay-50`}
+            className={`inline text-2xl text-gray-600 ${
+              interviewOpen ? "rotate-90" : ""
+            } transition delay-50`}
           ></FaAngleRight>
         </li>
         <li>
@@ -84,8 +116,9 @@ const LeftSideBer = () => {
               .map((interview) => (
                 <Link
                   key={interview._id}
-                  className={`pl-4 ${interviewOpen ? "block" : "hidden"
-                    } hover:bg-gray-300 cursor-pointer p-1`}
+                  className={`pl-4 ${
+                    interviewOpen ? "block" : "hidden"
+                  } hover:bg-gray-300 cursor-pointer p-1`}
                   to={`/documentation/interview/${interview._id}`}
                 >
                   {interview?.title}
@@ -93,7 +126,6 @@ const LeftSideBer = () => {
               ))}
         </li>
       </ul>
-
 
       {/* Error docs data here */}
       <ul className="space-y-2 text-[1.2rem]">
@@ -103,8 +135,9 @@ const LeftSideBer = () => {
         >
           Error{" "}
           <FaAngleRight
-            className={`inline text-2xl text-gray-600 ${errorDocOpen ? "rotate-90" : ""
-              } transition delay-50`}
+            className={`inline text-2xl text-gray-600 ${
+              errorDocOpen ? "rotate-90" : ""
+            } transition delay-50`}
           ></FaAngleRight>
         </li>
         <li>
@@ -114,8 +147,9 @@ const LeftSideBer = () => {
               .map((error) => (
                 <Link
                   key={error._id}
-                  className={`pl-4 ${errorDocOpen ? "block" : "hidden"
-                    } hover:bg-gray-300 cursor-pointer p-1`}
+                  className={`pl-4 ${
+                    errorDocOpen ? "block" : "hidden"
+                  } hover:bg-gray-300 cursor-pointer p-1`}
                   to={`/documentation/error/${error._id}`}
                 >
                   {error?.title}

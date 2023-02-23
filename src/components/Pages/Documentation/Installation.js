@@ -6,7 +6,7 @@ import { useTheme } from "../../../hooks/useTheme";
 
 const Installation = () => {
   const { theme } = useTheme();
-  const { id = "63ee7862d9c11e46a7ec92ed" } = useParams();
+  const { id = "63f700a3b751fe1353d63565" } = useParams();
   console.log(id);
   const [loading, setLoading] = useState(false);
   const [installation, setInstallation] = useState({});

@@ -10,6 +10,7 @@ const Drawer = () => {
   const [interviewOpen, setInterviewOpen] = useState(false);
   const [errorDocOpen, setErrorDocOpen] = useState(false);
   const [openInstallation, setOpenInstallation] = useState(false);
+  const [openMainConcept, setOpenMainConcept] = useState(false);
   const { pathname } = useLocation();
   const { user } = useContext(AuthContext);
   const { data, loading } = useFetch(
@@ -55,7 +56,7 @@ const Drawer = () => {
                 onClick={() => setOpenInstallation(!openInstallation)}
                 className="hover:cursor-pointer px-4 py-2 flex items-center hover:bg-gray-300 justify-between"
               >
-                React{" "}
+                Installation
                 <FaAngleRight
                   className={`inline text-2xl text-gray-600 ${
                     openInstallation ? "rotate-90" : ""
@@ -76,6 +77,33 @@ const Drawer = () => {
                     {installation?.title}
                   </Link>
                 ))}
+                {/* main concept start */}
+              <label
+                onClick={() => setOpenMainConcept(!openMainConcept)}
+                className="hover:cursor-pointer px-4 py-2 flex items-center hover:bg-gray-300 justify-between"
+              >
+                Main Concept
+                <FaAngleRight
+                  className={`inline text-2xl text-gray-600 ${
+                    openMainConcept ? "rotate-90" : ""
+                  } transition delay-50 `}
+                ></FaAngleRight>
+              </label>
+
+              {data
+                .filter((doc) => doc?.category === "MAIN CONCEPTS")
+                .map((main) => (
+                  <Link
+                    key={main._id}
+                    className={`${
+                      openMainConcept ? "block" : "hidden"
+                    } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
+                    to={`/documentation/mainConcept/${main?._id}`}
+                  >
+                    {main?.title}
+                  </Link>
+                ))}
+                {/* main concept end */}
               <label
                 onClick={() => setInterviewOpen(!interviewOpen)}
                 className="hover:cursor-pointer px-4 py-2 flex items-center hover:bg-gray-300 justify-between"
