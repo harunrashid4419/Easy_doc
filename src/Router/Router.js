@@ -26,9 +26,10 @@ import Quiz from "../components/Pages/QuizPage/Quiz";
 import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
 import Payment from "../Payment/Payment";
 import AddReview from "../components/Pages/Dashboard/AddReview/AddReview";
-import Drawer from "../components/SharedPage/Navbar/Drawer";
+// import Drawer from "../components/SharedPage/Navbar/Drawer";
 import PaymentUsers from "../components/Pages/Dashboard/PaymentUsers/PaymentUsers";
 import MainConcept from "../components/Pages/Documentation/MainConcept/MainConcept";
+import Api from "../components/Pages/Documentation/Api";
 
 
 
@@ -115,6 +116,11 @@ const routes = createBrowserRouter([
             path: "/documentation/mainConcept/:id",
             element: <MainConcept></MainConcept>
           },
+          {
+            path: "/documentation/apireference/:id",
+            element: <Api></Api>
+          }
+          
 
         ]
       },

@@ -10,6 +10,7 @@ const LeftSideBer = () => {
   const [errorDocOpen, setErrorDocOpen] = useState(false);
   const [openInstallation, setOpenInstallation] = useState(false);
   const [openMainConcept, setOpenMainConcept] = useState(false);
+  const [openApi,setOpenApi]=useState(false);
   const { data, loading } = useFetch(
     "https://easy-doc-server.vercel.app/doc-data"
   );
@@ -61,6 +62,31 @@ const LeftSideBer = () => {
                   to={`/documentation/installation/${installation._id}`}
                 >
                   {installation?.title}
+                </Link>
+              ))}
+        </li>
+        <li
+          onClick={() => setOpenApi(!openApi)}
+          className="flex justify-between transition duration-700 ease-in-out cursor-pointer items-center text-[1.5rem] hover:bg-gray-300 pl-2"
+        >
+          Api Reference
+          <FaAngleRight
+            className={`inline text-2xl text-gray-600 ${openApi ? "rotate-90" : ""
+              } transition delay-50`}
+          ></FaAngleRight>
+        </li>
+        <li>
+          {data &&
+            data
+              ?.filter((item) => item?.category === "apireference")
+              .map((api) => (
+                <Link
+                  key={api._id}
+                  className={`pl-4 ${openApi ? "block" : "hidden"
+                    } hover:bg-gray-300 cursor-pointer p-1`}
+                  to={`/documentation/apireference/${api._id}`}
+                >
+                  {api?.title}
                 </Link>
               ))}
         </li>

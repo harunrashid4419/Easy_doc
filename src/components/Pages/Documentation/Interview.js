@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 const Interview = () => {
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
   const [loading, setLoading] = useState(false);
   const [interview, setInterview] = useState({});
   const {

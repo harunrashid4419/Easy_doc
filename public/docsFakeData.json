@@ -1,6 +1,6 @@
 [
     {
-        "id": "01",
+        "id":"01",
         "category": "interview",
         "title": "Interview Preperation & Tips",
         "titleSummury": "An interview is a structured conversation where one participant asks questions, and the other provides answers. In common parlance, the word interview refers to a one-on-one conversation between an interviewer and an interviewee.",
@@ -9,8 +9,8 @@
         "tipsTitle": "10 things you should never do in a job interview",
         "allTips": "1. Be Negetive   It's never a good idea to be critical towards past employers you may have had. Negativity towards previous experiences does not reflect poorly on the organization, but on you. Always be optimistic about past challenges you’ve faced and what you learned from those experiences.   2. Show your nerves   It’s normal to feel nervous during an interview, especially if you’ve been preparing for a while. However coming across as too nervous may be interpreted by the interviewer as you needing to work on the interpersonal skills necessary to thrive in the work environments—be that with other students in the lab or customers for the company. This doesn’t mean you need to be an extrovert—just be confident in yourself and your answers.   3. Lie about anything   It can be tempting to overstate your experience to make you seem more qualified than you are, especially when you feel trapped in a perpetual I need experience to get experience cycle. But exaggerating your qualifications is never a good idea. The risks from doing a job you aren't qualified for is harmful to yourself and others. Some other ways of getting out of this cycle can include volunteering to gain necessary skills, doing workshops, or even taking a course to diversify your skill set!   4. Be arrogant   Don’t get me wrong, it’s important to be confident and enthusiastic during an interview, but appearing arrogant is usually a downfall. There is a fine line between bragging and being confident. No matter how qualified you think you are for the position, nobody owes you the job so stay humble, be respectful, and make sure to thank your interviewer for their time and the opportunity to interview for the position.   5. Dress too casually   While you don’t need to wear a suit and tie to interview at a lab (typically), it's important to present yourself professionally. So no leggings or sweats, no messy hair, and please don’t wear running shoes. How you present yourself reflects on your cleanliness, organization, and work ethic. It shows your interviewer that you're taking this seriously.   6. Show up late   This one speaks for itself. Remember, 10 minutes early is on time. Don’t forget to double-check your interview time and location, and make sure you review how to get there on Google Maps.   7. Leave them hanging   Often at the end of an interview, you'll be asked if you have any questions. Never say (No) This is a great time not only to ask questions about the position and the organization, but also to ask them about the timeline for the (potential) hiring process, reaffirm how qualified and passionate you are, and of course ask any other questions. Don’t forget to thank them for the interview!   8. Display bad body language   Body language is a big reflection of your entire attitude and what you think of the people you're with and the place you're in. Be sure to sit up straight, and make eye contact. Slouching, as well as fiddling around, could show that you’re nervous, uninterested, or arrogant.   9. Forget to do your homework   Make sure you know the position you're applying for through and through. Be ready to talk about how your skills, experience, and attitude fulfill the values and requirements of the position. Make sure you have evidence to back up the fact that you are the one for the job.   10. Ramble on   Although it's important to answer the question with more than one-word responses, rambling on and on for minutes is not recommended. Gather your thoughts and try to articulate them clearly so the interviewer gets the point. Rambling loses their interest and can make them think you don't know what you're talking about. If you feel like you're rambling, stop yourself and ask the interviewer to repeat the question. This will help you get back on track. You could also ask if your response answers their question and they may take the opportunity to elaborate and redirect you."
     },
-    {
-        "id": "02",
+    {    
+        "id":"02",
         "category": "interview",
         "title": "Tell me about yourself?",
         "titleSummury": "This is firest question of an interview. And you must prepare for this question before. You can great impact by answerings this question beautifylly",
@@ -36,8 +36,8 @@
             }
         ]
     },
-    {
-        "id": "03",
+    {    
+        "id":"03",
         "category": "interview",
         "title": "What is your strength?",
         "subTitle": "Today, we’re tackling another critical job interview question: What are your strengths?",
@@ -66,7 +66,7 @@
         ]
     },
     {
-        "id": "04",
+        "id":"04",
         "category": "interview",
         "title": "Why should we hire you ?",
         "subTitle": "How to Answer “Why Should We Hire You?”",
@@ -97,7 +97,7 @@
         ]
     },
     {
-        "id": "05",
+        "id":"05",
         "category": "error",
         "title": "Error",
         "titleSummury": "There is no developer who has not faced errors in his/her development life. When we get error that means we make a mistakes and we should find out it with cool head but many of the developer became nervious when getting error. Always remember if you want to be a professional developer you must learn how to handle error easily because it's a speciality of a developer.",
@@ -127,7 +127,7 @@
         }
     },
     {
-        "id": "06",
+        "id":"06",
         "category": "error",
         "title": "Syntax Error",
         "titleSummury": "During the syntax analysis phase, this type of error appears. Syntax error is found during the execution of the program.   Some syntax error can be:   Error in structure   Missing operators   Unbalanced parenthesis",
@@ -137,7 +137,7 @@
         "code": "int a;   print('value of variable a is',a)   Here, ';' is missing from the print statement."
     },
     {
-        "id": "07",
+        "id":"07",
         "category": "error",
         "title": "Uncaught Type Error",
         "img": "http://net-informations.com/js/iq/img/type-error.png",
@@ -149,7 +149,7 @@
         "code": "try {   null.f()   } catch (e) {   console.log(e instanceofTypeError) // true   console.log(e.message) // null has nopropertie   console.log(e.name) // TypeError   console.log(e fileName) // Scratchpad/1   console.log(e.lineNumber) // 2   console.log(e.columnNumber) // 2console.log(e.stack) // @Scratchpad2:2:3\n}"
     },
     {
-        "id": "08",
+        "id":"08",
         "category": "error",
         "title": "Reference Error",
         "titleSummury": "When programming in JavaScript, you’ll commonly encounter reference errors. There are a number of reasons why you might get one, but fortunately, resolving such an error isn’t too difficult. It’s helpful to know what this error is and why it’s being thrown by the compiler because you’ll save yourself precious debugging time.   In this guide to JavaScript reference errors, you’ll learn how to identify and solve them as well as how to avoid this type of error in the future.",
@@ -161,7 +161,7 @@
         "code": "const a = 'Apple'   console.log(a)   // ReferenceError a is not defined."
     },
     {
-        "id": "09",
+        "id":"09",
         "title": "Getting Started",
         "category": "installation",
         "titleSummury":"This page is an overview of the React documentation and related resources.React is a JavaScript library for building user interfaces Learn what React is all about on our homepage or in the tutorial.",
@@ -176,7 +176,7 @@
         
     },
     {
-        "id": "10",
+        "id":"10",
         "title": "Create a New React App",
         "category": "installation",
         "titleSummuryYellow": "Use an integrated toolchain for the best user and developer experience.This page describes a few popular React toolchains which help with tasks like:Scaling to many files and components.Using third-party libraries from npm.Detecting common mistakes early.Live-editing CSS and JS in development.Optimizing the output for production.",
@@ -187,7 +187,7 @@
         "howTitleSummury2":"1. Create React App   Create React App is a comfortable environment for learning React, and is the best way to start building a new single-page application in React.It sets up your development environment so that you can use the latest JavaScript features,provides a nice developer experience, and optimizes your app for production.   2. Next.js   Next.js is a popular and lightweight framework for static and server‑rendered applicationsbuilt with React. It includes styling and routing solutions out of the box, and assumes that you’re using Node.js as the server environment.Learn Next.js from its official guide.   3. Gatsby   Gatsby is the best way to create static websites with React. It lets you use React components,but outputs pre-rendered HTML and CSS to guarantee the fastest load time.Learn Gatsby from its official guide and a gallery of starter kits.   4. More Flexible Toolchains   The following toolchains offer more flexibility and choice. We recommend them to more experienced users:   Neutrino combines the power of webpack with the simplicity of presets, and includes a preset for React apps and React components.Nx is a toolkit for full-stack monorepo development, with built-in support for React, Next.js, Express, and more.   Parcel is a fast, zero configuration web application bundler that works with React.Razzle is a server-rendering framework that doesn’t require any configuration, but offers more flexibility than Next.js."
     },
     {
-        "id": "11",
+        "id":"11",
         "title": "CDN Links",
         "category": "installation",
         "titleSumm": "Both React and ReactDOM are available over a CDN.",
@@ -201,7 +201,7 @@
 
     },
     {
-        "id": "12",
+        "id":"12",
         "title": "Release Channels",
         "category": "installation",
         "titleSummury":"React relies on a thriving open source community to file bug reports, open pull   requests, and submit RFCs. To encourage feedback we sometimes share special   builds of React that include unreleased features.",
@@ -210,6 +210,7 @@
 
     },
     {
+        "id":"13",
         "category": "MAIN CONCEPTS",
         "title": "Hello World",
         "first": "The smallest React example looks like this:",
@@ -478,6 +479,7 @@
         "sixteen": "If you look at ProductTable, you’ll see that the table header (containing the “Name” and “Price” labels) isn’t its own component. This is a matter of preference, and there’s an argument to be made either way. For this example, we left it as part of ProductTable because it is part of rendering the data collection which is ProductTable’s responsibility. However, if this header grows to be complex (e.g., if we were to add affordances for sorting), it would certainly make sense to make this its own ProductTableHeader component."
     },
     {
+        "id":"14",
         "title":"ReactDOM",
         "category":"apireference",
         "titleSummary":"The react-dom package provides DOM-specific methods that can be used at the top level of your app and as an escape hatch to get outside the React model if you need to.",
@@ -493,6 +495,7 @@
 
     },
     {
+        "id":"15",
         "title":"ReactDOMClient",
         "category":"apireference",
         "titleSummary":"The react-dom/client package provides client-specific methods used for initializing an app on the client. Most of your components should not need to use this module.",
@@ -516,6 +519,7 @@
         "domcode6":"hydrateRoot(container, element[, options])"
     },
     {
+        "id":"16",
         "title":"ReactDOMServer",
         "category":"apireference",
         "titleSummary":"The ReactDOMServer object enables you to render components to static markup. Typically, it’s used on a Node server:",
@@ -532,6 +536,7 @@
        
     },
     {
+        "id":"17",
         "title":"JavaScript Environment Requirements",
         "category":"apireference",
         "titleSummary":"React 18 supports all modern browsers (Edge, Firefox, Chrome, Safari, etc).",
@@ -540,6 +545,7 @@
         "titleSummury3":"The correct polyfill for these features depend on your environment. For many users, you can configure your Browserlist settings. For others, you may need to import polyfills like core-js directly."
     },
     {
+        "id":"18",
         "title":"Glossary of React Terms",
         "category":"apireference",
         "title1":"Single-page Application",
@@ -698,4 +704,5 @@
         "second": "Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.   Building your own Hooks lets you extract component logic into reusable functions.   When we were learning about using the Effect Hook, we saw this component from a chat application that displays a message indicating whether a friend is online or offline:",
         "thirdCode": "import React, { useState, useEffect } from 'react';   function FriendStatus(props) {   const [isOnline, setIsOnline] = useState(null);   useEffect(() => {   function handleStatusChange(status) {   setIsOnline(status.isOnline);   }   ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);   return () =>   {ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);   };   });   if (isOnline === null) {   return 'Loading...';   }   return isOnline ? 'Online' : 'Offline';   }"
     }
+
 ]
