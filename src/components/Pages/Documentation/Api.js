@@ -57,25 +57,30 @@ const Api = () => {
         domcode6,
           }=api;
           
-    // const code1=domcode1?.split("   ");
-    // const summarytitle2=titleSummary2?.split("   ");
-    // const titledes1=title1des?.split("   ");
-    // const titledes2=title2des?.split("   ");
-    // const titledes7=title7des?.split("   ");
-    // const titledes8=title8des?.split("   ");
-    // const codeup4=upcode4?.split("   ");
-    // const code4=domcode4?.split("   ");
-    // const codeup5=upcode5?.split("   ");
-    // const code5=domcode5?.split("   ");
-    // const titleyellow=yellowtitle.split("   ");
-    // const title1yellow=yellowtitle1?.split("   ");
-    // const title2yellow=yellowtitle2?.split("   ");
+    const code1=domcode1?.split("   ");
+    const summarytitle2=titleSummary2?.split("   ");
+    const titledes1=title1des?.split("   ");
+    const titledes2=title2des?.split("   ");
+    const titledes7=title7des?.split("   ");
+    const titledes8=title8des?.split("   ");
+    const codeup4=upcode4?.split("   ");
+    const code4=domcode4?.split("   ");
+    const codeup5=upcode5?.split("   ");
+    const code5=domcode5?.split("   ");
+    const titleyellow=yellowtitle.split("   ");
+    const title1yellow=yellowtitle1?.split("   ");
+    const title2yellow=yellowtitle2?.split("   ");
     if (loading) {
         return <p>Loading...</p>;
       }
     return (
         <div>
             <h1 className='text-3xl font-bold text-orange-300'>{title}</h1>
+            <div className="mockup-code">
+            {
+                code1 && code1.map(code=>)
+            }
+          </div>
         </div>
     );
 };
