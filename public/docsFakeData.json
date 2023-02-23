@@ -1,6 +1,6 @@
 [
     {
-        "id": "01",
+        "id":"01",
         "category": "interview",
         "title": "Interview Preperation & Tips",
         "titleSummury": "An interview is a structured conversation where one participant asks questions, and the other provides answers. In common parlance, the word interview refers to a one-on-one conversation between an interviewer and an interviewee.",
@@ -9,8 +9,8 @@
         "tipsTitle": "10 things you should never do in a job interview",
         "allTips": "1. Be Negetive   It's never a good idea to be critical towards past employers you may have had. Negativity towards previous experiences does not reflect poorly on the organization, but on you. Always be optimistic about past challenges you’ve faced and what you learned from those experiences.   2. Show your nerves   It’s normal to feel nervous during an interview, especially if you’ve been preparing for a while. However coming across as too nervous may be interpreted by the interviewer as you needing to work on the interpersonal skills necessary to thrive in the work environments—be that with other students in the lab or customers for the company. This doesn’t mean you need to be an extrovert—just be confident in yourself and your answers.   3. Lie about anything   It can be tempting to overstate your experience to make you seem more qualified than you are, especially when you feel trapped in a perpetual I need experience to get experience cycle. But exaggerating your qualifications is never a good idea. The risks from doing a job you aren't qualified for is harmful to yourself and others. Some other ways of getting out of this cycle can include volunteering to gain necessary skills, doing workshops, or even taking a course to diversify your skill set!   4. Be arrogant   Don’t get me wrong, it’s important to be confident and enthusiastic during an interview, but appearing arrogant is usually a downfall. There is a fine line between bragging and being confident. No matter how qualified you think you are for the position, nobody owes you the job so stay humble, be respectful, and make sure to thank your interviewer for their time and the opportunity to interview for the position.   5. Dress too casually   While you don’t need to wear a suit and tie to interview at a lab (typically), it's important to present yourself professionally. So no leggings or sweats, no messy hair, and please don’t wear running shoes. How you present yourself reflects on your cleanliness, organization, and work ethic. It shows your interviewer that you're taking this seriously.   6. Show up late   This one speaks for itself. Remember, 10 minutes early is on time. Don’t forget to double-check your interview time and location, and make sure you review how to get there on Google Maps.   7. Leave them hanging   Often at the end of an interview, you'll be asked if you have any questions. Never say (No) This is a great time not only to ask questions about the position and the organization, but also to ask them about the timeline for the (potential) hiring process, reaffirm how qualified and passionate you are, and of course ask any other questions. Don’t forget to thank them for the interview!   8. Display bad body language   Body language is a big reflection of your entire attitude and what you think of the people you're with and the place you're in. Be sure to sit up straight, and make eye contact. Slouching, as well as fiddling around, could show that you’re nervous, uninterested, or arrogant.   9. Forget to do your homework   Make sure you know the position you're applying for through and through. Be ready to talk about how your skills, experience, and attitude fulfill the values and requirements of the position. Make sure you have evidence to back up the fact that you are the one for the job.   10. Ramble on   Although it's important to answer the question with more than one-word responses, rambling on and on for minutes is not recommended. Gather your thoughts and try to articulate them clearly so the interviewer gets the point. Rambling loses their interest and can make them think you don't know what you're talking about. If you feel like you're rambling, stop yourself and ask the interviewer to repeat the question. This will help you get back on track. You could also ask if your response answers their question and they may take the opportunity to elaborate and redirect you."
     },
-    {
-        "id": "02",
+    {    
+        "id":"02",
         "category": "interview",
         "title": "Tell me about yourself?",
         "titleSummury": "This is firest question of an interview. And you must prepare for this question before. You can great impact by answerings this question beautifylly",
@@ -36,8 +36,8 @@
             }
         ]
     },
-    {
-        "id": "03",
+    {    
+        "id":"03",
         "category": "interview",
         "title": "What is your strength?",
         "subTitle": "Today, we’re tackling another critical job interview question: What are your strengths?",
@@ -66,7 +66,7 @@
         ]
     },
     {
-        "id": "04",
+        "id":"04",
         "category": "interview",
         "title": "Why should we hire you ?",
         "subTitle": "How to Answer “Why Should We Hire You?”",
@@ -97,7 +97,7 @@
         ]
     },
     {
-        "id": "05",
+        "id":"05",
         "category": "error",
         "title": "Error",
         "titleSummury": "There is no developer who has not faced errors in his/her development life. When we get error that means we make a mistakes and we should find out it with cool head but many of the developer became nervious when getting error. Always remember if you want to be a professional developer you must learn how to handle error easily because it's a speciality of a developer.",
@@ -127,7 +127,7 @@
         }
     },
     {
-        "id": "06",
+        "id":"06",
         "category": "error",
         "title": "Syntax Error",
         "titleSummury": "During the syntax analysis phase, this type of error appears. Syntax error is found during the execution of the program.   Some syntax error can be:   Error in structure   Missing operators   Unbalanced parenthesis",
@@ -137,7 +137,7 @@
         "code": "int a;   print('value of variable a is',a)   Here, ';' is missing from the print statement."
     },
     {
-        "id": "07",
+        "id":"07",
         "category": "error",
         "title": "Uncaught Type Error",
         "img": "http://net-informations.com/js/iq/img/type-error.png",
@@ -149,7 +149,7 @@
         "code": "try {   null.f()   } catch (e) {   console.log(e instanceofTypeError) // true   console.log(e.message) // null has nopropertie   console.log(e.name) // TypeError   console.log(e fileName) // Scratchpad/1   console.log(e.lineNumber) // 2   console.log(e.columnNumber) // 2console.log(e.stack) // @Scratchpad2:2:3\n}"
     },
     {
-        "id": "08",
+        "id":"08",
         "category": "error",
         "title": "Reference Error",
         "titleSummury": "When programming in JavaScript, you’ll commonly encounter reference errors. There are a number of reasons why you might get one, but fortunately, resolving such an error isn’t too difficult. It’s helpful to know what this error is and why it’s being thrown by the compiler because you’ll save yourself precious debugging time.   In this guide to JavaScript reference errors, you’ll learn how to identify and solve them as well as how to avoid this type of error in the future.",
@@ -161,7 +161,7 @@
         "code": "const a = 'Apple'   console.log(a)   // ReferenceError a is not defined."
     },
     {
-        "id": "09",
+        "id":"09",
         "title": "Getting Started",
         "category": "installation",
         "titleSummury":"This page is an overview of the React documentation and related resources.React is a JavaScript library for building user interfaces Learn what React is all about on our homepage or in the tutorial.",
@@ -176,7 +176,7 @@
         
     },
     {
-        "id": "10",
+        "id":"10",
         "title": "Create a New React App",
         "category": "installation",
         "titleSummuryYellow": "Use an integrated toolchain for the best user and developer experience.This page describes a few popular React toolchains which help with tasks like:Scaling to many files and components.Using third-party libraries from npm.Detecting common mistakes early.Live-editing CSS and JS in development.Optimizing the output for production.",
@@ -187,7 +187,7 @@
         "howTitleSummury2":"1. Create React App   Create React App is a comfortable environment for learning React, and is the best way to start building a new single-page application in React.It sets up your development environment so that you can use the latest JavaScript features,provides a nice developer experience, and optimizes your app for production.   2. Next.js   Next.js is a popular and lightweight framework for static and server‑rendered applicationsbuilt with React. It includes styling and routing solutions out of the box, and assumes that you’re using Node.js as the server environment.Learn Next.js from its official guide.   3. Gatsby   Gatsby is the best way to create static websites with React. It lets you use React components,but outputs pre-rendered HTML and CSS to guarantee the fastest load time.Learn Gatsby from its official guide and a gallery of starter kits.   4. More Flexible Toolchains   The following toolchains offer more flexibility and choice. We recommend them to more experienced users:   Neutrino combines the power of webpack with the simplicity of presets, and includes a preset for React apps and React components.Nx is a toolkit for full-stack monorepo development, with built-in support for React, Next.js, Express, and more.   Parcel is a fast, zero configuration web application bundler that works with React.Razzle is a server-rendering framework that doesn’t require any configuration, but offers more flexibility than Next.js."
     },
     {
-        "id": "11",
+        "id":"11",
         "title": "CDN Links",
         "category": "installation",
         "titleSumm": "Both React and ReactDOM are available over a CDN.",
@@ -201,7 +201,7 @@
 
     },
     {
-        "id": "12",
+        "id":"12",
         "title": "Release Channels",
         "category": "installation",
         "titleSummury":"React relies on a thriving open source community to file bug reports, open pull   requests, and submit RFCs. To encourage feedback we sometimes share special   builds of React that include unreleased features.",
@@ -210,6 +210,7 @@
 
     },
     {
+        "id":"13",
         "category": "MAIN CONCEPTS",
         "title": "Hello World",
         "first": "The smallest React example looks like this:",
@@ -223,5 +224,94 @@
         "nineth": "Knowledge Level Assumptions",
         "tenth": "React is a JavaScript library, and so we’ll assume you have a basic understanding of the JavaScript language. If you don’t feel very confident, we recommend going through a JavaScript tutorial to check your knowledge level and enable you to follow along this guide without getting lost. It might take you between 30 minutes and an hour, but as a result you won’t have to feel like you’re learning both React and JavaScript at the same time.",
         "eleventhYellow": "Note   This guide occasionally uses some newer JavaScript syntax in the examples. If you haven’t worked with JavaScript in the last few years, these three points should get you most of the way."
+    },
+    {
+        "id":"14",
+        "title":"ReactDOM",
+        "category":"apireference",
+        "titleSummary":"The react-dom package provides DOM-specific methods that can be used at the top level of your app and as an escape hatch to get outside the React model if you need to.",
+        "domcode1":"import * as ReactDOM from 'react-dom';",
+        "titleSummary1":"If you use ES5 with npm, you can write:",
+        "domcode2":"var ReactDOM = require('react-dom');",
+        "title1":"Overview",
+        "title1des":"The react-dom package exports these methods:   createPortal()   flushSync()   These react-dom methods are also exported, but are considered legacy:   render()   hydrate()   findDOMNode()   unmountComponentAtNode()",
+        "yellotitle":"Note:   Both render and hydrate have been replaced with new client methods in React 18. These methods will warn that your app will behave as if it’s running React 17 (learn more here).",
+        "title2":"Legacy Reference",
+        "yellotitle2":"Note:   render() controls the contents of the container node you pass in. Any existing DOM elements inside are replaced when first called. Later calls use React’s DOM diffing algorithm for efficient updates.   render() does not modify the container node (only modifies the children of the container). It may be possible to insert a component to an existing DOM node without overwriting the existing children.   render() currently returns a reference to the root ReactComponent instance. However, using this return value is legacy and should be avoided because future versions of React may render components asynchronously in some cases. If you need a reference to the root ReactComponent instance, the preferred solution is to attach a callback ref to the root element.   Using render() to hydrate a server-rendered container is deprecated. Use hydrateRoot() instead.",
+        "title2des":"Same as render(), but is used to hydrate a container whose HTML contents were rendered by ReactDOMServer. React will attempt to attach event listeners to the existing markup.   React expects that the rendered content is identical between the server and the client. It can patch up differences in text content, but you should treat mismatches as bugs and fix them. In development mode, React warns about mismatches during hydration. There are no guarantees that attribute differences will be patched up in case of mismatches. This is important for performance reasons because in most apps, mismatches are rare, and so validating all markup would be prohibitively expensive.   If a single element’s attribute or text content is unavoidably different between the server and the client (for example, a timestamp), you may silence the warning by adding suppressHydrationWarning={true} to the element. It only works one level deep, and is intended to be an escape hatch. Don’t overuse it. Unless it’s text content, React still won’t attempt to patch it up, so it may remain inconsistent until future updates.   If you intentionally need to render something different on the server and the client, you can do a two-pass rendering. Components that render something different on the client can read a state variable like this.state.isClient, which you can set to true in componentDidMount(). This way the initial render pass will render the same content as the server, avoiding mismatches, but an additional pass will happen synchronously right after hydration. Note that this approach will make your components slower because they have to render twice, so use it with caution.   Remember to be mindful of user experience on slow connections. The JavaScript code may load significantly later than the initial HTML render, so if you render something different in the client-only pass, the transition can be jarring. However, if executed well, it may be beneficial to render a “shell” of the application on the server, and only show some of the extra widgets on the client. To learn how to do this without getting the markup mismatch issues, refer to the explanation in the previous paragraph."
+
+    },
+    {
+        "id":"15",
+        "title":"ReactDOMClient",
+        "category":"apireference",
+        "titleSummary":"The react-dom/client package provides client-specific methods used for initializing an app on the client. Most of your components should not need to use this module.",
+        "domcode1":"import * as ReactDOM from 'react-dom/client';",
+        "titleSummary1":"If you use ES5 with npm, you can write:",
+        "domcode2":"var ReactDOM = require('react-dom/client');",
+        "title1":"Overview",
+        "title1des":"The following methods can be used in client environments:   createRoot()   hydrateRoot()",
+        "title2":"Reference",
+        "upyellowtitle":"createRoot()",
+        "yellotitle":"Try the new React documentation for createRoot.   The new docs will soon replace this site, which will be archived. Provide feedback.",
+        "domcode3":"createRoot(container[, options]);",
+        "upcode4":"Create a React root for the supplied container and return the root. The root can be used to render a React element into the DOM with render:",
+        "domcode4":"const root = createRoot(container);   root.render(element);",
+        "upcode5":"createRoot accepts two options:   onRecoverableError: optional callback called when React automatically recovers from errors.   identifierPrefix: optional prefix React uses for ids generated by React.useId. Useful to avoid conflicts when using multiple roots on the same page. Must be the same prefix used on the server.",
+        "upcode6":"The root can also be unmounted with unmount:",
+        "domcode5":"root.unmount();",
+        "yellotitle1":"Note:   createRoot() controls the contents of the container node you pass in. Any existing DOM elements inside are replaced when render is called. Later calls use React’s DOM diffing algorithm for efficient updates.   createRoot() does not modify the container node (only modifies the children of the container). It may be possible to insert a component to an existing DOM node without overwriting the existing children.   Using createRoot() to hydrate a server-rendered container is not supported. Use   hydrateRoot() instead.",
+        "upyellowtitle1":"hydrateRoot()",
+        "yellotitle2":"Try the new React documentation for hydrateRoot.   The new docs will soon replace this site, which will be archived. Provide feedback.",
+        "domcode6":"hydrateRoot(container, element[, options])"
+    },
+    {
+        "id":"16",
+        "title":"ReactDOMServer",
+        "category":"apireference",
+        "titleSummary":"The ReactDOMServer object enables you to render components to static markup. Typically, it’s used on a Node server:",
+        "domcode1":"// ES modules   import * as ReactDOMServer from 'react-dom/server';   // CommonJS   var ReactDOMServer = require('react-dom/server');",
+        "title1":"Overview",
+        "title1des":"These methods are only available in the environments with Node.js Streams:   renderToPipeableStream()   renderToNodeStream() (Deprecated)   renderToStaticNodeStream()   These methods are only available in the environments with Web Streams (this includes browsers, Deno, and some modern edge runtimes):   renderToReadableStream()   The following methods can be used in the environments that don’t support streams:   renderToString()   renderToStaticMarkup()",
+        "title2":"Reference",
+        "yellotitle":"Try the new React documentation for renderToPipeableStream.   The new docs will soon replace this site, which will be archived. Provide feedback.",
+        "domcode3":"ReactDOMServer.renderToPipeableStream(element, options)",
+        "upcode4":"Render a React element to its initial HTML. Returns a stream with a pipe(res) method to pipe the output and abort() to abort the request. Fully supports Suspense and streaming of HTML with “delayed” content blocks “popping in” via inline <script> tags later.   If you call ReactDOM.hydrateRoot() on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.",
+        "domcode4":"let didError = false;   const stream = renderToPipeableStream(   <App />,   {   onShellReady() {    // The content above all Suspense boundaries is ready.         // If something errored before we started streaming, we set the error code appropriately.   res.statusCode = didError ? 500 : 200;   res.setHeader('Content-type', 'text/html');   stream.pipe(res);   },   onShellError(error) {   // Something errored before we could complete the shell so we emit an alternative shell.   res.statusCode = 500;   res.send(   '<!doctype html><p>Loading...</p><script src='clientrender.js'></script>'   );   },   onAllReady() {   // If you don't want streaming, use this instead of onShellReady.   // This will fire after the entire page content is ready.   // You can use this for crawlers or static generation.   // res.statusCode = didError ? 500 : 200;   // res.setHeader('Content-type', 'text/html');   // stream.pipe(res);   },   onError(err) {   didError = true;   console.error(err);   },    }   );",
+        "upcode5":"Streams a React element to its initial HTML. Returns a Promise that resolves to a Readable Stream. Fully supports Suspense and streaming of HTML.   If you call ReactDOM.hydrateRoot() on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.",
+        "domcode5":"let controller = new AbortController();   let didError = false;   try {   let stream = await renderToReadableStream(   <html>   <body>Success</body>   </html>,   {   signal: controller.signal,   onError(error) {   didError = true;   console.error(error);   }   }   );   // This is to wait for all Suspense boundaries to be ready. You can uncomment   // This is to wait for all Suspense boundaries to be ready. You can uncomment   // this line if you want to buffer the entire HTML instead of streaming it.   // You can use this for crawlers or static generation:   // await stream.allReady;   return new Response(stream, {   status: didError ? 500 : 200,   headers: {'Content-Type': 'text/html'},   });   } catch (error) {   return new Response(   '<!doctype html><p>Loading...</p><script src='clientrender.js'></script>'   {   status: 500,   headers: {'Content-Type': 'text/html'},   }   );   }"
+       
+    },
+    {
+        "id":"17",
+        "title":"JavaScript Environment Requirements",
+        "category":"apireference",
+        "titleSummary":"React 18 supports all modern browsers (Edge, Firefox, Chrome, Safari, etc).",
+        "titleSummary1":"If you support older browsers and devices such as Internet Explorer which do not provide modern browser features natively or have non-compliant implementations, consider including a global polyfill in your bundled application.",
+        "titleSummary2":"Here is a list of the modern features React 18 uses:   Promise   Symbol   Object.assign",
+        "titleSummury3":"The correct polyfill for these features depend on your environment. For many users, you can configure your Browserlist settings. For others, you may need to import polyfills like core-js directly."
+    },
+    {
+        "id":"18",
+        "title":"Glossary of React Terms",
+        "category":"apireference",
+        "title1":"Single-page Application",
+        "title1des":"A single-page application is an application that loads a single HTML page and all the necessary assets (such as JavaScript and CSS) required for the application to run. Any interactions with the page or subsequent pages do not require a round trip to the server which means the page is not reloaded.   Though you may build a single-page application in React, it is not a requirement. React can also be used for enhancing small parts of existing websites with additional interactivity. Code written in React can coexist peacefully with markup rendered on the server by something like PHP, or with other client-side libraries. In fact, this is exactly how React is being used at Facebook.",
+        "title2":"ES6, ES2015, ES2016, etc",
+        "title2des":"These acronyms all refer to the most recent versions of the ECMAScript Language Specification standard, which the JavaScript language is an implementation of. The ES6 version (also known as ES2015) includes many additions to the previous versions such as: arrow functions, classes, template literals, let and const statements.",
+        "title3":"Compilers",
+        "title3des":"A JavaScript compiler takes JavaScript code, transforms it and returns JavaScript code in a different format. The most common use case is to take ES6 syntax and transform it into syntax that older browsers are capable of interpreting. Babel is the compiler most commonly used with React.",
+        "title4":"Bundlers",
+        "title4des":"Bundlers take JavaScript and CSS code written as separate modules (often hundreds of them), and combine them together into a few files better optimized for the browsers. Some bundlers commonly used in React applications include Webpack and Browserify.",
+        "title5":"Package Managers",
+        "title5des":"Package managers are tools that allow you to manage dependencies in your project. npm and Yarn are two package managers commonly used in React applications. Both of them are clients for the same npm package registry.",
+        "title6":"CDN",
+        "title6des":"CDN stands for Content Delivery Network. CDNs deliver cached, static content from a network of servers across the globe.",
+        "title7":"JSX",
+        "title7des":"JSX is a syntax extension to JavaScript. It is similar to a template language, but it has full power of JavaScript. JSX gets compiled to React.createElement() calls which return plain JavaScript objects called “React elements”. To get a basic introduction to JSX see the docs here and find a more in-depth tutorial on JSX here.   React DOM uses camelCase property naming convention instead of HTML attribute names. For example, tabindex becomes tabIndex in JSX. The attribute class is also written as className since class is a reserved word in JavaScript:",
+        "domcode7":"<h1 className='hello'>My name is Clementine!</h1>",
+        "title8":"Keys",
+        "title8des":"A “key” is a special string attribute you need to include when creating arrays of elements. Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside an array to give the elements a stable identity.   Keys only need to be unique among sibling elements in the same array. They don’t need to be unique across the whole application or even a single component.   Don’t pass something like Math.random() to keys. It is important that keys have a “stable identity” across re-renders so that React can determine when items are added, removed, or re-ordered. Ideally, keys should correspond to unique and stable identifiers coming from your data, such as post.id."
     }
+
 ]
