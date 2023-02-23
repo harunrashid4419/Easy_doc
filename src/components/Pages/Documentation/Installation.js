@@ -7,7 +7,7 @@ import { useTheme } from "../../../hooks/useTheme";
 const Installation = () => {
   const { theme } = useTheme();
   const { id = "63ee7862d9c11e46a7ec92ed" } = useParams();
-  console.log(id);
+  // console.log(id);
   const [loading, setLoading] = useState(false);
   const [installation, setInstallation] = useState({});
   const {
@@ -51,7 +51,7 @@ const Installation = () => {
   }
   return (
     <div>
-      <h1 className="text-3xl my-4 md:text-5xl font-bold mb-8">{title}</h1>
+      <h1 className="text-3xl my-4 md:text-5xl font-bold mb-4">{title}</h1>
       <p className="text-lg md:text-xl mt-16">{titleSumm}</p>
       <img className="mt-4" src={img1} alt="" />
       <p className="text-lg md:text-xl w-3/4 my-4">{description}</p>
