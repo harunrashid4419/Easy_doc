@@ -23,7 +23,7 @@ const LeftSideBer = () => {
     // this is leftsidbar main div
     <div
       className={`${theme === "dark" ? "bg-[#2c303a54]" : "bg-gray-100"
-        } md:h-screen md:border-r-4 border-gray-200 overflow-y-scroll md:sticky top-0 p-2 hidden md:block md:col-span-3 lg:col-span-1`}
+        } md:h-screen md:border-r-4 border-gray-200 overflow-y-scroll md:sticky top-0 p-2 hidden lg:block lg:col-span-1`}
     >
       <div className="divider text-gray-500">Menu</div>
       <div className="relative">

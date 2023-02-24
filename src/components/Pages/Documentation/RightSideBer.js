@@ -5,7 +5,7 @@ const RightSideBer = () => {
 
 
     return (
-        <div className='md:col-span-5 lg:col-span-3 bg-neutral-content p-5 text-base-content'>
+        <div className='lg:col-span-3 bg-neutral-content p-5 text-base-content'>
             <Outlet></Outlet>
         </div>
     );
