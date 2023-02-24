@@ -110,7 +110,8 @@ const routes = createBrowserRouter([
           {
             path: "/documentation/error/:id",
             element: <Error></Error>
-          },{
+          }
+          ,{
             path: "/documentation/apireference/:id",
             element: <Api></Api>
           }

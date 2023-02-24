@@ -64,13 +64,13 @@ const Api = () => {
     const titledes2=title2des?.split("   ");
     const titledes7=title7des?.split("   ");
     const titledes8=title8des?.split("   ");
-    // const codeup4=upcode4?.split("   ");
-    // const code4=domcode4?.split("   ");
-    // const codeup5=upcode5?.split("   ");
-    // const code5=domcode5?.split("   ");
-    const titleyellow=yellowtitle.split("   ");
-    // const title1yellow=yellowtitle1?.split("   ");
-    // const title2yellow=yellowtitle2?.split("   ");
+    const codeup4=upcode4?.split("   ");
+    const code4=domcode4?.split("   ");
+    const codeup5=upcode5?.split("   ");
+    const code5=domcode5?.split("   ");
+    const titleyellow=yellowtitle?.split("   ");
+    const title1yellow=yellowtitle1?.split("   ");
+    const title2yellow=yellowtitle2?.split("   ");
     if (loading) {
         return <p>Loading...</p>;
       }
@@ -161,7 +161,7 @@ const Api = () => {
                 }
                 </p>
                 </div>
-                <div>
+                <div className='my-6'>
             { domcode7 && <>
                 <div className="mockup-code">
                 <pre data-prefix="$"><code>{domcode7}</code></pre> 
@@ -178,14 +178,81 @@ const Api = () => {
                 </p>
                 </div>
                 <div className='my-2'>
-                    <h1 className='text-2xl font-bold'>{upyellowtitle}</h1>
+                    <h1 className='text-lg md:text-xl'>{upyellowtitle}</h1>
                     <p className='w-full bg-yellow-200'>
                         {
                            titleyellow && titleyellow.map(titley=><p className='p-4'>{titley}</p>) 
                         }
                     </p>
                 </div>
-               
+                <div>
+            { domcode3 && <>
+                <div className="mockup-code">
+                <pre data-prefix="$"><code>{domcode3}</code></pre> 
+              </div>
+              </>
+            }
+            </div>
+            <div className='my-4'>
+                <p className='text-lg md:text-xl'>
+                {
+                    codeup4 && codeup4.map(up4=><p>{up4}</p>)
+                }
+                </p>
+                <div className='my-6'>
+            { code4 && <>
+                <div className="mockup-code">
+                {
+                    code4 && code4.map((code,i)=><Code code={code} key={i}></Code>)
+                }
+              </div>
+              </>
+            }
+            </div>
+            </div>
+            <div>
+            <p className='text-lg md:text-xl'>
+                {
+                    codeup5 && codeup5.map(up5=><p>{up5}</p>)
+                }
+                </p>
+                <p className='text-lg md:text-xl mt-4'>
+                {
+                    upcode6
+                }
+                </p>
+                </div>
+                <div className='my-6'>
+            { code5 && <>
+                <div className="mockup-code">
+                {
+                    code5 && code5.map((code,i)=><Code code={code} key={i}></Code>)
+                }
+              </div>
+              </>
+            }
+            </div>
+            <div className='my-2'>
+                    <h1 className='text-lg md:text-xl'>{upyellowtitle1}</h1>
+                    <div className='w-full text-lg md:text-xl bg-yellow-200'>
+                        {
+                           title1yellow && title1yellow.map(title1y=><p className='p-4'>{title1y}</p>) 
+                        }
+                    </div>
+                    <p className='w-3/4  bg-yellow-200'>
+                        {
+                           title2yellow && title2yellow.map(title2y=><p className='p-4 text-lg md:text-xl'>{title2y}</p>) 
+                        }
+                    </p>
+                </div>
+                <div>
+            { domcode6 && <>
+                <div className="mockup-code">
+                <pre data-prefix="$"><code>{domcode6}</code></pre> 
+              </div>
+              </>
+            }
+            </div>
             </div>
         
     );

@@ -15,6 +15,8 @@ const Users = () => {
   });
 
   return (
+
+    
     <div className="mb-10">
       <h1 className={`text-4xl my-12 text-center ${theme === 'dark' ? 'text-white' : 'text-black'}`}>All Users</h1>
       <div className="overflow-x-auto ">

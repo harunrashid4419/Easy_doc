@@ -191,13 +191,13 @@
         "title": "CDN Links",
         "category": "installation",
         "titleSumm": "Both React and ReactDOM are available over a CDN.",
-        "img1":"https://i.ibb.co/nn2Qy0b/Screenshot-63.png",
+        "code1":"<script crossorigin src='https://unpkg.com/react@18/umd/react.development.js'></script>   <script crossorigin src='https://unpkg.com/react-dom@18/umd/react-dom.development.js'></script>",
         "description":"The versions above are only meant for development, and are not suitable for production.   Minified and optimized production versions of React are available at:",
-        "img2":"https://i.ibb.co/pR3pWhN/Screenshot-64.png",
+        "code2":"<script crossorigin src='https://unpkg.com/react@18/umd/react.production.min.js'></script>   <script crossorigin src='https://unpkg.com/react-dom@18/umd/react-dom.production.min.js'></script>",
         "description1":"To load a specific version of react and react-dom, replace 18 with the version number",
         "dTitle":"Why the crossorigin Attribute?",
         "descrption2":"If you serve React from a CDN, we recommend to keep the crossorigin attribute set:",
-        "img3":"https://i.ibb.co/QrGBvYb/Screenshot-68.png"
+        "code3":"<script crossorigin src='...'></script>"
 
     },
     {
