@@ -28,6 +28,7 @@ import Payment from "../Payment/Payment";
 import AddReview from "../components/Pages/Dashboard/AddReview/AddReview";
 import Drawer from "../components/SharedPage/Navbar/Drawer";
 import PaymentUsers from "../components/Pages/Dashboard/PaymentUsers/PaymentUsers";
+import Hooks from "../components/Pages/Documentation/Hooks";
 
 
 
@@ -101,6 +102,10 @@ const routes = createBrowserRouter([
           {
             path: "/documentation/installation/:id",
             element: <Installation></Installation>
+          },
+          {
+            path: "/documentation/hooks/:id",
+            element: <Hooks></Hooks>
           },
           {
             path: "/documentation/interview/:id",

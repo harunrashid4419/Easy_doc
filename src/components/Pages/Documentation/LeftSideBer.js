@@ -9,6 +9,7 @@ const LeftSideBer = () => {
   const [interviewOpen, setInterviewOpen] = useState(false);
   const [errorDocOpen, setErrorDocOpen] = useState(false);
   const [openInstallation, setOpenInstallation] = useState(false);
+  const [openHooks, setOpenHooks] = useState(false);
   const { data, loading } = useFetch(
     "https://easy-doc-server.vercel.app/doc-data"
   );
@@ -58,6 +59,35 @@ const LeftSideBer = () => {
                   to={`/documentation/installation/${installation._id}`}
                 >
                   {installation?.title}
+                </Link>
+              ))}
+        </li>
+      </ul>
+
+      {/* React Hooks start from here */}
+      <ul className="space-y-2 text-[1.2rem]">
+        <li
+          onClick={() => setOpenHooks(!openHooks)}
+          className="flex justify-between transition duration-700 ease-in-out cursor-pointer items-center text-[1.5rem] hover:bg-gray-300 pl-2"
+        >
+          Installation
+          <FaAngleRight
+            className={`inline text-2xl text-gray-600 ${openHooks ? "rotate-90" : ""
+              } transition delay-50`}
+          ></FaAngleRight>
+        </li>
+        <li>
+          {data &&
+            data
+              ?.filter((item) => item?.category === "hooks")
+              .map((hooks) => (
+                <Link
+                  key={hooks._id}
+                  className={`pl-4 ${openHooks ? "block" : "hidden"
+                    } hover:bg-gray-300 cursor-pointer p-1`}
+                  to={`/documentation/hooks/${hooks._id}`}
+                >
+                  {hooks?.title}
                 </Link>
               ))}
         </li>
