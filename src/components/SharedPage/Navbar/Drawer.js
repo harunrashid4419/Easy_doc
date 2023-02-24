@@ -7,6 +7,7 @@ import { AuthContext } from "../../../Context/UserContext";
 import useFetch from "../../../hooks/useFetch";
 
 const Drawer = () => {
+<<<<<<< HEAD
   const [interviewOpen, setInterviewOpen] = useState(false);
   const [errorDocOpen, setErrorDocOpen] = useState(false);
   const [openInstallation, setOpenInstallation] = useState(false);
@@ -24,6 +25,18 @@ const Drawer = () => {
       <Link to="/blog">Blog</Link>
       <Link to="/courses">Courses</Link>
       {user?.uid ? (
+=======
+    const [interviewOpen, setInterviewOpen] = useState(false);
+    const [errorDocOpen, setErrorDocOpen] = useState(false);
+    const [openInstallation, setOpenInstallation] = useState(false);
+    const { pathname } = useLocation();
+    const { user } = useContext(AuthContext);
+    const { data, loading } = useFetch(
+        "https://easy-doc-server.vercel.app/doc-data"
+    );
+    console.log(data);
+    const links = (
+>>>>>>> 3ffd7179182468c1b87b73c88a16b92ebd692856
         <>
           <Link to="/dashboard">Dashboard</Link>
         </>
@@ -33,9 +46,15 @@ const Drawer = () => {
     </>
   );
 
+<<<<<<< HEAD
   if (loading) {
     return loading;
   }
+=======
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+>>>>>>> 3ffd7179182468c1b87b73c88a16b92ebd692856
 
   return (
     <div className="drawer md:hidden absolute">

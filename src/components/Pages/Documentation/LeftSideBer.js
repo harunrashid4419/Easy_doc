@@ -18,7 +18,7 @@ const LeftSideBer = () => {
   if (loading) {
     return <p>Loading...</p>;
   }
-
+  console.log(data);
   return (
     // this is leftsidbar main div
     <div

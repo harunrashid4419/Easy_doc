@@ -1,9 +1,9 @@
-import "./App.css";
+
 import { RouterProvider } from "react-router-dom";
+import { Provider } from 'react-redux'
 import routes from "./Router/Router";
 import { Toaster } from "react-hot-toast";
-import { Provider } from "react-redux";
-import store from "./redux/store";
+import store from "./app/store";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <RouterProvider router={routes}></RouterProvider>
         <Toaster />
       </Provider>
+
 
     </>
   );
