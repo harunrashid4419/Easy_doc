@@ -68,7 +68,7 @@ const Api = () => {
   // const code4=domcode4?.split("   ");
   // const codeup5=upcode5?.split("   ");
   // const code5=domcode5?.split("   ");
-  const titleyellow = yellowtitle.split("   ");
+  const titleyellow = yellowtitle?.split("   ");
   // const title1yellow=yellowtitle1?.split("   ");
   // const title2yellow=yellowtitle2?.split("   ");
   if (loading) {
