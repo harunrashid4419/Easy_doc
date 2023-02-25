@@ -1,15 +1,17 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+
 import { useParams } from "react-router-dom";
+import { useFetchDataQuery } from "../../../features/api/apiSlice";
 import { useTheme } from "../../../hooks/useTheme";
 
 const Installation = () => {
   const { theme } = useTheme();
-  const { id = "63f77abeb751fe13538111b4" } = useParams();
-  // console.log(id);
-  const [loading, setLoading] = useState(false);
-  const [installation, setInstallation] = useState({});
+  const { id = "63f8df9db751fe135363e7cd" } = useParams();
+  const { data: installation, isLoading } = useFetchDataQuery(`/installation/${id}`);
+  console.log(installation);
+  if (isLoading) {
+    return <p>loading....</p>
+  }
   const {
     title,
     img1,
@@ -37,18 +39,6 @@ const Installation = () => {
   const summuries2 = howTitleSummury2?.split("   ");
   const summuries3 = titleSummuryYellow?.split("   ");
 
-  useEffect(() => {
-    setLoading(true);
-    fetch(`https://easy-doc-server.vercel.app/installation/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setInstallation(data);
-        setLoading(false);
-      });
-  }, [id]);
-  if (loading) {
-    return <p>Loading...</p>;
-  }
   return (
     <div>
       <h1 className="text-3xl my-4 md:text-5xl font-bold mb-4">{title}</h1>

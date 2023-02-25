@@ -16,29 +16,28 @@ const Drawer = () => {
   const { data, loading } = useFetch(
     "https://easy-doc-server.vercel.app/doc-data"
   );
-  const links = (
+  const links =
     <>
       <Link to="/">Home</Link>
       <Link to="/documentation">Documentation</Link>
       <Link to="/community">Community</Link>
       <Link to="/blog">Blog</Link>
       <Link to="/courses">Courses</Link>
-      {user?.uid ? (
+      {user?.uid ?
         <>
           <Link to="/dashboard">Dashboard</Link>
         </>
-      ) : (
+        :
         <Link to="/login">Login</Link>
-      )}
+      }
     </>
-  );
 
   if (loading) {
-    return loading;
+    return <p>Loading</p>;
   }
 
   return (
-    <div className="drawer md:hidden absolute">
+    <div className="drawer lg:hidden absolute">
       <input id="easy-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-side">
         <label htmlFor="easy-drawer" className="drawer-overlay"></label>
@@ -58,9 +57,8 @@ const Drawer = () => {
               >
                 Installation
                 <FaAngleRight
-                  className={`inline text-2xl text-gray-600 ${
-                    openInstallation ? "rotate-90" : ""
-                  } transition delay-50 `}
+                  className={`inline text-2xl text-gray-600 ${openInstallation ? "rotate-90" : ""
+                    } transition delay-50 `}
                 ></FaAngleRight>
               </label>
 
@@ -69,24 +67,22 @@ const Drawer = () => {
                 .map((installation) => (
                   <Link
                     key={installation._id}
-                    className={`${
-                      openInstallation ? "block" : "hidden"
-                    } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
+                    className={`${openInstallation ? "block" : "hidden"
+                      } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
                     to={`/documentation/installation/${installation?._id}`}
                   >
                     {installation?.title}
                   </Link>
                 ))}
-                {/* main concept start */}
+              {/* main concept start */}
               <label
                 onClick={() => setOpenMainConcept(!openMainConcept)}
                 className="hover:cursor-pointer px-4 py-2 flex items-center hover:bg-gray-300 justify-between"
               >
                 Main Concept
                 <FaAngleRight
-                  className={`inline text-2xl text-gray-600 ${
-                    openMainConcept ? "rotate-90" : ""
-                  } transition delay-50 `}
+                  className={`inline text-2xl text-gray-600 ${openMainConcept ? "rotate-90" : ""
+                    } transition delay-50 `}
                 ></FaAngleRight>
               </label>
 
@@ -95,24 +91,22 @@ const Drawer = () => {
                 .map((main) => (
                   <Link
                     key={main._id}
-                    className={`${
-                      openMainConcept ? "block" : "hidden"
-                    } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
+                    className={`${openMainConcept ? "block" : "hidden"
+                      } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
                     to={`/documentation/mainConcept/${main?._id}`}
                   >
                     {main?.title}
                   </Link>
                 ))}
-                {/* main concept end */}
+              {/* main concept end */}
               <label
                 onClick={() => setInterviewOpen(!interviewOpen)}
                 className="hover:cursor-pointer px-4 py-2 flex items-center hover:bg-gray-300 justify-between"
               >
                 Interview Question{" "}
                 <FaAngleRight
-                  className={`inline text-2xl text-gray-600 ${
-                    interviewOpen ? "rotate-90" : ""
-                  } transition delay-50 `}
+                  className={`inline text-2xl text-gray-600 ${interviewOpen ? "rotate-90" : ""
+                    } transition delay-50 `}
                 ></FaAngleRight>
               </label>
 
@@ -121,9 +115,8 @@ const Drawer = () => {
                 .map((interview) => (
                   <Link
                     key={interview._id}
-                    className={`${
-                      interviewOpen ? "block" : "hidden"
-                    } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
+                    className={`${interviewOpen ? "block" : "hidden"
+                      } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
                     to={`/documentation/interview/${interview?._id}`}
                   >
                     {interview?.title}
@@ -136,9 +129,8 @@ const Drawer = () => {
               >
                 Error Handling{" "}
                 <FaAngleRight
-                  className={`inline text-2xl text-gray-600 ${
-                    errorDocOpen ? "rotate-90" : ""
-                  } transition delay-50 `}
+                  className={`inline text-2xl text-gray-600 ${errorDocOpen ? "rotate-90" : ""
+                    } transition delay-50 `}
                 ></FaAngleRight>
               </label>
 
@@ -147,9 +139,8 @@ const Drawer = () => {
                 .map((error) => (
                   <Link
                     key={error._id}
-                    className={`${
-                      errorDocOpen ? "block" : "hidden"
-                    } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
+                    className={`${errorDocOpen ? "block" : "hidden"
+                      } hover:bg-gray-300 cursor-pointer pl-6 py-1`}
                     to={`/documentation/error/${error?._id}`}
                   >
                     {error?.title}

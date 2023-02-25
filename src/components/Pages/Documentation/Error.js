@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useFetchDataQuery } from "../../../features/api/apiSlice";
 
 const Error = () => {
   const { id } = useParams();
-  const [loading, setLoading] = useState(false);
-  const [data, setData] = useState({});
+  const { data: error, isLoading } = useFetchDataQuery(`/error/${id}`);
+  if (isLoading) {
+    return <p>Loading...</p>
+  }
   const {
     title,
     titleSummury,
@@ -17,24 +20,12 @@ const Error = () => {
     subExampleTitle,
     subExampleTitleSummury,
     code,
-  } = data;
+  } = error;
   const summuries = titleSummury?.split("   ");
   const types = errorTypes?.split("   ");
   const answers = answer?.split("   ");
   const codes = code?.split("   ");
 
-  useEffect(() => {
-    setLoading(true);
-    fetch(`https://easy-doc-server.vercel.app/error/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      });
-  }, [id]);
-  if (loading) {
-    return <p>Loading...</p>;
-  }
   return (
     <div className="text-[1.2rem]">
       <h1 className="text-3xl md:text-5xl font-bold mt-10 mb-4">{title}</h1>
