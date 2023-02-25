@@ -28,6 +28,8 @@ import Payment from "../Payment/Payment";
 import AddReview from "../components/Pages/Dashboard/AddReview/AddReview";
 // import Drawer from "../components/SharedPage/Navbar/Drawer";
 import PaymentUsers from "../components/Pages/Dashboard/PaymentUsers/PaymentUsers";
+import Hooks from "../components/Pages/Documentation/Hooks";
+import MainConcept from "../components/Pages/Documentation/MainConcept/MainConcept";
 import Api from "../components/Pages/Documentation/Api";
 
 
@@ -104,18 +106,31 @@ const routes = createBrowserRouter([
             element: <Installation></Installation>
           },
           {
+            path: "/documentation/hooks/:id",
+            element: <Hooks></Hooks>
+          },
+          {
             path: "/documentation/interview/:id",
             element: <Interview></Interview>,
           },
           {
             path: "/documentation/error/:id",
             element: <Error></Error>
+<<<<<<< HEAD
           }
           ,{
+=======
+          },
+          {
+            path: "/documentation/mainConcept/:id",
+            element: <MainConcept></MainConcept>
+          },
+          {
+>>>>>>> main
             path: "/documentation/apireference/:id",
             element: <Api></Api>
           }
-          
+
 
         ]
       },

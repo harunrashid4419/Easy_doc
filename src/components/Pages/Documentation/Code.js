@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-const Code = ({code}) => {
-
-    return (
-        <div>
-           <pre data-prefix="$"><code>{code}</code></pre> 
-        </div>
-    );
+const Code = ({ code }) => {
+  return (
+    
+    <pre>
+    <code>{code}</code>
+  </pre>
+  );
 };
 
 export default Code;

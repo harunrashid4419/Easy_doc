@@ -9,14 +9,16 @@ const LeftSideBer = () => {
   const [interviewOpen, setInterviewOpen] = useState(false);
   const [errorDocOpen, setErrorDocOpen] = useState(false);
   const [openInstallation, setOpenInstallation] = useState(false);
-  const [openApi,setOpenApi]=useState(false);
+  const [openHooks, setOpenHooks] = useState(false);
+  const [openMainConcept, setOpenMainConcept] = useState(false);
+  const [openApi, setOpenApi] = useState(false);
   const { data, loading } = useFetch(
     "https://easy-doc-server.vercel.app/doc-data"
   );
   if (loading) {
     return <p>Loading...</p>;
   }
-
+  console.log(data);
   return (
     // this is leftsidbar main div
     <div
@@ -33,7 +35,6 @@ const LeftSideBer = () => {
         <FaSearch className="absolute top-3 left-4 w-10 text-slate-400"></FaSearch>
       </div>
       <h1 className="text-2xl font-bold text-center">React</h1>
-
 
       {/* React Installation docs data here */}
       <ul className="space-y-2 text-[1.2rem]">
@@ -88,8 +89,63 @@ const LeftSideBer = () => {
               ))}
         </li>
       </ul>
-      <h1 className="text-2xl font-bold text-center mt-8">Others</h1>
+      <ul className="space-y-2 text-[1.2rem]">
+        <li
+          onClick={() => setOpenMainConcept(!openMainConcept)}
+          className="flex justify-between transition duration-700 ease-in-out cursor-pointer items-center text-[1.5rem] hover:bg-gray-300 pl-2"
+        >
+          Main Concept
+          <FaAngleRight
+            className={`inline text-2xl text-gray-600 ${openMainConcept ? "rotate-90" : ""
+              } transition delay-50`}
+          ></FaAngleRight>
+        </li>
+        <li>
+          {data &&
+            data
+              ?.filter((item) => item?.category === "MAIN CONCEPTS")
+              .map((main) => (
+                <Link
+                  key={main._id}
+                  className={`pl-4 ${openMainConcept ? "block" : "hidden"
+                    } hover:bg-gray-300 cursor-pointer p-1`}
+                  to={`/documentation/mainConcept/${main._id}`}
+                >
+                  {main?.title}
+                </Link>
+              ))}
+        </li>
+      </ul>
 
+      {/* React Hooks start from here */}
+      <ul className="space-y-2 text-[1.2rem]">
+        <li
+          onClick={() => setOpenHooks(!openHooks)}
+          className="flex justify-between transition duration-700 ease-in-out cursor-pointer items-center text-[1.5rem] hover:bg-gray-300 pl-2"
+        >
+          Installation
+          <FaAngleRight
+            className={`inline text-2xl text-gray-600 ${openHooks ? "rotate-90" : ""
+              } transition delay-50`}
+          ></FaAngleRight>
+        </li>
+        <li>
+          {data &&
+            data
+              ?.filter((item) => item?.category === "hooks")
+              .map((hooks) => (
+                <Link
+                  key={hooks._id}
+                  className={`pl-4 ${openHooks ? "block" : "hidden"
+                    } hover:bg-gray-300 cursor-pointer p-1`}
+                  to={`/documentation/hooks/${hooks._id}`}
+                >
+                  {hooks?.title}
+                </Link>
+              ))}
+        </li>
+      </ul>
+      <h1 className="text-2xl font-bold text-center mt-8">Others</h1>
 
       {/* Interview docs data here */}
       <ul className="space-y-2 text-[1.2rem]">
@@ -119,7 +175,6 @@ const LeftSideBer = () => {
               ))}
         </li>
       </ul>
-
 
       {/* Error docs data here */}
       <ul className="space-y-2 text-[1.2rem]">
