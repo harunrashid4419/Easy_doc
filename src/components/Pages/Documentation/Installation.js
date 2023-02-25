@@ -3,6 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useFetchDataQuery } from "../../../features/api/apiSlice";
 import { useTheme } from "../../../hooks/useTheme";
+import Code from "./Code";
 
 const Installation = () => {
   const { theme } = useTheme();
@@ -14,9 +15,9 @@ const Installation = () => {
   }
   const {
     title,
-    img1,
-    img2,
-    img3,
+    code1,
+    code2,
+    code3,
     subTitleSummury,
     dTitle,
     description,
@@ -32,6 +33,8 @@ const Installation = () => {
     allTips,
     titleSummuryYellow,
   } = installation;
+  const cd1=code1?.split("   ");
+  const cd2=code2?.split("   ");
   const tips = allTips?.split("   ");
   const answers = answer?.split("   ");
   const summuries = subTitleSummury?.split("   ");
@@ -43,13 +46,38 @@ const Installation = () => {
     <div>
       <h1 className="text-3xl my-4 md:text-5xl font-bold mb-4">{title}</h1>
       <p className="text-lg md:text-xl mt-16">{titleSumm}</p>
-      <img className="mt-4" src={img1} alt="" />
+      <div>
+            { cd1 && <>
+                <div className="mockup-code">
+                {
+                    cd1 && cd1.map((code,i)=><Code code={code} key={i}></Code>)
+                }
+              </div>
+              </>
+            }
+            </div>
       <p className="text-lg md:text-xl w-3/4 my-4">{description}</p>
-      <img src={img2} alt="" />
+      <div>
+            { cd2 && <>
+                <div className="mockup-code">
+                {
+                    cd2 && cd2.map((code,i)=><Code code={code} key={i}></Code>)
+                }
+              </div>
+              </>
+            }
+            </div>
       <p className="text-lg md:text-xl w-3/4 my-4">{description1}</p>
       <h1 className="text-3xl mt-8">{dTitle}</h1>
       <p className="text-lg md:text-xl w-3/4 my-4">{description2}</p>
-      <img src={img3} alt="" />
+      <div>
+            { code3 && <>
+                <div className="mockup-code">
+                <pre data-prefix="$"><code>{code3}</code></pre> 
+              </div>
+              </>
+            }
+            </div>
       <div className="space-y-4">
         {summuries &&
           summuries.map((summury, idx) => <p key={idx}>{summury}</p>)}
