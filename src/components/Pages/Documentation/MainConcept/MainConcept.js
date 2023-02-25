@@ -1,6 +1,4 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useFetchDataQuery } from "../../../../features/api/apiSlice";
 import Loader from "../../../../Loader/Loader";
@@ -12,7 +10,7 @@ const MainConcept = () => {
     `/main-concept/${id}`
   );
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loader></Loader>;
   }
   const {
     title,
