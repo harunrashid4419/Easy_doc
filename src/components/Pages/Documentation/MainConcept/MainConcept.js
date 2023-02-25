@@ -1,10 +1,35 @@
 import React from "react";
+<<<<<<< HEAD
+import { useState } from "react";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+=======
 import { useParams } from "react-router-dom";
 import { useFetchDataQuery } from "../../../../features/api/apiSlice";
+>>>>>>> main
 import Loader from "../../../../Loader/Loader";
 import Code from "../Code";
 
 const MainConcept = () => {
+<<<<<<< HEAD
+  const [mainConcept, setMainConcept] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { id } = useParams();
+  useEffect(() => {
+    setLoading(true);
+    fetch(`http://localhost:5000/main-concept/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setLoading(false);
+        setMainConcept(data);
+      });
+  }, [id]);
+
+  if (loading) {
+    return Loader;
+  }
+  console.log(mainConcept);
+=======
   const { id } = useParams();
   const { data: mainConcept, isLoading } = useFetchDataQuery(
     `/main-concept/${id}`
@@ -12,12 +37,16 @@ const MainConcept = () => {
   if (isLoading) {
     return <Loader></Loader>;
   }
+>>>>>>> main
   const {
     title,
     first,
     firstYellow,
     second,
+<<<<<<< HEAD
+=======
     secondBlack,
+>>>>>>> main
     secondYellow,
     third,
     thirdHeader,
@@ -32,7 +61,10 @@ const MainConcept = () => {
     sixth,
     sixthBlack,
     sixthYellow,
+<<<<<<< HEAD
+=======
     sixthImg,
+>>>>>>> main
     seventhHeader,
     seventhBlack,
     eight,
@@ -51,7 +83,10 @@ const MainConcept = () => {
     twelveHeader,
     thirteen,
     thirteenBlack,
+<<<<<<< HEAD
+=======
     thirteenImgTwo,
+>>>>>>> main
     fourteen,
     fourteenBlack,
     fourteenHeader,
@@ -77,6 +112,19 @@ const MainConcept = () => {
     twentyFour,
     twentyFive,
   } = mainConcept;
+<<<<<<< HEAD
+  const firsts = first?.split("   ");
+  const seventhBlacks = seventhBlack?.split("   ");
+  const threeBlacks = seventhBlack?.split("   ");
+  return (
+    <div className="py-8">
+      <p className="text-6xl text-base-content">{title}</p>
+      <p>{first && firsts.map((firstPara) => <div className="py-5">{firstPara}</div>)}</p>
+      <div className="mockup-code">
+        {seventhBlack &&
+          seventhBlacks.map((code, i) => <Code code={code} key={i}></Code>)}
+      </div>
+=======
 
   const firsts = first?.split("   ");
   const firstYellows = firstYellow?.split("   ");
@@ -547,6 +595,7 @@ const MainConcept = () => {
             </div>
           ))}
       </p>
+>>>>>>> main
     </div>
   );
 };
