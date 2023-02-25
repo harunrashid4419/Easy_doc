@@ -96,10 +96,15 @@ const QSN = () => {
               className="bg-neutral-content collapse collapse-plus border border-base-300 rounded-md shadow-2xl"
             >
               <div className="collapse-title text-xl font-medium">
-                Focus me to see content
+                What is JSX?
               </div>
               <div className="collapse-content">
-                <p> attribute is necessary to make the div focusable</p>
+                <p>
+                  JSX stands for Javascript XML and it is a very useful tool for
+                  React developers. JSX is an extension of the JavaScript
+                  language which provides a way to structure component rendering
+                  using syntax similar to HTML.
+                </p>
               </div>
             </div>
           </div>
@@ -109,10 +114,17 @@ const QSN = () => {
               className="collapse collapse-plus border border-base-300 bg-neutral-content rounded-md shadow-2xl"
             >
               <div className="collapse-title text-xl font-medium">
-                Focus me to see content
+                What is a state in React and how is it used?
               </div>
               <div className="collapse-content">
-                <p> attribute is necessary to make the div focusable</p>
+                <p>
+                  States are the heart of React components. States are the
+                  source of data and must be kept as simple as possible.
+                  Basically, states are the objects which determine components
+                  rendering and behavior. They are mutable unlike the props and
+                  create dynamic and interactive components. They are accessed
+                  via this.state().
+                </p>
               </div>
             </div>
           </div>
