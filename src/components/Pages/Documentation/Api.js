@@ -11,7 +11,7 @@ const Api = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/apireference/${id}`)
+    fetch(`https://easy-doc-server.vercel.app/apireference/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setApi(data);
