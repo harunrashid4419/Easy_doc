@@ -4,7 +4,6 @@ import Register from "../components/Authentication/Register/Register";
 import Community from "../components/Community/Community";
 import Blog from "../components/Pages/BlogPage/Blog";
 import Details from "../components/Pages/BlogPage/Details/Details";
-import DashboardLayout from "../components/Pages/Dashboard/DashboardLayout/DashboardLayout";
 import Users from "../components/Pages/Dashboard/Users/Users";
 import Documentation from "../components/Pages/Documentation/Documentation";
 import Home from "../components/Pages/HomePage/Home/Home";
@@ -31,6 +30,7 @@ import PaymentUsers from "../components/Pages/Dashboard/PaymentUsers/PaymentUser
 import Hooks from "../components/Pages/Documentation/Hooks";
 import MainConcept from "../components/Pages/Documentation/MainConcept/MainConcept";
 import Api from "../components/Pages/Documentation/Api";
+import Dashboard from "../components/Pages/Dashboard/Dashboard";
 
 
 
@@ -94,6 +94,40 @@ const routes = createBrowserRouter([
         ),
       },
       {
+        path: "/dashboard",
+        element: (
+          <PrivateRoute>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+        ),
+        children: [
+          {
+            path: '/dashboard',
+            element: <AddReview></AddReview>
+          },
+          {
+            path: "/dashboard/users",
+            element: (
+              <AdminRouter>
+                <Users></Users>
+              </AdminRouter>
+            ),
+          },
+          {
+            path: "/dashboard/addBlog",
+            element: <AddBlog></AddBlog>,
+          },
+          {
+            path: '/dashboard/addReview',
+            element: <AddReview></AddReview>
+          },
+          {
+            path: '/dashboard/paymentUsers',
+            element: <PaymentUsers></PaymentUsers>
+          },
+        ],
+      },
+      {
         path: "/documentation",
         element: <Documentation></Documentation>,
         children: [
@@ -116,17 +150,14 @@ const routes = createBrowserRouter([
           {
             path: "/documentation/error/:id",
             element: <Error></Error>
-<<<<<<< HEAD
-          }
-          ,{
-=======
           },
+  
           {
             path: "/documentation/mainConcept/:id",
             element: <MainConcept></MainConcept>
           },
           {
->>>>>>> main
+
             path: "/documentation/apireference/:id",
             element: <Api></Api>
           }
@@ -159,40 +190,7 @@ const routes = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/dashboard",
-    element: (
-      <PrivateRoute>
-        <DashboardLayout></DashboardLayout>
-      </PrivateRoute>
-    ),
-    children: [
-      {
-        path: '/dashboard',
-        element: <AddReview></AddReview>
-      },
-      {
-        path: "/dashboard/users",
-        element: (
-          <AdminRouter>
-            <Users></Users>
-          </AdminRouter>
-        ),
-      },
-      {
-        path: "/dashboard/addBlog",
-        element: <AddBlog></AddBlog>,
-      },
-      {
-        path: '/dashboard/addReview',
-        element: <AddReview></AddReview>
-      },
-      {
-        path: '/dashboard/paymentUsers',
-        element: <PaymentUsers></PaymentUsers>
-      },
-    ],
-  },
+  
 ]);
 
 export default routes;

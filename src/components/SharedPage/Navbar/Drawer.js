@@ -37,7 +37,7 @@ const Drawer = () => {
   }
 
   return (
-    <div className="drawer md:hidden absolute">
+    <div className="drawer lg:hidden absolute">
       <input id="easy-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-side">
         <label htmlFor="easy-drawer" className="drawer-overlay"></label>

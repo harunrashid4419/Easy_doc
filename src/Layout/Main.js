@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import ProfileModal from '../components/Pages/Profile/ProfileModal/ProfileModal';
 import Footer from '../components/SharedPage/Footer/Footer';
@@ -7,6 +7,24 @@ import Navbar from '../components/SharedPage/Navbar/Navbar';
 
 const Main = () => {
     const [show, setShow] = useState(true);
+    const [isMobile, setIsMobile] = useState(false)
+
+    //choose the screen size 
+    const handleResize = () => {
+        if (window.innerWidth < 1024) {
+            setIsMobile(true)
+        } else {
+            setIsMobile(false)
+        }
+    }
+
+    // create an event listener
+    useEffect(() => {
+        window.addEventListener("resize", handleResize)
+    }, [isMobile])
+    useEffect(() => {
+        setShow(true)
+    }, [show])
     return (
         <div>
             {
@@ -16,7 +34,7 @@ const Main = () => {
                 ></ProfileModal>
             }
             <Navbar></Navbar>
-            <Drawer></Drawer>
+            {isMobile && <Drawer></Drawer>}
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
