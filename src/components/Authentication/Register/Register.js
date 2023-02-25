@@ -15,6 +15,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { useTheme } from "../../../hooks/useTheme";
+import { usePutDataMutation } from "../../../features/api/apiSlice";
 
 const Register = () => {
   const {
@@ -22,7 +23,7 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { createUser, updateUser, googleSignIn, githubSignIn } =
+  const { user, createUser, updateUser, googleSignIn, githubSignIn } =
     useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -30,8 +31,8 @@ const Register = () => {
   const [check, setCheck] = useState(false);
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  const {theme} = useTheme();
-
+  const { theme } = useTheme();
+  const [putUser, { isError, isLoading }] = usePutDataMutation(`/user?uid=${user?.uid}`);
   const handleRegister = (data) => {
     const name = data.firstName + " " + data.lastName;
     const email = data?.email;
@@ -45,9 +46,10 @@ const Register = () => {
           displayName: name,
         };
         updateUser(usersInfo)
-          .then((result) => {})
+          .then((result) => { })
           .catch((error) => console.error(error));
-        userAddToDatabase(name, email, user?.uid);
+        putUser(name, email, user?.uid);
+        // userAddToDatabase(name, email, user?.uid);
       })
       .catch((error) => {
         setError(error.message);
@@ -56,22 +58,22 @@ const Register = () => {
   };
 
   // user store in database
-  const userAddToDatabase = (name, email, uid) => {
-    const user = { name, email, uid, photoURL: "" };
-    fetch(`https://easy-doc-server.vercel.app/user?uid=${uid}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        toast.success("Register successfully!");
-        navigate("/");
-      });
-  };
+  // const userAddToDatabase = (name, email, uid) => {
+  //   const user = { name, email, uid, photoURL: "" };
+  //   fetch(`https://easy-doc-server.vercel.app/user?uid=${uid}`, {
+  //     method: "PUT",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify(user),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       toast.success("Register successfully!");
+  //       navigate("/");
+  //     });
+  // };
 
   // Sign In with Google
   const handleGoogleSignIn = () => {

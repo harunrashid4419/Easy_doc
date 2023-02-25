@@ -2,27 +2,16 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useFetchDataQuery } from "../../../../features/api/apiSlice";
 import Loader from "../../../../Loader/Loader";
 import Code from "../Code";
 
 const MainConcept = () => {
-  const [mainConcept, setMainConcept] = useState([]);
-  const [loading, setLoading] = useState(false);
   const { id } = useParams();
-  useEffect(() => {
-    setLoading(true);
-    fetch(`http://localhost:5000/main-concept/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setLoading(false);
-        setMainConcept(data);
-      });
-  }, [id]);
-
-  if (loading) {
-    return Loader;
+  const { data: mainConcept, isLoading } = useFetchDataQuery(`/main-concept/${id}`);
+  if (isLoading) {
+    return <p>Loading...</p>
   }
-  console.log(mainConcept);
   const {
     title,
     first,
