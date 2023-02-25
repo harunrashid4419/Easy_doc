@@ -55,7 +55,7 @@ const AddReview = () => {
   };
 
   return (
-    <div className="md:p-12 p-5">
+    <div className="md:p-12 p-2">
       <h2 className="text-center text-base-content text-2xl font-normal">
         Add your valuable Review
       </h2>
