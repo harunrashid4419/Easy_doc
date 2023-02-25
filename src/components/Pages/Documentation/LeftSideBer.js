@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { FaAngleRight, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import useFetch from "../../../hooks/useFetch";
+import { useFetchDataQuery } from "../../../features/api/apiSlice";
 import { useTheme } from "../../../hooks/useTheme";
 
+
 const LeftSideBer = () => {
+  const { data, isLoading } = useFetchDataQuery('/doc-data')
+
   const { theme } = useTheme();
   const [interviewOpen, setInterviewOpen] = useState(false);
   const [errorDocOpen, setErrorDocOpen] = useState(false);
@@ -12,18 +15,16 @@ const LeftSideBer = () => {
   const [openHooks, setOpenHooks] = useState(false);
   const [openMainConcept, setOpenMainConcept] = useState(false);
   const [openApi, setOpenApi] = useState(false);
-  const { data, loading } = useFetch(
-    "https://easy-doc-server.vercel.app/doc-data"
-  );
-  if (loading) {
-    return <p>Loading...</p>;
+  if (isLoading) {
+    return <p>loading...</p>
   }
   console.log(data);
+
   return (
     // this is leftsidbar main div
     <div
       className={`${theme === "dark" ? "bg-[#2c303a54]" : "bg-gray-100"
-        } md:h-screen md:border-r-4 border-gray-200 overflow-y-scroll md:sticky top-0 p-2 hidden md:block md:col-span-3 lg:col-span-1`}
+        } md:h-screen md:border-r-4 border-gray-200 overflow-y-scroll md:sticky top-0 p-2 hidden lg:block lg:col-span-1`}
     >
       <div className="divider text-gray-500">Menu</div>
       <div className="relative">
