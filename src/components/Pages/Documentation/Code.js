@@ -1,11 +1,15 @@
 import React from "react";
 
-const Code = ({ code }) => {
+const Code = ({ code, yellow }) => {
   return (
-    
-    <pre>
-    <code>{code}</code>
-  </pre>
+    <>
+      {code && (
+        <pre>
+          <code>{code}</code>
+        </pre>
+      )}
+      {yellow && <p className="py-1 text-xl">{yellow}</p>}
+    </>
   );
 };
 

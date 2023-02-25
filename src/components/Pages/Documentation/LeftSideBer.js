@@ -124,7 +124,7 @@ const LeftSideBer = () => {
           onClick={() => setOpenHooks(!openHooks)}
           className="flex justify-between transition duration-700 ease-in-out cursor-pointer items-center text-[1.5rem] hover:bg-gray-300 pl-2"
         >
-          Installation
+          Hooks
           <FaAngleRight
             className={`inline text-2xl text-gray-600 ${openHooks ? "rotate-90" : ""
               } transition delay-50`}
