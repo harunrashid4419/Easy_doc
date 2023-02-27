@@ -48,8 +48,11 @@ const Register = () => {
         updateUser(usersInfo)
           .then((result) => { })
           .catch((error) => console.error(error));
-        putUser(name, email, user?.uid);
-        // userAddToDatabase(name, email, user?.uid);
+        const data = {
+          name, email, uid: user?.uid
+        }
+        putUser(data);
+        // userAddToDatabase(data);
       })
       .catch((error) => {
         setError(error.message);

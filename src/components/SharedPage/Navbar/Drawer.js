@@ -42,7 +42,8 @@ const Drawer = () => {
       <div className="drawer-side">
         <label htmlFor="easy-drawer" className="drawer-overlay"></label>
         <ul className="menu w-80 bg-base-100 text-base-content text-[1.2rem] space-y-1 px-2">
-          {pathname.includes("/documentation") ? (
+          {
+            pathname.includes("/documentation") &&
             <>
               <Link
                 className="bg-slate-300 font-bold flex items-center p-2 gap-2"
@@ -147,11 +148,16 @@ const Drawer = () => {
                   </Link>
                 ))}
             </>
-          ) : (
+          }
+          {
+            pathname.includes('/dashboard') &&
             <>
-              <li>{links}</li>
             </>
-          )}
+          }
+
+          {
+            pathname.includes('/dashboard')
+          }
         </ul>
       </div>
     </div>
