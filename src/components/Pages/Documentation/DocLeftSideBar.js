@@ -7,7 +7,7 @@ import DocRoutes from "./DocRoutes";
 const DocLeftSideBer = () => {
   const { theme } = useTheme();
   const { data, isLoading } = useGetDocDataQuery();
-  console.log(data);
+
   if (isLoading) {
     return <p>loading...</p>;
   }

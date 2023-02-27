@@ -1,4 +1,3 @@
-
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -32,7 +31,7 @@ const MyProfile = () => {
     return <h1>Loading...</h1>
   }
   // destructuring user information from data
-  const { name, email, phoneNumber, photoURL } = data;
+  const { phoneNumber, photoURL } = data;
 
   // this is the update profile function
   // that can update when user change his/her information
@@ -56,7 +55,7 @@ const MyProfile = () => {
           if (data.acknowledged) {
             toast.success("Your Information Updated Successfully");
             setEdit(false);
-            refetch();
+            // refetch();
           }
         });
     }
@@ -90,10 +89,7 @@ const MyProfile = () => {
               // else show this image
               <img src="https://i.ibb.co/dJnbzDL/profile-image.png" alt=""></img>
           }
-          {/* <label>
-            <FaCamera className="text-2xl absolute top-28 right-8 text-blue-700"></FaCamera>
-            <input type="file" className="file-input file-input-bordered file-input-accent w-full max-w-xs hidden" />
-          </label> */}
+
         </div>
         {/* this is user information container */}
         <div>
@@ -111,7 +107,7 @@ const MyProfile = () => {
                     {...register("name")}
                     className="input input-sm w-full input-bordered"
                     type="text"
-                    defaultValue={name}
+                    defaultValue={user?.displayName}
                   />
                 </div>
                 <div>
@@ -120,7 +116,7 @@ const MyProfile = () => {
                     {...register("email")}
                     className="input input-sm w-full input-bordered"
                     type="email"
-                    defaultValue={email}
+                    defaultValue={user?.email}
                   />
                 </div>
                 <div>
@@ -148,11 +144,11 @@ const MyProfile = () => {
               <div className="space-y-4">
                 <div>
                   <span className="text-sm font-semibold">Full Name</span>
-                  <p className="text-xl font-semibold">{name}</p>
+                  <p className="text-xl font-semibold">{user?.displayName}</p>
                 </div>
                 <div>
                   <span className="text-sm font-semibold">Email Address</span>
-                  <p className="text-xl font-semibold">{email}</p>
+                  <p className="text-xl font-semibold">{user?.email}</p>
                 </div>
                 <div>
                   <span className="text-sm font-semibold">Phone Number</span>
