@@ -6,10 +6,7 @@ const docApi = apiSlice.injectEndpoints({
             query: () => '/doc-data'
         }),
         getDocCategory: builder.query({
-            query: (path) => ({
-                method: 'GET',
-                url: path
-            })
+            query: (path) => path
         }),
     })
 })

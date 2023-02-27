@@ -83,6 +83,7 @@ const Login = () => {
           user?.email,
           user?.photoURL,
         );
+
       })
       .catch((error) => toast.error(error.message));
   };
