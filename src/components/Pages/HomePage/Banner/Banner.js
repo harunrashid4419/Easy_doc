@@ -9,7 +9,8 @@ const Banner = () => {
           What is Easy Doc?
         </h1>
         <h2 className="text-xl font-semibold">
-          We are always ready to help you.
+          Easy Doc is a documentation website. You read React Documentation and
+          some other's questions.
         </h2>
         <div className="my-5">
           <Link to="/documentation">

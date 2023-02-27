@@ -39,6 +39,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
+        console.log(user)
         const usersInfo = {
           displayName: name,
         };
@@ -56,7 +57,7 @@ const Register = () => {
   // user store in database
   // const userAddToDatabase = (name, email) => {
   //   const user = { name, email, photoURL: "" };
-  //   fetch(`http://localhost:5000/user?email=${email}`, {
+  //   fetch(`https://easy-doc-server.vercel.app/user?email=${email}`, {
   //     method: "PUT",
   //     headers: {
   //       "content-type": "application/json",
@@ -105,7 +106,7 @@ const Register = () => {
   // Saved user to database with (GOOGLE & GITHUB)
   const addUserToDatabase = (name, email, photoURL) => {
     const user = { name, email, photoURL };
-    fetch(`http://localhost:5000/user?email=${email}`, {
+    fetch(`https://easy-doc-server.vercel.app/user?email=${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

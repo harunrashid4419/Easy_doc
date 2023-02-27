@@ -39,7 +39,7 @@ const Login = () => {
         const currentUser = {
           email: user?.email
         }
-        fetch(`http://localhost:5000/jwt`, {
+        fetch(`https://easy-doc-server.vercel.app/jwt`, {
           method: 'POST',
           headers: {
             'content-type': 'application/json'
@@ -106,7 +106,7 @@ const Login = () => {
   // Saved user to database with (GOOGLE & GITHUB)
   const addUserToDatabase = (name, email, photoURL) => {
     const user = { name, email, photoURL };
-    fetch(`http://localhost:5000/user?email=${email}`, {
+    fetch(`https://easy-doc-server.vercel.app/user?email=${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
