@@ -1,8 +1,10 @@
 import React, { useReducer } from "react";
+import useTitle from "../../../../Hook/useTitle";
 import { useTheme } from "../../../../hooks/useTheme";
 import "./SingleQuizDetails.css";
 
 const SingleQuizDetails = ({ question, i }) => {
+  useTitle('Quiz Details');
   const { theme } = useTheme();
   const { questions, options, currect_ans } = question;
   const initialState = {

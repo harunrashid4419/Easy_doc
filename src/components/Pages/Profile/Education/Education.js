@@ -6,9 +6,11 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { FaEdit } from 'react-icons/fa';
 import { AuthContext } from '../../../../Context/UserContext';
+import useTitle from '../../../../Hook/useTitle';
 
 
 const Education = () => {
+    useTitle('Education');
     const { user } = useContext(AuthContext);
     const [edit, setEdit] = useState(false);
     const { register, handleSubmit } = useForm();

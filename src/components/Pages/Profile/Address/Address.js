@@ -6,11 +6,13 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { FaEdit } from 'react-icons/fa';
 import { AuthContext } from '../../../../Context/UserContext';
+import useTitle from '../../../../Hook/useTitle';
 // import useFetch from '../../../../hooks/useFetch';
 // import useHttp from '../../../../hooks/useHttp';
 
 const Address = () => {
     // const [addressInfo, setAddressInfo] = useState({});
+    useTitle('Address');
     const [edit, setEdit] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { user } = useContext(AuthContext);

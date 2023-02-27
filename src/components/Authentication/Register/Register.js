@@ -14,6 +14,7 @@ import { toast } from "react-hot-toast";
 import { useTheme } from "../../../hooks/useTheme";
 import { getToken } from "../../../token/getToken";
 import SocialLogin from "../../SharedPage/SocialLogin/SocialLogin";
+import useTitle from "../../../Hook/useTitle";
 
 const Register = () => {
   const {
@@ -21,7 +22,7 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { user, createUser, updateUser } =
+  const { createUser, updateUser } =
     useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -30,6 +31,8 @@ const Register = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const { theme } = useTheme();
+  useTitle('Register');
+
   const handleRegister = (data) => {
     const name = data.firstName + " " + data.lastName;
     const email = data?.email;
