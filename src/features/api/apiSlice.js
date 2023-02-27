@@ -1,30 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const apiForAll = createApi({
-    reducerPath: "same",
+export const apiSlice = createApi({
+    reducerPath: "api",
     baseQuery: fetchBaseQuery({
-        baseUrl: "https://easy-doc-server.vercel.app"
+        baseUrl: process.env.REACT_APP_BASE_URL
     }),
-    endpoints: (builder) => ({
-        fetchData: builder.query({
-            query: (path) => ({
-                url: path
-            })
-        }),
-        // postData: builder.mutation({
-        //     query: (data) => ({
-        //         method: 'POST',
-        //         url: path,
-        //         body: data
-        //     })
-        // }),
-        putData: builder.mutation({
-            query: (data, path) => ({
-                method: 'PUT',
-                url: path,
-                body: data
-            })
-        }),
-    })
+    endpoints: (builder) => ({})
 });
-export const { useFetchDataQuery, usePostDataMutation, usePutDataMutation } = apiForAll;
+export default apiSlice;

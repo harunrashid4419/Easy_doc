@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { apiForAll } from "../features/api/apiSlice";
+import apiSlice from "../features/api/apiSlice";
+
 
 const store = configureStore({
     reducer: {
-        [apiForAll.reducerPath]: apiForAll.reducer,
+        [apiSlice.reducerPath]: apiSlice.reducer,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiForAll.middleware)
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware)
 })
 export default store;

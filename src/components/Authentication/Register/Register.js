@@ -15,7 +15,6 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { useTheme } from "../../../hooks/useTheme";
-import { usePutDataMutation } from "../../../features/api/apiSlice";
 
 const Register = () => {
   const {
@@ -23,7 +22,7 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { user, createUser, updateUser, googleSignIn, githubSignIn } =
+  const { createUser, updateUser, googleSignIn, githubSignIn } =
     useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -32,7 +31,6 @@ const Register = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const { theme } = useTheme();
-  const [putUser, { isError, isLoading }] = usePutDataMutation(`/user?uid=${user?.uid}`);
   const handleRegister = (data) => {
     const name = data.firstName + " " + data.lastName;
     const email = data?.email;
@@ -41,18 +39,13 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
         const usersInfo = {
           displayName: name,
         };
         updateUser(usersInfo)
           .then((result) => { })
-          .catch((error) => console.error(error));
-        const data = {
-          name, email, uid: user?.uid
-        }
-        putUser(data);
-        // userAddToDatabase(data);
+          .catch((error) => setError(error.message));
+        addUserToDatabase(name, email);
       })
       .catch((error) => {
         setError(error.message);
@@ -61,9 +54,9 @@ const Register = () => {
   };
 
   // user store in database
-  // const userAddToDatabase = (name, email, uid) => {
-  //   const user = { name, email, uid, photoURL: "" };
-  //   fetch(`https://easy-doc-server.vercel.app/user?uid=${uid}`, {
+  // const userAddToDatabase = (name, email) => {
+  //   const user = { name, email, photoURL: "" };
+  //   fetch(`http://localhost:5000/user?email=${email}`, {
   //     method: "PUT",
   //     headers: {
   //       "content-type": "application/json",
@@ -104,16 +97,15 @@ const Register = () => {
           user?.displayName,
           user?.email,
           user?.photoURL,
-          user?.uid
         );
       })
       .catch((error) => toast.error(error.message));
   };
 
   // Saved user to database with (GOOGLE & GITHUB)
-  const addUserToDatabase = (name, email, photoURL, uid) => {
-    const user = { name, email, photoURL, uid };
-    fetch(`https://easy-doc-server.vercel.app/user?uid=${uid}`, {
+  const addUserToDatabase = (name, email, photoURL) => {
+    const user = { name, email, photoURL };
+    fetch(`http://localhost:5000/user?email=${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

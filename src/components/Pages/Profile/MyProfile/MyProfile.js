@@ -8,36 +8,47 @@ import { AuthContext } from "../../../../Context/UserContext";
 
 
 const MyProfile = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [edit, setEdit] = useState(false);
   const { register, handleSubmit } = useForm();
-  const { data , isLoading, refetch } = useQuery({
-    queryKey: ['user', user?.uid],
+
+  // used tanstack query for fetching user information // 
+  const { data, isLoading, refetch } = useQuery({
+    queryKey: ['user', user?.email],
     queryFn: async () => {
-      const res = await fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
+      const res = await fetch(`http://localhost:5000/user?email=${user?.email}`, {
+        // checking valid user or not by token before send data
+        headers: {
+          // set token into local-storage
+          authorization: `Bearer ${localStorage.getItem('jwt-token')}`
+        }
+      });
       const data = await res.json();
       return data;
     }
   })
+
   if (isLoading) {
     return <h1>Loading...</h1>
   }
-  const { email, name, phoneNumber, photoURL } = data;
-  console.log(data)
+  // destructuring user information from data
+  const { name, email, phoneNumber, photoURL } = data;
+
   // this is the update profile function
   // that can update when user change his/her information
-  const updateProfile = (data) => {
-    if (!/(\+88)?-?01[0-9]\d{8}/g.test(data.phoneNumber)) {
+  const updateProfile = (phoneNumber) => {
+    // number validation by regular expression
+    if (!/(\+88)?-?01[0-9]\d{8}/g.test(phoneNumber)) {
       toast.error("please input valid number");
       return;
     }
     else {
-      fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, {
+      fetch(`http://localhost:5000/user?email=${user?.email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(phoneNumber),
       })
         .then((res) => res.json())
         .then((data) => {

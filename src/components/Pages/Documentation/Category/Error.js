@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import { useFetchDataQuery } from "../../../features/api/apiSlice";
+import { useGetDocCategoryQuery } from "../../../../features/api/docApi";
+import Code from "../Code";
 
 const Error = () => {
   const { id } = useParams();
-  const { data: error, isLoading } = useFetchDataQuery(`/error/${id}`);
+  const { data: error, isLoading } = useGetDocCategoryQuery(`/error/${id}`);
   if (isLoading) {
     return <p>Loading...</p>
   }
@@ -25,7 +26,6 @@ const Error = () => {
   const types = errorTypes?.split("   ");
   const answers = answer?.split("   ");
   const codes = code?.split("   ");
-
   return (
     <div className="text-[1.2rem]">
       <h1 className="text-3xl md:text-5xl font-bold mt-10 mb-4">{title}</h1>
@@ -63,11 +63,7 @@ const Error = () => {
         {codes && (
           <div className="mockup-code overflow-x-scroll">
             {codes &&
-              codes.map((code, idx) => (
-                <pre key={idx} className="text-gray-300">
-                  <code>{code}</code>
-                </pre>
-              ))}
+              codes.map((code, i) => <Code code={code} key={i}></Code>)}
           </div>
         )}
       </div>

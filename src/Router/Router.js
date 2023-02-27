@@ -15,22 +15,21 @@ import Main from "../Layout/Main";
 import PrivateRoute from "./PrivateRoute";
 import AddBlog from "../components/Pages/Dashboard/AddBlog/AddBlog";
 import AdminRouter from "./AdminRouter";
-import Interview from "../components/Pages/Documentation/Interview";
-import Error from "../components/Pages/Documentation/Error";
 import Courses from "../components/Pages/Courses/Courses";
 import ErrorElement from "../components/ErrorElement/ErrorElement";
 import Contact from "../components/Pages/Contact/Contact";
-import Installation from "../components/Pages/Documentation/Installation";
 import Quiz from "../components/Pages/QuizPage/Quiz";
 import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
 import Payment from "../Payment/Payment";
 import AddReview from "../components/Pages/Dashboard/AddReview/AddReview";
-// import Drawer from "../components/SharedPage/Navbar/Drawer";
 import PaymentUsers from "../components/Pages/Dashboard/PaymentUsers/PaymentUsers";
-import Hooks from "../components/Pages/Documentation/Hooks";
-import MainConcept from "../components/Pages/Documentation/MainConcept/MainConcept";
-import Api from "../components/Pages/Documentation/Api";
 import Dashboard from "../components/Pages/Dashboard/Dashboard";
+import Installation from "../components/Pages/Documentation/Category/Installation";
+import Hooks from "../components/Pages/Documentation/Category/Hooks";
+import Interview from "../components/Pages/Documentation/Category/Interview";
+import Error from "../components/Pages/Documentation/Category/Error";
+import MainConcept from "../components/Pages/Documentation/Category/MainConcept";
+import Api from "../components/Pages/Documentation/Category/Api";
 
 
 
@@ -133,7 +132,7 @@ const routes = createBrowserRouter([
         children: [
           {
             path: "/documentation",
-            element: <Installation></Installation>,
+            element: <Installation></Installation>
           },
           {
             path: "/documentation/installation/:id",
@@ -145,13 +144,13 @@ const routes = createBrowserRouter([
           },
           {
             path: "/documentation/interview/:id",
-            element: <Interview></Interview>,
+            element: <Interview></Interview>
           },
           {
             path: "/documentation/error/:id",
             element: <Error></Error>
           },
-  
+
           {
             path: "/documentation/mainConcept/:id",
             element: <MainConcept></MainConcept>
@@ -190,7 +189,7 @@ const routes = createBrowserRouter([
       },
     ],
   },
-  
+
 ]);
 
 export default routes;

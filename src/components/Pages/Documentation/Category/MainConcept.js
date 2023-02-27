@@ -1,14 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useFetchDataQuery } from "../../../../features/api/apiSlice";
+import { useGetDocCategoryQuery } from "../../../../features/api/docApi";
 import Loader from "../../../../Loader/Loader";
 import Code from "../Code";
 
 const MainConcept = () => {
   const { id } = useParams();
-  const { data: mainConcept, isLoading } = useFetchDataQuery(
-    `/main-concept/${id}`
-  );
+  const { data: mainConcept, isLoading } = useGetDocCategoryQuery(`/main-concept/${id}`);
   if (isLoading) {
     return <Loader></Loader>;
   }
