@@ -41,6 +41,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
+        console.log(user);
         getToken(user);
         const usersInfo = {
           displayName: name,
@@ -75,7 +76,7 @@ const Register = () => {
         if (data.acknowledged) {
           setError("");
           toast.success("Successfully sign In");
-          // navigate(from, { replace: true });
+          navigate(from, { replace: true });
         }
       });
   };
