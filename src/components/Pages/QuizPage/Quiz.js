@@ -1,9 +1,11 @@
 import React from "react";
 import {  useLoaderData } from "react-router-dom";
+import useTitle from "../../../Hook/useTitle";
 import "./Quiz.css";
 import SingleQuiz from "./SingleQuiz/SingleQuiz";
 
 const Quiz = () => {
+  useTitle('Quiz');
   const quizes = useLoaderData();
   return (
     <div className="container">

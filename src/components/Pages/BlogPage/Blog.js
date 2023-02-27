@@ -2,8 +2,10 @@ import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import "./Blog.css";
 import { FaUserAlt } from "react-icons/fa";
+import useTitle from "../../../Hook/useTitle";
 
 const Blog = () => {
+  useTitle('Blog');
   const blogs = useLoaderData();
   return (
     <div className="container">

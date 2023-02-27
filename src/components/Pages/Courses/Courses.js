@@ -3,9 +3,11 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import courses from "../../../assets/course-banner.json";
 import { useTheme } from "../../../hooks/useTheme";
 import ShowCourses from "./ShowCourses";
+import useTitle from "../../../Hook/useTitle";
 
 function Courses() {
   const { theme } = useTheme();
+  useTitle('Courses');
   const [allcoursesdata, setallCoursesData] = useState([]);
   useEffect(() => {
     fetch("https://easy-doc-server.vercel.app/allcourses")

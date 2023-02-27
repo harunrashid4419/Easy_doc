@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { useTheme } from "../../../hooks/useTheme";
+import useTitle from "../../../Hook/useTitle";
 import { getToken } from "../../../token/getToken";
 import SocialLogin from "../../SharedPage/SocialLogin/SocialLogin";
 
@@ -29,6 +30,7 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const { theme } = useTheme();
+  useTitle('Login');
 
   // Login with email and password
   const handleLogin = (data) => {

@@ -1,9 +1,11 @@
 import React from "react";
+import useTitle from "../../../Hook/useTitle";
 import { useTheme } from "../../../hooks/useTheme";
 import Member from "./Member/Member";
 
 const Contact = () => {
   const { theme } = useTheme();
+  useTitle('Contact');
   const members = [
     {
       id: "01",
