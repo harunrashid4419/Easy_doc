@@ -7,7 +7,7 @@ import { AuthContext } from "../../../../Context/UserContext";
 
 
 const MyProfile = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [edit, setEdit] = useState(false);
   const { register, handleSubmit } = useForm();
 
@@ -15,7 +15,7 @@ const MyProfile = () => {
   const { data, isLoading, refetch } = useQuery({
     queryKey: ['user', user?.email],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/user?email=${user?.email}`, {
+      const res = await fetch(`https://easy-doc-server.vercel.app/user?email=${user?.email}`, {
         // checking valid user or not by token before send data
         headers: {
           // set token into local-storage
@@ -42,7 +42,7 @@ const MyProfile = () => {
       return;
     }
     else {
-      fetch(`http://localhost:5000/user?email=${user?.email}`, {
+      fetch(`https://easy-doc-server.vercel.app/user?email=${user?.email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

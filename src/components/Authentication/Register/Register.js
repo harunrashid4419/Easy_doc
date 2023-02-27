@@ -6,9 +6,6 @@ import {
   FaUserAlt,
   FaEye,
   FaEyeSlash,
-  FaGooglePlusG,
-  FaGithub,
-  FaFacebookF,
 } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { useForm } from "react-hook-form";
@@ -40,6 +37,8 @@ const Register = () => {
     // create user
     createUser(email, password)
       .then((result) => {
+        const user = result.user;
+        console.log(user)
         const usersInfo = {
           displayName: name,
         };
@@ -61,7 +60,7 @@ const Register = () => {
   // Saved user to database with (GOOGLE & GITHUB)
   const addUserToDatabase = (name, email, photoURL) => {
     const user = { name, email, photoURL };
-    fetch(`http://localhost:5000/user?email=${email}`, {
+    fetch(`https://easy-doc-server.vercel.app/user?email=${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

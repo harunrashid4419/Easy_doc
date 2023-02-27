@@ -59,7 +59,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="py-2 shadow-md">
+    <div className="py-4 shadow-md">
       <div className="container sticky bg-base-100 top-0 z-[10] text-[1.5rem] px-2">
         <div className="flex justify-between items-center font-[poppins]">
           <div className="flex items-center">

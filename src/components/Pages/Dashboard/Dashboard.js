@@ -1,8 +1,4 @@
-import React, { useContext } from "react";
-import { Link, Outlet } from "react-router-dom";
-import { AuthContext } from "../../../Context/UserContext";
-import useAdmin from "../../../Hook/useAdmin";
-import { useTheme } from "../../../hooks/useTheme";
+import React from "react";
 import DashboardLeftSide from "./DashboardLeftSide";
 import DashboardRightSide from "./DashboardRightSide";
 

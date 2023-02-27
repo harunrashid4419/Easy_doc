@@ -1,5 +1,4 @@
-import React, { useEffect, useReducer } from "react";
-import { toast } from "react-hot-toast";
+import React, { useReducer } from "react";
 import { useTheme } from "../../../../hooks/useTheme";
 import "./SingleQuizDetails.css";
 

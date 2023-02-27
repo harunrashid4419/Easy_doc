@@ -58,7 +58,6 @@ const Login = () => {
       });
   };
 
-
   // get email
   const handleEmail = (event) => {
     const email = event.target.value;
