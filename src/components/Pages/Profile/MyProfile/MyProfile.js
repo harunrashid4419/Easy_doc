@@ -31,13 +31,13 @@ const MyProfile = () => {
     return <h1>Loading...</h1>
   }
   // destructuring user information from data
-  const { phoneNumber, photoURL } = data;
-
+  const { name, email, phoneNumber, photoURL } = data;
   // this is the update profile function
   // that can update when user change his/her information
-  const updateProfile = (phoneNumber) => {
+  const updateProfile = (data) => {
+    console.log(data);
     // number validation by regular expression
-    if (!/(\+88)?-?01[0-9]\d{8}/g.test(phoneNumber)) {
+    if (!/(\+88)?-?01[0-9]\d{8}/.test(data?.phoneNumber)) {
       toast.error("please input valid number");
       return;
     }
@@ -47,7 +47,7 @@ const MyProfile = () => {
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(phoneNumber),
+        body: JSON.stringify(data),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -55,7 +55,7 @@ const MyProfile = () => {
           if (data.acknowledged) {
             toast.success("Your Information Updated Successfully");
             setEdit(false);
-            // refetch();
+            refetch();
           }
         });
     }
@@ -107,7 +107,7 @@ const MyProfile = () => {
                     {...register("name")}
                     className="input input-sm w-full input-bordered"
                     type="text"
-                    defaultValue={user?.displayName}
+                    defaultValue={name}
                   />
                 </div>
                 <div>
@@ -116,7 +116,7 @@ const MyProfile = () => {
                     {...register("email")}
                     className="input input-sm w-full input-bordered"
                     type="email"
-                    defaultValue={user?.email}
+                    defaultValue={email}
                   />
                 </div>
                 <div>
@@ -144,11 +144,11 @@ const MyProfile = () => {
               <div className="space-y-4">
                 <div>
                   <span className="text-sm font-semibold">Full Name</span>
-                  <p className="text-xl font-semibold">{user?.displayName}</p>
+                  <p className="text-xl font-semibold">{name}</p>
                 </div>
                 <div>
                   <span className="text-sm font-semibold">Email Address</span>
-                  <p className="text-xl font-semibold">{user?.email}</p>
+                  <p className="text-xl font-semibold">{email}</p>
                 </div>
                 <div>
                   <span className="text-sm font-semibold">Phone Number</span>
