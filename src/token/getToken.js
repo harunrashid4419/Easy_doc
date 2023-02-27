@@ -2,7 +2,7 @@ export const getToken = (user) => {
     const currentUser = {
         email: user?.email
     }
-    fetch(`http://localhost:5000/jwt`, {
+    fetch(`https://easy-doc-server.vercel.app/jwt`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

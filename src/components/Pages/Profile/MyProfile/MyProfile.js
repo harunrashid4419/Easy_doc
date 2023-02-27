@@ -5,30 +5,32 @@ import { toast } from "react-hot-toast";
 import { FaEdit } from "react-icons/fa";
 import { AuthContext } from "../../../../Context/UserContext";
 
-
 const MyProfile = () => {
   const { user } = useContext(AuthContext);
   const [edit, setEdit] = useState(false);
   const { register, handleSubmit } = useForm();
 
-  // used tanstack query for fetching user information // 
+  // used tanstack query for fetching user information //
   const { data, isLoading, refetch } = useQuery({
-    queryKey: ['user', user?.email],
+    queryKey: ["user", user?.email],
     queryFn: async () => {
-      const res = await fetch(`https://easy-doc-server.vercel.app/user?email=${user?.email}`, {
-        // checking valid user or not by token before send data
-        headers: {
-          // set token into local-storage
-          authorization: `Bearer ${localStorage.getItem('jwt-token')}`
+      const res = await fetch(
+        `https://easy-doc-server.vercel.app/user?email=${user?.email}`,
+        {
+          // checking valid user or not by token before send data
+          headers: {
+            // set token into local-storage
+            authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
+          },
         }
-      });
+      );
       const data = await res.json();
       return data;
-    }
-  })
+    },
+  });
 
   if (isLoading) {
-    return <h1>Loading...</h1>
+    return <h1>Loading...</h1>;
   }
   // destructuring user information from data
   const { name, email, phoneNumber, photoURL } = data;
@@ -40,8 +42,7 @@ const MyProfile = () => {
     if (!/(\+88)?-?01[0-9]\d{8}/.test(data?.phoneNumber)) {
       toast.error("please input valid number");
       return;
-    }
-    else {
+    } else {
       fetch(`https://easy-doc-server.vercel.app/user?email=${user?.email}`, {
         method: "PUT",
         headers: {
@@ -59,37 +60,51 @@ const MyProfile = () => {
           }
         });
     }
-
   };
   return (
     <div>
       <div className="flex justify-between">
         <h1 className="text-2xl font-bold text-purple-500">My Profile</h1>
         <div>
-          {
-            edit ?
-              <button onClick={() => setEdit(!edit)} className="btn btn-outline btn-error">Not Now</button>
-              :
-              <button className="btn btn-outline btn-success flex items-center" onClick={() => setEdit(!edit)} ><FaEdit className="hover:text-blue-500 hover:cursor-pointer mr-2"></FaEdit> Edit
-              </button>
-          }
+          {edit ? (
+            <button
+              onClick={() => setEdit(!edit)}
+              className="btn btn-outline btn-error"
+            >
+              Not Now
+            </button>
+          ) : (
+            <button
+              className="btn btn-outline btn-success flex items-center"
+              onClick={() => setEdit(!edit)}
+            >
+              <FaEdit className="hover:text-blue-500 hover:cursor-pointer mr-2"></FaEdit>{" "}
+              Edit
+            </button>
+          )}
         </div>
       </div>
       <div className="flex space-x-20">
-
         {/* this is image container */}
         <div className="relative md:w-1/5">
           {/* conditional rendering whether
            user has photoURL or not */}
           {
             // if user has photoURL show the image
-            photoURL ?
-              <img src={photoURL} alt="" className="mask mask-circle my-6 border-4 border-dashed border-indigo-600 rounded-full mx-auto" />
-              :
+            photoURL ? (
+              <img
+                src={photoURL}
+                alt=""
+                className="mask mask-circle my-6 border-4 border-dashed border-indigo-600 rounded-full mx-auto"
+              />
+            ) : (
               // else show this image
-              <img src="https://i.ibb.co/dJnbzDL/profile-image.png" alt=""></img>
+              <img
+                src="https://i.ibb.co/dJnbzDL/profile-image.png"
+                alt=""
+              ></img>
+            )
           }
-
         </div>
         {/* this is user information container */}
         <div>
@@ -152,7 +167,9 @@ const MyProfile = () => {
                 </div>
                 <div>
                   <span className="text-sm font-semibold">Phone Number</span>
-                  <p className="text-xl font-semibold">{phoneNumber ? phoneNumber : '01#########'}</p>
+                  <p className="text-xl font-semibold">
+                    {phoneNumber ? phoneNumber : "01#########"}
+                  </p>
                 </div>
               </div>
             )
