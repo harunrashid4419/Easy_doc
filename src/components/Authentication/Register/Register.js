@@ -41,16 +41,16 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user)
+        getToken(user);
         const usersInfo = {
           displayName: name,
         };
         updateUser(usersInfo)
-          .then((result) => {
-            const user = result.user;
-            getToken(user);
+          .then((result) => { })
+          .catch((error) => {
+            setError(error.message)
+            console.log(error)
           })
-          .catch((error) => setError(error.message));
         addUserToDatabase(name, email);
       })
       .catch((error) => {
@@ -61,9 +61,9 @@ const Register = () => {
 
 
   // Saved user to database with (GOOGLE & GITHUB)
-  const addUserToDatabase = (name, email, photoURL) => {
-    const user = { name, email, photoURL };
-    fetch(`https://easy-doc-server.vercel.app/user?email=${email}`, {
+  const addUserToDatabase = (name, email) => {
+    const user = { name, email };
+    fetch(`https://easy-doc-server.vercel.app/user?email=${user?.email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -75,7 +75,7 @@ const Register = () => {
         if (data.acknowledged) {
           setError("");
           toast.success("Successfully sign In");
-          navigate(from, { replace: true });
+          // navigate(from, { replace: true });
         }
       });
   };
