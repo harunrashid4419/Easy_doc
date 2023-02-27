@@ -68,7 +68,7 @@ const Api = () => {
   const code4 = domcode4?.split("   ");
   const codeup5 = upcode5?.split("   ");
   const code5 = domcode5?.split("   ");
-  const titleyellow = yellowtitle.split("   ");
+  const titleyellow = yellowtitle?.split("   ");
   const title1yellow = yellowtitle1?.split("   ");
   const title2yellow = yellowtitle2?.split("   ");
   if (loading) {
@@ -288,11 +288,13 @@ const Api = () => {
       </div>
       <div className='my-2'>
         <h1 className='text-lg md:text-xl'>{upyellowtitle1}</h1>
-        <div className='w-full text-lg md:text-xl bg-yellow-200'>
-          {
-            title1yellow && title1yellow.map(title1y => <p className='p-4'>{title1y}</p>)
-          }
+        {title1yellow && (
+        <div className="bg-base-300 p-5 my-8">
+          {title1yellow.map((yellow, i) => (
+            <Code key={i} yellow={yellow}></Code>
+          ))}
         </div>
+      )}
         <p className='w-3/4  bg-yellow-200'>
           {
             title2yellow && title2yellow.map(title2y => <p className='p-4 text-lg md:text-xl'>{title2y}</p>)
