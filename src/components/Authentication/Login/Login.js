@@ -3,9 +3,6 @@ import Lottie from "lottie-react";
 import loginAnimation from "../../../assets/login.json";
 import "./Login.css";
 import {
-  FaFacebookF,
-  FaGooglePlusG,
-  FaGithub,
   FaEye,
   FaEyeSlash,
 } from "react-icons/fa";
@@ -14,6 +11,8 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { useTheme } from "../../../hooks/useTheme";
+import { getToken } from "../../../token/getToken";
+import SocialLogin from "../../SharedPage/SocialLogin/SocialLogin";
 
 const Login = () => {
   const {
@@ -21,7 +20,7 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { login, user, restorePassword, googleSignIn, githubSignIn } =
+  const { login, user, restorePassword, } =
     useContext(AuthContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -36,20 +35,7 @@ const Login = () => {
     login(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        const currentUser = {
-          email: user?.email
-        }
-        fetch(`https://easy-doc-server.vercel.app/jwt`, {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json'
-          },
-          body: JSON.stringify(currentUser)
-        })
-          .then(res => res.json())
-          .then(data => {
-            localStorage.setItem('jwt-token', data.token);
-          })
+        getToken(user);
         setError("");
         toast.success("LogIn Success");
       })
@@ -69,57 +55,6 @@ const Login = () => {
       .catch((error) => {
         console.log(error);
         setError(error.message);
-      });
-  };
-
-  // Sign In with Google
-  const handleGoogleSignIn = () => {
-    googleSignIn()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        addUserToDatabase(
-          user?.displayName,
-          user?.email,
-          user?.photoURL,
-        );
-
-      })
-      .catch((error) => toast.error(error.message));
-  };
-
-  // SignIn with Github
-  const handleGithubSignIn = () => {
-    githubSignIn()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        addUserToDatabase(
-          user?.displayName,
-          user?.email,
-          user?.photoURL,
-        );
-      })
-      .catch((error) => toast.error(error.message));
-  };
-
-  // Saved user to database with (GOOGLE & GITHUB)
-  const addUserToDatabase = (name, email, photoURL) => {
-    const user = { name, email, photoURL };
-    fetch(`https://easy-doc-server.vercel.app/user?email=${email}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          setError("");
-          toast.success("Successfully sign In");
-          navigate(from, { replace: true });
-        }
       });
   };
 
@@ -187,15 +122,7 @@ const Login = () => {
             </form>
             <div className="divider">OR</div>
             <div className="social-login">
-              <Link onClick={handleGoogleSignIn} id="google">
-                <FaGooglePlusG />
-              </Link>
-              <Link onClick={handleGithubSignIn} id="github">
-                <FaGithub />
-              </Link>
-              <Link id="facebook">
-                <FaFacebookF />
-              </Link>
+              <SocialLogin></SocialLogin>
             </div>
             <p className="link-register">
               Don't have any account. <Link to="/register">Register</Link> Now

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ErrorElement = () => {
+const NotFound = () => {
   return (
     <div>
       <section className="flex items-center h-screen p-16 bg-gray-100 text-gray-900">
@@ -51,4 +51,4 @@ const ErrorElement = () => {
   );
 };
 
-export default ErrorElement;
+export default NotFound;

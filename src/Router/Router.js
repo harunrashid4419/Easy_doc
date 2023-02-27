@@ -16,7 +16,6 @@ import PrivateRoute from "./PrivateRoute";
 import AddBlog from "../components/Pages/Dashboard/AddBlog/AddBlog";
 import AdminRouter from "./AdminRouter";
 import Courses from "../components/Pages/Courses/Courses";
-import ErrorElement from "../components/ErrorElement/ErrorElement";
 import Contact from "../components/Pages/Contact/Contact";
 import Quiz from "../components/Pages/QuizPage/Quiz";
 import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
@@ -30,6 +29,7 @@ import Interview from "../components/Pages/Documentation/Category/Interview";
 import Error from "../components/Pages/Documentation/Category/Error";
 import MainConcept from "../components/Pages/Documentation/Category/MainConcept";
 import Api from "../components/Pages/Documentation/Category/Api";
+import NotFound from "../components/Pages/NotFound/NotFound";
 
 
 
@@ -37,7 +37,6 @@ const routes = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement: <ErrorElement></ErrorElement>,
     children: [
       {
         path: "/",
@@ -189,7 +188,10 @@ const routes = createBrowserRouter([
       },
     ],
   },
-
+  {
+    path: '*',
+    element: <NotFound></NotFound>
+  }
 ]);
 
 export default routes;

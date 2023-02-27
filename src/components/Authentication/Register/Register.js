@@ -6,15 +6,14 @@ import {
   FaUserAlt,
   FaEye,
   FaEyeSlash,
-  FaGooglePlusG,
-  FaGithub,
-  FaFacebookF,
 } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { useTheme } from "../../../hooks/useTheme";
+import { getToken } from "../../../token/getToken";
+import SocialLogin from "../../SharedPage/SocialLogin/SocialLogin";
 
 const Register = () => {
   const {
@@ -22,7 +21,7 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { createUser, updateUser, googleSignIn, githubSignIn } =
+  const { user, createUser, updateUser } =
     useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -44,7 +43,10 @@ const Register = () => {
           displayName: name,
         };
         updateUser(usersInfo)
-          .then((result) => { })
+          .then((result) => {
+            const user = result.user;
+            getToken(user);
+          })
           .catch((error) => setError(error.message));
         addUserToDatabase(name, email);
       })
@@ -54,54 +56,6 @@ const Register = () => {
       });
   };
 
-  // user store in database
-  // const userAddToDatabase = (name, email) => {
-  //   const user = { name, email, photoURL: "" };
-  //   fetch(`https://easy-doc-server.vercel.app/user?email=${email}`, {
-  //     method: "PUT",
-  //     headers: {
-  //       "content-type": "application/json",
-  //     },
-  //     body: JSON.stringify(user),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       toast.success("Register successfully!");
-  //       navigate("/");
-  //     });
-  // };
-
-  // Sign In with Google
-  const handleGoogleSignIn = () => {
-    googleSignIn()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        addUserToDatabase(
-          user?.displayName,
-          user?.email,
-          user?.photoURL,
-          user?.uid
-        );
-      })
-      .catch((error) => toast.error(error.message));
-  };
-
-  // SignIn with Github
-  const handleGithubSignIn = () => {
-    githubSignIn()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        addUserToDatabase(
-          user?.displayName,
-          user?.email,
-          user?.photoURL,
-        );
-      })
-      .catch((error) => toast.error(error.message));
-  };
 
   // Saved user to database with (GOOGLE & GITHUB)
   const addUserToDatabase = (name, email, photoURL) => {
@@ -211,15 +165,7 @@ const Register = () => {
           </form>
           <div className="divider">OR</div>
           <div className="social-login">
-            <Link onClick={handleGoogleSignIn} id="google">
-              <FaGooglePlusG />
-            </Link>
-            <Link onClick={handleGithubSignIn} id="github">
-              <FaGithub />
-            </Link>
-            <Link id="facebook">
-              <FaFacebookF />
-            </Link>
+            <SocialLogin></SocialLogin>
           </div>
           <p className="link-register">
             Already have an account.<Link to="/login"> LogIn</Link> Now
