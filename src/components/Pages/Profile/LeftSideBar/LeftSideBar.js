@@ -50,14 +50,6 @@ const LeftSideBar = () => {
           />
           <Link to="/view-profile/education">Education</Link>
         </div>
-        <div className="flex items-center gap-6">
-          <img
-            className="w-8"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ93eSnGDLqSPEtbO1QnEjeqrSl17JWxHDGXg&usqp=CAU"
-            alt=""
-          />
-          <Link to="/view-profile/my-contribution">My Contribution</Link>
-        </div>
       </div>
     </div>
   );
