@@ -15,6 +15,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { useTheme } from "../../../hooks/useTheme";
+import useTitle from "../../../Hook/useTitle";
 
 const Register = () => {
   const {
@@ -31,6 +32,8 @@ const Register = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const { theme } = useTheme();
+  useTitle('Register');
+
   const handleRegister = (data) => {
     const name = data.firstName + " " + data.lastName;
     const email = data?.email;

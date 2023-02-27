@@ -14,9 +14,11 @@ import { toast } from "react-hot-toast";
 import { useTheme } from "../../../../hooks/useTheme";
 import Loader from "../../../../Loader/Loader";
 import { useGetDocCategoryQuery } from "../../../../features/api/docApi";
+import useTitle from "../../../../Hook/useTitle";
 
 const Details = () => {
   const { id } = useParams();
+  useTitle('Blog Details');
   // const pageUrl = useLocation().pathname;
   // const id = pageUrl.split("/details/")[1];
   const { user } = useContext(AuthContext);
