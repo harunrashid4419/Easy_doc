@@ -15,9 +15,15 @@ const Education = () => {
 
     // get user information by query user uid
     const { data: educationInfo, isLoading, refetch } = useQuery({
-        queryKey: ['user', user?.uid],
+        queryKey: ['user', user?.email],
         queryFn: async () => {
-            const res = await fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
+            const res = await fetch(`http://localhost:5000/user?email=${user?.email}`, {
+                // checking valid user or not by token before send data
+                headers: {
+                    // set token into local-storage
+                    authorization: `Bearer ${localStorage.getItem('jwt-token')}`
+                }
+            });
             const data = await res.json();
             return data;
         }
@@ -27,7 +33,7 @@ const Education = () => {
         return <h1>Loading...</h1>
     }
     const handleEducationForm = data => {
-        fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, {
+        fetch(`http://localhost:5000/user?email=${user?.email}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

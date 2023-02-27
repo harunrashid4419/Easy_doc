@@ -75,12 +75,6 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="lg:hidden flex gap-3">
-            <label
-              htmlFor="dashboard-drawer"
-              className="lg:hidden text-3xl hover:cursor-pointer hover:bg-slate-200 p-2 rounded-md"
-            >
-              <HiMenu></HiMenu>
-            </label>
             <ThemeToggle></ThemeToggle>
             {user?.uid && (
               <label htmlFor="profile-modal">

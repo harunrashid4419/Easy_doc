@@ -1,24 +1,15 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
 import { useParams } from "react-router-dom";
-import Code from "./Code";
+import { useFetchDataQuery } from "../../../../features/api/apiSlice";
+import { useGetDocCategoryQuery } from "../../../../features/api/docApi";
+import Code from "../Code";
 
 const Api = () => {
   const { id } = useParams();
-  const [loading, setLoading] = useState(false);
-  const [api, setApi] = useState({});
-
-  useEffect(() => {
-    setLoading(true);
-    fetch(`https://easy-doc-server.vercel.app/apireference/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setApi(data);
-        setLoading(false);
-      });
-  }, [id]);
-  console.log(api);
+  const { data: api, isLoading } = useGetDocCategoryQuery(`/apireference/${id}`);
+  if (isLoading) {
+    return <p>Loading...</p>
+  }
   const {
     title,
     titleSummary,
@@ -57,7 +48,7 @@ const Api = () => {
     yellowtitle2,
     domcode6,
   } = api;
-  console.log(api);
+
   const code1 = domcode1?.split("   ");
   const summarytitle2 = titleSummary2?.split("   ");
   const titledes1 = title1des?.split("   ");
@@ -68,16 +59,10 @@ const Api = () => {
   const code4 = domcode4?.split("   ");
   const codeup5 = upcode5?.split("   ");
   const code5 = domcode5?.split("   ");
-  const titleyellow = yellowtitle.split("   ");
+  const titleyellow = yellowtitle?.split("   ");
   const title1yellow = yellowtitle1?.split("   ");
   const title2yellow = yellowtitle2?.split("   ");
-  if (loading) {
-    return <p>Loading...</p>;
-  }
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
   return (
     <div>
       <h1 className="text-3xl my-4 md:text-5xl font-bold">{title}</h1>

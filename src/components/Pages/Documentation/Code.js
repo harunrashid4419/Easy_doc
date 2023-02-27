@@ -8,7 +8,10 @@ const Code = ({ code, yellow }) => {
           <code>{code}</code>
         </pre>
       )}
-      {yellow && <p className="py-1 text-xl">{yellow}</p>}
+      {
+        yellow &&
+        <div>{yellow}</div>
+      }
     </>
   );
 };

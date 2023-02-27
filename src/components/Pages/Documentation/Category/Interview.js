@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
-// import { useDispatch, useSelector } from 'react-redux';
+
 import { useParams } from "react-router-dom";
-import { useFetchDataQuery } from "../../../features/api/apiSlice";
-// import { ERROR, SUCCESS } from '../../../redux/actionTypes/actionTypes';
+import { useGetDocCategoryQuery } from "../../../../features/api/docApi";
 
 const Interview = () => {
   const { id } = useParams();
   // fetching interview data
-  const { data: interview, isLoading } = useFetchDataQuery(`/interview/${id}`);
+  const { data: interview, isLoading } = useGetDocCategoryQuery(`/interview/${id}`);
   if (isLoading) {
     return <p>loading..</p>
   }

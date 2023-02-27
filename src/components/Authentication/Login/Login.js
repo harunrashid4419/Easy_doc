@@ -36,7 +36,20 @@ const Login = () => {
     login(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        const currentUser = {
+          email: user?.email
+        }
+        fetch(`http://localhost:5000/jwt`, {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(currentUser)
+        })
+          .then(res => res.json())
+          .then(data => {
+            localStorage.setItem('jwt-token', data.token);
+          })
         setError("");
         toast.success("LogIn Success");
       })
@@ -69,7 +82,6 @@ const Login = () => {
           user?.displayName,
           user?.email,
           user?.photoURL,
-          user?.uid
         );
       })
       .catch((error) => toast.error(error.message));
@@ -85,16 +97,15 @@ const Login = () => {
           user?.displayName,
           user?.email,
           user?.photoURL,
-          user?.uid
         );
       })
       .catch((error) => toast.error(error.message));
   };
 
   // Saved user to database with (GOOGLE & GITHUB)
-  const addUserToDatabase = (name, email, photoURL, uid) => {
-    const user = { name, email, photoURL, uid };
-    fetch(`https://easy-doc-server.vercel.app/user?uid=${uid}`, {
+  const addUserToDatabase = (name, email, photoURL) => {
+    const user = { name, email, photoURL };
+    fetch(`http://localhost:5000/user?email=${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -128,9 +139,8 @@ const Login = () => {
     <div className="login-section">
       <div className="container">
         <div
-          className={`main-login ${
-            theme === "dark" ? "bg-[#2C303A]" : "bg-[#4f794247]"
-          }`}
+          className={`main-login ${theme === "dark" ? "bg-[#2C303A]" : "bg-[#4f794247]"
+            }`}
         >
           <div className="animation">
             <Lottie animationData={loginAnimation} loop={true}></Lottie>

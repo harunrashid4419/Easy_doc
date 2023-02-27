@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -12,8 +12,8 @@ import "./Detalis.css";
 import { AuthContext } from "../../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { useTheme } from "../../../../hooks/useTheme";
-import { useFetchDataQuery } from "../../../../features/api/apiSlice";
 import Loader from "../../../../Loader/Loader";
+import { useGetDocCategoryQuery } from "../../../../features/api/docApi";
 
 const Details = () => {
   const { id } = useParams();
@@ -21,7 +21,7 @@ const Details = () => {
   // const id = pageUrl.split("/details/")[1];
   const { user } = useContext(AuthContext);
   const { theme } = useTheme();
-  const { data: blogDetails, isLoading } = useFetchDataQuery(`/blog/${id}`);
+  const { data: blogDetails, isLoading } = useGetDocCategoryQuery(`/blog/${id}`);
 
   // const { data: blogDetails = [] } = useQuery({
   //   queryKey: ["blogDetails"],
@@ -59,7 +59,7 @@ const Details = () => {
     _id,
   } = blogDetails;
 
-  
+
 
   const handleCommentSubmit = (event) => {
     event.preventDefault();
@@ -101,7 +101,7 @@ const Details = () => {
         }
       });
   };
-  
+
   return (
     <div className="container">
       <div className="main-blog-details">
@@ -134,9 +134,8 @@ const Details = () => {
             </div>
           </div>
           <div
-            className={`author-content ${
-              theme === "dark" ? "bg-[#2C303A]" : "bg-[#F4F6F8]"
-            }`}
+            className={`author-content ${theme === "dark" ? "bg-[#2C303A]" : "bg-[#F4F6F8]"
+              }`}
           >
             <p>
               I write and curate content for Bluehost. I hope this blog post is
