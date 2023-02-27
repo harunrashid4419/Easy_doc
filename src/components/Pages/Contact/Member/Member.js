@@ -7,9 +7,8 @@ const Member = ({ member }) => {
     member;
   return (
     <div
-      className={`card border border-1 ${
-        theme === 'dark' ? "bg-neutral-content" : "bg-gray-200"
-      }`}
+      className={`card border border-1 ${theme === 'dark' ? "bg-neutral-content" : "bg-gray-200"
+        }`}
     >
       <div className="avatar">
         <div className="w-28 mx-auto mt-4 rounded-full">
@@ -19,9 +18,8 @@ const Member = ({ member }) => {
       <div className="card-body items-center text-center">
         <h2 className="text-2xl font-bold">{name}</h2>
         <h2
-          className={`${
-            theme === "dark" ? "text-green-500" : "text-violet-800"
-          } font-bold text-xl`}
+          className={`${theme === "dark" ? "text-green-500" : "text-violet-800"
+            } font-bold text-xl`}
         >
           {title}
         </h2>
@@ -36,7 +34,7 @@ const Member = ({ member }) => {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 448 512"
                 height="1em"
                 width="1em"
