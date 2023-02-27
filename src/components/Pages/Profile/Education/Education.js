@@ -17,7 +17,7 @@ const Education = () => {
     const { data: educationInfo, isLoading, refetch } = useQuery({
         queryKey: ['user', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/user?email=${user?.email}`, {
+            const res = await fetch(`https://easy-doc-server.vercel.app/user?email=${user?.email}`, {
                 // checking valid user or not by token before send data
                 headers: {
                     // set token into local-storage
@@ -33,7 +33,7 @@ const Education = () => {
         return <h1>Loading...</h1>
     }
     const handleEducationForm = data => {
-        fetch(`http://localhost:5000/user?email=${user?.email}`, {
+        fetch(`https://easy-doc-server.vercel.app/user?email=${user?.email}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

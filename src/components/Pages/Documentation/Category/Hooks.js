@@ -14,7 +14,7 @@ const Hooks = () => {
     const { data: hooks = [] } = useQuery({
         queryKey: ['hooks', id],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/hooks/${id}`);
+            const res = await fetch(`https://easy-doc-server.vercel.app/hooks/${id}`);
             const data = await res.json();
             return data
         }
