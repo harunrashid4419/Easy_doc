@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { FaEdit } from "react-icons/fa";
@@ -10,20 +10,10 @@ const MyProfile = () => {
   const [edit, setEdit] = useState(false);
   const { register, handleSubmit } = useForm();
 
-  // used tanstack query for fetching user information //
   const { data, isLoading, refetch } = useQuery({
     queryKey: ["user", user?.email],
     queryFn: async () => {
-      const res = await fetch(
-        `https://easy-doc-server.vercel.app/user?email=${user?.email}`,
-        {
-          // checking valid user or not by token before send data
-          headers: {
-            // set token into local-storage
-            authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
-          },
-        }
-      );
+      const res = await fetch(`http://localhost:5000/user?email=${user?.email}`);
       const data = await res.json();
       return data;
     },
@@ -32,6 +22,7 @@ const MyProfile = () => {
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
+
   // destructuring user information from data
   const { name, email, phoneNumber, photoURL } = data;
   // this is the update profile function
@@ -56,7 +47,7 @@ const MyProfile = () => {
           if (data.acknowledged) {
             toast.success("Your Information Updated Successfully");
             setEdit(false);
-            refetch();
+            refetch()
           }
         });
     }
