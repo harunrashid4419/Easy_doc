@@ -41,7 +41,7 @@ const Register = () => {
       navigate(from, { replace: true });
       toast.success('successfully sign up')
     }
-  }, [token])
+  }, [from, navigate, token])
 
 
   const handleRegister = (data) => {

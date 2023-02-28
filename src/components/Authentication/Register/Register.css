@@ -99,7 +99,8 @@
     text-align: right;
 }
 .register-section .main-register .first-last-name{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 #input-file{
     padding-left: 0px;
