@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { FaEdit } from "react-icons/fa";
@@ -13,7 +13,7 @@ const MyProfile = () => {
   const { data, isLoading, refetch } = useQuery({
     queryKey: ["user", user?.email],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/user?email=${user?.email}`);
+      const res = await fetch(`https://easy-doc-server.vercel.app/user?email=${user?.email}`);
       const data = await res.json();
       return data;
     },

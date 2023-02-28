@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useContext } from 'react';
 import { Outlet } from 'react-router-dom';
 import ProfileModal from '../components/Pages/Profile/ProfileModal/ProfileModal';
 import Footer from '../components/SharedPage/Footer/Footer';
 import Drawer from '../components/SharedPage/Navbar/Drawer';
 import Navbar from '../components/SharedPage/Navbar/Navbar';
-import { AuthContext } from '../Context/UserContext';
 
 const Main = () => {
     const [show, setShow] = useState(true);
