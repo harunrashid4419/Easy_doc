@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { useFetchDataQuery } from "../../../../features/api/apiSlice";
 import { useGetDocCategoryQuery } from "../../../../features/api/docApi";
 import Loader from "../../../../Loader/Loader";
 import Code from "../Code";

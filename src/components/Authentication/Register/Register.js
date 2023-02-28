@@ -6,15 +6,15 @@ import {
   FaUserAlt,
   FaEye,
   FaEyeSlash,
-  FaGooglePlusG,
-  FaGithub,
-  FaFacebookF,
 } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { useTheme } from "../../../hooks/useTheme";
+import { getToken } from "../../../token/getToken";
+import SocialLogin from "../../SharedPage/SocialLogin/SocialLogin";
+import useTitle from "../../../Hook/useTitle";
 
 const Register = () => {
   const {
@@ -22,7 +22,7 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { createUser, updateUser, googleSignIn, githubSignIn } =
+  const { createUser, updateUser } =
     useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -30,7 +30,8 @@ const Register = () => {
   const [check, setCheck] = useState(false);
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  const {theme} = useTheme();
+  const { theme } = useTheme();
+  useTitle('Register');
 
   const handleRegister = (data) => {
     const name = data.firstName + " " + data.lastName;
@@ -41,13 +42,17 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        getToken(user);
         const usersInfo = {
           displayName: name,
         };
         updateUser(usersInfo)
-          .then((result) => {})
-          .catch((error) => console.error(error));
-        userAddToDatabase(name, email, user?.uid);
+          .then((result) => { })
+          .catch((error) => {
+            setError(error.message)
+            console.log(error)
+          })
+        addUserToDatabase(name, email);
       })
       .catch((error) => {
         setError(error.message);
@@ -55,60 +60,11 @@ const Register = () => {
       });
   };
 
-  // user store in database
-  const userAddToDatabase = (name, email, uid) => {
-    const user = { name, email, uid, photoURL: "" };
-    fetch(`https://easy-doc-server.vercel.app/user?uid=${uid}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        toast.success("Register successfully!");
-        navigate("/");
-      });
-  };
-
-  // Sign In with Google
-  const handleGoogleSignIn = () => {
-    googleSignIn()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        addUserToDatabase(
-          user?.displayName,
-          user?.email,
-          user?.photoURL,
-          user?.uid
-        );
-      })
-      .catch((error) => toast.error(error.message));
-  };
-
-  // SignIn with Github
-  const handleGithubSignIn = () => {
-    githubSignIn()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        addUserToDatabase(
-          user?.displayName,
-          user?.email,
-          user?.photoURL,
-          user?.uid
-        );
-      })
-      .catch((error) => toast.error(error.message));
-  };
 
   // Saved user to database with (GOOGLE & GITHUB)
-  const addUserToDatabase = (name, email, photoURL, uid) => {
-    const user = { name, email, photoURL, uid };
-    fetch(`https://easy-doc-server.vercel.app/user?uid=${uid}`, {
+  const addUserToDatabase = (name, email) => {
+    const user = { name, email };
+    fetch(`https://easy-doc-server.vercel.app/user?email=${user?.email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -213,15 +169,7 @@ const Register = () => {
           </form>
           <div className="divider">OR</div>
           <div className="social-login">
-            <Link onClick={handleGoogleSignIn} id="google">
-              <FaGooglePlusG />
-            </Link>
-            <Link onClick={handleGithubSignIn} id="github">
-              <FaGithub />
-            </Link>
-            <Link id="facebook">
-              <FaFacebookF />
-            </Link>
+            <SocialLogin></SocialLogin>
           </div>
           <p className="link-register">
             Already have an account.<Link to="/login"> LogIn</Link> Now

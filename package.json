@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.0",
+    "@reduxjs/toolkit": "^1.9.2",
     "@stripe/react-stripe-js": "^1.16.4",
     "@stripe/stripe-js": "^1.46.0",
     "@tanstack/react-query": "^4.22.0",
@@ -27,6 +28,7 @@
     "react-scripts": "5.0.1",
     "react-switch": "^7.0.0",
     "redux": "^4.2.1",
+    "redux-devtools-extension": "^2.13.9",
     "swiper": "^8.4.5",
     "web-vitals": "^2.1.4"
   },

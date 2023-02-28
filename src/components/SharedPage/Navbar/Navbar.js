@@ -59,7 +59,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="py-2 shadow-md">
+    <div className="py-4 shadow-md">
       <div className="container sticky bg-base-100 top-0 z-[10] text-[1.5rem] px-2">
         <div className="flex justify-between items-center font-[poppins]">
           <div className="flex items-center">
@@ -75,12 +75,6 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="lg:hidden flex gap-3">
-            <label
-              htmlFor="dashboard-drawer"
-              className="lg:hidden text-3xl hover:cursor-pointer hover:bg-slate-200 p-2 rounded-md"
-            >
-              <HiMenu></HiMenu>
-            </label>
             <ThemeToggle></ThemeToggle>
             {user?.uid && (
               <label htmlFor="profile-modal">

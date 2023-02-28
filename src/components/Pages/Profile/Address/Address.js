@@ -6,27 +6,26 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { FaEdit } from 'react-icons/fa';
 import { AuthContext } from '../../../../Context/UserContext';
+import useTitle from '../../../../Hook/useTitle';
 // import useFetch from '../../../../hooks/useFetch';
 // import useHttp from '../../../../hooks/useHttp';
 
 const Address = () => {
     // const [addressInfo, setAddressInfo] = useState({});
+    useTitle('Address');
     const [edit, setEdit] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { user } = useContext(AuthContext);
-
-    // const [response, sendPutRequest, loading] = useHttp();
-
-    // function putAddressInfo(formValue) {
-    //     sendPutRequest(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, 'PUT', formValue)
-    // }
-
-    // get user information by query user uid
-    // const { data: currentUser, isLoading, refetch } = useFetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, 'user');
     const { data: addressInfo, isLoading, refetch } = useQuery({
-        queryKey: ['user', user?.uid],
+        queryKey: ['user', user?.email],
         queryFn: async () => {
-            const res = await fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`);
+            const res = await fetch(`https://easy-doc-server.vercel.app/user?email=${user?.email}`, {
+                // checking valid user or not by token before send data
+                headers: {
+                    // set token into local-storage
+                    authorization: `Bearer ${localStorage.getItem('jwt-token')}`
+                }
+            });
             const data = await res.json();
             return data;
         }
@@ -36,7 +35,7 @@ const Address = () => {
         return <h1>Loading...</h1>
     }
     const putAddressInfo = data => {
-        fetch(`https://easy-doc-server.vercel.app/user?uid=${user?.uid}`, {
+        fetch(`https://easy-doc-server.vercel.app/user?email=${user?.email}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

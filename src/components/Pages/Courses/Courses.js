@@ -3,9 +3,11 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import courses from "../../../assets/course-banner.json";
 import { useTheme } from "../../../hooks/useTheme";
 import ShowCourses from "./ShowCourses";
+import useTitle from "../../../Hook/useTitle";
 
 function Courses() {
   const { theme } = useTheme();
+  useTitle('Courses');
   const [allcoursesdata, setallCoursesData] = useState([]);
   useEffect(() => {
     fetch("https://easy-doc-server.vercel.app/allcourses")
@@ -20,9 +22,8 @@ function Courses() {
             Discover Your Potential Browse Online Courses
           </h1>
           <p
-            className={`${
-              theme === "dark" ? "text-[#ffffff94]" : "text-[6b707f]"
-            }`}
+            className={`${theme === "dark" ? "text-[#ffffff94]" : "text-[6b707f]"
+              }`}
           >
             Expand your knowledge and enhance your skills with our comprehensive
             selection of online courses. Whether you're looking to start a new
@@ -36,8 +37,8 @@ function Courses() {
       {/* courses section */}
       <h2 className="text-center font-semibold text-2xl my-12">Our courses</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 my-0 m-4">
-        {allcoursesdata.map((courses) => (
-          <ShowCourses courses={courses}></ShowCourses>
+        {allcoursesdata.map((courses, i) => (
+          <ShowCourses courses={courses} key={i}></ShowCourses>
         ))}
       </div>
     </div>

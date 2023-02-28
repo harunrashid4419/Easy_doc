@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
-// import { useDispatch, useSelector } from 'react-redux';
+
 import { useParams } from "react-router-dom";
-// import { ERROR, SUCCESS } from '../../../redux/actionTypes/actionTypes';
+import { useGetDocCategoryQuery } from "../../../../features/api/docApi";
 
 const Interview = () => {
   const { id } = useParams();
-  // console.log(id);
-  const [loading, setLoading] = useState(false);
-  const [interview, setInterview] = useState({});
+  // fetching interview data
+  const { data: interview, isLoading } = useGetDocCategoryQuery(`/interview/${id}`);
+  if (isLoading) {
+    return <p>loading..</p>
+  }
   const {
     title,
     img,
@@ -29,22 +30,7 @@ const Interview = () => {
   const summuries = subTitleSummury?.split("   ");
   const summuries1 = howTitleSummury1?.split("   ");
   const summuries2 = howTitleSummury2?.split("   ");
-  // const dispatch = useDispatch();
-  useEffect(() => {
-    setLoading(true);
-    fetch(`https://easy-doc-server.vercel.app/interview/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setLoading(false);
-        setInterview(data);
-      });
-    // .catch(() => dispatch({ type: ERROR }))
-  }, [id]);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-  // console.log(data);
   return (
     <div className="text-[1.2rem]">
       <h1 className="text-3xl my-4 md:text-5xl font-bold">{title}</h1>

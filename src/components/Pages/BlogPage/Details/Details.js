@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -12,22 +12,40 @@ import "./Detalis.css";
 import { AuthContext } from "../../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { useTheme } from "../../../../hooks/useTheme";
+import Loader from "../../../../Loader/Loader";
+import { useGetDocCategoryQuery } from "../../../../features/api/docApi";
+import useTitle from "../../../../Hook/useTitle";
 
 const Details = () => {
-  const pageUrl = useLocation().pathname;
-  const id = pageUrl.split("/details/")[1];
+  const { id } = useParams();
+  useTitle('Blog Details');
+  // const pageUrl = useLocation().pathname;
+  // const id = pageUrl.split("/details/")[1];
   const { user } = useContext(AuthContext);
-  const {theme} = useTheme();
+  const { theme } = useTheme();
+  const { data: blogDetails, isLoading } = useGetDocCategoryQuery(`/blog/${id}`);
 
-  const { data: blogDetails = [] } = useQuery({
-    queryKey: ["blogDetails"],
+  // const { data: blogDetails = [] } = useQuery({
+  //   queryKey: ["blogDetails"],
+  //   queryFn: async () => {
+  //     const res = await fetch(`https://easy-doc-server.vercel.app/blog/${id}`);
+  //     const data = await res.json();
+  //     return data;
+  //   },
+  // });
+  const { data: comments = [], refetch } = useQuery({
+    queryKey: ["comment", blogDetails],
     queryFn: async () => {
-      const res = await fetch(`https://easy-doc-server.vercel.app/blog/${id}`);
+      const res = await fetch(
+        `https://easy-doc-server.vercel.app/comment/${_id}`
+      );
       const data = await res.json();
       return data;
     },
   });
-
+  if (isLoading) {
+    return Loader;
+  }
   const {
     title,
     post_date,
@@ -43,16 +61,7 @@ const Details = () => {
     _id,
   } = blogDetails;
 
-  const { data: comments = [], refetch } = useQuery({
-    queryKey: ["comment", blogDetails],
-    queryFn: async () => {
-      const res = await fetch(
-        `https://easy-doc-server.vercel.app/comment/${_id}`
-      );
-      const data = await res.json();
-      return data;
-    },
-  });
+
 
   const handleCommentSubmit = (event) => {
     event.preventDefault();
@@ -68,7 +77,14 @@ const Details = () => {
     );
   };
 
-  const commentAddToDatabase = (message, displayName, email, photoURL, id, clear) => {
+  const commentAddToDatabase = (
+    message,
+    displayName,
+    email,
+    photoURL,
+    id,
+    clear
+  ) => {
     const commentInfo = { message, displayName, email, photoURL, id };
     fetch("https://easy-doc-server.vercel.app/comment", {
       method: "POST",
@@ -92,7 +108,7 @@ const Details = () => {
     <div className="container">
       <div className="main-blog-details">
         <div className="top-header">
-          <p className="text-base-content">{post_date}</p>
+          <p className="text-base-content">{post_date.slice(0, 10)}</p>
           <div className="share-icon">
             <Link>
               <FaFacebookF />
@@ -119,7 +135,10 @@ const Details = () => {
               )}
             </div>
           </div>
-          <div className={`author-content ${theme === 'dark' ? 'bg-[#2C303A]': 'bg-[#F4F6F8]'}`}>
+          <div
+            className={`author-content ${theme === "dark" ? "bg-[#2C303A]" : "bg-[#F4F6F8]"
+              }`}
+          >
             <p>
               I write and curate content for Bluehost. I hope this blog post is
               helpful.

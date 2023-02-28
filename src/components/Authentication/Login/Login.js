@@ -3,9 +3,6 @@ import Lottie from "lottie-react";
 import loginAnimation from "../../../assets/login.json";
 import "./Login.css";
 import {
-  FaFacebookF,
-  FaGooglePlusG,
-  FaGithub,
   FaEye,
   FaEyeSlash,
 } from "react-icons/fa";
@@ -14,6 +11,9 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { useTheme } from "../../../hooks/useTheme";
+import useTitle from "../../../Hook/useTitle";
+import { getToken } from "../../../token/getToken";
+import SocialLogin from "../../SharedPage/SocialLogin/SocialLogin";
 
 const Login = () => {
   const {
@@ -21,7 +21,7 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { login, user, restorePassword, googleSignIn, githubSignIn } =
+  const { login, user, restorePassword, } =
     useContext(AuthContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -30,13 +30,14 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const { theme } = useTheme();
+  useTitle('Login');
 
   // Login with email and password
   const handleLogin = (data) => {
     login(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        getToken(user);
         setError("");
         toast.success("LogIn Success");
       })
@@ -59,58 +60,6 @@ const Login = () => {
       });
   };
 
-  // Sign In with Google
-  const handleGoogleSignIn = () => {
-    googleSignIn()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        addUserToDatabase(
-          user?.displayName,
-          user?.email,
-          user?.photoURL,
-          user?.uid
-        );
-      })
-      .catch((error) => toast.error(error.message));
-  };
-
-  // SignIn with Github
-  const handleGithubSignIn = () => {
-    githubSignIn()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        addUserToDatabase(
-          user?.displayName,
-          user?.email,
-          user?.photoURL,
-          user?.uid
-        );
-      })
-      .catch((error) => toast.error(error.message));
-  };
-
-  // Saved user to database with (GOOGLE & GITHUB)
-  const addUserToDatabase = (name, email, photoURL, uid) => {
-    const user = { name, email, photoURL, uid };
-    fetch(`https://easy-doc-server.vercel.app/user?uid=${uid}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          setError("");
-          toast.success("Successfully sign In");
-          navigate(from, { replace: true });
-        }
-      });
-  };
-
   // get email
   const handleEmail = (event) => {
     const email = event.target.value;
@@ -128,9 +77,8 @@ const Login = () => {
     <div className="login-section">
       <div className="container">
         <div
-          className={`main-login ${
-            theme === "dark" ? "bg-[#2C303A]" : "bg-[#4f794247]"
-          }`}
+          className={`main-login ${theme === "dark" ? "bg-[#2C303A]" : "bg-[#4f794247]"
+            }`}
         >
           <div className="animation">
             <Lottie animationData={loginAnimation} loop={true}></Lottie>
@@ -176,15 +124,7 @@ const Login = () => {
             </form>
             <div className="divider">OR</div>
             <div className="social-login">
-              <Link onClick={handleGoogleSignIn} id="google">
-                <FaGooglePlusG />
-              </Link>
-              <Link onClick={handleGithubSignIn} id="github">
-                <FaGithub />
-              </Link>
-              <Link id="facebook">
-                <FaFacebookF />
-              </Link>
+              <SocialLogin></SocialLogin>
             </div>
             <p className="link-register">
               Don't have any account. <Link to="/register">Register</Link> Now

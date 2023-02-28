@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
+import { useGetDocCategoryQuery } from "../../../../features/api/docApi";
+import Code from "../Code";
 
 const Error = () => {
   const { id } = useParams();
-  const [loading, setLoading] = useState(false);
-  const [data, setData] = useState({});
+  const { data: error, isLoading } = useGetDocCategoryQuery(`/error/${id}`);
+  if (isLoading) {
+    return <p>Loading...</p>
+  }
   const {
     title,
     titleSummury,
@@ -17,24 +21,11 @@ const Error = () => {
     subExampleTitle,
     subExampleTitleSummury,
     code,
-  } = data;
+  } = error;
   const summuries = titleSummury?.split("   ");
   const types = errorTypes?.split("   ");
   const answers = answer?.split("   ");
   const codes = code?.split("   ");
-
-  useEffect(() => {
-    setLoading(true);
-    fetch(`https://easy-doc-server.vercel.app/error/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      });
-  }, [id]);
-  if (loading) {
-    return <p>Loading...</p>;
-  }
   return (
     <div className="text-[1.2rem]">
       <h1 className="text-3xl md:text-5xl font-bold mt-10 mb-4">{title}</h1>
@@ -72,11 +63,7 @@ const Error = () => {
         {codes && (
           <div className="mockup-code overflow-x-scroll">
             {codes &&
-              codes.map((code, idx) => (
-                <pre key={idx} className="text-gray-300">
-                  <code>{code}</code>
-                </pre>
-              ))}
+              codes.map((code, i) => <Code code={code} key={i}></Code>)}
           </div>
         )}
       </div>

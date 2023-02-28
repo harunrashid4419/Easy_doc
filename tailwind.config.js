@@ -21,7 +21,8 @@ module.exports = {
           "neutral-content": "#ffffff",
           accent: "#ffffff",
           primary: '#6b707f',
-          "base-200": '#003300'
+          "base-200": '#003300',
+          "base-300": '#FFF7D0',
         },
         dark: {
           ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
@@ -31,7 +32,8 @@ module.exports = {
           "neutral-content": "#2C303A",
           accent: "#3B3B3B",
           primary: '#f6f6f6',
-          "base-200": '#f5deb3a8'
+          "base-200": '#f5deb3a8',
+          "base-300": '#000',
         },
       },
       "light",

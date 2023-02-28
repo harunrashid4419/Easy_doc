@@ -43,6 +43,7 @@ const UserContext = ({ children }) => {
 
   // signout
   const logOut = () => {
+    localStorage.removeItem('jwt-token')
     return signOut(auth);
   };
 

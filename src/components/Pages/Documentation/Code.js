@@ -1,11 +1,18 @@
 import React from "react";
 
-const Code = ({ code }) => {
+const Code = ({ code, yellow }) => {
   return (
-    
-    <pre>
-    <code>{code}</code>
-  </pre>
+    <>
+      {code && (
+        <pre>
+          <code>{code}</code>
+        </pre>
+      )}
+      {
+        yellow &&
+        <div>{yellow}</div>
+      }
+    </>
   );
 };
 

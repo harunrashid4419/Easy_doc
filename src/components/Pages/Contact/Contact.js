@@ -1,9 +1,11 @@
 import React from "react";
+import useTitle from "../../../Hook/useTitle";
 import { useTheme } from "../../../hooks/useTheme";
 import Member from "./Member/Member";
 
 const Contact = () => {
   const { theme } = useTheme();
+  useTitle('Contact');
   const members = [
     {
       id: "01",
@@ -68,9 +70,8 @@ const Contact = () => {
   return (
     <div>
       <div
-        className={`flex items-center justify-center ${
-          theme === "dark" ? "bg-slate-600" : "bg-violet-400"
-        } h-60`}
+        className={`flex items-center justify-center ${theme === "dark" ? "bg-slate-600" : "bg-violet-400"
+          } h-60`}
       >
         <div className="w-50 flex flex-col items-center">
           <h1 className="text-5xl my-2 font-semibold">Contact Us</h1>
@@ -86,7 +87,7 @@ const Contact = () => {
           >
             <div>
               <label
-                for="name"
+                htmlFor="name"
                 className="block mb-2 text-lg font-medium text-base-content"
               >
                 Your Name

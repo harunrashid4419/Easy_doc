@@ -1,4 +1,5 @@
 import React from "react";
+import useTitle from "../../../../Hook/useTitle";
 import Slider from "../../../Slider/Slider";
 import Banner from "../Banner/Banner";
 import RecommendedTopics from "../Card/RecommendedTopics";
@@ -7,6 +8,7 @@ import QSN from "../QSN/QSN";
 import SideBar from "../SideBar/SideBar";
 
 const Home = () => {
+  useTitle('Home');
   return (
     <div>
       <Banner></Banner>
