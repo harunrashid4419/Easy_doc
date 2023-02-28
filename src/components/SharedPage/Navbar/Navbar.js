@@ -17,7 +17,7 @@ const Navbar = () => {
       <li className="mr-2 transition-colors">
         <Link to="/documentation">Docs</Link>
       </li>
-      {user?.uid && (
+      {user?.email && (
         <li className="mr-2 transition-colors">
           <Link to="/community">Community</Link>
         </li>
@@ -34,7 +34,7 @@ const Navbar = () => {
       <li className="mr-2 transition-colors">
         <Link to="/contact">Contact</Link>
       </li>
-      {user?.uid ? (
+      {user?.email ? (
         <>
           <li className="mr-2 transition-colors">
             <Link to="/dashboard">Dashboard</Link>
@@ -76,7 +76,7 @@ const Navbar = () => {
           </div>
           <div className="lg:hidden flex gap-3">
             <ThemeToggle></ThemeToggle>
-            {user?.uid && (
+            {user?.email && (
               <label htmlFor="profile-modal">
                 <FaUserCircle className="text-4xl hover:ring-8 rounded-full ring-blue-500/30 bg-white text-blue-500 hover:cursor-pointer"></FaUserCircle>
               </label>

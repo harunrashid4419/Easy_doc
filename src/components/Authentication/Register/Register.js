@@ -12,9 +12,10 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { useTheme } from "../../../hooks/useTheme";
-import { getToken } from "../../../token/getToken";
 import SocialLogin from "../../SharedPage/SocialLogin/SocialLogin";
 import useTitle from "../../../Hook/useTitle";
+import useToken from "../../../hooks/useToken";
+import { useEffect } from "react";
 
 const Register = () => {
   const {
@@ -25,6 +26,8 @@ const Register = () => {
   const { createUser, updateUser } =
     useContext(AuthContext);
   const [error, setError] = useState("");
+  const [email, setEmail] = useState('');
+  const [token] = useToken(email);
   const navigate = useNavigate();
   const [eyeClick, setEyeClick] = useState(false);
   const [check, setCheck] = useState(false);
@@ -33,6 +36,14 @@ const Register = () => {
   const { theme } = useTheme();
   useTitle('Register');
 
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+      toast.success('successfully sign up')
+    }
+  }, [token])
+
+
   const handleRegister = (data) => {
     const name = data.firstName + " " + data.lastName;
     const email = data?.email;
@@ -40,19 +51,18 @@ const Register = () => {
     // create user
     createUser(email, password)
       .then((result) => {
-        const user = result.user;
-        console.log(user);
-        getToken(user);
         const usersInfo = {
           displayName: name,
         };
         updateUser(usersInfo)
-          .then((result) => { })
+          .then((result) => {
+            addUserToDatabase(name, email);
+          })
           .catch((error) => {
             setError(error.message)
             console.log(error)
           })
-        addUserToDatabase(name, email);
+
       })
       .catch((error) => {
         setError(error.message);
@@ -73,11 +83,7 @@ const Register = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.acknowledged) {
-          setError("");
-          toast.success("Successfully sign In");
-          navigate(from, { replace: true });
-        }
+        setEmail(email);
       });
   };
 
