@@ -25,6 +25,7 @@ const MyProfile = () => {
 
   // destructuring user information from data
   const { name, email, phoneNumber, photoURL } = data;
+  console.log(data);
   // this is the update profile function
   // that can update when user change his/her information
   const updateProfile = (data) => {
