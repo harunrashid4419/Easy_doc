@@ -5,8 +5,8 @@ import { AuthContext } from "../../Context/UserContext";
 import { useTheme } from "../../hooks/useTheme";
 import ShowPost from "./ShowPost";
 
-const Post = () => {
-  const { register, handleSubmit, reset } = useForm();
+const Post = ({refetch}) => {
+  const { register, handleSubmit, reset, } = useForm();
   const imageHostKey = "2ed74405c9982edbe45a4ac8ae219bfb";
   const { user } = useContext(AuthContext);
   const { theme } = useTheme();
@@ -41,6 +41,7 @@ const Post = () => {
             .then((postdata) => {
               toast.success("post successfuly");
               reset();
+              refetch()
             });
         }
       });
@@ -79,7 +80,8 @@ const Post = () => {
           </form>
         </div>
       </div>
-      <ShowPost></ShowPost>
+      {/* <ShowPost
+      ></ShowPost> */}
     </div>
   );
 };
