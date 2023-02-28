@@ -12,6 +12,7 @@ function ShowCourses({ courses }) {
     price,
     _id,
   } = courses;
+  console.log(_id);
   return (
     <div>
       <div>
@@ -28,7 +29,7 @@ function ShowCourses({ courses }) {
             <p>{heading}</p>
             <div className="card-actions mt-4">
               <p className="font-semibold">price: ${price}</p>
-              <Link to={`/servicesDetails/${_id}`}>
+              <Link to={`/coursesDetails/${_id}`}>
                 <button className="btn btn-primary">See details</button>
               </Link>
             </div>
