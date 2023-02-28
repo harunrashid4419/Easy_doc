@@ -30,6 +30,7 @@ import Error from "../components/Pages/Documentation/Category/Error";
 import MainConcept from "../components/Pages/Documentation/Category/MainConcept";
 import Api from "../components/Pages/Documentation/Category/Api";
 import NotFound from "../components/Pages/NotFound/NotFound";
+import CoursesDetails from "../components/Pages/Courses/CoursesDetails";
 
 
 
@@ -53,6 +54,11 @@ const routes = createBrowserRouter([
       {
         path: "/courses",
         element: <Courses></Courses>,
+      },
+      {
+        path: "/coursesDetails/:id",
+        loader: ({params}) => fetch(`http://localhost:5000/coursesDetails/${params.id}`),
+        element: <CoursesDetails></CoursesDetails>,
       },
       {
         path: '/contact',
