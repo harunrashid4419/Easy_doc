@@ -8,7 +8,6 @@ import {
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/UserContext';
 import { toast } from 'react-hot-toast';
-import { getToken } from '../../../token/getToken';
 
 
 const SocialLogin = () => {
@@ -21,7 +20,6 @@ const SocialLogin = () => {
         googleSignIn()
             .then((result) => {
                 const user = result.user;
-                getToken(user);
                 addUserToDatabase(
                     user?.displayName,
                     user?.email,
@@ -38,7 +36,6 @@ const SocialLogin = () => {
         githubSignIn()
             .then((result) => {
                 const user = result.user;
-                getToken(user);
                 addUserToDatabase(
                     user?.displayName,
                     user?.email,

@@ -8,7 +8,7 @@ import Navbar from '../components/SharedPage/Navbar/Navbar';
 const Main = () => {
     const [show, setShow] = useState(true);
     const [isMobile, setIsMobile] = useState(false)
-
+    console.log(show);
     //choose the screen size 
     const handleResize = () => {
         if (window.innerWidth < 1024) {

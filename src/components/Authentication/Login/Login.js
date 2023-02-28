@@ -12,7 +12,6 @@ import { AuthContext } from "../../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { useTheme } from "../../../hooks/useTheme";
 import useTitle from "../../../Hook/useTitle";
-import { getToken } from "../../../token/getToken";
 import SocialLogin from "../../SharedPage/SocialLogin/SocialLogin";
 
 const Login = () => {
@@ -37,7 +36,7 @@ const Login = () => {
     login(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        getToken(user);
+        console.log(user);
         setError("");
         toast.success("LogIn Success");
       })
