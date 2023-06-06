@@ -6,7 +6,7 @@ import RecommendedTopics from "../Card/RecommendedTopics";
 import PremiumPage from "../PremiumPage/PremiumPage";
 import QSN from "../QSN/QSN";
 import SideBar from "../SideBar/SideBar";
-import Contact from "../Contact/Contact";
+import Contact from "../Contact/Contact"
 
 const Home = () => {
   useTitle('Home');
