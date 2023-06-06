@@ -21,7 +21,7 @@ module.exports = {
           "neutral-content": "#ffffff",
           accent: "#ffffff",
           primary: '#6b707f',
-          "base-200": '#003300',
+          "base-200": '#355BC0',
           "base-300": '#FFF7D0',
         },
         dark: {
