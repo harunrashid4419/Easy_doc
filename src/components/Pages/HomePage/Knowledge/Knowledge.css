@@ -8,8 +8,8 @@
 }
 .main-khowledge .knowledge-section .single-knowledge {
     display: flex;
-    background-color: whitesmoke;
     padding: 30px 20px;
+    background-color: whitesmoke;
     transition: .5s;
 }
 .main-khowledge .knowledge-section .single-knowledge:hover{
@@ -24,7 +24,6 @@
 }
 .main-khowledge .single-knowledge .content h1{
     font-size: 20px;
-    color: #1d2746;
     font-weight: bold;
 }
 .main-khowledge .single-knowledge .content p{

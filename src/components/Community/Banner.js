@@ -14,7 +14,7 @@ const Banner = () => {
           </h1>
           <p
             className={`${
-              theme === "dark" ? "text-[#ffffff94]" : "text-[6b707f]"
+              theme === "dark" ? "text-[#ffffff94]" : "text-[#6b707f]"
             }`}
           >
             Collectives helps you find trusted answers faster, engage with
