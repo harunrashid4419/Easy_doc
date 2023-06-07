@@ -36,7 +36,7 @@ const PaymentSingleUser = ({ paymentUser, refetch }) => {
           <button
             onClick={() => handleDeleteUser(_id)}
             className="btn text-black border-none"
-            style={{ backgroundColor: "#F87171" }}
+            style={{ backgroundColor: "#FBBD23" }}
           >
             Delete
           </button>

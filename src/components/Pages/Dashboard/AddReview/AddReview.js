@@ -90,10 +90,10 @@ const AddReview = () => {
             onChange={ratingChanged}
             size={40}
             isHalf={true}
-            activeColor="#ffd700"
+            activeColor="#FBBD23"
           />
         </div>
-        <input className="btn btn-wide" type="submit" value="Submit Review" />
+        <input className="btn btn-wide" style={{backgroundColor:'#355BC0'}} type="submit" value="Submit Review" />
       </form>
     </div>
   );

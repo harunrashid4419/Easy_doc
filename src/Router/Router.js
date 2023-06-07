@@ -16,7 +16,6 @@ import PrivateRoute from "./PrivateRoute";
 import AddBlog from "../components/Pages/Dashboard/AddBlog/AddBlog";
 import AdminRouter from "./AdminRouter";
 import Courses from "../components/Pages/Courses/Courses";
-import Contact from "../components/Pages/Contact/Contact";
 import Quiz from "../components/Pages/QuizPage/Quiz";
 import QuizDetails from "../components/Pages/QuizPage/QuizDetails/QuizDetails";
 import Payment from "../Payment/Payment";
@@ -59,10 +58,6 @@ const routes = createBrowserRouter([
         path: "/coursesDetails/:id",
         loader: ({params}) => fetch(`https://easy-doc-server.vercel.app/coursesDetails/${params.id}`),
         element: <CoursesDetails></CoursesDetails>,
-      },
-      {
-        path: '/contact',
-        element: <Contact></Contact>
       },
       {
         path: "/blog",

@@ -8,9 +8,9 @@ import subscribtion from "../../../../assets/subscribe-banner.json";
 const PremiumPage = () => {
   const { theme } = useTheme();
   return (
-    <div className="container">
-      <h2 className="text-center text-3xl font-bold mb-5">Get on-time support </h2>
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 items-center pt-16  bg-neutral-content mb-5 px-5">
+    <div className="container my-28">
+      <h2 className="text-center text-3xl font-bold mb-4">Get on-time support </h2>
+      <div className="grid md:grid-cols-2 sm:grid-cols-1 items-center pt-8  bg-neutral-content mb-5 px-5">
         <div>
           <Player
             src={subscribtion}
@@ -21,7 +21,7 @@ const PremiumPage = () => {
         </div>
         <div>
           <h1 className="text-3xl font-bold mb-5">
-            subscribe our innovation and get on-time support.
+            Subscribe Our Innovation And Get On-time Support.
           </h1>
           <p
             className={`${
@@ -33,7 +33,7 @@ const PremiumPage = () => {
             potential work with live chat.
           </p>
           <Link to={`/payment`}>
-            <button className="btn mt-4 btn-secondary bg-purple-600 border-none">
+            <button className="btn mt-4 border-none" style={{backgroundColor:'#355BC0'}}>
               subscribe
             </button>
           </Link>
