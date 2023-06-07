@@ -24,38 +24,38 @@ const RecommendedTopics = () => {
               <h1 className="font-bold neutral mb-2">MAIN CONCEPTS</h1>
               <div>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Introducing JSX
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Rendering Elements
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Components and
                   Props
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> State and Lifecycle
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Handling Events
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Conditional
@@ -68,38 +68,38 @@ const RecommendedTopics = () => {
               <h1 className="font-bold mb-2">ADVANCED GUIDES</h1>
               <div>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Accessibility
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" />
                   Context
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Error Boundaries
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Forwarding Refs
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Fragments
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> JSX In Depth
@@ -111,37 +111,37 @@ const RecommendedTopics = () => {
               <h1 className="font-bold mb-2">API REFERENCE</h1>
               <div>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> ReactDOM
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> ReactDOMClient
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> ReactDOMServer
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> DOM Elements
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> SyntheticEvent
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Test Utilities
@@ -153,39 +153,39 @@ const RecommendedTopics = () => {
               <h1 className="font-bold mb-2">HOOKS</h1>
               <div>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Introducing Hooks
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Hooks at a Glance
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Using the State
                   Hook
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Using the Effect
                   Hook
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Rules of Hooks
                 </a>
                 <a
-                  href="/"
+                  href="#"
                   className="flex items-center hover:text-blue-500 hover:underline"
                 >
                   <FaAngleRight className="text-blue-600" /> Building Your Own

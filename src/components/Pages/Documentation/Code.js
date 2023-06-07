@@ -5,12 +5,12 @@ const Code = ({ code, yellow }) => {
     <>
       {code && (
         <pre>
-          <code>{code}</code>
+          <code className="text-xl text-base-100">{code}</code>
         </pre>
       )}
       {
         yellow &&
-        <div>{yellow}</div>
+        <div className="text-xl">{yellow}</div>
       }
     </>
   );

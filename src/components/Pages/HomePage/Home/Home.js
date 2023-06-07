@@ -10,14 +10,14 @@ import SideBar from "../SideBar/SideBar";
 const Home = () => {
   useTitle('Home');
   return (
-    <div>
+    <>
       <Banner></Banner>
       <RecommendedTopics></RecommendedTopics>
       <Slider></Slider>
       <QSN></QSN>
       <PremiumPage></PremiumPage>
       <SideBar></SideBar>
-    </div>
+    </>
   );
 };
 

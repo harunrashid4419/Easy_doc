@@ -57,7 +57,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/coursesDetails/:id",
-        loader: ({params}) => fetch(`http://localhost:5000/coursesDetails/${params.id}`),
+        loader: ({params}) => fetch(`https://easy-doc-server.vercel.app/coursesDetails/${params.id}`),
         element: <CoursesDetails></CoursesDetails>,
       },
       {

@@ -5,7 +5,7 @@ import Member from "./Member/Member";
 
 const Contact = () => {
   const { theme } = useTheme();
-  useTitle('Contact');
+  useTitle("Contact");
   const members = [
     {
       id: "01",
@@ -69,16 +69,17 @@ const Contact = () => {
   ];
   return (
     <div>
-      <div
-        className={`flex items-center justify-center ${theme === "dark" ? "bg-slate-600" : "bg-violet-400"
-          } h-60`}
+      {/* <div
+        className={`flex items-center justify-center ${
+          theme === "dark" ? "bg-slate-600" : "bg-violet-400"
+        } h-60`}
       >
         <div className="w-50 flex flex-col items-center">
           <h1 className="text-5xl my-2 font-semibold">Contact Us</h1>
           <h3 className="text-lg">Contact The Help Team</h3>
         </div>
-      </div>
-      <section className="py-16 bg-violet-100">
+      </div> */}
+      {/* <section className="py-16 bg-violet-100">
         <div className="bg-neutral-content px-8 mx-auto max-w-screen-md border-2 border-violet-200 rounded py-12">
           <form
             action="https://formsubmit.co/munniakter00702@gmail.com"
@@ -148,14 +149,14 @@ const Contact = () => {
             <div className="text-center">
               <button
                 type="submit"
-                className=" py-3 px-5 text-lg btn btn-primary font-medium text-center text-black rounded-lg bg-yellow-500 sm:w-fit hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                className={`py-3 px-5 text-lg btn btn-primary font-medium text-center text-base-100 rounded-lg ${theme === 'dark' ? 'bg-bisque': 'bg-[#355BC0]'} sm:w-fit hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800`}
               >
                 Send message
               </button>
             </div>
           </form>
         </div>
-      </section>
+      </section> */}
       <div className="my-20">
         <div className="text-center">
           <h1 className="text-5xl font-bold my-4">Meet Our Beautiful Team</h1>
