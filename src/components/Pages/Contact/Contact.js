@@ -70,9 +70,8 @@ const Contact = () => {
   return (
     <div>
       {/* <div
-        className={`flex items-center justify-center ${
-          theme === "dark" ? "bg-slate-600" : "bg-violet-400"
-        } h-60`}
+        className={`flex items-center justify-center ${theme === "dark" ? "bg-slate-600" : "bg-violet-400"
+          } h-60`}
       >
         <div className="w-50 flex flex-col items-center">
           <h1 className="text-5xl my-2 font-semibold">Contact Us</h1>
@@ -149,7 +148,7 @@ const Contact = () => {
             <div className="text-center">
               <button
                 type="submit"
-                className={`py-3 px-5 text-lg btn btn-primary font-medium text-center text-base-100 rounded-lg ${theme === 'dark' ? 'bg-bisque': 'bg-[#355BC0]'} sm:w-fit hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800`}
+                className=" py-3 px-5 text-lg btn btn-primary font-medium text-center text-black rounded-lg bg-yellow-500 sm:w-fit hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
               >
                 Send message
               </button>

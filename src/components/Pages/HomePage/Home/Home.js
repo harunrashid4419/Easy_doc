@@ -6,12 +6,14 @@ import RecommendedTopics from "../Card/RecommendedTopics";
 import PremiumPage from "../PremiumPage/PremiumPage";
 import QSN from "../QSN/QSN";
 import SideBar from "../SideBar/SideBar";
+import Knowledge from "../Knowledge/Knowledge";
 
 const Home = () => {
   useTitle('Home');
   return (
     <>
       <Banner></Banner>
+      <Knowledge></Knowledge>
       <RecommendedTopics></RecommendedTopics>
       <Slider></Slider>
       <QSN></QSN>
