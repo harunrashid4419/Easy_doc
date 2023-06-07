@@ -25,11 +25,14 @@ const Navbar = () => {
       <li className="mr-2 transition-colors">
         <Link to="/blog">Blog</Link>
       </li>
-      <li className="mr-2 transition-colors">
+      {/* <li className="mr-2 transition-colors">
         <Link to="/courses">Courses</Link>
-      </li>
+      </li> */}
       <li className="mr-2 transition-colors">
         <Link to="/quiz">Quiz</Link>
+      </li>
+      <li className="mr-2 transition-colors">
+        <Link to="/contact">About US</Link>
       </li>
       {user?.email ? (
         <>

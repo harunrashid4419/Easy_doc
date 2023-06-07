@@ -6,20 +6,20 @@ import RecommendedTopics from "../Card/RecommendedTopics";
 import PremiumPage from "../PremiumPage/PremiumPage";
 import QSN from "../QSN/QSN";
 import SideBar from "../SideBar/SideBar";
-import Contact from "../Contact/Contact"
+import Knowledge from "../Knowledge/Knowledge";
 
 const Home = () => {
   useTitle('Home');
   return (
-    <div>
+    <>
       <Banner></Banner>
+      <Knowledge></Knowledge>
       <RecommendedTopics></RecommendedTopics>
       <Slider></Slider>
       <QSN></QSN>
       <PremiumPage></PremiumPage>
-      <Contact></Contact>
       <SideBar></SideBar>
-    </div>
+    </>
   );
 };
 
