@@ -8,6 +8,7 @@ import QSN from "../QSN/QSN";
 import SideBar from "../SideBar/SideBar";
 import Knowledge from "../Knowledge/Knowledge";
 import HomeContact from "../HomeContact/HomeContact";
+import Feature from "../Feature/Feature";
 
 const Home = () => {
   useTitle('Home');
@@ -20,6 +21,7 @@ const Home = () => {
       <QSN></QSN>
       <PremiumPage></PremiumPage>
       <SideBar></SideBar>
+      <Feature></Feature>
       <HomeContact></HomeContact>
     </>
   );
