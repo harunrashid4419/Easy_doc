@@ -7,6 +7,7 @@ import PremiumPage from "../PremiumPage/PremiumPage";
 import QSN from "../QSN/QSN";
 import SideBar from "../SideBar/SideBar";
 import Knowledge from "../Knowledge/Knowledge";
+import HomeContact from "../HomeContact/HomeContact";
 import Feature from "../Feature/Feature";
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
       <PremiumPage></PremiumPage>
       <SideBar></SideBar>
       <Feature></Feature>
+      <HomeContact></HomeContact>
     </>
   );
 };

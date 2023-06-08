@@ -1,0 +1,88 @@
+.main-contact {
+    background-color: #4C4CF1;
+    padding: 150px 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+}
+.main-contact::before{
+    content: '';
+    background-image: url(/src/assets/subscribe_shap-1.png);
+    position: absolute;
+    width: 100%;
+    height: 130px;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}
+.main-contact .left{
+    width: 45%;
+}
+.main-contact .left h1{
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+}
+.main-contact .right{
+    width: 50%;
+    margin-left: 5%;
+    display: flex;
+}
+.main-contact .right input{
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: 300px;
+}
+.main-contact .right button{
+    border-radius: 45px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #0d0d75;
+    padding: 13px 40px;
+    color: #fff;
+    margin-left: 10px;
+    transition: .5s;
+}
+.main-contact .right button:hover{
+    background-color: #fff;
+    color: black;
+}
+@media screen and (max-width: 1100px) {
+    .main-contact .right{
+        display: block;
+    }
+    .main-contact .right button{
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .main-contact {
+        padding: 150px 30px 50px 30px;
+        display: block;
+    }
+    .main-contact .left{
+        width: 100%;
+    }
+    .main-contact .right{
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    .main-contact .right button{
+        margin-left: 20px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .main-contact .right{
+        display: block;
+    }
+    .main-contact .right input {
+        width: 100%;
+    }
+    .main-contact .right button{
+        margin-left: 0px;
+    }
+}
